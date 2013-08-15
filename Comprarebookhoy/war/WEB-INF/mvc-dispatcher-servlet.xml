@@ -1,0 +1,128 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:mvc="http://www.springframework.org/schema/mvc" 
+        xmlns:util="http://www.springframework.org/schema/util"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd                
+                http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+        		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+                http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+                ">
+        		
+	
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+	<!-- I need DI a message into controller, so component scan is disabled, 
+		to avoid double instatetial movieController bean. <context:component-scan 
+		base-package="com" /> -->
+	<context:component-scan base-package="com">
+		<context:include-filter type="regex" expression="com.amatic.ch.*" />
+	</context:component-scan>
+	
+	<context:annotation-config />
+	
+	
+	<mvc:default-servlet-handler/>
+	
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver" p:order="1" />
+	
+	
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	
+	<bean id="jsonMessageConverter"
+	    class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+	
+	<bean
+	    class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+	    <property name="messageConverters">
+	        <list>
+	            <ref bean="jsonMessageConverter" />
+	        </list>
+	    </property>
+	</bean>
+	
+	<!--  <aop:aspectj-autoproxy/>
+	<bean id="loginAspect" class="com.amatic.rc.aop.login.LoginAspect" />
+	-->
+	<util:map id ="attributesMap" map-class="java.util.HashMap"
+		key-type="java.lang.String" value-type="java.lang.String">
+		<entry key="email" value="list1@cc.com" />
+		<entry key="nickname" value="" />
+	</util:map>
+	<bean id="OIdUserBean" class="com.dyuproject.openid.OpenIdUser">
+		<property name="attributes" ref="attributesMap"/>
+	</bean>
+	
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="com.amatic.ch.exception.DefaultJacksonHttpMessageConverter">
+                <!-- True only for the blog article - a production system would set this to false to reduce
+                     the number of bytes sent across the wire: -->
+                <property name="prettyPrint" value="true"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <mvc:interceptors>
+        <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang"/>
+        </bean>
+    </mvc:interceptors>
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver"/>
+	
+
+
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="order" value="1"/>
+        <property name="mediaTypes">
+            <map>
+                <entry key="json" value="application/json"/>
+            </map>
+        </property>
+        <property name="defaultContentType" value="#{T(org.springframework.http.MediaType).APPLICATION_JSON}"/>
+        <property name="defaultViews">
+            <list>
+                <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView"/>
+            </list>
+        </property>
+    </bean>
+
+
+
+    <!-- Allow Exceptions to be handled in annotated methods if desired.  Otherwise fallback to the
+         'restExceptionResolver' below: -->
+    <bean id="annotationMethodHandlerExceptionResolver"
+          class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver">
+        <property name="order" value="0"/>
+    </bean>	
+	<bean id="restExceptionResolver" class="com.amatic.ch.exception.RestExceptionHandler">
+	  <property name="order" value="100"></property>
+	  <property name="errorResolver">
+	    <bean class="com.amatic.ch.exception.DefaultRestErrorResolver">
+	      <property name="localeResolver" ref="localeResolver"></property>
+	      <property name="defaultMoreInfoUrl" value="mailto:support@amatic.com"></property>
+	      <property name="exceptionMappingDefinitions">
+	        <map>
+	          <!-- 404 -->
+	          <entry key="com.stormpath.blog.spring.mvc.rest.exhandler.UnknownResourceException" value="404, _exmsg"></entry>
+	          <!-- 500 (catch all): -->
+	          <entry key="Throwable" value="500, error.internal"></entry>
+	        </map>
+	      </property>
+	    </bean>
+	  </property>
+	</bean>
+	
+</beans>
