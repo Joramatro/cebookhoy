@@ -168,7 +168,7 @@
 			<div class="clients-carousel">
 		
 				<ul class="slides clients">
-					<li><img src="img/logos/1.png" alt="1"/></li>
+					<li><img src="img/logos/1.png" alt=""/></li>
 					<li><img src="img/logos/2.png" alt=""/></li>	
 					<li><img src="img/logos/3.png" alt=""/></li>
 					<li><img src="img/logos/4.png" alt=""/></li>
