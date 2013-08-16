@@ -100,7 +100,7 @@ public class FileResource {
 
 	ImagesService imagesService = ImagesServiceFactory.getImagesService();
 
-	int sizeImage = 400;
+	int sizeImage = ImagesService.SERVING_SIZES_LIMIT;
 	String url = imagesService.getServingUrl(ServingUrlOptions.Builder
 		.withBlobKey(blobKey).crop(true).imageSize(sizeImage));
 

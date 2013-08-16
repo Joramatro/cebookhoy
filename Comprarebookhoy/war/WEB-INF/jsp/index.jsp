@@ -120,7 +120,7 @@
 	
 		
 					
-					<div class="title"><h3>Últimas Publicaciones</h3></div>
+		<div class="title"><h3>Últimas Publicaciones</h3></div>
 			
     	<div class="container">
 	
@@ -146,8 +146,6 @@
 					</div>	
 				</div>
 				</c:forEach>
-
-
 			</div>
 			<!-- end: Portfolio -->
       	

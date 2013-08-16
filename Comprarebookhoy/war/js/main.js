@@ -16,7 +16,8 @@ $(function(){
 	        	  "resumen": $("#resumen").val(),
 	        	  "articulo": $("#articulo").val(),
 	        	  "keywords": $("#keywords").val(),
-	        	  "valoracion": $("#valoracion").val()
+	        	  "clase1": $("#clase1").val(),
+	        	  "clase2": $("#clase2").val()
 	          },
 		      success: function(text){
 //		    	  var nameChn = ($("#nameChannel").val()).replace(/\s/g , "-")

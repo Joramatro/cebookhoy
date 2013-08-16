@@ -17,7 +17,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-keynote ico-white"></i>Organiza tus libros y autores</h2>
+				<h2><i class="ico-keynote ico-white"></i>${publicacion.titulo}</h2>
 
 			</div>
 			<!-- end: Container  -->
@@ -34,12 +34,12 @@
     	<div class="container">
 	
 			<!-- start: Flexslider -->
-			<div class="slider">
+			<div class="slider" >
 				<div id="flex1" class="flexslider home">
 					<ul class="slides">
 						<c:forEach var="imagen" items="${publicacion.lImages}" varStatus="status" end="${fn:length(publicacion.lImages)}">
 						<li>
-							<img src="${imagen}" alt="" />
+							<img src="${imagen}" style="height:400px" alt="" />
 							<div class="slide-caption n">
 								<h3>${publicacion.descripcion}</h3>
 							</div>
@@ -55,20 +55,21 @@
 			<!-- start: Row -->
 			<div class="row">
 				
-				<div class="span2">
-					
+				<div class="span2">					
 					<ul class="project-info">
-						<li><strong>Fecha del artículo:</strong> ${publicacion.fechaCreacion}</li>
-						<li><strong>Número de visitas::</strong>  ${publicacion.numVisitas}</li>
+						<li><strong>Número visitas&nbsp;</strong>&nbsp;  ${publicacion.numVisitas}</li>
+						<c:if test="${publicacion.sumaPuntos gt 0 }">
+							<li><strong>Puntos&nbsp;</strong>&nbsp; ${publicacion.sumaPuntos}</li>
+						</c:if>
+						<li><strong>Fecha&nbsp;</strong>&nbsp; ${publicacion.fechaCreacion}</li>
 					</ul>
-					<a href="project.html#" class="button color launch">Project Page</a>
-					
+					<a href="" class="button color launch">Cómpralo Aquí</a>					
 				</div>
 				<% pageContext.setAttribute("newLineChar", "\n"); %>
 				<div class="span10">
 					
 					<p>
-						<span class="dropcap">-</span>${fn:replace(publicacion.articulo, newLineChar, "<p/><p>")}
+						<span class="dropcap">+</span>${fn:replace(publicacion.articulo, newLineChar, "<p/><p>")}
 					</p>
 					
 					
@@ -133,6 +134,84 @@
 							</div>
 
 						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+	<div class="row">			
+		<div class="span9">
+		<!-- start: Comments -->
+					<h4>Comments <span class="comments-amount">(${fn:length(publicacion.lComentarios)})</span></h4>
+					<div class="comments-sec">
+
+						<ol class="commentlist">
+						<c:forEach var="comentario" items="${publicacion.comentariosDeref}" varStatus="status">
+							<li style="width: 100%;">
+								<div class="comments">
+									<div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=50" alt="" width="50" height="50" border="0" /> </div>
+									<div class="comment-des">
+										<div class="comment-by"><strong>${comentario.nombre}</strong><span class="reply"><span style="color:#aaa">/ </span><b>&nbsp;${comentario.puntos}</b> puntos</span> <span class="date">${comentario.fecha}</span></div>
+										<p>${comentario.comentario }</p>
+									</div>
+								</div>		
+							</li>
+						</c:forEach>
+						</ol>
+
+					</div>
+					<!-- end: Comments -->
+					<div class="clear" style="padding-top: 10px;"></div>
+
+					<!-- start: Comment Add -->
+					<h4>Deja un comentario</h4>
+					<div class="form-spacer"></div>
+					
+					<!-- Form -->
+					<div id="contact-form">
+						<form action="/blog/${publicacion.url}/nuevoComentario" id="formComment" method="post">
+							
+							<div class="field">
+								<label>Nombre:</label>
+								<input type="text" name="nombre" class="text" />
+							</div>
+
+							<div class="field">
+								<label>Email: <span>*</span></label>
+								<input type="text" name="email" class="text" />
+							</div>
+							
+							<div class="field">
+								<label>Puntos: <span>*</span></label>
+								<select name="puntos" style="width: 6%;" title="Por favor, valora del 0 al 5 (lo mejor) a este producto en tu comentario">
+								  <option value="0">0</option>
+								  <option value="1">1</option>
+								  <option value="2">2</option>
+								  <option value="3">3</option>
+								  <option value="4">4</option>
+								  <option value="5">5</option>
+								</select>
+							</div>
+
+							<div class="field">
+								<label>Comentario: <span>*</span></label>
+								<textarea name="comentario" class="text textarea" ></textarea>
+							</div>
+
+							<div class="field">
+								<input type="button" id="send" value="Enviar" onclick="this.form.submit()"/>
+							</div>
+							<input name="url" type="hidden" value="${publicacion.url}"/>
+
+						</form>
+						
+					</div>		
+
+					<!-- end: Comment Add -->
+			</div>
+		</div>		
+					
+							
 										
 					<div class="title"><h3>Te Puede Interesar</h3></div>					
 			
@@ -156,63 +235,7 @@
 							</div>
 						</c:forEach>
 						</div>
-					</div>
-        			</div>
-					<!-- end: Row -->
-
-				</div>
-
-        		<div class="span3">
-					
-					<!-- start: Testimonials-->
-
-					<div class="testimonial-container">
-
-						<div class="title"><h3>What Client’s Say</h3></div>
-
-							<div class="testimonials-carousel" data-autorotate="3000">
-
-								<ul class="carousel">
-
-									<li class="testimonial">
-										<div class="testimonials">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
-										<div class="testimonials-bg"></div>
-										<div class="testimonials-author">Lucas Luck, <span>CEO</span></div>
-									</li>
-
-									<li class="testimonial">
-										<div class="testimonials">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
-										<div class="testimonials-bg"></div>
-										<div class="testimonials-author">Lucas Luck, <span>CTO</span></div>
-									</li>
-
-									<li class="testimonial">
-										<div class="testimonials">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
-										<div class="testimonials-bg"></div>
-										<div class="testimonials-author">Lucas Luck, <span>COO</span></div>
-									</li>
-
-									<li class="testimonial">
-										<div class="testimonials">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
-										<div class="testimonials-bg"></div>
-										<div class="testimonials-author">Lucas Luck, <span>CMO</span></div>
-									</li>
-
-								</ul>
-
-							</div>
-
-						</div>
-
-					<!-- end: Testimonials-->
-					
-        		</div>
-
-      		</div>
-			<!-- end: Row -->
-			
-	
-			
+					</div>						
 		</div>
 		<!-- end: Container  -->
 	

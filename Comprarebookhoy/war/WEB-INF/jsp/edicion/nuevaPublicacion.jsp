@@ -66,21 +66,7 @@
 							<li class="active">
 	                			<a href="/">Home</a>
 	              			</li>
-							<li class="dropdown">
-	                			<a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">Catálogo<b class="caret"></b></a>
-	                			<ul class="dropdown-menu">
-	                  				<li><a href="social-icons.html">Social Icons</a></li>
-									<li><a href="icons.html">Icons</a></li>
-									<li><a href="sliders.html">Sliders</a></li>
-									<li><a href="typography.html">Typography</a></li>
-									<li><a href="shortcodes.html">Shortcodes</a></li>
-									<li><a href="list-styles.html">List Styles</a></li>
-	                			</ul>
-	              			</li>																
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="about.html">About</a></li>
-	              			<li><a href="contact.html">Contact</a></li>
-	              			<li><a href="pricing.html">Sign in</a></li>
+
 	            		</ul>
 	          		</div>
 	        	</div>
@@ -103,7 +89,25 @@ Keywords: <input type="text" style="width: 433px;"id="keywords" name="keywords" 
 <br><br>
 Descripcion: <input type="text" style="width: 633px;" id="descripcion" name="descripcion" size="100" maxlength="100">
 <br><br>
-Valoracion: <input type="text" style="width: 633px;" id="valoracion" name="valoracion" size="5" maxlength="5">
+Clase1: <select name="puntos" id="clase1" name="clase1">
+				  <option value="Novedades">Novedades</option>
+				  <option value="Sony">Sony</option>
+				  <option value="Inves">Inves</option>
+				  <option value="Wolder">Wolder</option>
+				  <option value="Woxter">Woxter</option>
+				  <option value="Papyre">Papyre</option>
+				  <option value="Otros">Otros</option>
+				</select>
+Clase2: <select name="puntos" id="clase2" name="clas2">
+				  <option value=""></option>
+				  <option value="Novedades">Novedades</option>
+				  <option value="Sony">Sony</option>
+				  <option value="Inves">Inves</option>
+				  <option value="Wolder">Wolder</option>
+				  <option value="Woxter">Woxter</option>
+				  <option value="Papyre">Papyre</option>
+				  <option value="Otros">Otros</option>
+				</select>				
 <br><br>
 Resumen<br>
 <textarea style="width: 833px;" rows="10" id="resumen" name="resumen"></textarea>

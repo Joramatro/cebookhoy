@@ -67,10 +67,12 @@
 	          		<div class="nav-collapse collapse">
 	            		<ul class="nav">
 							<li class="active">
-	                			<a href="/">Home</a>
+	                			<a href="/">Inicio</a>
 	              			</li>
+	              			<li><a href="/ebooks">Ebooks</a></li>
+	              			<li><a href="pricing.html">Accesorios</a></li>
 							<li class="dropdown">
-	                			<a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">Catálogo<b class="caret"></b></a>
+	                			<a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">Destacados<b class="caret"></b></a>
 	                			<ul class="dropdown-menu">
 	                  				<li><a href="social-icons.html">Social Icons</a></li>
 									<li><a href="icons.html">Icons</a></li>
@@ -79,11 +81,9 @@
 									<li><a href="shortcodes.html">Shortcodes</a></li>
 									<li><a href="list-styles.html">List Styles</a></li>
 	                			</ul>
-	              			</li>																
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="about.html">About</a></li>
-	              			<li><a href="contact.html">Contact</a></li>
-	              			<li><a href="pricing.html">Sign in</a></li>
+	              			</li>	              																			
+							<li><a href="about.html">Sobre nosotros</a></li>
+	              			<li><a href="contact.html">Contacto</a></li>
 	            		</ul>
 	          		</div>
 	        	</div>

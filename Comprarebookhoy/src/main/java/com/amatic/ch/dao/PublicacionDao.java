@@ -14,6 +14,6 @@ public interface PublicacionDao {
 
     public List<Publicacion> getPublicaciones();
 
-    void update(Publicacion publicacion);
+    public void update(Publicacion publicacion);
 
 }

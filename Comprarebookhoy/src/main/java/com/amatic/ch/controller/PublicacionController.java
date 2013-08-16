@@ -54,9 +54,10 @@ public class PublicacionController {
 	    @RequestParam("resumen") String resumen,
 	    @RequestParam("articulo") String articulo,
 	    @RequestParam("keywords") String keywords,
-	    @RequestParam("valoracion") String valoracion,
-	    HttpServletRequest request, HttpServletResponse response)
-	    throws IOException, NoSuchAlgorithmException {
+	    @RequestParam("clase1") String clase1,
+	    @RequestParam("clase2") String clase2, HttpServletRequest request,
+	    HttpServletResponse response) throws IOException,
+	    NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
 
 	User user = (User) session
@@ -87,7 +88,8 @@ public class PublicacionController {
 	publicacion.setDescripcion(descripcion);
 	publicacion.setArticulo(articulo);
 	publicacion.setKeywords(keywords);
-	publicacion.setValoracion(Float.parseFloat(valoracion));
+	publicacion.setClase1(clase1);
+	publicacion.setClase2(clase2);
 
 	publicacionService.crearPublicacion(publicacion);
 	//

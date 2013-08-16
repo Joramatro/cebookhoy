@@ -46,14 +46,34 @@ public class Publicacion implements Serializable {
     @Index
     String keywords;
     @Index
-    float valoracion;
+    String clase1;
+    @Index
+    String clase2;
+    @Load
+    List<Ref<Comentario>> lComentarios = new ArrayList<Ref<Comentario>>();
 
-    public float getValoracion() {
-	return valoracion;
+    public List<Ref<Comentario>> getlComentarios() {
+	return lComentarios;
     }
 
-    public void setValoracion(float valoracion) {
-	this.valoracion = valoracion;
+    public void setlComentarios(List<Ref<Comentario>> lComentarios) {
+	this.lComentarios = lComentarios;
+    }
+
+    public String getClase1() {
+	return clase1;
+    }
+
+    public void setClase1(String clase1) {
+	this.clase1 = clase1;
+    }
+
+    public String getClase2() {
+	return clase2;
+    }
+
+    public void setClase2(String clase2) {
+	this.clase2 = clase2;
     }
 
     public Integer getNumVisitas() {
@@ -162,6 +182,19 @@ public class Publicacion implements Serializable {
 	    url = url.substring(0, url.length() - 1);
 	}
 	return url;
+    }
+
+    public List<Comentario> getComentariosDeref() {
+	return Deref.deref(lComentarios);
+    }
+
+    public int getSumaPuntos() {
+	List<Comentario> lComentarios = this.getComentariosDeref();
+	int sumaPuntos = 0;
+	for (Comentario comentario : lComentarios) {
+	    sumaPuntos += comentario.getPuntos();
+	}
+	return sumaPuntos;
     }
 
 }

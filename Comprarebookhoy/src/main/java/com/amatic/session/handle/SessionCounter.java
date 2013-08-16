@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
+import com.amatic.ch.dto.Comentario;
 import com.amatic.ch.dto.Publicacion;
 import com.amatic.ch.dto.User;
 import com.google.appengine.api.channel.ChannelMessage;
@@ -21,6 +22,7 @@ public class SessionCounter implements HttpSessionListener {
     static {
 	ObjectifyService.register(Publicacion.class);
 	ObjectifyService.register(User.class);
+	ObjectifyService.register(Comentario.class);
 	// ObjectifyService.register(Channel.class);
     }
 

@@ -26,7 +26,7 @@ public class PublicacionService {
 	return this.PublicacionDao.getUltimasPublicaciones();
     }
 
-    public List<Publicacion> gePublicaciones() {
+    public List<Publicacion> getPublicaciones() {
 	return this.PublicacionDao.getPublicaciones();
     }
 
