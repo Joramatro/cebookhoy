@@ -26,7 +26,7 @@ import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Ref;
 
 @Controller
-public class PublicacionController {
+public class EditionController {
 
     @Autowired
     private PublicacionService publicacionService;
@@ -55,7 +55,8 @@ public class PublicacionController {
 	    @RequestParam("articulo") String articulo,
 	    @RequestParam("keywords") String keywords,
 	    @RequestParam("clase1") String clase1,
-	    @RequestParam("clase2") String clase2, HttpServletRequest request,
+	    @RequestParam("clase2") String clase2,
+	    @RequestParam("tipo") String tipo, HttpServletRequest request,
 	    HttpServletResponse response) throws IOException,
 	    NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
@@ -90,6 +91,7 @@ public class PublicacionController {
 	publicacion.setKeywords(keywords);
 	publicacion.setClase1(clase1);
 	publicacion.setClase2(clase2);
+	publicacion.setTipo(tipo);
 
 	publicacionService.crearPublicacion(publicacion);
 	//
@@ -103,6 +105,9 @@ public class PublicacionController {
 
 	request.getSession().setAttribute("tituloNuevaPublicacion",
 		publicacion.getTitulo());
+
+	request.getSession().setAttribute("tipoNuevaPublicacion",
+		publicacion.getTipo());
 
 	return;
 

@@ -8,6 +8,8 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.amatic.ch.dao.PublicacionDao;
+import com.amatic.ch.dto.Contacto;
+import com.amatic.ch.dto.Email;
 import com.amatic.ch.dto.Publicacion;
 
 @Repository
@@ -20,19 +22,20 @@ public class PublicacionDaoImpl implements PublicacionDao {
     }
 
     @Override
-    public Publicacion getPublicacion(String titulo) {
+    public Publicacion getPublicacion(String titulo, String tipo) {
 
 	Publicacion publicacion = ofy().load().type(Publicacion.class)
-		.filter("titulo", titulo).first().get();
+		.filter("titulo", titulo).filter("tipo", tipo).first().get();
 
 	return publicacion;
     }
 
     @Override
-    public List<Publicacion> getUltimasPublicaciones() {
+    public List<Publicacion> getUltimasPublicaciones(String tipo) {
 
 	List<Publicacion> ultimasPublicaciones = ofy().load()
-		.type(Publicacion.class).order("-fechaCreacion").list();
+		.type(Publicacion.class).filter("tipo", tipo)
+		.order("-fechaCreacion").list();
 
 	if (ultimasPublicaciones.size() > 10) {
 	    ultimasPublicaciones = ultimasPublicaciones.subList(0, 10);
@@ -42,10 +45,10 @@ public class PublicacionDaoImpl implements PublicacionDao {
     }
 
     @Override
-    public List<Publicacion> getPublicaciones() {
+    public List<Publicacion> getPublicaciones(String tipo) {
 
 	List<Publicacion> publicaciones = ofy().load().type(Publicacion.class)
-		.order("-fechaCreacion").list();
+		.filter("tipo", tipo).order("-fechaCreacion").list();
 
 	return publicaciones;
     }
@@ -74,6 +77,22 @@ public class PublicacionDaoImpl implements PublicacionDao {
 	updatePublicacion.setKeywords(publicacion.getKeywords());
 	updatePublicacion.setClase1(publicacion.getClase1());
 	updatePublicacion.setClase2(publicacion.getClase2());
+	updatePublicacion.setTipo(publicacion.getTipo());
+	updatePublicacion.setAutor(publicacion.getAutor());
+    }
+
+    @Override
+    public void saveEmail(Email email) {
+
+	ofy().save().entity(email);
+
+    }
+
+    @Override
+    public void saveContacto(Contacto contacto) {
+
+	ofy().save().entity(contacto);
+
     }
 
 }

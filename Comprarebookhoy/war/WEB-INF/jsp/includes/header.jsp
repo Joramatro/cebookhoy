@@ -31,6 +31,7 @@
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="/css/style.css" rel="stylesheet">
 	<link href="/css/parallax-slider.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/apprise-v2.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Boogaloo">
@@ -63,27 +64,27 @@
 	            		<span class="icon-bar"></span>
 	            		<span class="icon-bar"></span>
 	          		</a>
-					<a class="brand" href="index.html"><i class="ico-charts circle"></i>Comprar Ebooks <span>Hoy</span>.</a>
+					<a class="brand" href="/"><i class="ico-charts circle"></i>Comprar eBook <span>Hoy</span>.</a>
 	          		<div class="nav-collapse collapse">
-	            		<ul class="nav">
-							<li class="active">
+	            		<ul id="menuSuperior" class="nav">
+							<li id="menuInicio">
 	                			<a href="/">Inicio</a>
 	              			</li>
-	              			<li><a href="/ebooks">Ebooks</a></li>
-	              			<li><a href="pricing.html">Accesorios</a></li>
+	              			<li id="menuEbooks"><a href="/ebooks">Ebooks</a></li>
 							<li class="dropdown">
-	                			<a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">Destacados<b class="caret"></b></a>
+	                			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Destacados<b class="caret"></b></a>
 	                			<ul class="dropdown-menu">
-	                  				<li><a href="social-icons.html">Social Icons</a></li>
-									<li><a href="icons.html">Icons</a></li>
-									<li><a href="sliders.html">Sliders</a></li>
-									<li><a href="typography.html">Typography</a></li>
-									<li><a href="shortcodes.html">Shortcodes</a></li>
-									<li><a href="list-styles.html">List Styles</a></li>
+	                  				<li><a href="/ebooks/papyre-HD">Papyre HD</a></li>
+									<li><a href="/ebooks/papyre-HD">Kindle 2</a></li>
+									<li><a href="/ebooks/papyre-HD">Kindle 3</a></li>
+									<li><a href="/ebooks/papyre-HD">Mini Ipad</a></li>
+									<li><a href="/ebooks/papyre-HD">Nexu 7</a></li>
 	                			</ul>
-	              			</li>	              																			
-							<li><a href="about.html">Sobre nosotros</a></li>
-	              			<li><a href="contact.html">Contacto</a></li>
+	              			</li>
+	              			<li id="menuAccesorios"><a href="/accesorios">Accesorios</a></li>
+	              			<li id="menuBlog"><a href="/blog">Blog</a></li>	              																			
+							<li id="menuSobre"><a href="/sobre">Sobre nosotros</a></li>
+	              			<li id="menuContacto"><a href="/contacto">Contacto</a></li>
 	            		</ul>
 	          		</div>
 	        	</div>

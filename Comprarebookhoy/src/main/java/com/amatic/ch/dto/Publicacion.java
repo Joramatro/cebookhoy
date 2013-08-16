@@ -49,6 +49,27 @@ public class Publicacion implements Serializable {
     String clase1;
     @Index
     String clase2;
+    @Index
+    String tipo;
+    @Index
+    String autor;
+
+    public String getAutor() {
+	return autor;
+    }
+
+    public void setAutor(String autor) {
+	this.autor = autor;
+    }
+
+    public String getTipo() {
+	return tipo;
+    }
+
+    public void setTipo(String tipo) {
+	this.tipo = tipo;
+    }
+
     @Load
     List<Ref<Comentario>> lComentarios = new ArrayList<Ref<Comentario>>();
 

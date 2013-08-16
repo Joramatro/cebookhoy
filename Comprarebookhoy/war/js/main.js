@@ -17,7 +17,8 @@ $(function(){
 	        	  "articulo": $("#articulo").val(),
 	        	  "keywords": $("#keywords").val(),
 	        	  "clase1": $("#clase1").val(),
-	        	  "clase2": $("#clase2").val()
+	        	  "clase2": $("#clase2").val(),
+	        	  "tipo": $("#tipo").val()
 	          },
 		      success: function(text){
 //		    	  var nameChn = ($("#nameChannel").val()).replace(/\s/g , "-")
@@ -27,4 +28,73 @@ $(function(){
 		    });
     });
 });
+
+
+
+function validateEmail(email) {   
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+//function validarEmail(){
+//	  var email = $("#newsletter_input").val();
+//	  if (validateEmail(email)) {
+//		alert("Gracias por suscribirte a nuestras noticias");
+//	    return true;
+//	  } else {
+//	    alert("Por favor, introduce un email correcto");
+//	  }
+//	  return false;
+//	}
+
+function validarEmail(){
+	  var email = $("#newsletter_input").val();
+	  if (validateEmail(email)) {
+    	$.ajax({
+		      type: "POST",
+		      url: "/suscribir",
+		      dataType: "html",
+		      cache: false,
+	          data: {
+	        	  "email": $("#newsletter_input").val()
+	          },
+		      success: function(text){
+		    	  Apprise("Gracias por suscribirte a nuestras publicaciones!");
+		    	  $("#newsletter_input").val("");
+		      }
+		    });
+    }else {
+	    alert("Por favor, introduce un email correcto");
+	  }
+}
+
+
+$(function(){ 
+    $("#btnContact").on('click', function() {
+	  var email = $("#emailContact").val();
+	  if (validateEmail(email)) {
+	  	  $.ajax({
+			      type: "POST",
+			      url: "/contactar",
+			      dataType: "html",
+			      cache: false,
+		          data: {
+		        	  "email": $("#emailContact").val(),
+		        	  "name": $("#nameContact").val(),
+		        	  "message": $("#messageContact").val()
+		          },
+			      success: function(text){
+			    	  Apprise("Hemos recibido tu mensaje. Te responderemos en cuanto nos sea posible. Gracias!");
+			    	  $("#newsletter_input").val("");
+			    	  $("#emailContact").val("");
+			    	  $("#nameContact").val("");
+			    	  $("#messageContact").val("");
+			      }
+			    });
+	  }else {
+		    alert("Por favor, introduce un email correcto");
+		  }
+	    });
+});
+
 

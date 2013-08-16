@@ -60,7 +60,7 @@
 	            		<span class="icon-bar"></span>
 	            		<span class="icon-bar"></span>
 	          		</a>
-					<a class="brand" href="index.html"><i class="ico-charts circle"></i>Comprar Ebooks <span>Hoy</span>.</a>
+					<a class="brand" href="/"><i class="ico-charts circle"></i>Comprar eBook <span>Hoy</span>.</a>
 	          		<div class="nav-collapse collapse">
 	            		<ul class="nav">
 							<li class="active">
@@ -84,12 +84,18 @@
 				
 		<!--start: Container -->
     	<div class="container">
+ Tipo: <select name="tipo" id="tipo">
+				  <option value="AR">Articulo</option>
+				  <option value="EB">eBook</option>
+				  <option value="AC">Accesorio</option>
+				</select><br><br>
 Titulo: <input type="text" style="width: 433px;" id="titulo" name="titulo" size="25" maxlength="50"><br><br>
 Keywords: <input type="text" style="width: 433px;"id="keywords" name="keywords" size="35" maxlength="100">
 <br><br>
 Descripcion: <input type="text" style="width: 633px;" id="descripcion" name="descripcion" size="100" maxlength="100">
 <br><br>
-Clase1: <select name="puntos" id="clase1" name="clase1">
+Clase1: <select id="clase1" name="clase1">
+				  <option value=""></option>
 				  <option value="Novedades">Novedades</option>
 				  <option value="Sony">Sony</option>
 				  <option value="Inves">Inves</option>
@@ -98,7 +104,7 @@ Clase1: <select name="puntos" id="clase1" name="clase1">
 				  <option value="Papyre">Papyre</option>
 				  <option value="Otros">Otros</option>
 				</select>
-Clase2: <select name="puntos" id="clase2" name="clas2">
+Clase2: <select id="clase2" name="clase2">
 				  <option value=""></option>
 				  <option value="Novedades">Novedades</option>
 				  <option value="Sony">Sony</option>
@@ -295,7 +301,7 @@ Articulo
 				<!-- start: Footer Menu Logo -->
 				<div class="span2">
 					<div id="footer-menu-logo">
-						<div id="logo-chart"></div><a class="brand" href="index.html#">CE<span>HOY</span>.</a>
+						<div id="logo-chart"></div><a class="brand" href="/">CE<span>HOY</span>.</a>
 					</div>
 				</div>
 				<!-- end: Footer Menu Logo -->
@@ -307,13 +313,13 @@ Articulo
 
 						<ul id="footer-nav">
 
-							<li><a href="/">Principio</a></li>
+							<li><a href="/">Inicio</a></li>
 
-							<li><a href="services.html">Modelos</a></li>
+							<li><a href="/ebooks">eBooks</a></li>
 
-							<li><a href="pricing.html">Sobre nosotros</a></li>
+							<li><a href="/sobre">Sobre nosotros</a></li>
 							
-							<li><a href="contact.html">Contacto</a></li>
+							<li><a href="/contacto">Contacto</a></li>
 
 						</ul>
 
@@ -376,7 +382,7 @@ Articulo
 				<div class="span6">
 				
 					<!-- start: Follow Us -->
-					<h3>Follow Us!</h3>
+					<h3>Síguenos!</h3>
 					<ul class="social-grid">
 						<li>
 							<div class="social-item">				
@@ -466,7 +472,7 @@ Articulo
 		
 			<div class="span12">
 				<p>
-					&copy; 2013, <a href="http://clabs.co">Amatics</a>. Designed by <a href="http://clabs.co">Jorge</a> Amat<img src="img/poland2.png" alt="Jorge Amat" style="margin-top:-4px">
+					&copy; 2013, <a href="/">Compra eBook Hoy</a>
 				</p>
 			</div>
 	

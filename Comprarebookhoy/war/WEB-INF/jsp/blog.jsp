@@ -15,7 +15,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-lightbulb ico-white"></i>eBooks</h2>
+				<h2><i class="ico-lightbulb ico-white"></i>Blog</h2>
 
 			</div>
 			<!-- end: Container  -->
@@ -34,13 +34,6 @@
 			<div id="filters">
 				<ul class="option-set" data-option-key="filter">
 					<li><a href="#filter" class="selected" data-option-value="*">Todos</a></li>
-					<li><a href="#filter" data-option-value=".Novedades">Novedades</a></li>
-					<li><a href="#filter" data-option-value=".Sony">Sony</a></li>
-					<li><a href="#filter" data-option-value=".Inves">Inves</a></li>
-					<li><a href="#filter" data-option-value=".Wolder">Wolder</a></li>
-					<li><a href="#filter" data-option-value=".Woxter">Woxter</a></li>
-					<li><a href="#filter" data-option-value=".Papyre">Papyre</a></li>
-					<li><a href="#filter" data-option-value=".Otros">Otros</a></li>
 				</ul>
 			</div> 
 		</div>
@@ -48,12 +41,12 @@
 				
 		<!--start: Container -->
     	<div class="container">
-			<!-- start: ebooks -->
+			<!-- start: articulo -->
 			<div id="portfolio-wrapper" class="row">
 				<% pageContext.setAttribute("newLineChar", "\n"); %>
 				<c:forEach var="publicacion" items="${publicaciones}" varStatus="status" >				
 				<div class="span4 portfolio-item ${publicacion.clase1} ${publicacion.clase2}">
-					<div class="picture"><a href="/ebooks/${publicacion.url}" title="${publicacion.titulo}">
+					<div class="picture"><a href="/blog/${publicacion.url}" title="${publicacion.titulo}">
 					
 					<c:if test="${!empty publicacion.lImages }">
 					<img src="${publicacion.lImages[0]}" alt="Detalle"/>
@@ -71,7 +64,7 @@
 				</div>
 				</c:forEach>
 			</div>
-			<!-- end: ebooks -->
+			<!-- end: articulo -->
 			
 			<div class="clear" style="padding-top: 25px;"></div>
 			<div class="span3" style="float: right;">

@@ -69,7 +69,7 @@
 				<div class="span10">
 					
 					<p>
-						<span class="dropcap">+</span>${fn:replace(publicacion.articulo, newLineChar, "<p/><p>")}
+						<span class="ico-color ico-search"></span>${fn:replace(publicacion.articulo, newLineChar, "<p/><p>")}
 					</p>
 					
 					
@@ -171,7 +171,7 @@
 					
 					<!-- Form -->
 					<div id="contact-form">
-						<form action="/blog/${publicacion.url}/nuevoComentario" id="formComment" method="post">
+						<form action="/ebooks/${publicacion.url}/nuevoComentario" id="formComment" method="post">
 							
 							<div class="field">
 								<label>Nombre:</label>
@@ -185,7 +185,7 @@
 							
 							<div class="field">
 								<label>Puntos: <span>*</span></label>
-								<select name="puntos" style="width: 6%;" title="Por favor, valora del 0 al 5 (lo mejor) el producto analizado">
+								<select name="puntos" style="width: 6%;" title="Por favor, valora del 0 al 5 (lo mejor) a este producto en tu comentario">
 								  <option value="0">0</option>
 								  <option value="1">1</option>
 								  <option value="2">2</option>
@@ -199,7 +199,9 @@
 								<label>Comentario: <span>*</span></label>
 								<textarea name="comentario" class="text textarea" ></textarea>
 							</div>
+							
 							<label>El comentario puede tardar unos instantes en aparecer publicado una vez enviado</label>
+							
 							<div class="field">
 							<br>
 								<input type="button" id="send" value="Enviar" onclick="this.form.submit()"/>
@@ -221,9 +223,9 @@
     				<div class="container">
     					<div id="portfolio-wrapper" class="row">
 						<c:forEach var="publicacionRel" items="${publicaciones}" varStatus="status" end="3">
-							<c:if test="${publicacionRel.titulo ne publicacion.titulo }">			
+							<c:if test="${publicacionRel.titulo ne publicacion.titulo }">				
 							<div class="span4 portfolio-item nature people">
-								<div class="picture"><a href="/blog/${publicacionRel.url}" title="${publicacionRel.titulo}">
+								<div class="picture"><a href="/ebooks/${publicacionRel.url}" title="${publicacionRel.titulo}">
 								<c:if test="${!empty publicacionRel.lImages }">
 									<img src="${publicacionRel.lImages[0]}" alt="Detalle"/>
 								</c:if>

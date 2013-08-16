@@ -16,25 +16,25 @@
 				<h2>TU LIBRERÍA PORTABLE</h2>
 				<p>cine o reproductor de musica</p>
 				<a href="index.html#" class="da-link">LEER MÁS</a>
-				<div class="da-img"><img src="img/parallax-slider/libreriaportable.jpg" alt="image01" /></div>
+				<div class="da-img"><img src="/img/parallax-slider/libreriaportable.jpg" alt="image01" /></div>
 			</div>
 			<div class="da-slide">
 				<h2>KINDLE PAPERWHITE 3G</h2>
 				<p>La tecnología unica Paperwhite y larga duración de batería hacen de el un gran contendiente.</p>
 				<a href="index.html#" class="da-link">LEER MÁS</a>
-				<div class="da-img"><img src="img/parallax-slider/kindlepaperwhite3g.jpg" alt="image02" /></div>
+				<div class="da-img"><img src="/img/parallax-slider/kindlepaperwhite3g.jpg" alt="image02" /></div>
 			</div>
 			<div class="da-slide">
 				<h2>NOOK HD</h2>
 				<p>Uno de los mejores que te permite configurar tu propio perfil ofreciendo un abundante contenido.</p>
 				<a href="index.html#" class="da-link">LEER MÁS</a>
-				<div class="da-img"><img src="img/parallax-slider/nook_hd.jpg" alt="image03" /></div>
+				<div class="da-img"><img src="/img/parallax-slider/nook_hd.jpg" alt="image03" /></div>
 			</div>
 			<div class="da-slide">
 				<h2>KOBO GLO WIRELESS EREADER</h2>
 				<p>Un diseño y tacto único que ofrece un programa de recompensas cuando alcanzas un hito en tu lectura</p>
 				<a href="index.html#" class="da-link">LEER MÁS</a>
-				<div class="da-img"><img src="img/parallax-slider/Kobo_Glo_eReader.jpg" alt="image04" /></div>
+				<div class="da-img"><img src="/img/parallax-slider/Kobo_Glo_eReader.jpg" alt="image04" /></div>
 			</div>
 			<nav class="da-arrows">
 				<span class="da-arrows-prev"></span>
@@ -129,7 +129,7 @@
 				<% pageContext.setAttribute("newLineChar", "\n"); %>
 				<c:forEach var="publicacion" items="${publicaciones}" varStatus="status" >				
 				<div class="span4 portfolio-item nature people">
-					<div class="picture"><a href="/blog/${publicacion.url}" title="${publicacion.titulo}">
+					<div class="picture"><a href="/ebooks/${publicacion.url}" title="${publicacion.titulo}">
 					
 					<c:if test="${!empty publicacion.lImages }">
 					<img src="${publicacion.lImages[0]}" alt="Detalle"/>
@@ -137,12 +137,12 @@
 					
 					<div class="image-overlay-link"></div></a>
 						<div class="item-description alt">
-							<h5><a href="project.html">${publicacion.titulo}</a></h5>
+							<h5><a href="/ebooks/${publicacion.url}">${publicacion.titulo}</a></h5>
 							<p>
 								${fn:replace(publicacion.resumen, newLineChar, "<p/><p>")}
 							</p>
 						</div>
-						<div class="post-meta"><span><i class="mini-ico-calendar"></i>${publicacion.fechaCreacion}</span> <span><i class="mini-ico-user"></i> <a href="portfolio3.html#">Jorge Amat</a></span> <span><i class="mini-ico-comment"></i><%--<a href="portfolio3.html#">89 comments</a>--%></span></div>
+						<div class="post-meta"><span><i class="mini-ico-calendar"></i><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span><span style="visibility:hidden"><i class="mini-ico-user"></i>  <a href="#">Jorge Amat</a></span> <span><i class="mini-ico-comment"></i><a href="#">${fn:length(publicacion.lComentarios)} comments</a></span></div>
 					</div>	
 				</div>
 				</c:forEach>
@@ -166,26 +166,26 @@
 			<div class="clients-carousel">
 		
 				<ul class="slides clients">
-					<li><img src="img/logos/1.png" alt=""/></li>
-					<li><img src="img/logos/2.png" alt=""/></li>	
-					<li><img src="img/logos/3.png" alt=""/></li>
-					<li><img src="img/logos/4.png" alt=""/></li>
-					<li><img src="img/logos/5.png" alt=""/></li>
-					<li><img src="img/logos/6.png" alt=""/></li>
-					<li><img src="img/logos/7.png" alt=""/></li>
-					<li><img src="img/logos/8.png" alt=""/></li>
-					<li><img src="img/logos/9.png" alt=""/></li>
-					<li><img src="img/logos/10.png" alt=""/></li>
-					<li><img src="img/logos/1.png" alt=""/></li>
-					<li><img src="img/logos/2.png" alt=""/></li>	
-					<li><img src="img/logos/3.png" alt=""/></li>
-					<li><img src="img/logos/4.png" alt=""/></li>
-					<li><img src="img/logos/5.png" alt=""/></li>
-					<li><img src="img/logos/6.png" alt=""/></li>
-					<li><img src="img/logos/7.png" alt=""/></li>
-					<li><img src="img/logos/8.png" alt=""/></li>
-					<li><img src="img/logos/9.png" alt=""/></li>
-					<li><img src="img/logos/10.png" alt=""/></li>	
+					<li><img src="/img/logos/1.png" alt=""/></li>
+					<li><img src="/img/logos/2.png" alt=""/></li>	
+					<li><img src="/img/logos/3.png" alt=""/></li>
+					<li><img src="/img/logos/4.png" alt=""/></li>
+					<li><img src="/img/logos/5.png" alt=""/></li>
+					<li><img src="/img/logos/6.png" alt=""/></li>
+					<li><img src="/img/logos/7.png" alt=""/></li>
+					<li><img src="/img/logos/8.png" alt=""/></li>
+					<li><img src="/img/logos/9.png" alt=""/></li>
+					<li><img src="/img/logos/10.png" alt=""/></li>
+					<li><img src="/img/logos/1.png" alt=""/></li>
+					<li><img src="/img/logos/2.png" alt=""/></li>	
+					<li><img src="/img/logos/3.png" alt=""/></li>
+					<li><img src="/img/logos/4.png" alt=""/></li>
+					<li><img src="/img/logos/5.png" alt=""/></li>
+					<li><img src="/img/logos/6.png" alt=""/></li>
+					<li><img src="/img/logos/7.png" alt=""/></li>
+					<li><img src="/img/logos/8.png" alt=""/></li>
+					<li><img src="/img/logos/9.png" alt=""/></li>
+					<li><img src="/img/logos/10.png" alt=""/></li>	
 				</ul>
 		
 			</div>

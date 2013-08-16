@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.amatic.ch.dao.PublicacionDao;
+import com.amatic.ch.dto.Contacto;
+import com.amatic.ch.dto.Email;
 import com.amatic.ch.dto.Publicacion;
 
 @Service
@@ -18,20 +20,28 @@ public class PublicacionService {
 	this.PublicacionDao.crearPublicacion(publicacion);
     }
 
-    public Publicacion getPublicacion(String titulo) {
-	return this.PublicacionDao.getPublicacion(titulo);
+    public Publicacion getPublicacion(String titulo, String tipo) {
+	return this.PublicacionDao.getPublicacion(titulo, tipo);
     }
 
-    public List<Publicacion> getUltimasPublicaciones() {
-	return this.PublicacionDao.getUltimasPublicaciones();
+    public List<Publicacion> getUltimasPublicaciones(String tipo) {
+	return this.PublicacionDao.getUltimasPublicaciones(tipo);
     }
 
-    public List<Publicacion> getPublicaciones() {
-	return this.PublicacionDao.getPublicaciones();
+    public List<Publicacion> getPublicaciones(String tipo) {
+	return this.PublicacionDao.getPublicaciones(tipo);
     }
 
     public void update(Publicacion publicacion) {
 	this.PublicacionDao.update(publicacion);
+    }
+
+    public void saveEmail(Email email) {
+	this.PublicacionDao.saveEmail(email);
+    }
+
+    public void saveContacto(Contacto contacto) {
+	this.PublicacionDao.saveContacto(contacto);
     }
 
 }

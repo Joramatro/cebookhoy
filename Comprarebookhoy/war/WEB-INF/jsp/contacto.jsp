@@ -1,0 +1,140 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ page isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix='fn' uri='http://java.sun.com/jsp/jstl/functions' %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<%@ include file="/WEB-INF/jsp/includes/header.jsp"%>
+
+	<!-- start: Map -->
+	<div>
+
+		<!-- starts: Google Maps -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<div id="googlemaps-container-top"></div>
+		<div id="googlemaps" class="google-map google-map-full"></div>
+		<div id="googlemaps-container-bottom"></div>
+		<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+		<script src="js/jquery.gmap.min.js"></script>
+		<script type="text/javascript">
+			$('#googlemaps').gMap({
+				maptype: 'ROADMAP',
+				scrollwheel: false,
+				zoom: 13,
+				markers: [
+					{
+						address: 'Winton Road, Dublin, Ireland', // Your Adress Here
+						html: '',
+						popup: false,
+					}
+
+				],
+
+			});
+		</script>
+		<!-- end: Google Maps -->
+	</div>
+	<!-- end: Map -->	
+	
+	<!-- start: Wrapper -->	
+	<div id="wrapper">		
+
+		<!-- start: Container -->	
+		<div class="container">
+			
+			<!-- start: Row -->
+			<div class="row">
+			
+				<!-- start: Contact Info -->
+				<div class="span3">
+					<div class="title"><h3>Información de Contacto</h3></div>
+					<p>
+						<b>Comprar eBook Hoy</b>
+					</p>
+					<p>
+						Fitzwilliam Court, Winton Road
+					</p>
+					<p>	
+						Dublin 6, Dublin, Irlanda
+					</p>	
+					<p>
+						Email: jorge.amat@comprarebookhoy.com
+					</p>
+				</div>
+				<!-- end: Contact Info -->		
+
+				<!-- start: Contact Form -->
+				<div class="span4">
+					<div class="title"><h3>Formulario de Contacto</h3></div>
+
+					<!-- start: Contact Form -->
+					<div id="contact-form">
+
+						<form method="post" action="contact.html">
+
+							<fieldset>
+								<div class="clearfix">
+									<label for="name"><span>Nombre:</span></label>
+									<div class="input">
+										<input tabindex="1" size="18" id="nameContact" name="name" type="text" value="">
+									</div>
+								</div>
+
+								<div class="clearfix">
+									<label for="email"><span>Email:</span></label>
+									<div class="input">
+										<input tabindex="2" size="25" id="emailContact" name="email" type="text" value="" class="input-xlarge">
+									</div>
+								</div>
+
+								<div class="clearfix">
+									<label for="message"><span>Mensaje:</span></label>
+									<div class="input">
+										<textarea tabindex="3" class="input-xlarge" id="messageContact" name="body" rows="7"></textarea>
+									</div>
+								</div>
+
+								<div class="actions">
+									<button tabindex="3" id="btnContact" type="button" class="btn btn-succes btn-large">Enviar Mensaje</button>
+								</div>
+							</fieldset>
+
+						</form>
+
+					</div>
+					<!-- end: Contact Form -->
+
+				</div>
+				<!-- end: Contact Form -->
+
+				<!-- start: Social Sites -->
+				<div class="span5">
+					<div class="title"><h3>Síguenos!</h3></div>
+					<ul class="social-bookmarks">
+						<li class="facebook"><a href="#">facebook</a></li>
+						<li class="flickr"><a href="#">flickr</a></li>
+						<li class="googleplus"><a href="#">googleplus</a></li>
+						<li class="linkedin"><a href="#">linkedin</a></li>
+						<li class="twitter"><a href="#">twitter</a></li>
+						<li class="yelp"><a href="#">yelp</a></li>
+						<li class="youtube"><a href="#">youtube</a></li>
+					</ul>
+				</div>
+				<!-- end: Social Sites -->
+			
+			</div>
+			<!-- end: Row -->
+
+		</div>
+		<!-- end: Container -->
+				
+  	</div>
+	<!-- end: Wrapper  -->			
+
+<%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
+
+</body>
+</html>	

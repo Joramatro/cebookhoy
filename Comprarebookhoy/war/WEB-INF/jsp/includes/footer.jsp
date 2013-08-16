@@ -13,7 +13,7 @@
 				<!-- start: Footer Menu Logo -->
 				<div class="span2">
 					<div id="footer-menu-logo">
-						<div id="logo-chart"></div><a class="brand" href="index.html#">CE<span>HOY</span>.</a>
+						<div id="logo-chart"></div><a class="brand" href="/">CE<span>HOY</span>.</a>
 					</div>
 				</div>
 				<!-- end: Footer Menu Logo -->
@@ -25,13 +25,13 @@
 
 						<ul id="footer-nav">
 
-							<li><a href="/">Principio</a></li>
+							<li><a href="/">Inicio</a></li>
 
-							<li><a href="services.html">Modelos</a></li>
+							<li><a href="/ebooks">eBooks</a></li>
 
-							<li><a href="pricing.html">Sobre nosotros</a></li>
+							<li><a href="/sobre">Sobre nosotros</a></li>
 							
-							<li><a href="contact.html">Contacto</a></li>
+							<li><a href="/contacto">Contacto</a></li>
 
 						</ul>
 
@@ -73,7 +73,7 @@
 					
 					<h3>Sobre nosotros</h3>
 					<p>
-						Somos un equipo de personas con gran formación tecnológica y apasionadas por todo lo relacionado con ella. Poseemos una gran experiencia en el mundo de internet y te brindamos la mejor actualidad en Internet, noticias de gadget tecnológicos, software y telefonía.
+						Somos un equipo de personas con gran formación tecnológica y apasionados por el mundo de la informática. Queremos ofrecerte la mejor información sobre eBooks, tablets y nuevos gadgets tecnológicos.
 					</p>
 						
 				</div>
@@ -94,7 +94,7 @@
 				<div class="span6">
 				
 					<!-- start: Follow Us -->
-					<h3>Follow Us!</h3>
+					<h3>Síguenos!</h3>
 					<ul class="social-grid">
 						<li>
 							<div class="social-item">				
@@ -128,11 +128,11 @@
 							<div class="social-item">				
 								<div class="social-info-wrap">
 									<div class="social-info">
-										<div class="social-info-front social-dribbble">
-											<a href="http://dribbble.com"></a>
+										<div class="social-info-front social-youtube">
+											<a href="http://youtube.com"></a>
 										</div>
-										<div class="social-info-back social-dribbble-hover">
-											<a href="http://dribbble.com"></a>
+										<div class="social-info-back social-youtube-hover">
+											<a href="http://youtube.com"></a>
 										</div>	
 									</div>
 								</div>
@@ -156,12 +156,12 @@
 					<!-- end: Follow Us -->
 				
 					<!-- start: Newsletter -->
-					<form id="newsletter">
-						<h3>Newsletter</h3>
-						<p>Por favor, déjanos tu email para conocer nuestras nuevas publicaciones</p>
+					<form action="/subscripcion" method="POST" id="newsletter">
+						<h3>Suscríbete</h3>
+						<p>Por favor, dejanos tu email</p>
 						<label for="newsletter_input">@:</label>
-						<input type="text" id="newsletter_input"/>
-						<input type="submit" id="newsletter_submit" value="submit">
+						<input type="text" name="email" id="newsletter_input">
+						<input type="submit" onclick="validarEmail();return false;" id="newsletter_submit" value="Guardar">
 					</form>
 					<!-- end: Newsletter -->
 				
@@ -184,7 +184,7 @@
 		
 			<div class="span12">
 				<p>
-					&copy; 2013, <a href="http://clabs.co">Amatics</a>. Designed by <a href="http://clabs.co">Jorge</a> Amat<img src="img/poland2.png" alt="Jorge Amat" style="margin-top:-4px">
+					&copy; 2013, <a href="/">Compra eBook Hoy</a> <img src="/img/poland2.png" alt="Jorge Amat" style="margin-top:-4px">
 				</p>
 			</div>
 	
@@ -206,5 +206,25 @@
 <script src="/js/slider.js"></script>
 <script src="/js/fancybox.js"></script>
 <script defer="defer" src="/js/custom.js"></script>
+<script src="/js/apprise-v2.js"></script>
 <script src="/js/main.js"></script>
+
+<script>
+	var pathname = window.location.pathname;
+	var parts = pathname.split('/');
+	$("#menuSuperior > li").removeClass('active');
+	if(parts[1] == 'contacto'){		
+		$("#menuContacto").addClass('active');
+	}else if(parts[1] == 'sobre'){	
+		$("#menuSobre").addClass('active');
+	}else if(parts[1] == 'blog'){	
+		$("#menuBlog").addClass('active');
+	}else if(parts[1] == 'accesorios'){	
+		$("#menuAccesorios").addClass('active');
+	}else if(parts[1] == 'ebooks'){	
+		$("#menuEbooks").addClass('active');
+	}else{
+		$("#menuInicio").addClass('active');
+	}
+</script>
 <!-- end: Java Script -->

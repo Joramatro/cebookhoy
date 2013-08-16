@@ -116,7 +116,7 @@
 	      <property name="exceptionMappingDefinitions">
 	        <map>
 	          <!-- 404 -->
-	          <entry key="com.stormpath.blog.spring.mvc.rest.exhandler.UnknownResourceException" value="404, _exmsg"></entry>
+	          <entry key="com.amatic.ch.exception.UnknownResourceException" value="404, _exmsg"></entry>
 	          <!-- 500 (catch all): -->
 	          <entry key="Throwable" value="500, error.internal"></entry>
 	        </map>

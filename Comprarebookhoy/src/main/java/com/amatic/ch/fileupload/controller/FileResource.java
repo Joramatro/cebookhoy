@@ -61,9 +61,9 @@ public class FileResource {
 	    status = Status.NOT_FOUND;
 	}
 	HttpSession session = req.getSession();
-	Publicacion publicacion = publicacionService
-		.getPublicacion((String) session
-			.getAttribute("nuevaPublicacion"));
+	Publicacion publicacion = publicacionService.getPublicacion(
+		(String) session.getAttribute("tituloNuevaPublicacion"),
+		(String) session.getAttribute("tipoNuevaPublicacion"));
 	List<String> lImages = publicacion.getlImages();
 	lImages.remove(key);
 	publicacionService.update(publicacion);
@@ -104,9 +104,9 @@ public class FileResource {
 	String url = imagesService.getServingUrl(ServingUrlOptions.Builder
 		.withBlobKey(blobKey).crop(true).imageSize(sizeImage));
 
-	Publicacion publicacion = publicacionService
-		.getPublicacion((String) session
-			.getAttribute("tituloNuevaPublicacion"));
+	Publicacion publicacion = publicacionService.getPublicacion(
+		(String) session.getAttribute("tituloNuevaPublicacion"),
+		(String) session.getAttribute("tipoNuevaPublicacion"));
 	List<String> lImages = publicacion.getlImages();
 	lImages.add(url);
 	List<String> lImagesKeys = publicacion.getlImagesKeys();

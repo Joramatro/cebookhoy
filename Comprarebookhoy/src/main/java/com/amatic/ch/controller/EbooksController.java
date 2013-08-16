@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.amatic.ch.constants.WebConstants;
 import com.amatic.ch.dto.Comentario;
 import com.amatic.ch.dto.Publicacion;
 import com.amatic.ch.exception.UnknownResourceException;
@@ -30,7 +31,7 @@ import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Ref;
 
 @Controller
-public class MainController {
+public class EbooksController {
 
     List<Integer> sessions = new ArrayList<Integer>();
 
@@ -46,48 +47,14 @@ public class MainController {
     @Resource(name = "OIdUserBean")
     OpenIdUser oIdUserBean;
 
-    @RequestMapping(value = { "/index", "/" }, method = { RequestMethod.GET,
-	    RequestMethod.POST })
-    public String getMainScreen(ModelMap model, HttpServletRequest request,
-	    HttpServletResponse response) throws IOException {
-
-	HttpSession session = request.getSession();
-	// User user = (User) session
-	// .getAttribute(WebConstants.SessionConstants.RC_USER);
-	// // Ref<?> value has not been initialized
-	// if (user != null) {
-	// user = this.userService.findUser(user.getMail());
-	// }
-	// // Saltando Uservalidation
-	// if (user == null) {
-	// user = new User();
-	// user.setMail((String) oIdUserBean.getAttribute("email"));
-	// user.setName((String) oIdUserBean.getAttribute("nickname"));
-	// session.setAttribute(WebConstants.SessionConstants.RC_USER, user);
-	// try {
-	// user = this.userService.findUser(user.getMail());
-	// } catch (com.googlecode.objectify.NotFoundException nf) {
-	// this.userService.create(user, false);
-	// }
-	// }
-	// user.setNewUser(true);
-	// Fin Uservalidation trick
-
-	List<Publicacion> publicaciones = publicacionService
-		.getUltimasPublicaciones();
-
-	model.addAttribute("publicaciones", publicaciones);
-
-	return "index";
-    }
-
-    @RequestMapping(value = { "/blog/{url}" }, method = RequestMethod.GET)
+    @RequestMapping(value = { "/ebooks/{url}" }, method = RequestMethod.GET)
     public String cargarPublicacion(ModelMap model, @PathVariable String url,
 	    HttpServletRequest request, HttpServletResponse response)
 	    throws IOException {
 
 	String titulo = url.replaceAll("-", " ");
-	Publicacion publicacion = publicacionService.getPublicacion(titulo);
+	Publicacion publicacion = publicacionService.getPublicacion(titulo,
+		WebConstants.SessionConstants.EBOOK);
 	if (publicacion == null) {
 	    String uri = request.getRequestURI();
 	    throw new UnknownResourceException("There is no resource for path "
@@ -101,14 +68,14 @@ public class MainController {
 	model.addAttribute("publicacion", publicacion);
 
 	List<Publicacion> publicaciones = publicacionService
-		.getUltimasPublicaciones();
+		.getUltimasPublicaciones(WebConstants.SessionConstants.EBOOK);
 
 	model.addAttribute("publicaciones", publicaciones);
 
-	return "articulo";
+	return "ebook";
     }
 
-    @RequestMapping(value = { "/blog/{url}/nuevoComentario" }, method = { RequestMethod.POST })
+    @RequestMapping(value = { "/ebooks/{url}/nuevoComentario" }, method = { RequestMethod.POST })
     public void guardarComentario(ModelMap model,
 	    @RequestParam("url") String url,
 	    @RequestParam("nombre") String nombre,
@@ -119,7 +86,8 @@ public class MainController {
 	    throws IOException, NoSuchAlgorithmException {
 
 	String titulo = url.replaceAll("-", " ");
-	Publicacion publicacion = publicacionService.getPublicacion(titulo);
+	Publicacion publicacion = publicacionService.getPublicacion(titulo,
+		WebConstants.SessionConstants.EBOOK);
 	if (publicacion == null) {
 	    String uri = request.getRequestURI();
 	    throw new UnknownResourceException("There is no resource for path "
@@ -142,17 +110,18 @@ public class MainController {
 
 	publicacionService.update(publicacion);
 
-	response.sendRedirect("/blog/" + url);
+	response.sendRedirect("/ebooks/" + url);
 
     }
 
     @RequestMapping(value = { "/ebooks" }, method = { RequestMethod.GET })
-    public String getEbooks(ModelMap model, HttpServletRequest request,
+    public String getPublicaciones(ModelMap model, HttpServletRequest request,
 	    HttpServletResponse response) throws IOException {
 
 	HttpSession session = request.getSession();
 
-	List<Publicacion> publicaciones = publicacionService.getPublicaciones();
+	List<Publicacion> publicaciones = publicacionService
+		.getPublicaciones(WebConstants.SessionConstants.EBOOK);
 
 	List<Comentario> comentarios = comentarioService
 		.getUltimosComentarios();
