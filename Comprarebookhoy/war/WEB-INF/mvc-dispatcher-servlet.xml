@@ -27,6 +27,12 @@
 	
 	<mvc:default-servlet-handler/>
 	
+	<aop:aspectj-autoproxy/>
+	<bean id="loginAspect" class="com.amatic.ch.aop.login.LoginAspect" />
+	
+	
+	<util:properties id="application" location="classpath:config/properties/application.properties" />
+	
 	
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver" p:order="1" />
 	

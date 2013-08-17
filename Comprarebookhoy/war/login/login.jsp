@@ -12,12 +12,12 @@
 <div id="content">
 
   <div class="logo">
-		<h1><a title="Room Channel" href="#"><span class="red">Room Channel</span></a></h1>
+		<h1><a title="Room Channel" href="#"><span class="red">Comprar eBook Hoy</span></a></h1>
 		<input type="image" src="/images/logo3.jpg" width="95px" height="40px" class="button-sel" alt="www.roomchannel.com" title="www.roomchannel.com"/>
   </div>            
 
 <div class="subheader" style="margin-left:20px">
-    <h1>Log In</h1> to participate in Room Channel
+    <h1>Log In</h1> para editar en Comprar eBook Hoy
 </div>
 <div id="mainbar">
 

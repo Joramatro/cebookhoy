@@ -5,7 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <html>
   <head>
     <title>Nueva Publicacion</title>
@@ -84,6 +84,7 @@
 				
 		<!--start: Container -->
     	<div class="container">
+    	<h2><i class="ico-keynote ico-white"></i><a id="logout" href="#" class="btn logout">Logout</a></h2>
  Tipo: <select name="tipo" id="tipo">
 				  <option value="AR">Articulo</option>
 				  <option value="EB">eBook</option>
@@ -196,7 +197,7 @@ Articulo
     </div>
     <br><br><br>
     <div>
-    	<a href="/edicion"><button class="btn">Crear otra Publicacion</button></a>
+    	<a href="/editar"><button class="btn">Crear otra Publicacion</button></a>
     </div>
 </div>
     
@@ -546,6 +547,7 @@ $(function() {
 		});
 	});
 </script>
+<script src="/js/login.js"></script>
 
 		<!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
 		<!--[if gte IE 8]><script src="/js/cors/jquery.xdr-transport.js"></script><![endif]-->

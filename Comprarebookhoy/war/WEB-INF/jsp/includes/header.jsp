@@ -8,10 +8,29 @@
 
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Comprar Ebook Hoy</title> 
-	<meta name="description" content="Comprar tu Ebook Reader hoy mismo"/>
-	<meta name="keywords" content="Ebook, Reader, EReader, comprar ebook, ebook hoy" />
+	<c:choose>
+	<c:when test="${empty publicacion}">
+		<title>Comprar eBook Hoy</title> 
+		<meta name="description" content="Compra tu eBook Reader hoy mismo. Consulta nuestros análisis sobre los ebooks de marcas como Sony, Kindle, Kobo y muchas más "/>
+		<meta name="keywords" content="Ebook, Reader, EReader, comprar ebook, ebook hoy, comprar kindle" />
+		<meta name="title" content="Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="abstract" content="Consulta nuestros análisis y compra tu eBook hoy mismo" />
+	</c:when>
+		<c:when test="${!empty publicacion}">
+		<title>${publicacion.title} en Comprar eBook Hoy</title> 
+		<meta name="description" content="${publicacion.descripcion}"/>
+		<meta name="keywords" content="${publicacion.keywords}" />
+		<meta name="title" content="${publicacion.title} en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="abstract" content="${publicacion.resumen}" />
+	</c:when>
+	
 	<meta name="author" content="Jorge Amat"/>
+	
+	
+	
+	<meta name="robots" content="index,all" />
+	<meta name="revisit-after" content="1 days" />
+	<meta name="lang" content="es" />
 	<!-- end: Meta -->
 	
 	<!-- start: Mobile Specific -->

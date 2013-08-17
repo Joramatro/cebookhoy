@@ -3,6 +3,7 @@ package com.amatic.ch.exception;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -210,19 +211,30 @@ public class RestExceptionHandler extends AbstractHandlerExceptionResolver
 	    return null;
 	}
 
-	ModelAndView mav = null;
+	// ModelAndView mav = null;
 
+	// try {
+	// mav = getModelAndView(webRequest, handler, error);
+	// } catch (Exception invocationEx) {
+	// log.error("Acquiring ModelAndView for Exception [" + ex
+	// + "] resulted in an exception.", invocationEx);
+	// }
+	LinkedHashMap lhmBody = null;
 	try {
-	    mav = getModelAndView(webRequest, handler, error);
-	} catch (Exception invocationEx) {
-	    log.error("Acquiring ModelAndView for Exception [" + ex
-		    + "] resulted in an exception.", invocationEx);
+	    Object body = getModelAndView(webRequest, handler, error);
+	    lhmBody = (LinkedHashMap) body;
+	} catch (Exception e) {
+	    // TODO Auto-generated catch block
+	    log.error("error getting body resterror", e);
 	}
+
+	ModelAndView mav = new ModelAndView("error/error_dinamic");
+	mav.addObject("message", lhmBody);
 
 	return mav;
     }
 
-    protected ModelAndView getModelAndView(ServletWebRequest webRequest,
+    protected Object getModelAndView(ServletWebRequest webRequest,
 	    Object handler, RestError error) throws Exception {
 
 	applyStatusIfPossible(webRequest, error);
@@ -247,8 +259,8 @@ public class RestExceptionHandler extends AbstractHandlerExceptionResolver
     }
 
     @SuppressWarnings("unchecked")
-    private ModelAndView handleResponseBody(Object body,
-	    ServletWebRequest webRequest) throws ServletException, IOException {
+    private Object handleResponseBody(Object body, ServletWebRequest webRequest)
+	    throws ServletException, IOException {
 
 	HttpInputMessage inputMessage = new ServletServerHttpRequest(
 		webRequest.getRequest());
@@ -272,12 +284,13 @@ public class RestExceptionHandler extends AbstractHandlerExceptionResolver
 	    for (MediaType acceptedMediaType : acceptedMediaTypes) {
 		for (HttpMessageConverter messageConverter : converters) {
 		    if (messageConverter.canWrite(bodyType, acceptedMediaType)) {
-			messageConverter.write(body, acceptedMediaType,
-				outputMessage);
+			// messageConverter.write(body, acceptedMediaType,
+			// outputMessage);
 			// return empty model and view to short circuit the
 			// iteration and to let
 			// Spring know that we've rendered the view ourselves:
-			return new ModelAndView();
+			// return new ModelAndView();
+			return body;
 		    }
 		}
 	    }
