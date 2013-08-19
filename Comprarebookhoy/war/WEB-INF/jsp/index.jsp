@@ -16,25 +16,25 @@
 				<h2>TU LIBRERÍA PORTABLE</h2>
 				<p>cine o reproductor de musica</p>
 				<a href="index.html#" class="da-link">LEER MÁS</a>
-				<div class="da-img"><img src="/img/parallax-slider/libreriaportable.jpg" alt="image01" /></div>
+				<div class="da-img"><img src="/img/parallax-slider/libreriaportable.jpg" style="width: 430px;height:280px;" alt="image01" /></div>
 			</div>
 			<div class="da-slide">
 				<h2>KINDLE PAPERWHITE 3G</h2>
 				<p>La tecnología unica Paperwhite y larga duración de batería hacen de el un gran contendiente.</p>
 				<a href="index.html#" class="da-link">LEER MÁS</a>
-				<div class="da-img"><img src="/img/parallax-slider/kindlepaperwhite3g.jpg" alt="image02" /></div>
+				<div class="da-img"><img src="/img/parallax-slider/kindlepaperwhite3g.jpg" style="width: 430px;height:280px;" alt="image02" /></div>
 			</div>
 			<div class="da-slide">
 				<h2>NOOK HD</h2>
 				<p>Uno de los mejores que te permite configurar tu propio perfil ofreciendo un abundante contenido.</p>
 				<a href="index.html#" class="da-link">LEER MÁS</a>
-				<div class="da-img"><img src="/img/parallax-slider/nook_hd.jpg" alt="image03" /></div>
+				<div class="da-img"><img src="/img/parallax-slider/nook_hd.jpg" style="width: 430px;height:280px;" alt="image03" /></div>
 			</div>
 			<div class="da-slide">
 				<h2>KOBO GLO WIRELESS EREADER</h2>
 				<p>Un diseño y tacto único que ofrece un programa de recompensas cuando alcanzas un hito en tu lectura</p>
 				<a href="index.html#" class="da-link">LEER MÁS</a>
-				<div class="da-img"><img src="/img/parallax-slider/Kobo_Glo_eReader.jpg" alt="image04" /></div>
+				<div class="da-img"><img src="/img/parallax-slider/Kobo_Glo_eReader.jpg" style="width: 430px;height:280px;" alt="image04" /></div>
 			</div>
 			<nav class="da-arrows">
 				<span class="da-arrows-prev"></span>
@@ -56,7 +56,7 @@
       		<!-- start: Hero Unit - Main hero unit for a primary marketing message or call to action -->
       		<div class="hero-unit">
 				<h3>
-					Organiza todos tus e-books y autores: los E-books se están siendo cada vez más y más populares, gracias a lo fácil que es llevarlos contigo y transferirlos
+					Organiza todos tus e-books y autores: los e-books se están siendo cada vez más y más populares, gracias a lo fácil que es llevarlos contigo y transferirlos
 				</h3>
         		<p><a class="btn btn-primary btn-large" href="/blog/organiza-todos-tus-ebooks">Continúa &raquo;</a></p>
       		</div>
@@ -75,8 +75,8 @@
 						<div class="icons-box-vert">
 							<i class="ico-ok ico-white circle-color-full"></i>
 							<div class="icons-box-vert-info">
-								<h3>Easy to use</h3>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+								<h3>Promueve la lectura</h3>
+								<p>Los usuarios de eBooks tienden a leer más que antes y permiten incorporar contenido multimedia.</p>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -86,10 +86,10 @@
 					<!-- start: Icon Box Start -->
 					<div class="span4">
 						<div class="icons-box-vert">
-							<i class="ico-cup  ico-white circle-color-full"></i>
+							<i class="ico-ok ico-white circle-color-full"></i>
 							<div class="icons-box-vert-info">
-								<h3>Best choice</h3>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+								<h3>Desafía el tiempo </h3>
+								<p>Con el desarrollo de las tecnologías, los eBooks pueden entregarse casi de manera instantánea, cuestión de segundos.</p>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -99,10 +99,10 @@
 					<!-- start: Icon Box Start -->
 					<div class="span4">
 						<div class="icons-box-vert">
-							<i class="ico-ipad ico-white circle-color-full"></i>
+							<i class="ico-ok ico-white circle-color-full"></i>
 							<div class="icons-box-vert-info">
-								<h3>Fully Responsive</h3>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+								<h3>Más Barato</h3>
+								<p>Muchas obras de las bibliotecas en línea permiten la lectura de clásicos sin ningún coste.</p>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -176,16 +176,6 @@
 					<li><img src="/img/logos/8.png" alt=""/></li>
 					<li><img src="/img/logos/9.png" alt=""/></li>
 					<li><img src="/img/logos/10.png" alt=""/></li>
-					<li><img src="/img/logos/1.png" alt=""/></li>
-					<li><img src="/img/logos/2.png" alt=""/></li>	
-					<li><img src="/img/logos/3.png" alt=""/></li>
-					<li><img src="/img/logos/4.png" alt=""/></li>
-					<li><img src="/img/logos/5.png" alt=""/></li>
-					<li><img src="/img/logos/6.png" alt=""/></li>
-					<li><img src="/img/logos/7.png" alt=""/></li>
-					<li><img src="/img/logos/8.png" alt=""/></li>
-					<li><img src="/img/logos/9.png" alt=""/></li>
-					<li><img src="/img/logos/10.png" alt=""/></li>	
 				</ul>
 		
 			</div>

@@ -17,7 +17,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-stats ico-white"></i>About Us</h2>
+				<h2><i class="ico-stats ico-white"></i>Sobre Nosotros</h2>
 
 			</div>
 			<!-- end: Container  -->
@@ -40,36 +40,33 @@
 					
 					<!-- start: About Us -->
 					<div id="about">
-						<div class="title"><h3>About Us</h3></div>
+						<div class="title"><h3>Sobre nosotros</h3></div>
 						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+							Somos un equipo de personas con gran formación tecnólogica que quiere ofrecerte la mejor información y los mejores análisis sobre eBooks en la red.
 						</p>
 						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+							Nuestras valoraciones son honestas y de firma propia, pretendiendo aclarar tu idea para comprar un eBook en función a tus necesidades. Los eBooks han cambiado la forma de concebir la lectura de libros y estamos aquí para ayudarte en todo lo posible y darte la mejor información que puedas encontrar en Internet.
 						</p>
 						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-						</p>
-						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+							Por favor, no dudes en contactar con nosotros para consultarnos cualquier duda que tengas ó darnos tu opinión sobre nuestro trabajo, estamos aquí para ayudarte y conseguir que tu elección sea la idónea, porque estamos a tu servicio.
 						</p>
 					</div>	
 					<!-- end: About Us -->
 
 					<!-- start: History -->
 					<div id="history">
-						<div class="title"><h3>History</h3></div>
+						<div class="title"><h3>Historia</h3></div>
 						<p>
-							<span class="dropcap">P</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+							<span class="dropcap">1</span>Somos un grupo humano cuya profesión y pasión es la tecnología, que reciéntemente ha decidido apostar por una nueva marca en la que ofrecer sus conocimientos para ayudar a otras personas.
 						</p>
 						<p>
-							<span class="dropcap color">P</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+							<span class="dropcap color">2</span>Desde hace ya unos años, los eBooks han irrumpido con fuerza en el mercado, y se presetan claramente como la opción preferida entre los lectores más avidos, y los que no lo son tanto. Sin lugar a dudas, es el presente y futuro de la lectura.
 						</p>
 						<p>
-							<span class="dropcap dark">P</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+							<span class="dropcap dark">3</span>Nosotros venimos de una formación relacionada con la tecnología, y tras más de 6 años trabajando para distintas empresas TIC privadas y estudiando nuevos gadgets tecnológicos en nuestro tiempo libre, reunimos aquí todos nuestros conocimientos para intentar crear la mejor web de habla hispana sobre eBooks y productos relacionados. Nuestro objetivo es ser honestos y aportar valor a nuestros lectores. 
 						</p>
 						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+							Reciéntemente hemos creado nuestra nueva web "Comprar eBook Hoy", dónde pretendemos ofrecer la mejor información y los mejores análisis para conseguir que aciertes con la compra del producto que buscas. Estamos aquí para ayudarte y que decidas con la mejor opinión creada posible, contacta con nosotros cuando así lo requieras.
 						</p>
 					</div>	
 					<!-- end: History -->
@@ -77,50 +74,30 @@
 					<!-- start: Team -->	
 					<div id="team">
 						
-						<div class="title"><h3>Team</h3></div>
+						<div class="title"><h3>Equipo</h3></div>
 						
 						<!-- start: Row -->
 						<div class="row">
 						
 							<!-- start: About Member -->
 							<div class="span4">
-								<img src="/img/team_member.jpg" alt="team member">
-								<div class="team-name">Lucas Luck <span> / Co-Founder, CEO</span></div>
+								<img src="/img/jorge_1.jpg" alt="team member">
+								<div class="team-name">Jorge Amat<span> / Fundador de CEHoy</span></div>
 								<p>
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+									 Jorge es un joven desarrollador de software con un gran espíritu emprendedor. Es el creador de la saga "Compra Hoy" y dedica su tiempo a mejorar la plataforma web que él mismo inició, además de colaborar con otras empresas en Dublin como contractor. Como gran apasionado a los gadgets tecnológicos, también escribe artículos y anáisis que pueden ayudarte en la elección de tu producto favorito. 
 								</p>
 								<div class="social_profiles">
 									<ul class="social-bookmarks">
-										<li class="facebook"><a href="about.html">facebook</a></li>
-										<li class="flickr"><a href="about.html">flickr</a></li>
-										<li class="googleplus"><a href="about.html#">googleplus</a></li>
-										<li class="linkedin"><a href="about.html#">linkedin</a></li>
-										<li class="twitter"><a href="about.html#">twitter</a></li>
-										<li class="pinterest"><a href="about.html#">pinterest</a></li>
+										<li class="facebook"><a href="https://www.facebook.com/jorge.amat.ro">facebook</a></li>
+										<li class="googleplus"><a href="https://plus.google.com/108657243775074009859">googleplus</a></li>
+										<li class="linkedin"><a href="http://ie.linkedin.com/pub/jorge-amat-romero/2b/731/895">linkedin</a></li>
+										<li class="twitter"><a href="https://twitter.com/Jorge_Amat1">twitter</a></li>
+										<li class="pinterest"><a href="http://pinterest.com/jorgeamatro/">pinterest</a></li>
 									</ul>
 								</div>	
 							</div>
 							<!-- end: About Member -->
-
-							<!-- start: About Member -->
-							<div class="span4">
-								<img src="/img/team_member.jpg" alt="team member">
-								<div class="team-name">Lucas Luck <span> / Co-Founder, General Manager</span></div>
-								<p>
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
-								</p>
-								<div class="social_profiles">
-									<ul class="social-bookmarks">
-										<li class="facebook"><a href="about.html">facebook</a></li>
-										<li class="flickr"><a href="about.html">flickr</a></li>
-										<li class="googleplus"><a href="about.html#">googleplus</a></li>
-										<li class="linkedin"><a href="about.html#">linkedin</a></li>
-										<li class="twitter"><a href="about.html#">twitter</a></li>
-										<li class="pinterest"><a href="about.html#">pinterest</a></li>
-									</ul>
-								</div>	
-							</div>
-							<!-- end: About Member -->	
+	
 						
 						</div>
 						<!-- end: Row -->
@@ -137,84 +114,28 @@
 					<div id="sidebar">
 
 						<!-- start: Skills -->
-				       	<div class="title"><h3>Our Skills</h3></div>
+				       	<div class="title"><h3>Nuestras habilidades</h3></div>
 				       	<ul class="progress-bar">
 				        	<li>
-				            	<h5>Web Design ( 40% )</h5>
-				            	<div class="meter"><span style="width: 40%"></span></div><!-- Edite width here -->
-				          	</li>
-				          	<li>
-				            	<h5>Wordpress ( 80% )</h5>
-				            	<div class="meter"><span style="width: 80%"></span></div><!-- Edite width here -->
-				          	</li>
-				          	<li>
-				            	<h5>Branding ( 100% )</h5>
+				            	<h5>Productos de marca ( 100% )</h5>
 				            	<div class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
 				          	</li>
 				          	<li>
-				            	<h5>SEO Optmization ( 60% )</h5>
-				            	<div class="meter"><span style="width: 60%"></span></div><!-- Edite width here -->
+				            	<h5>Gestión de contenidos( 100% )</h5>
+				            	<div class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
+				          	</li>
+				          	<li>
+				            	<h5>Desarrollo web ( 100% )</h5>
+				            	<div class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
+				          	</li>
+				          	<li>
+				            	<h5>Optimización SEO ( 100% )</h5>
+				            	<div class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
 				          	</li>
 				      	</ul>
 				      	<!-- end: Skills -->
 
-						<!-- start: Tabs -->
-						<div class="title"><h3>Tabs</h3></div>
 
-						<ul class="tabs-nav">
-							<li class="active"><a href="about.html#tab1"><i class="mini-ico-glass"></i> Tab 1</a></li>
-							<li><a href="about.html#tab2"><i class="mini-ico-list"></i> Tab 2</a></li>
-							<li><a href="about.html#tab3"><i class="mini-ico-pencil"></i> Tab 3</a></li>
-						</ul>
-
-						<div class="tabs-container">
-							<div class="tab-content" id="tab1">1. Lorem ipsum pharetra felis. Aliquam egestas consectetur elementum class aptent taciti sociosqu ad litora torquent perea conubia nostra lorem inceptos orem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-							<div class="tab-content" id="tab2">2. Lorem ipsum pharetra felis. Aliquam egestas consectetur elementum class aptent taciti sociosqu ad litora torquent perea conubia nostra lorem inceptos orem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-							<div class="tab-content" id="tab3">3. Lorem ipsum pharetra felis. Aliquam egestas consectetur elementum class aptent taciti sociosqu ad litora torquent perea conubia nostra lorem inceptos orem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-						</div>
-						<!-- end: Tabs -->
-
-						<!-- start: Testimonials-->
-
-						<div class="testimonial-container">
-
-							<div class="title"><h3>Testimonials</h3></div>
-
-								<div class="testimonials-carousel" data-autorotate="3000">
-
-									<ul class="carousel">
-
-										<li class="testimonial">
-											<div class="testimonials">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
-											<div class="testimonials-bg"></div>
-											<div class="testimonials-author">Lucas Luck, <span>CEO</span></div>
-										</li>
-
-										<li class="testimonial">
-											<div class="testimonials">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
-											<div class="testimonials-bg"></div>
-											<div class="testimonials-author">Lucas Luck, <span>CTO</span></div>
-										</li>
-
-										<li class="testimonial">
-											<div class="testimonials">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
-											<div class="testimonials-bg"></div>
-											<div class="testimonials-author">Lucas Luck, <span>COO</span></div>
-										</li>
-
-										<li class="testimonial">
-											<div class="testimonials">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
-											<div class="testimonials-bg"></div>
-											<div class="testimonials-author">Lucas Luck, <span>CMO</span></div>
-										</li>
-
-									</ul>
-
-								</div>
-
-							</div>
-
-						<!-- end: Testimonials-->
 
 					</div>
 					<!-- end: Sidebar -->

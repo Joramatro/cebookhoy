@@ -17,12 +17,14 @@
 		<meta name="abstract" content="Consulta nuestros análisis y compra tu eBook hoy mismo" />
 	</c:when>
 		<c:when test="${!empty publicacion}">
-		<title>${publicacion.title} en Comprar eBook Hoy</title> 
+		<title>${publicacion.titulo} en Comprar eBook Hoy</title> 
 		<meta name="description" content="${publicacion.descripcion}"/>
 		<meta name="keywords" content="${publicacion.keywords}" />
-		<meta name="title" content="${publicacion.title} en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="title" content="${publicacion.titulo} en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
 		<meta name="abstract" content="${publicacion.resumen}" />
 	</c:when>
+	</c:choose>
+	
 	
 	<meta name="author" content="Jorge Amat"/>
 	

@@ -1,8 +1,8 @@
-<!-- Indices written at Sat, 17 Aug 2013 13:50:25 BST -->
+<!-- Indices written at Mon, 19 Aug 2013 03:45:34 BST -->
 
 <datastore-indexes>
 
-    <!-- Used 1 time in query history -->
+    <!-- Used 20 times in query history -->
     <datastore-index kind="Publicacion" ancestor="false" source="auto">
         <property name="tipo" direction="asc"/>
         <property name="fechaCreacion" direction="desc"/>

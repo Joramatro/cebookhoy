@@ -17,7 +17,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-settings ico-white"></i>Services</h2>
+				<h2><i class="ico-settings ico-white"></i>Accesorios</h2>
 
 			</div>
 			<!-- end: Container  -->
