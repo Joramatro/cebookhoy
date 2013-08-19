@@ -101,10 +101,10 @@
 								<div class="social-info-wrap">
 									<div class="social-info">
 										<div class="social-info-front social-twitter">
-											<a href="https://twitter.com/ComprareBookHoy"></a>
+											<a target="_blank" href="https://twitter.com/ComprareBookHoy"></a>
 										</div>
 										<div class="social-info-back social-twitter-hover">
-											<a href="https://twitter.com/ComprareBookHoy"></a>
+											<a target="_blank" href="https://twitter.com/ComprareBookHoy"></a>
 										</div>	
 									</div>
 								</div>
@@ -115,10 +115,10 @@
 								<div class="social-info-wrap">
 									<div class="social-info">
 										<div class="social-info-front social-facebook">
-											<a href="https://www.facebook.com/pages/Comprar-Ebook-Hoy/1409281269284939?fref=ts"></a>
+											<a target="_blank" href="https://www.facebook.com/pages/Comprar-Ebook-Hoy/1409281269284939?fref=ts"></a>
 										</div>
 										<div class="social-info-back social-facebook-hover">
-											<a href="https://www.facebook.com/pages/Comprar-Ebook-Hoy/1409281269284939?fref=ts"></a>
+											<a target="_blank" href="https://www.facebook.com/pages/Comprar-Ebook-Hoy/1409281269284939?fref=ts"></a>
 										</div>
 									</div>
 								</div>
@@ -129,10 +129,10 @@
 								<div class="social-info-wrap">
 									<div class="social-info">
 										<div class="social-info-front social-youtube">
-											<a href="http://www.youtube.com/channel/UCzRhBI19dHSSREeuSE3NBDA"></a>
+											<a target="_blank" href="http://www.youtube.com/channel/UCzRhBI19dHSSREeuSE3NBDA"></a>
 										</div>
 										<div class="social-info-back social-youtube-hover">
-											<a href="http://www.youtube.com/channel/UCzRhBI19dHSSREeuSE3NBDA"></a>
+											<a target="_blank" href="http://www.youtube.com/channel/UCzRhBI19dHSSREeuSE3NBDA"></a>
 										</div>	
 									</div>
 								</div>
@@ -143,10 +143,10 @@
 								<div class="social-info-wrap">
 									<div class="social-info">
 										<div class="social-info-front social-flickr">
-											<a href="http://www.flickr.com/photos/100459814@N05"></a>
+											<a target="_blank" href="http://www.flickr.com/people/100459814@N05/"></a>
 										</div>
 										<div class="social-info-back social-flickr-hover">
-											<a href="http://www.flickr.com/photos/100459814@N05"></a>
+											<a target="_blank" href="http://www.flickr.com/people/100459814@N05/"></a>
 										</div>	
 									</div>
 								</div>

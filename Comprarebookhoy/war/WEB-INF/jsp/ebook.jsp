@@ -231,7 +231,7 @@
 								</c:if>
 								<div class="image-overlay-link"></div></a>
 									<div class="item-description alt">
-										<h5><a href="project.html">${publicacionRel.titulo}</a></h5>
+										<h5><a title="${publicacionRel.titulo}" href="/ebooks/${publicacionRel.url}">${publicacionRel.titulo}</a></h5>
 										<p>
 											${fn:replace(publicacionRel.resumen, newLineChar, "<p/><p>")}
 										</p>

@@ -114,13 +114,13 @@
 				<div class="span5">
 					<div class="title"><h3>Síguenos!</h3></div>
 					<ul class="social-bookmarks">
-						<li class="facebook"><a href="https://www.facebook.com/pages/Comprar-Ebook-Hoy/1409281269284939?fref=ts">facebook</a></li>
-						<li class="flickr"><a href="http://www.flickr.com/photos/100459814@N05">flickr</a></li>
-						<li class="googleplus"><a href="https://plus.google.com/108657243775074009859">googleplus</a></li>
-						<li class="linkedin"><a href="http://ie.linkedin.com/pub/jorge-amat-romero/2b/731/895">linkedin</a></li>
-						<li class="twitter"><a href="https://twitter.com/ComprareBookHoy">twitter</a></li>
-						<li class="yelp"><a href="http://www.yelp.ie/user_details?userid=4t6COjQHIXnO4eZKT8WwLA">yelp</a></li>
-						<li class="youtube"><a href="http://www.youtube.com/channel/UCzRhBI19dHSSREeuSE3NBDA">youtube</a></li>
+						<li class="facebook"><a target="_blank" href="https://www.facebook.com/pages/Comprar-Ebook-Hoy/1409281269284939?fref=ts">facebook</a></li>
+						<li class="flickr"><a target="_blank" href="http://www.flickr.com/people/100459814@N05/">flickr</a></li>
+						<li class="googleplus"><a target="_blank" href="https://plus.google.com/108657243775074009859">googleplus</a></li>
+						<li class="linkedin"><a target="_blank" href="http://ie.linkedin.com/pub/jorge-amat-romero/2b/731/895">linkedin</a></li>
+						<li class="twitter"><a target="_blank" href="https://twitter.com/ComprareBookHoy">twitter</a></li>
+						<li class="yelp"><a target="_blank" href="http://www.yelp.ie/user_details?userid=4t6COjQHIXnO4eZKT8WwLA">yelp</a></li>
+						<li class="youtube"><a target="_blank" href="http://www.youtube.com/channel/UCzRhBI19dHSSREeuSE3NBDA">youtube</a></li>
 					</ul>
 				</div>
 				<!-- end: Social Sites -->

@@ -61,7 +61,7 @@
 					
 					<div class="image-overlay-link"></div></a>
 						<div class="item-description alt">
-							<h5><a href="project.html">${publicacion.titulo}</a></h5>
+							<h5><a title="${publicacion.titulo}" href="project.html">${publicacion.titulo}</a></h5>
 							<p>
 								${fn:replace(publicacion.resumen, newLineChar, "<p/><p>")}
 							</p>

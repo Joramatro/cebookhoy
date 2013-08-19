@@ -66,7 +66,7 @@
 							<span class="dropcap dark">3</span>Nosotros venimos de una formación relacionada con la tecnología, y tras más de 6 años trabajando para distintas empresas TIC privadas y estudiando nuevos gadgets tecnológicos en nuestro tiempo libre, reunimos aquí todos nuestros conocimientos para intentar crear la mejor web de habla hispana sobre eBooks y productos relacionados. Nuestro objetivo es ser honestos y aportar valor a nuestros lectores. 
 						</p>
 						<p>
-							Reciéntemente hemos creado nuestra nueva web "Comprar eBook Hoy", dónde pretendemos ofrecer la mejor información y los mejores análisis para conseguir que aciertes con la compra del producto que buscas. Estamos aquí para ayudarte y que decidas con la mejor opinión creada posible, contacta con nosotros cuando así lo requieras.
+							Reciéntemente hemos fundado nuestra propia empresa, dónde pretendemos ofrecer la mejor información y los mejores análisis para conseguir que aciertes con la compra del producto que buscas. Estamos aquí para ayudarte y que decidas con la mejor opinión creada posible, contacta con nosotros cuando así lo requieras.
 						</p>
 					</div>	
 					<!-- end: History -->
@@ -82,17 +82,17 @@
 							<!-- start: About Member -->
 							<div class="span4">
 								<img src="/img/jorge_1.jpg" alt="team member">
-								<div class="team-name">Jorge Amat<span> / Fundador de CEHoy</span></div>
+								<div class="team-name">Jorge Amat<span> / Creador de CEHoy</span></div>
 								<p>
-									 Jorge es un joven desarrollador de software con un gran espíritu emprendedor. Es el creador de la saga "Compra Hoy" y dedica su tiempo a mejorar la plataforma web que él mismo inició, además de colaborar con otras empresas en Dublin como contractor. Como gran apasionado a los gadgets tecnológicos, también escribe artículos y anáisis que pueden ayudarte en la elección de tu producto favorito. 
+									 Jorge es un joven desarrollador de software con un gran espíritu emprendedor. Es el creador de la saga "Compra Hoy" y dedica una buena parte de su tiempo a mejorar la plataforma web que él mismo inició. Además colabora con otras empresas en Dublin dónde reside hasta la fecha en busca de la Guinness perfecta. Como gran apasionado a los gadgets tecnológicos, también escribe artículos y anáisis que pueden ayudarte en la elección de tu producto favorito. 
 								</p>
 								<div class="social_profiles">
 									<ul class="social-bookmarks">
-										<li class="facebook"><a href="https://www.facebook.com/jorge.amat.ro">facebook</a></li>
-										<li class="googleplus"><a href="https://plus.google.com/108657243775074009859">googleplus</a></li>
-										<li class="linkedin"><a href="http://ie.linkedin.com/pub/jorge-amat-romero/2b/731/895">linkedin</a></li>
-										<li class="twitter"><a href="https://twitter.com/Jorge_Amat1">twitter</a></li>
-										<li class="pinterest"><a href="http://pinterest.com/jorgeamatro/">pinterest</a></li>
+										<li class="facebook"><a target="_blank" href="https://www.facebook.com/jorge.amat.ro">facebook</a></li>
+										<li class="googleplus"><a target="_blank" href="https://plus.google.com/108657243775074009859/posts">googleplus</a></li>
+										<li class="linkedin"><a target="_blank" href="http://ie.linkedin.com/pub/jorge-amat-romero/2b/731/895">linkedin</a></li>
+										<li class="twitter"><a target="_blank" href="https://twitter.com/Jorge_Amat1">twitter</a></li>
+										<li class="pinterest"><a target="_blank" href="http://pinterest.com/jorgeamatro/">pinterest</a></li>
 									</ul>
 								</div>	
 							</div>
