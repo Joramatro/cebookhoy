@@ -19,7 +19,7 @@ public class Comentario implements Serializable {
     Long id;
     @Index
     private int puntos;
-    @Index
+
     private String comentario;
     @Index
     private Date fecha;
@@ -27,6 +27,26 @@ public class Comentario implements Serializable {
     private String mail;
     @Index
     private String nombre;
+    @Index
+    private String web;
+    @Index
+    private String ipAddress;
+
+    public String getWeb() {
+	return web;
+    }
+
+    public String getIpAddress() {
+	return ipAddress;
+    }
+
+    public void setIpAddress(String ipAddress) {
+	this.ipAddress = ipAddress;
+    }
+
+    public void setWeb(String web) {
+	this.web = web;
+    }
 
     public Long getId() {
 	return id;

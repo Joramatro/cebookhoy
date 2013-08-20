@@ -85,13 +85,13 @@
 	            		<span class="icon-bar"></span>
 	            		<span class="icon-bar"></span>
 	          		</a>
-					<a class="brand" href="/"><i class="ico-charts circle"></i>Comprar eBook <span>Hoy</span>.</a>
+					<a class="brand" href="/"><i class="ico-book-open circle"></i>Comprar eBook <span>Hoy</span>.</a>
 	          		<div class="nav-collapse collapse">
 	            		<ul id="menuSuperior" class="nav">
 							<li id="menuInicio">
 	                			<a href="/">Inicio</a>
 	              			</li>
-	              			<li id="menuEbooks"><a href="/ebooks">Ebooks</a></li>
+	              			<li id="menuEbooks"><a href="/ebooks">eBooks</a></li>
 							<li class="dropdown">
 	                			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Destacados<b class="caret"></b></a>
 	                			<ul class="dropdown-menu">

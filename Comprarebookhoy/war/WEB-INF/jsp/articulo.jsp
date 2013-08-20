@@ -34,24 +34,28 @@
     	<div class="container">
 	
 			<!-- start: Flexslider -->
-			<div class="slider" >
+			<div style="width: 550px;height: 435px; margin: 0 auto;" class="slider" >
 				<div id="flex1" class="flexslider home">
+					<a target="_blank" href="${publicacion.script}">
 					<ul class="slides">
 						<c:forEach var="imagen" items="${publicacion.lImages}" varStatus="status" end="${fn:length(publicacion.lImages)}">
 						<li>
-							<img src="${imagen}" style="height:400px" alt="" />
+							<img style="width: 420px;height: 420px;" src="${imagen}"  alt="${publicacion.titulo}" />
 							<div class="slide-caption n">
-								<h3>${publicacion.descripcion}</h3>
+								<h3>${publicacion.titulo2}</h3>
 							</div>
 						</li>
 						</c:forEach>
 					</ul>
+					</a>
+					<img src="${publicacion.script2}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 				</div>
 			</div>
 			<!-- end: Flexslider -->
 			
 			<hr>
 			
+			<% pageContext.setAttribute("newLineChar", "\n"); %>
 			<!-- start: Row -->
 			<div class="row">
 				
@@ -59,91 +63,46 @@
 					<ul class="project-info">
 						<li><strong>Número visitas&nbsp;</strong>&nbsp;  ${publicacion.numVisitas}</li>
 						<c:if test="${publicacion.sumaPuntos gt 0 }">
-							<li><strong>Puntos&nbsp;</strong>&nbsp; ${publicacion.sumaPuntos}</li>
+							<li><strong>Puntos&nbsp;</strong>&nbsp; 
+							<a target="_blank" href="${publicacion.script}"><b>${publicacion.sumaPuntos}</b></a>
+							<img src="${publicacion.script2}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+							&nbsp;&nbsp;(de ${publicacion.numComentarios} votantes)</li> 
 						</c:if>
 						<li><strong>Fecha&nbsp;</strong>&nbsp; <fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></li>
-					</ul>
-					<a href="" class="button color launch">Cómpralo Aquí</a>					
-				</div>
-				<% pageContext.setAttribute("newLineChar", "\n"); %>
+						<li><strong>Autor&nbsp;</strong>&nbsp;  ${publicacion.autor}</li>
+					</ul>					
+				</div>				
 				<div class="span10">
+					${publicacion.articulo}
 					
-					<p>
-						<span class="dropcap">+</span>${fn:replace(publicacion.articulo, newLineChar, "<p/><p>")}
-					</p>
-					
-					
+					<br><a href="${publicacion.script}" class="button color launch">Cómpralo Aquí</a>
+					<img src="${publicacion.script2}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+					<br>
+					<!-- AddThis Button BEGIN -->
+					<div class="addthis_toolbox addthis_default_style ">
+					<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+					<a class="addthis_button_tweet"></a>
+					<a class="addthis_button_pinterest_pinit"></a>
+					<a class="addthis_counter addthis_pill_style"></a>
+					</div>
+					<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-509ce3d140135566"></script>
+					<!-- AddThis Button END -->
 				</div>	
 				
 			</div>
 			<!-- end: Row -->
 			
+			
 			<hr>
 			
-			<!-- start: Row -->
-      		<div class="row">
-	
-				<div class="span9">
-					
-					<div class="title"><h3>Compra Ahora</h3></div>
-					
-					<!-- start: Row -->
-		      		<div class="row">
-			
-						<div class="span3">
-	
-							<div class="picture">
-								<a href="/img/car.jpg" rel="image" title="mobile app">
-									<img src="/img/car.jpg" >
-									<div class="image-overlay-zoom"></div>
-								</a>
-							</div>
-							<div class="item-description">
-								<h4><a href="project.html#">Mobile App</a></h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-							</div>
-					
-        				</div>
-					
-						<div class="span3">
-
-							<div class="picture">
-								<a href="project.html">
-									<img src="/img/web_app1.jpg">
-									<div class="image-overlay-link"></div>
-								</a>
-							</div>
-							<div class="item-description">
-								<h4><a href="project.html#">Mobile App</a></h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-							</div>
-
-		        		</div>
-
-						<div class="span3">
-
-							<div class="picture">
-								<a href="/img/mobile_app1.jpg" rel="image" title="mobile app">
-									<img src="/img/mobile_app1.jpg">
-									<div class="image-overlay-zoom"></div>
-								</a>
-							</div>
-							<div class="item-description">
-								<h4><a href="project.html#">Mobile App</a></h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</div>
 			
 			
 	<div class="row">			
 		<div class="span9">
 		<!-- start: Comments -->
 					<h4>Comentarios <span class="comments-amount">(${fn:length(publicacion.lComentarios)})</span></h4>
-					<div class="comments-sec">
+					<div id="comments" class="comments-sec">
 
 						<ol class="commentlist">
 						<c:forEach var="comentario" items="${publicacion.comentariosDeref}" varStatus="status">
@@ -151,7 +110,16 @@
 								<div class="comments">
 									<div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=50" alt="" width="50" height="50" border="0" /> </div>
 									<div class="comment-des">
-										<div class="comment-by"><strong>${comentario.nombre}</strong><span class="reply"><span style="color:#aaa">/ </span><b>&nbsp;${comentario.puntos}</b> puntos</span> <span class="date">${comentario.fecha}</span></div>
+										<div class="comment-by">
+										<c:choose>
+										<c:when test="${empty comentario.web}">
+										<strong>${comentario.nombre}</strong>
+										</c:when>
+										<c:otherwise>
+										<a href="http://${comentario.web}"><strong>${comentario.nombre}</strong></a>
+										</c:otherwise>
+										</c:choose>
+										<span class="reply"><span style="color:#aaa">/ </span><b>&nbsp;${comentario.puntos}</b> puntos</span> <span class="date"><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="both" dateStyle="medium" timeStyle="short" value="${comentario.fecha}"/></span></div>
 										<p>
 										${fn:replace(comentario.comentario, newLineChar, "<p/><p>")}
 										</p>
@@ -163,7 +131,7 @@
 
 					</div>
 					<!-- end: Comments -->
-					<div class="clear" style="padding-top: 10px;"></div>
+					<div class="clear" style="padding-top: 35px;"></div>
 
 					<!-- start: Comment Add -->
 					<h4>Deja un comentario</h4>
@@ -174,19 +142,24 @@
 						<form action="/blog/${publicacion.url}/nuevoComentario" id="formComment" method="post">
 							
 							<div class="field">
-								<label>Nombre:</label>
-								<input type="text" name="nombre" class="text" />
+								<label>Nombre: <span>*</span></label>
+								<input id="comNombre" type="text" name="nombre" class="text" />
 							</div>
 
 							<div class="field">
-								<label>Email: <span>*</span></label>
-								<input type="text" name="email" class="text" />
+								<label>Email: (No será publicado) <span>*</span></label>
+								<input id="comEmail" type="text" name="email" class="text" />
 							</div>
 							
 							<div class="field">
-								<label>Puntos: <span>*</span></label>
-								<select name="puntos" style="width: 6%;" title="Por favor, valora del 0 al 5 (lo mejor) el producto analizado">
-								  <option value="0">0</option>
+								<label>Web: </label>
+								<input type="text" name="web" class="text" />
+							</div>							
+							
+							<div class="field">
+								<label>Puntos: </label>
+								<select name="puntos" style="width: 6%;" title="Por favor, valora (5 lo mejor) este producto">
+								  <option value="0"></option>
 								  <option value="1">1</option>
 								  <option value="2">2</option>
 								  <option value="3">3</option>
@@ -197,12 +170,14 @@
 
 							<div class="field">
 								<label>Comentario: <span>*</span></label>
-								<textarea name="comentario" class="text textarea" ></textarea>
+								<textarea id="comComentario" name="comentario" class="text textarea" ></textarea>
 							</div>
+							
 							<label>El comentario puede tardar unos instantes en aparecer publicado una vez enviado</label>
+							
 							<div class="field">
 							<br>
-								<input type="button" id="send" value="Enviar" onclick="this.form.submit()"/>
+								<input type="button" id="send" value="Enviar" onclick="if(validarComentarios()){this.form.submit()}"/>
 							</div>
 							<input name="url" type="hidden" value="${publicacion.url}"/>
 
@@ -216,12 +191,12 @@
 					
 							
 					<br><br>					
-					<div class="title"><h3>También te puede interesar...</h3></div>					
+				<%--<div class="title"><h3>También te puede interesar...</h3></div>					
 			
-    				<div class="container">
+    				 <div class="container">
     					<div id="portfolio-wrapper" class="row">
-						<c:forEach var="publicacionRel" items="${publicaciones}" varStatus="status" end="3">
-							<c:if test="${publicacionRel.titulo ne publicacion.titulo }">			
+						<c:forEach var="publicacionRel" items="${publicaciones}" varStatus="status" end="6">
+							<c:if test="${publicacionRel.titulo ne publicacion.titulo }">				
 							<div class="span4 portfolio-item nature people">
 								<div class="picture"><a href="/blog/${publicacionRel.url}" title="${publicacionRel.titulo}">
 								<c:if test="${!empty publicacionRel.lImages }">
@@ -229,7 +204,7 @@
 								</c:if>
 								<div class="image-overlay-link"></div></a>
 									<div class="item-description alt">
-										<h5><a href="project.html">${publicacionRel.titulo}</a></h5>
+										<h5><a title="${publicacionRel.titulo}" href="/blog/${publicacionRel.url}">${publicacionRel.titulo}</a></h5>
 										<p>
 											${fn:replace(publicacionRel.resumen, newLineChar, "<p/><p>")}
 										</p>
@@ -240,7 +215,41 @@
 							</c:if>
 						</c:forEach>
 						</div>
-					</div>						
+					</div>--%>
+					
+								<!-- start: Row -->
+      		<div class="row">
+	
+				<div class="span9">
+					
+					<div class="title"><h3>También te puede interesar...</h3></div>
+					
+					<!-- start: Row -->
+		      		<div class="row">
+						<c:forEach var="publicacionRel" items="${publicaciones}" varStatus="status" end="6">
+						<c:if test="${publicacionRel.titulo ne publicacion.titulo }">	
+						<div class="span3">	
+							<div class="picture">
+								<a href="/blog/${publicacionRel.url}" rel="image" title="${publicacionRel.titulo}">
+									<c:if test="${!empty publicacionRel.lImages }">
+									<img style="width: 270px;height: 180px;" src="${publicacionRel.lImages[0]}" alt="${publicacionRel.titulo}"/>
+									</c:if>
+									<div class="image-overlay-zoom"></div>
+								</a>
+							</div>
+							<div class="item-description">
+								<h4><a href="/blog/${publicacionRel.url}">${publicacion.titulo}</a></h4>
+								<p>
+									${fn:replace(publicacionRel.descripcion, newLineChar, "<p/><p>")}
+								</p>
+							</div>					
+        				</div>
+        				</c:if>
+        				</c:forEach>					
+					</div>
+				</div>
+			</div>
+									
 		</div>
 		<!-- end: Container  -->
 	

@@ -2,6 +2,7 @@ package com.amatic.ch.controller;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,11 +21,14 @@ import com.amatic.ch.dto.User;
 import com.amatic.ch.service.PublicacionService;
 import com.amatic.ch.service.UserService;
 import com.amatic.ch.utils.ChannelUtils;
+import com.google.appengine.labs.repackaged.com.google.common.base.Throwables;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Ref;
 
 @Controller
 public class EditionController {
+
+    Logger logger = Logger.getLogger(EditionController.class.getName());
 
     @Autowired
     private PublicacionService publicacionService;
@@ -51,29 +55,50 @@ public class EditionController {
 	    @RequestParam("keywords") String keywords,
 	    @RequestParam("clase1") String clase1,
 	    @RequestParam("clase2") String clase2,
-	    @RequestParam("tipo") String tipo, HttpServletRequest request,
-	    HttpServletResponse response) throws IOException,
-	    NoSuchAlgorithmException {
+	    @RequestParam("tipo") String tipo,
+	    @RequestParam("autor") String autor,
+	    @RequestParam("titulo2") String titulo2,
+	    @RequestParam("script") String script,
+	    @RequestParam("script2") String script2,
+	    HttpServletRequest request, HttpServletResponse response)
+	    throws IOException, NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
 
 	User user = (User) session
 		.getAttribute(WebConstants.SessionConstants.RC_USER);
 
 	Publicacion publicacion = new Publicacion();
+	try {
+	    publicacion.setKey(ChannelUtils.SHA1(titulo));
+	    publicacion.setNumVisitas(0);
+	    publicacion.setTitulo(titulo);
+	    publicacion.setUser(Ref.create(Key.create(User.class,
+		    user.getMail())));
+	    publicacion.setResumen(resumen);
+	    publicacion.setDescripcion(descripcion);
 
-	publicacion.setKey(ChannelUtils.SHA1(titulo));
-	publicacion.setNumVisitas(0);
-	publicacion.setTitulo(titulo);
-	publicacion.setUser(Ref.create(Key.create(User.class, user.getMail())));
-	publicacion.setResumen(resumen);
-	publicacion.setDescripcion(descripcion);
-	publicacion.setArticulo(articulo);
-	publicacion.setKeywords(keywords);
-	publicacion.setClase1(clase1);
-	publicacion.setClase2(clase2);
-	publicacion.setTipo(tipo);
+	    articulo = articulo.replaceAll("\n", "</p><p>");
+	    articulo = articulo.replaceAll("<p><h2>", "<br><br><h2>");
+	    articulo = articulo.replaceAll("</h2></p>", "</h2><br>");
+	    articulo = articulo.replaceAll("<span>",
+		    "<span class=\"dropcap color\">");
+	    articulo = articulo.concat("</p>");
+	    articulo = articulo.replaceFirst("</p>", "");
 
-	publicacionService.crearPublicacion(publicacion);
+	    publicacion.setArticulo(articulo);
+	    publicacion.setKeywords(keywords);
+	    publicacion.setClase1(clase1);
+	    publicacion.setClase2(clase2);
+	    publicacion.setTipo(tipo);
+	    publicacion.setAutor(autor);
+	    publicacion.setTitulo2(titulo2);
+	    publicacion.setScript(script);
+	    publicacion.setScript2(script2);
+
+	    publicacionService.crearPublicacion(publicacion);
+	} catch (Exception e) {
+	    logger.warning(Throwables.getStackTraceAsString(e));
+	}
 	//
 	// List<Ref<Publicacion>> lChannels = user.getChannels();
 	// lChannels.add(Ref.create(Key.create(Channel.class,

@@ -18,7 +18,7 @@ public class PublicacionDaoImpl implements PublicacionDao {
     @Override
     public void crearPublicacion(Publicacion publicacion) {
 	publicacion.setFechaCreacion(new Date());
-	ofy().save().entity(publicacion);
+	ofy().save().entity(publicacion).now();
     }
 
     @Override
@@ -79,6 +79,9 @@ public class PublicacionDaoImpl implements PublicacionDao {
 	updatePublicacion.setClase2(publicacion.getClase2());
 	updatePublicacion.setTipo(publicacion.getTipo());
 	updatePublicacion.setAutor(publicacion.getAutor());
+	updatePublicacion.setTitulo2(publicacion.getTitulo2());
+	updatePublicacion.setScript(publicacion.getScript());
+	updatePublicacion.setScript2(publicacion.getScript2());
     }
 
     @Override

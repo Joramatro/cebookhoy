@@ -82,16 +82,18 @@ public class BlogController {
 	    @RequestParam("email") String email,
 	    @RequestParam("puntos") String puntos,
 	    @RequestParam("comentario") String comentario,
-	    HttpServletRequest request, HttpServletResponse response)
-	    throws IOException, NoSuchAlgorithmException {
+	    @RequestParam("web") String web, HttpServletRequest request,
+	    HttpServletResponse response) throws IOException,
+	    NoSuchAlgorithmException {
 
 	String titulo = url.replaceAll("-", " ");
 	Publicacion publicacion = publicacionService.getPublicacion(titulo,
 		WebConstants.SessionConstants.ARTICULO);
-	if (publicacion == null) {
+	if (publicacion == null || Integer.parseInt(puntos) < 0
+		|| Integer.parseInt(puntos) > 5 || email == null
+		|| (email != null && email.trim().equals(""))) {
 	    String uri = request.getRequestURI();
-	    throw new UnknownResourceException("There is no resource for path "
-		    + uri);
+	    throw new UnknownResourceException("Error en comentario " + uri);
 	    // return "channelNotFound";
 	}
 
@@ -103,6 +105,9 @@ public class BlogController {
 	nuevoComentario.setNombre(nombre);
 	nuevoComentario.setPuntos(Integer.parseInt(puntos));
 	nuevoComentario.setComentario(comentario);
+	nuevoComentario.setWeb(web);
+	nuevoComentario.setIpAddress(OtherController.getClienAddress(request));
+
 	Key<Comentario> keyNuevoComentario = comentarioService
 		.crearComentario(nuevoComentario);
 

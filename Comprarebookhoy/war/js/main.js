@@ -18,7 +18,11 @@ $(function(){
 	        	  "keywords": $("#keywords").val(),
 	        	  "clase1": $("#clase1").val(),
 	        	  "clase2": $("#clase2").val(),
-	        	  "tipo": $("#tipo").val()
+	        	  "tipo": $("#tipo").val(),
+	        	  "autor": $("#autor").val(),
+	        	  "titulo2": $("#titulo2").val(),
+	        	  "script": $("#script").val(),
+	        	  "script2": $("#script2").val()
 	          },
 		      success: function(text){
 //		    	  var nameChn = ($("#nameChannel").val()).replace(/\s/g , "-")
@@ -66,6 +70,19 @@ function validarEmail(){
     }else {
 	    alert("Por favor, introduce un email correcto");
 	  }
+}
+
+function validarComentarios(){
+	  var email = $("#comEmail").val();
+	  if (!validateEmail(email)) {  
+	    alert("Por favor, introduce un email correcto");
+	    return false;
+	  }
+	  if($("#comNombre").val() =="" || $("#comComentario").val() == ""){
+		  alert("Por favor, rellena los campos obligatorios (*)");
+		  return false;
+	  }
+	  return true;
 }
 
 

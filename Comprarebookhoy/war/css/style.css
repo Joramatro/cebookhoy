@@ -1,5 +1,5 @@
 /*
-* Author: Łukasz Holeczek
+* Author: Å�ukasz Holeczek
 * Template: Smart Bootstrap Theme
 * Version: 1.0.4
 * Bootstrap version: 2.2.2
@@ -537,7 +537,7 @@ html[xmlns] .slides {display: block;}
 	margin: 0 0 0px 0px;
 	position: absolute;
 	display: block;
-	left: 20px;
+	left: -56%;
 	bottom: 20px;
 	background: rgba(0, 0, 0, 0.7);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#b3000000',GradientType=0 ); /* IE6-8 */
@@ -1793,7 +1793,7 @@ li.current {
 	margin: 5px;
 	height: 36px;
 	width: 36px;
-	background: #fcfcfc url(../img/chart.png);
+	background: #fcfcfc url(../img/logo2.png);
 	background-repeat: no-repeat;
 	background-position: 48%;
 	opacity: .1;

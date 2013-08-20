@@ -24,14 +24,9 @@
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <!-- Fav and touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/icon/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/icon/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/icon/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="/icon/apple-touch-icon-57-precomposed.png">
-        <link rel="shortcut icon" href="/icon/favicon.ico">
 		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
 		<link rel="stylesheet" href="/css/apprise-v2.css" type="text/css" />
-    <meta name="description" content="File Upload widget with multiple file selection, drag&amp;drop support, progress bars, validation and preview images, audio and video for jQuery. Supports cross-domain, chunked and resumable file uploads and client-side image resizing. Works with any server-side platform (PHP, Python, Ruby on Rails, Java, Node.js, Go etc.) that supports standard HTML form file uploads.">
+    <meta name="description" content="Subida de archivos y herramienta de edicion para Comprar eBook Hoy">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<style>
 			.ui-autocomplete-loading { background: white url('/img/fancybox_loading.gif') right center no-repeat; }
@@ -60,7 +55,7 @@
 	            		<span class="icon-bar"></span>
 	            		<span class="icon-bar"></span>
 	          		</a>
-					<a class="brand" href="/"><i class="ico-charts circle"></i>Comprar eBook <span>Hoy</span>.</a>
+					<a class="brand" href="/"><i class="ico-book-open circle"></i>Comprar eBook <span>Hoy</span>.</a>
 	          		<div class="nav-collapse collapse">
 	            		<ul class="nav">
 							<li class="active">
@@ -90,10 +85,12 @@
 				  <option value="EB">eBook</option>
 				  <option value="AC">Accesorio</option>
 				</select><br><br>
-Titulo: <input type="text" style="width: 433px;" id="titulo" name="titulo" size="25" maxlength="50"><br><br>
+Autor: <input type="text" style="width: 433px;" id="autor" name="autor" size="25" maxlength="50"><br><br>				
+Titulo: <input type="text" style="width: 433px;" id="titulo" name="titulo" size="70" maxlength="70"><br><br>
+Titulo2: <input type="text" style="width: 433px;" id="titulo2" name="titulo2" size="120" maxlength="120"><br><br>
 Keywords: <input type="text" style="width: 433px;"id="keywords" name="keywords" size="35" maxlength="100">
 <br><br>
-Descripcion: <input type="text" style="width: 633px;" id="descripcion" name="descripcion" size="100" maxlength="100">
+Descripcion: <input type="text" style="width: 633px;" id="descripcion" name="descripcion" size="160" maxlength="200">
 <br><br>
 Clase1: <select id="clase1" name="clase1">
 				  <option value=""></option>
@@ -123,6 +120,8 @@ Articulo
 <br>
 <textarea style="width: 833px;" rows="40" id="articulo" name="articulo"></textarea>
 <br><br>
+Script: <input type="text"  id="script" name="script" size="100" maxlength="200"><br><br>				
+Script2: <input type="text" id="script2" name="script2" size="100" maxlength="200"><br><br>
 <table width="50%" border="0" align="center" cellpadding="10" cellspacing="0">
 <tr>
 <td><div align="center">
@@ -473,7 +472,7 @@ Articulo
 		
 			<div class="span12">
 				<p>
-					&copy; 2013, <a href="/">Compra eBook Hoy</a>
+					&copy; 2013, <a href="/">Compra eBook Hoy</a><i style="margin-top: -18px;" class="ico-color ico-sun"></i>
 				</p>
 			</div>
 	

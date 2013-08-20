@@ -139,7 +139,7 @@ public class OtherController {
 	response.sendRedirect("/edicion/nuevo");
     }
 
-    public String getClienAddress(HttpServletRequest request) {
+    public static String getClienAddress(HttpServletRequest request) {
 	request.getHeader("VIA");
 	String ipAddress = request.getHeader("X-FORWARDED-FOR");
 	if (ipAddress == null) {

@@ -4,7 +4,7 @@ function getCenteredCoords(width, height) {
 
 function handleOpenIDResponse(openid_args) {
 	  $("#msg").empty();
-  $("#msg").html("<b>Verifying authentication, please wait...</b>");
+  $("#msg").html("<b>Verificando autentificacion, por favor espera...</b>");
   $.ajax({
     type: "POST",
     url: "/popup_verify/",

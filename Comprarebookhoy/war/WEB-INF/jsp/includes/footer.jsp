@@ -184,7 +184,7 @@
 		
 			<div class="span12">
 				<p>
-					&copy; 2013, <a href="/">Compra eBook Hoy</a> <img src="/img/poland2.png" alt="Jorge Amat" style="margin-top:-4px">
+					&copy; 2013, <a href="/">Comprar eBook Hoy</a><i style="margin-top: -18px;" class="ico-color ico-sun"></i>
 				</p>
 			</div>
 	

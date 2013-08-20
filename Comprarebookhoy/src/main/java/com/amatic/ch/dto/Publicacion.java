@@ -39,9 +39,7 @@ public class Publicacion implements Serializable {
     List<String> lImagesKeys = new ArrayList<String>();
     @Index
     String descripcion;
-    @Index
     String resumen;
-    @Index
     String articulo;
     @Index
     String keywords;
@@ -53,6 +51,14 @@ public class Publicacion implements Serializable {
     String tipo;
     @Index
     String autor;
+    @Index
+    String titulo2;
+    @Index
+    String script;
+    @Index
+    String script2;
+    @Load
+    List<Ref<Comentario>> lComentarios = new ArrayList<Ref<Comentario>>();
 
     public String getAutor() {
 	return autor;
@@ -69,9 +75,6 @@ public class Publicacion implements Serializable {
     public void setTipo(String tipo) {
 	this.tipo = tipo;
     }
-
-    @Load
-    List<Ref<Comentario>> lComentarios = new ArrayList<Ref<Comentario>>();
 
     public List<Ref<Comentario>> getlComentarios() {
 	return lComentarios;
@@ -216,6 +219,34 @@ public class Publicacion implements Serializable {
 	    sumaPuntos += comentario.getPuntos();
 	}
 	return sumaPuntos;
+    }
+
+    public int getNumComentarios() {
+	return lComentarios.size();
+    }
+
+    public String getTitulo2() {
+	return titulo2;
+    }
+
+    public void setTitulo2(String titulo2) {
+	this.titulo2 = titulo2;
+    }
+
+    public String getScript() {
+	return script;
+    }
+
+    public void setScript(String script) {
+	this.script = script;
+    }
+
+    public String getScript2() {
+	return script2;
+    }
+
+    public void setScript2(String script2) {
+	this.script2 = script2;
     }
 
 }

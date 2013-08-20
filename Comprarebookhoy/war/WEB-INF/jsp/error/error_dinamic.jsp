@@ -189,14 +189,11 @@
 
   <div class="desc">Parece que no va a poder ser<br>Clicka <a href="javascript:history.go(-1);" style="color:red">aquí</a> para volver atrás</div>
 </div>
-
+<!--  
 		<div class="lbox">
-			<%@ page isErrorPage="true" import="java.io.*" %>
-			
+			<%@ page isErrorPage="true" import="java.io.*" %>		
 
-			Ha sucedido un error inesperado. La traza es:
-	
-			<%-- Exception Handler --%>
+			Ha sucedido un error inesperado. La traza es:	
 	
 			<%= exception.toString() %><br></br>
 	
@@ -212,6 +209,6 @@
 			<br/> <br/>
 			<p>Por favor, envia esta traza al <a href="mailto:jorge.amat@comprarebookhoy.com">administrator</a></p>
 		</div>
-
+-->
 </body>
 </html>
