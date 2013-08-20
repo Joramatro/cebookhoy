@@ -219,8 +219,8 @@
 		$("#menuSobre").addClass('active');
 	}else if(parts[1] == 'blog'){	
 		$("#menuBlog").addClass('active');
-	}else if(parts[1] == 'accesorios'){	
-		$("#menuAccesorios").addClass('active');
+	}else if(parts[1] == 'extras'){	
+		$("#menuExtras").addClass('active');
 	}else if(parts[1] == 'ebooks'){	
 		$("#menuEbooks").addClass('active');
 	}else{

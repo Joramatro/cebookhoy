@@ -39,7 +39,7 @@ public class AccesoriosController {
     @Resource(name = "OIdUserBean")
     OpenIdUser oIdUserBean;
 
-    @RequestMapping(value = { "/accesorios" }, method = { RequestMethod.GET })
+    @RequestMapping(value = { "/extras" }, method = { RequestMethod.GET })
     public String getAccesorios(ModelMap model, HttpServletRequest request,
 	    HttpServletResponse response) throws IOException {
 
@@ -50,7 +50,7 @@ public class AccesoriosController {
 
 	model.addAttribute("publicaciones", publicaciones);
 
-	return "accesorios";
+	return "extras";
     }
 
 }

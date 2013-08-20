@@ -102,7 +102,7 @@
 									<li><a href="/ebooks/papyre-HD">Nexu 7</a></li>
 	                			</ul>
 	              			</li>
-	              			<li id="menuAccesorios"><a href="/accesorios">Accesorios</a></li>
+	              			<li id="menuExtras"><a href="/extras">Extras</a></li>
 	              			<li id="menuBlog"><a href="/blog">Blog</a></li>	              																			
 							<li id="menuSobre"><a href="/sobre">Sobre nosotros</a></li>
 	              			<li id="menuContacto"><a href="/contacto">Contacto</a></li>
