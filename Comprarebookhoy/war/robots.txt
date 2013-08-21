@@ -1,4 +1,4 @@
-Sitemap: http://www.comprarebookhoy.appspot.com/sitemap.xml
+Sitemap: http://www.comprarebookhoy.com/sitemap.xml
 
 User-Agent: *
 Crawl-delay: 1

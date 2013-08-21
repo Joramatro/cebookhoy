@@ -6,15 +6,27 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>http://www.comprarebookhoy.appspot.com/</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://www.comprarebookhoy.appspot.com/ebooks</loc>
+  <loc>http://www.comprarebookhoy.com/</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>//www.comprarebookhoy.appspot.com/blog</loc>
+  <loc>http://www.comprarebookhoy.com/ebooks</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.comprarebookhoy.com/blog</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.comprarebookhoy.com/extras</loc>
   <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.comprarebookhoy.com/sobre</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.comprarebookhoy.com/contacto</loc>
+  <changefreq>monthly</changefreq>
 </url>
 </urlset>

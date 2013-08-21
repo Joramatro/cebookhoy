@@ -264,7 +264,8 @@
 										<div class="testimonials">${fn:substring(comentario.comentario, 0, 400)}
 										<c:if test="${fn:length(comentario.comentario)>400}">
 										...
-										</c:if</div>
+										</c:if>
+										</div>
 										<div class="testimonials-bg"></div>
 										<div class="testimonials-author">${comentario.nombre}</div>
 									</li>
