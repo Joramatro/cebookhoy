@@ -17,7 +17,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-stats ico-white"></i>Sobre Nosotros</h2>
+				<h2><i class="ico-keynote ico-white"></i>Sobre Nosotros</h2>
 
 			</div>
 			<!-- end: Container  -->

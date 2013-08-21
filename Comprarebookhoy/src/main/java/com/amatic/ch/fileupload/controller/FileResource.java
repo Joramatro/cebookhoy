@@ -111,9 +111,23 @@ public class FileResource {
 	lImages.add(url);
 	List<String> lImagesKeys = publicacion.getlImagesKeys();
 	lImagesKeys.add(blobKey.getKeyString());
-
+	String articulo = publicacion.getArticulo();
+	if (lImages.size() == 3) {
+	    articulo = articulo
+		    .replaceAll(
+			    "<img>",
+			    "<br><a target=\"_blank\" href=\""
+				    + publicacion.getScript()
+				    + "\"><img src=\""
+				    + url
+				    + "\" title=\""
+				    + publicacion.getTitulo()
+				    + "\" style=\"width:300px; height:250px; margin-left: 28%;\"/></a><img src=\""
+				    + publicacion.getScript2()
+				    + "\" width=\"1\" height=\"1\" border=\"0\" alt=\"\" style=\"border:none !important; margin:0px !important;\" /><br> ");
+	    publicacion.setArticulo(articulo);
+	}
 	publicacionService.update(publicacion);
-
 	int sizePreview = 80;
 	String urlPreview = imagesService
 		.getServingUrl(ServingUrlOptions.Builder.withBlobKey(blobKey)

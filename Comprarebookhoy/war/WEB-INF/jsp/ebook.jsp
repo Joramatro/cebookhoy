@@ -17,7 +17,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-keynote ico-white"></i>${publicacion.titulo}</h2>
+				<h2><i class="ico-book ico-white"></i>${publicacion.titulo}</h2>
 
 			</div>
 			<!-- end: Container  -->

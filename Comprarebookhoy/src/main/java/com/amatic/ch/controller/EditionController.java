@@ -82,9 +82,6 @@ public class EditionController {
 	    articulo = articulo.replaceAll("</h2></p>", "</h2><br>");
 	    articulo = articulo.replaceAll("<span>",
 		    "<span class=\"dropcap color\">");
-	    articulo = articulo
-		    .replaceAll("<img",
-			    "<br><img style=\"width:300px; height:250px; margin-left: 28%;\"");
 	    articulo = articulo.concat("</p>");
 	    articulo = articulo.replaceFirst("</p>", "");
 
@@ -119,6 +116,58 @@ public class EditionController {
 
 	return;
 
+    }
+
+    @RequestMapping(value = { "/edicion/cargarPublicacion" }, method = {
+	    RequestMethod.GET, RequestMethod.POST })
+    public String guardarEdicionPublicacion(ModelMap model,
+	    @RequestParam("titulo") String titulo,
+	    @RequestParam("tipo") String tipo, HttpServletRequest request,
+	    HttpServletResponse response) throws IOException,
+	    NoSuchAlgorithmException {
+	HttpSession session = request.getSession();
+
+	Publicacion publicacion = publicacionService.getPublicacion(titulo,
+		tipo);
+	session.setAttribute("publicacion", publicacion);
+
+	model.addAttribute("publicacion", publicacion);
+
+	return "edicion/editarPublicacion";
+
+    }
+
+    @RequestMapping(value = { "/edicion/guardarEdicionPublicacion" }, method = {
+	    RequestMethod.GET, RequestMethod.POST })
+    public void guardarEdicionPublicacion(ModelMap model,
+	    @RequestParam("articulo") String articulo,
+	    HttpServletRequest request, HttpServletResponse response)
+	    throws IOException, NoSuchAlgorithmException {
+	HttpSession session = request.getSession();
+
+	Publicacion publicacion = (Publicacion) session
+		.getAttribute("publicacion");
+	try {
+	    // articulo = articulo.replaceAll("\n", "");
+	    publicacion.setArticulo(articulo);
+
+	    publicacionService.update(publicacion);
+	} catch (Exception e) {
+	    logger.warning(Throwables.getStackTraceAsString(e));
+	}
+
+	response.sendRedirect("/");
+
+    }
+
+    @RequestMapping(value = { "/edicion/existente" }, method = {
+	    RequestMethod.GET, RequestMethod.POST })
+    public String getEditarExistentePublicacion(ModelMap model,
+	    HttpServletRequest request, HttpServletResponse response)
+	    throws IOException {
+	request.getSession();
+
+	return "edicion/editarPublicacion";
     }
 
 }
