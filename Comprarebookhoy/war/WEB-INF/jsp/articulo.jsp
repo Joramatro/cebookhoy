@@ -248,6 +248,36 @@
         				</c:forEach>					
 					</div>
 				</div>
+				<div class="span3">
+					
+					<!-- start: Testimonials-->
+
+					<div class="testimonial-container">
+
+						<div class="title"><h3>Últimos Comentarios</h3></div>
+
+							<div class="testimonials-carousel" data-autorotate="3000">
+
+								<ul class="carousel">
+									<c:forEach var="comentario" items="${comentarios}" varStatus="status" >	
+									<li class="testimonial">
+										<div class="testimonials">${fn:substring(comentario.comentario, 0, 400)}
+										<c:if test="${fn:length(comentario.comentario)>400}">
+										...
+										</c:if</div>
+										<div class="testimonials-bg"></div>
+										<div class="testimonials-author">${comentario.nombre}</div>
+									</li>
+									</c:forEach>
+								</ul>
+
+							</div>
+
+						</div>
+
+					<!-- end: Testimonials-->
+					
+        		</div>
 			</div>
 									
 		</div>

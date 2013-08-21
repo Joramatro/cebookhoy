@@ -34,6 +34,9 @@
 			<div id="filters">
 				<ul class="option-set" data-option-key="filter">
 					<li><a href="#filter" class="selected" data-option-value="*">Todos</a></li>
+					<c:forEach var="categoria" items="${categorias}" varStatus="status" >
+						<li><a href="#filter" data-option-value=".${categoria}">${categoria}</a></li>
+					</c:forEach>
 				</ul>
 			</div> 
 		</div>
@@ -49,7 +52,7 @@
 					<div class="picture"><a href="/blog/${publicacion.url}" title="${publicacion.titulo}">
 					
 					<c:if test="${!empty publicacion.lImages }">
-					<img src="${publicacion.lImages[0]}" alt="Detalle"/>
+					<img src="${publicacion.lImages[0]}" alt="${publicacion.titulo}"/>
 					</c:if>
 					
 					<div class="image-overlay-link"></div></a>
@@ -59,7 +62,7 @@
 								${fn:replace(publicacion.resumen, newLineChar, "<p/><p>")}
 							</p>
 						</div>
-						<div class="post-meta"><span><i class="mini-ico-calendar"></i><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span><span style=""><i class="mini-ico-user"></i>  <a href="#">Jorge Amat</a></span> <span><i class="mini-ico-comment"></i><a href="#">${fn:length(publicacion.lComentarios)} comments</a></span></div>
+						<div class="post-meta"><span><i class="mini-ico-calendar"></i><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span><span style=""><i class="mini-ico-user"></i>  <a href="/blog/${publicacion.url}">Jorge Amat</a></span> <span><i class="mini-ico-comment"></i><a href="/blog/${publicacion.url}/#comments">${fn:length(publicacion.lComentarios)} comments</a></span></div>
 					</div>	
 				</div>
 				</c:forEach>
@@ -67,34 +70,17 @@
 			<!-- end: articulo -->
 			
 			<div class="clear" style="padding-top: 25px;"></div>
-			<div class="span3" style="float: right;">
-					
-					<!-- start: Testimonials-->
-
-					<div class="testimonial-container">
-
-						<div class="title"><h3>Últimos Comentarios</h3></div>
-
-							<div class="testimonials-carousel" data-autorotate="3000">
-
-								<ul class="carousel">
-									<c:forEach var="comentario" items="${comentarios}" varStatus="status" >	
-									<li class="testimonial">
-										<div class="testimonials">${comentario.comentario}</div>
-										<div class="testimonials-bg"></div>
-										<div class="testimonials-author">${comentario.nombre}</div>
-									</li>
-									</c:forEach>
-								</ul>
-
-							</div>
-
-						</div>
-
-					<!-- end: Testimonials-->
-					
-        		</div>
-			
+			<div class="span3" style="float: right;">		
+				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- rec mediano ch -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:300px;height:250px"
+				     data-ad-client="ca-pub-3168560600423825"
+				     data-ad-slot="6552423744"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
 			
       	
 		</div>

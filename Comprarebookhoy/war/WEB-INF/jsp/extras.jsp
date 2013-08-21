@@ -3,13 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix='fn' uri='http://java.sun.com/jsp/jstl/functions' %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
 <!DOCTYPE html>
 <html lang="es">
 
-	<%@ include file="/WEB-INF/jsp/includes/header.jsp"%>
-	
-	<!-- start: Page Title -->
+<%@ include file="/WEB-INF/jsp/includes/header.jsp"%>
+
 	<div id="page-title">
 
 		<div id="page-title-inner">
@@ -17,7 +15,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-settings ico-white"></i>Extras</h2>
+				<h2><i class="ico-lightbulb ico-white"></i>Extras</h2>
 
 			</div>
 			<!-- end: Container  -->
@@ -29,89 +27,70 @@
 	
 	<!--start: Wrapper-->
 	<div id="wrapper">
+		
+		<!-- start: Container -->	
+		<div class="container">
+
+			<div id="filters">
+				<ul class="option-set" data-option-key="filter">
+					<li><a href="#filter" class="selected" data-option-value="*">Todos</a></li>
+					<c:forEach var="categoria" items="${categorias}" varStatus="status" >
+						<li><a href="#filter" data-option-value=".${categoria}">${categoria}</a></li>
+					</c:forEach>
+				</ul>
+			</div> 
+		</div>
+		<!-- end: Container  -->
 				
 		<!--start: Container -->
     	<div class="container">
-	
-      		<!-- start: Row -->
-      		<div class="row">
-	
-        		<div class="span4">
-          			<div class="icons-box">
-						<i class="ico-iphone ico-color circle-color big"></i>
-						<div class="title"><h3>Mobile</h3></div>
-						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-						</p>
-						<div class="clear"></div>
-					</div>
-        		</div>
-
-        		<div class="span4">
-          			<div class="icons-box">
-						<i class="ico-imac circle big"></i>
-						<div class="title"><h3>Web</h3></div>
-						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-						</p>
-						<div class="clear"></div>
-					</div>
-        		</div>
-
-        		<div class="span4">
-          			<div class="icons-box">
-						<i class="ico-ok ico-white circle-color-full big-color"></i>
-						<div class="title"><h3>Responsive</h3></div>
-						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-						</p>
-						<div class="clear"></div>
-					</div>
-        		</div>
-
-        		<div class="span4">
-          			<div class="icons-box">
-						<i class="ico-embed-close ico-color circle-color big"></i>
-						<div class="title"><h3>HTML5 & CSS3</h3></div>
-						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-						</p>
-						<div class="clear"></div>
-					</div>
-        		</div>
-
-        		<div class="span4">
-          			<div class="icons-box">
-						<i class="ico-shopping-cart circle big"></i>
-						<div class="title"><h3>e-commerce</h3></div>
-						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-						</p>
-						<div class="clear"></div>
-					</div>
-        		</div>
-
-        		<div class="span4">
-          			<div class="icons-box">
-						<i class="ico-thumbs-up ico-white circle-color-full big-color"></i>
-						<div class="title"><h3>Social Marketing</h3></div>
-						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-						</p>
-						<div class="clear"></div>
-					</div>
-        		</div>
-
-      		</div>
-			<!-- end: Row -->
+			<!-- start: articulo -->
+			<div id="portfolio-wrapper" class="row">
+				<% pageContext.setAttribute("newLineChar", "\n"); %>
+				<c:forEach var="publicacion" items="${publicaciones}" varStatus="status" >				
+				<div class="span4 portfolio-item ${publicacion.clase1} ${publicacion.clase2}">
+					<div class="picture">
+					<a href="${publicacion.script}">
+					<c:if test="${!empty publicacion.lImages }">
+					<img src="${publicacion.lImages[0]}" alt="${publicacion.titulo}"/>
+					</c:if>
+					
+					<div class="image-overlay-link"></div></a>
+						<div class="item-description alt">
+							<h5><a href="${publicacion.script}">${publicacion.titulo}</a>
+							<p>
+								${fn:replace(publicacion.resumen, newLineChar, "<p/><p>")}
+							</p>
+						</div>
+						<div class="post-meta"><span><i class="mini-ico-calendar"></i><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span><span style=""><i class="mini-ico-user"></i> </div>
+					</div>	
+				</div>
+				<img src="${publicacion.script2}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+				</c:forEach>
+			</div>
+			<!-- end: articulo -->
+			
+			<div class="clear" style="padding-top: 25px;"></div>
+			<div class="span3" style="float: right;">		
+				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- rec mediano ch -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:300px;height:250px"
+				     data-ad-client="ca-pub-3168560600423825"
+				     data-ad-slot="6552423744"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+			
       	
 		</div>
 		<!--end: Container-->
 				
 	</div>
-	<!-- end: Wrapper  -->			
+	<!-- end: Wrapper  -->
 	
 <%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
 
 </body>
-</html>
+</html>				

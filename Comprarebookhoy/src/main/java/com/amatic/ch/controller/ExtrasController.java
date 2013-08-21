@@ -23,7 +23,7 @@ import com.amatic.ch.service.UserService;
 import com.dyuproject.openid.OpenIdUser;
 
 @Controller
-public class AccesoriosController {
+public class ExtrasController {
 
     List<Integer> sessions = new ArrayList<Integer>();
 

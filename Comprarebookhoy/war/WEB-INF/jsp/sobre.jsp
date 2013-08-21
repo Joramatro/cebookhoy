@@ -111,7 +111,7 @@
 				<div class="span4">
 					
 					<!-- start: Sidebar -->
-					<div id="sidebar">
+					<div id="sidebar" style="padding-bottom: 50px;">
 
 						<!-- start: Skills -->
 				       	<div class="title"><h3>Nuestras habilidades</h3></div>
@@ -139,6 +139,17 @@
 
 					</div>
 					<!-- end: Sidebar -->
+					<div>
+						<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- rec mediano ch -->
+						<ins class="adsbygoogle"
+						     style="display:inline-block;width:300px;height:250px"
+						     data-ad-client="ca-pub-3168560600423825"
+						     data-ad-slot="6552423744"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+					</div>
 					
 				</div>
 				

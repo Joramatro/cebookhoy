@@ -19,7 +19,7 @@ public class Comentario implements Serializable {
     Long id;
     @Index
     private int puntos;
-
+    @Index
     private String comentario;
     @Index
     private Date fecha;

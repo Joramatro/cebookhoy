@@ -13,28 +13,28 @@
 
 		<div id="da-slider" class="da-slider">
 			<div class="da-slide">
-				<h2>TU LIBRERÍA PORTABLE</h2>
-				<p>cine o reproductor de musica</p>
-				<a href="#" class="da-link">LEER MÁS</a>
-				<div class="da-img"><img src="/img/parallax-slider/libreriaportable.jpg" style="width: 430px;height:280px;" alt="image01" /></div>
-			</div>
-			<div class="da-slide">
 				<h2>KINDLE PAPERWHITE 3G</h2>
 				<p>La tecnología unica Paperwhite y larga duración de batería hacen de el un gran contendiente.</p>
-				<a href="#" class="da-link">LEER MÁS</a>
-				<div class="da-img"><img src="/img/parallax-slider/kindlepaperwhite3g.jpg" style="width: 430px;height:280px;" alt="image02" /></div>
+				<a href="/ebooks/Kindle-Paperwhite-3G" class="da-link">LEER MÁS</a>
+				<div class="da-img"><img src="/img/parallax-slider/1.jpg" style="width: 430px;height:280px;" alt="image01" /></div>
 			</div>
 			<div class="da-slide">
-				<h2>NOOK HD</h2>
-				<p>Uno de los mejores que te permite configurar tu propio perfil ofreciendo un abundante contenido.</p>
-				<a href="#" class="da-link">LEER MÁS</a>
-				<div class="da-img"><img src="/img/parallax-slider/nook_hd.jpg" style="width: 430px;height:280px;" alt="image03" /></div>
+				<h2>NOOK SIMPLE TOUCH</h2>
+				<p>Es un 25% más rápido que cualquier otro lector.</p>
+				<a href="/ebooks/Nook-Simple-Touch" class="da-link">LEER MÁS</a>
+				<div class="da-img"><img src="/img/parallax-slider/2.jpg" style="width: 430px;height:280px;" alt="image02" /></div>
 			</div>
 			<div class="da-slide">
-				<h2>KOBO GLO WIRELESS EREADER</h2>
-				<p>Un diseño y tacto único que ofrece un programa de recompensas cuando alcanzas un hito en tu lectura</p>
-				<a href="#" class="da-link">LEER MÁS</a>
-				<div class="da-img"><img src="/img/parallax-slider/Kobo_Glo_eReader.jpg" style="width: 430px;height:280px;" alt="image04" /></div>
+				<h2>Energy Color C7+ Touch</h2>
+				<p>Lee y reproduce todo tipo de contenido multimedia de alta definición.</p>
+				<a href="/ebooks/Energy-Color-C7+-Touch" class="da-link">LEER MÁS</a>
+				<div class="da-img"><img src="/img/parallax-slider/3.jpg" style="width: 430px;height:280px;" alt="image03" /></div>
+			</div>
+			<div class="da-slide">
+				<h2>KINDLE TOUCH</h2>
+				<p>Con Wifi y pantalla táctil de tinta electrónica E-Ink</p>
+				<a href="/ebooks/Kindle-Touch" class="da-link">LEER MÁS</a>
+				<div class="da-img"><img src="/img/parallax-slider/4.jpg" style="width: 430px;height:280px;" alt="image04" /></div>
 			</div>
 			<nav class="da-arrows">
 				<span class="da-arrows-prev"></span>
@@ -58,12 +58,11 @@
 				<h3>
 					Organiza todos tus e-books y autores: los e-books se están siendo cada vez más y más populares, gracias a lo fácil que es llevarlos contigo y transferirlos
 				</h3>
-        		<p><a class="btn btn-primary btn-large" href="/blog/organiza-todos-tus-ebooks">Continúa &raquo;</a></p>
+        		<p><a class="btn btn-primary btn-large" href="/blog">Blog</a></p>
       		</div>
 			<!-- end: Hero Unit -->
       		
 			<hr>
-			
 			<!-- start: Row -->
 			<div class="row">
 				
@@ -117,7 +116,17 @@
 			
 			<hr>
 			
-	
+			<div style="width: 60%;margin: 0 auto;">
+			<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- horizontal ch -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:90px"
+			     data-ad-client="ca-pub-3168560600423825"
+			     data-ad-slot="4936089743"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+			</div>
 		
 					
 		<div class="title"><h3>Últimas Publicaciones</h3></div>
@@ -127,12 +136,12 @@
 			<!-- start: Portfolio -->
 			<div id="portfolio-wrapper" class="row">
 				<% pageContext.setAttribute("newLineChar", "\n"); %>
-				<c:forEach var="publicacion" items="${publicaciones}" varStatus="status" >				
+				<c:forEach var="publicacion" items="${publicacionesEbooks}" varStatus="status" end="6">				
 				<div class="span4 portfolio-item nature people">
 					<div class="picture"><a href="/ebooks/${publicacion.url}" title="${publicacion.titulo}">
 					
 					<c:if test="${!empty publicacion.lImages }">
-					<img src="${publicacion.lImages[0]}" alt="Detalle"/>
+					<img src="${publicacion.lImages[0]}" alt="${publicacion.titulo}"/>
 					</c:if>
 					
 					<div class="image-overlay-link"></div></a>
@@ -142,10 +151,29 @@
 								${fn:replace(publicacion.resumen, newLineChar, "<p/><p>")}
 							</p>
 						</div>
-						<div class="post-meta"><span><i class="mini-ico-calendar"></i><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span><span style="visibility:hidden"><i class="mini-ico-user"></i>  <a href="#">Jorge Amat</a></span> <span><i class="mini-ico-comment"></i><a href="#">${fn:length(publicacion.lComentarios)} comments</a></span></div>
+						<div class="post-meta"><span><i class="mini-ico-calendar"></i><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span><span style=""><i class="mini-ico-user"></i>  <a href="/ebooks/${publicacion.url}">Jorge Amat</a></span> <span><i class="mini-ico-comment"></i><a href="/ebooks/${publicacion.url}/#comments">${fn:length(publicacion.lComentarios)} comments</a></span></div>
 					</div>	
 				</div>
 				</c:forEach>
+				<c:forEach var="publicacion" items="${publicacionesBlog}" varStatus="status" end="6">				
+				<div class="span4 portfolio-item nature people">
+					<div class="picture"><a href="/blog/${publicacion.url}" title="${publicacion.titulo}">
+					
+					<c:if test="${!empty publicacion.lImages }">
+					<img src="${publicacion.lImages[0]}" alt="${publicacion.titulo}"/>
+					</c:if>
+					
+					<div class="image-overlay-link"></div></a>
+						<div class="item-description alt">
+							<h5><a href="/blog/${publicacion.url}">${publicacion.titulo}</a></h5>
+							<p>
+								${fn:replace(publicacion.resumen, newLineChar, "<p/><p>")}
+							</p>
+						</div>
+						<div class="post-meta"><span><i class="mini-ico-calendar"></i><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span><span style=""><i class="mini-ico-user"></i>  <a href="/blog/${publicacion.url}">Jorge Amat</a></span> <span><i class="mini-ico-comment"></i><a href="/blog/${publicacion.url}/#comments">${fn:length(publicacion.lComentarios)} comments</a></span></div>
+					</div>	
+				</div>
+				</c:forEach>				
 			</div>
 			<!-- end: Portfolio -->
       	

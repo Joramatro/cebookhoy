@@ -161,7 +161,7 @@
 						<p>Por favor, dejanos tu email</p>
 						<label for="newsletter_input">@:</label>
 						<input type="text" name="email" id="newsletter_input">
-						<input type="submit" onclick="validarEmail();return false;" id="newsletter_submit" value="Guardar">
+						<input type="submit" onclick="validarEmail();return false;" id="newsletter_submit" value="Enviar">
 					</form>
 					<!-- end: Newsletter -->
 				

@@ -88,7 +88,7 @@
 Autor: <input type="text" style="width: 433px;" id="autor" name="autor" size="25" maxlength="50"><br><br>				
 Titulo: <input type="text" style="width: 433px;" id="titulo" name="titulo" size="70" maxlength="70"><br><br>
 Titulo2: <input type="text" style="width: 433px;" id="titulo2" name="titulo2" size="120" maxlength="120"><br><br>
-Keywords: <input type="text" style="width: 433px;"id="keywords" name="keywords" size="35" maxlength="100">
+Keywords: <input type="text" style="width: 433px;"id="keywords" name="keywords" size="150" maxlength="150">
 <br><br>
 Descripcion: <input type="text" style="width: 633px;" id="descripcion" name="descripcion" size="160" maxlength="200">
 <br><br>

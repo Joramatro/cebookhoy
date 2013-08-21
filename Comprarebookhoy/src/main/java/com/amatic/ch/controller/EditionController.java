@@ -82,6 +82,9 @@ public class EditionController {
 	    articulo = articulo.replaceAll("</h2></p>", "</h2><br>");
 	    articulo = articulo.replaceAll("<span>",
 		    "<span class=\"dropcap color\">");
+	    articulo = articulo
+		    .replaceAll("<img",
+			    "<br><img style=\"width:300px; height:250px; margin-left: 28%;\"");
 	    articulo = articulo.concat("</p>");
 	    articulo = articulo.replaceFirst("</p>", "");
 

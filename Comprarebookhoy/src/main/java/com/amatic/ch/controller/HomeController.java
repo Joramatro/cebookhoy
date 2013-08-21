@@ -66,10 +66,15 @@ public class HomeController {
 	// user.setNewUser(true);
 	// Fin Uservalidation trick
 
-	List<Publicacion> publicaciones = publicacionService
+	List<Publicacion> publicacionesEbooks = publicacionService
 		.getUltimasPublicaciones(WebConstants.SessionConstants.EBOOK);
 
-	model.addAttribute("publicaciones", publicaciones);
+	List<Publicacion> publicacionesBlog = publicacionService
+		.getUltimasPublicaciones(WebConstants.SessionConstants.ARTICULO);
+
+	model.addAttribute("publicacionesEbooks", publicacionesEbooks);
+
+	model.addAttribute("publicacionesBlog", publicacionesBlog);
 
 	return "index";
     }

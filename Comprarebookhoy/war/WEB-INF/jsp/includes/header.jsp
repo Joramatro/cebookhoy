@@ -9,24 +9,40 @@
 	<!-- start: Meta -->
 	<meta charset="utf-8">
 	<c:choose>
-	<c:when test="${empty publicacion}">
-		<title>Comprar eBook Hoy</title> 
-		<meta name="description" content="Compra tu eBook Reader hoy mismo. Consulta nuestros análisis sobre los ebooks de marcas como Sony, Kindle, Kobo y muchas más "/>
-		<meta name="keywords" content="Ebook, Reader, EReader, comprar ebook, ebook hoy, comprar kindle" />
-		<meta name="title" content="Comprar eBook Hoy - www.comprarebookhoy.com" />
-		<meta name="abstract" content="Consulta nuestros análisis y compra tu eBook hoy mismo" />
-	</c:when>
 		<c:when test="${!empty publicacion}">
 		<title>${publicacion.titulo} en Comprar eBook Hoy</title> 
 		<meta name="description" content="${publicacion.descripcion}"/>
 		<meta name="keywords" content="${publicacion.keywords}" />
 		<meta name="title" content="${publicacion.titulo} en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
-		<meta name="abstract" content="${publicacion.resumen}" />
 	</c:when>
+	<c:when test="${fn:contains(pageContext.request.requestURI, 'extras')}">
+		<title>Extras en Comprar eBook Hoy</title> 
+		<meta name="description" content="Accede a todos los extras para tu eBook como fundas para protegerlo, adaptadores de corriente ó luces de lectura"/>
+		<meta name="keywords" content="extras ebook, accesorios ebook, adaptador corriente, luz lectura, funda kindle, funda ebook, funda lector ebook, funda ereader" />
+		<meta name="title" content="Extras en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+	</c:when>
+	<c:when test="${fn:contains(pageContext.request.requestURI, 'sobre')}">
+		<title>Sobre Nosotros y Comprar eBook Hoy</title> 
+		<meta name="description" content="Toda la información sobre los que trabajamos en Comprar eBook Hoy, su experiencia y valores profesionales"/>
+		<meta name="keywords" content="sobre nosotros ebooks, sobre ebooks, nosotros ebook, sobre kindle, sobre fundas ebook, sobre ereaders, sobre lectores de ebook" />
+		<meta name="title" content="Sobre Nosotros en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+	</c:when>
+	<c:when test="${fn:contains(pageContext.request.requestURI, 'contacto')}">
+		<title>Contacta con Comprar eBook Hoy</title> 
+		<meta name="description" content="Contacta con los que trabajamos en Comprar eBook Hoy"/>
+		<meta name="keywords" content="contacta nosotros ebooks, contacta ebooks, contacta ebook, contacta kindle, contacta fundas ebook, contacta ereaders, contacta lectores de ebook" />
+		<meta name="title" content="Contacta en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+	</c:when>
+	<c:otherwise>
+		<title>Bienvenido a Comprar eBook Hoy</title> 
+		<meta name="description" content="Busca y encuentra tu eBook favorito, análisis de todos los lectores de eBooks y los mejores eReaders al mejor precio. Accede a la mejor información sobre eBooks"/>
+		<meta name="keywords" content="ebook, lector ebook, ereader, kindle, fundas ebook, ereaders mejor precio, kindle paperwhite, sony ebooks, mini ipad, woxter ebooks, wolter ebooks" />
+		<meta name="title" content="Lectores de eBooks en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+	</c:otherwise>		
 	</c:choose>
 	
 	
-	<meta name="author" content="Jorge Amat"/>
+	<meta name="author" content="Comprar eBook Hoy"/>
 	
 	
 	
