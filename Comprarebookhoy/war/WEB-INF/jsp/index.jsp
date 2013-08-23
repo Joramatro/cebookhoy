@@ -15,7 +15,7 @@
 			<div class="da-slide">
 				<h2>KINDLE PAPERWHITE 3G</h2>
 				<p>La tecnología unica Paperwhite y larga duración de batería hacen de el un gran contendiente.</p>
-				<a href="/" class="da-link">LEER MÁS</a>
+				<a href="/ebooks/Kindle-Paperwhite-3G" class="da-link">LEER MÁS</a>
 				<div class="da-img"><img src="/img/parallax-slider/1.jpg" style="width: 430px;height:280px;" alt="image01" /></div>
 			</div>
 			<div class="da-slide">

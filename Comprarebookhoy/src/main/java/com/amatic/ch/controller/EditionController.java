@@ -164,7 +164,6 @@ public class EditionController {
 	    RequestMethod.GET, RequestMethod.POST })
     public void guardarEdicionPublicacion(ModelMap model,
 	    @RequestParam("articulo") String articulo,
-	    @RequestParam("resumen") String resumen,
 	    HttpServletRequest request, HttpServletResponse response)
 	    throws IOException, NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
@@ -174,7 +173,6 @@ public class EditionController {
 	try {
 	    // articulo = articulo.replaceAll("\n", "");
 	    publicacion.setArticulo(articulo);
-	    publicacion.setResumen(resumen);
 
 	    publicacionService.update(publicacion);
 	} catch (Exception e) {
