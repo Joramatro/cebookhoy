@@ -111,6 +111,7 @@ public class BlogController {
 	nuevoComentario.setPuntos(Integer.parseInt(puntos));
 	nuevoComentario.setComentario(comentario);
 	nuevoComentario.setWeb(web);
+	nuevoComentario.setGravatar(OtherController.getGravatar80pxUrl(email));
 	nuevoComentario.setIpAddress(OtherController.getClienAddress(request));
 
 	Key<Comentario> keyNuevoComentario = comentarioService

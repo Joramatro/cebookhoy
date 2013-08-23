@@ -15,14 +15,8 @@
 			<div class="da-slide">
 				<h2>KINDLE PAPERWHITE 3G</h2>
 				<p>La tecnología unica Paperwhite y larga duración de batería hacen de el un gran contendiente.</p>
-				<a href="/ebooks/Kindle-Paperwhite-3G" class="da-link">LEER MÁS</a>
+				<a href="/" class="da-link">LEER MÁS</a>
 				<div class="da-img"><img src="/img/parallax-slider/1.jpg" style="width: 430px;height:280px;" alt="image01" /></div>
-			</div>
-			<div class="da-slide">
-				<h2>NOOK SIMPLE TOUCH</h2>
-				<p>Es un 25% más rápido que cualquier otro lector.</p>
-				<a href="/ebooks/Nook-Simple-Touch" class="da-link">LEER MÁS</a>
-				<div class="da-img"><img src="/img/parallax-slider/2.jpg" style="width: 430px;height:280px;" alt="image02" /></div>
 			</div>
 			<div class="da-slide">
 				<h2>Energy Color C7+ Touch</h2>
@@ -31,9 +25,15 @@
 				<div class="da-img"><img src="/img/parallax-slider/3.jpg" style="width: 430px;height:280px;" alt="image03" /></div>
 			</div>
 			<div class="da-slide">
-				<h2>KINDLE TOUCH</h2>
+				<h2>Kindle Fire HD</h2>
+				<p>Delgado, ligero y portátil. Sensacional pantalla de 7 pulgadas.</p>
+				<a href="/ebooks/Kindle-Fire-HD" class="da-link">LEER MÁS</a>
+				<div class="da-img"><img src="/img/parallax-slider/2.jpg" style="width: 430px;height:280px;" alt="image02" /></div>
+			</div>
+			<div class="da-slide">
+				<h2>KINDLE</h2>
 				<p>Con Wifi y pantalla táctil de tinta electrónica E-Ink</p>
-				<a href="/ebooks/Kindle-Touch" class="da-link">LEER MÁS</a>
+				<a href="/ebooks/Kindle" class="da-link">LEER MÁS</a>
 				<div class="da-img"><img src="/img/parallax-slider/4.jpg" style="width: 430px;height:280px;" alt="image04" /></div>
 			</div>
 			<nav class="da-arrows">

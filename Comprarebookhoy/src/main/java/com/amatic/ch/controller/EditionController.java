@@ -2,6 +2,7 @@ package com.amatic.ch.controller;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.amatic.ch.constants.WebConstants;
+import com.amatic.ch.dto.Comentario;
 import com.amatic.ch.dto.Publicacion;
 import com.amatic.ch.dto.User;
 import com.amatic.ch.service.PublicacionService;
@@ -77,13 +79,34 @@ public class EditionController {
 	    publicacion.setResumen(resumen);
 	    publicacion.setDescripcion(descripcion);
 
+	    int i = 1;
+	    int punto = 1;
+	    articulo = "<p>" + articulo;
+	    while (articulo.contains("\n\n")) {
+		if (i % 2 != 0) {
+		    articulo = articulo.replaceFirst("\n\n",
+			    "</p><br><br><h2><span class=\"dropcap color\">"
+				    + punto + "</span>");
+		    punto++;
+		    if (i == 1) {
+			articulo = articulo.replaceFirst("<br>", "</p><br>");
+		    }
+		} else {
+		    articulo = articulo.replaceFirst("\n\n", "</h2><br><p>");
+		}
+		i++;
+	    }
 	    articulo = articulo.replaceAll("\n", "</p><p>");
-	    articulo = articulo.replaceAll("<p><h2>", "<br><br><h2>");
-	    articulo = articulo.replaceAll("</h2></p>", "</h2><br>");
-	    articulo = articulo.replaceAll("<span>",
-		    "<span class=\"dropcap color\">");
 	    articulo = articulo.concat("</p>");
-	    articulo = articulo.replaceFirst("</p>", "");
+
+	    articulo = articulo
+		    .replaceAll("<a>", "<a href=\"" + script + "\">");
+	    articulo = articulo
+		    .replaceAll(
+			    "</a>",
+			    "</a><img src=\""
+				    + script2
+				    + "\" width=\"1\" height=\"1\" border=\"0\" alt=\"\" style=\"border:none !important; margin:0px !important;\" />");
 
 	    publicacion.setArticulo(articulo);
 	    publicacion.setKeywords(keywords);
@@ -120,7 +143,7 @@ public class EditionController {
 
     @RequestMapping(value = { "/edicion/cargarPublicacion" }, method = {
 	    RequestMethod.GET, RequestMethod.POST })
-    public String guardarEdicionPublicacion(ModelMap model,
+    public String cargarPublicacion(ModelMap model,
 	    @RequestParam("titulo") String titulo,
 	    @RequestParam("tipo") String tipo, HttpServletRequest request,
 	    HttpServletResponse response) throws IOException,
@@ -141,6 +164,7 @@ public class EditionController {
 	    RequestMethod.GET, RequestMethod.POST })
     public void guardarEdicionPublicacion(ModelMap model,
 	    @RequestParam("articulo") String articulo,
+	    @RequestParam("resumen") String resumen,
 	    HttpServletRequest request, HttpServletResponse response)
 	    throws IOException, NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
@@ -150,12 +174,14 @@ public class EditionController {
 	try {
 	    // articulo = articulo.replaceAll("\n", "");
 	    publicacion.setArticulo(articulo);
+	    publicacion.setResumen(resumen);
 
 	    publicacionService.update(publicacion);
 	} catch (Exception e) {
 	    logger.warning(Throwables.getStackTraceAsString(e));
 	}
 
+	session.setAttribute("publicacion", null);
 	response.sendRedirect("/");
 
     }
@@ -168,6 +194,20 @@ public class EditionController {
 	request.getSession();
 
 	return "edicion/editarPublicacion";
+    }
+
+    @RequestMapping(value = { "/edicion/limpiarComentario" }, method = {
+	    RequestMethod.GET, RequestMethod.POST })
+    public void getLogEditar(ModelMap model, HttpServletRequest request,
+	    HttpServletResponse response) throws IOException {
+	HttpSession session = request.getSession();
+
+	Publicacion publicacion = publicacionService.getPublicacion("Kindle",
+		WebConstants.SessionConstants.EBOOK);
+
+	List<Ref<Comentario>> lComentarios = publicacion.getlComentarios();
+	lComentarios.remove(1);
+	publicacionService.update(publicacion);
     }
 
 }

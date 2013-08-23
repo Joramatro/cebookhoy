@@ -31,6 +31,8 @@ public class Comentario implements Serializable {
     private String web;
     @Index
     private String ipAddress;
+    @Index
+    private String gravatar;
 
     public String getWeb() {
 	return web;
@@ -94,6 +96,14 @@ public class Comentario implements Serializable {
 
     public void setFecha(Date fecha) {
 	this.fecha = fecha;
+    }
+
+    public String getGravatar() {
+	return gravatar;
+    }
+
+    public void setGravatar(String gravatar) {
+	this.gravatar = gravatar;
     }
 
 }

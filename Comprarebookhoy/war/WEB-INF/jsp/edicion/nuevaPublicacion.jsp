@@ -100,7 +100,9 @@ Clase1: <select id="clase1" name="clase1">
 				  <option value="Wolder">Wolder</option>
 				  <option value="Woxter">Woxter</option>
 				  <option value="Papyre">Papyre</option>
+				  <option value="Kindle">Kindle</option>
 				  <option value="Otros">Otros</option>
+				  <option value="Fundas">Fundas</option>
 				</select>
 Clase2: <select id="clase2" name="clase2">
 				  <option value=""></option>
@@ -110,7 +112,9 @@ Clase2: <select id="clase2" name="clase2">
 				  <option value="Wolder">Wolder</option>
 				  <option value="Woxter">Woxter</option>
 				  <option value="Papyre">Papyre</option>
+				  <option value="Kindle">Kindle</option>
 				  <option value="Otros">Otros</option>
+				  <option value="Fundas">Fundas</option>
 				</select>				
 <br><br>
 Resumen<br>

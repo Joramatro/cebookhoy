@@ -123,7 +123,7 @@ Clase2: <select id="clase2" name="clase2">
 				</select>				
 <br><br>
 Resumen<br>
-<textarea style="width: 833px;" rows="10" id="resumen" name="resumen"></textarea>
+<textarea style="width: 833px;" rows="10" id="resumen" name="resumen" value="${publicacion.resumen}"></textarea>
 <br><br>
 Articulo
 <br>

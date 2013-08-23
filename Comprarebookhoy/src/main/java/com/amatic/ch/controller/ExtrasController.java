@@ -48,6 +48,20 @@ public class ExtrasController {
 	List<Publicacion> publicaciones = publicacionService
 		.getPublicaciones(WebConstants.SessionConstants.ACCESORIO);
 
+	List<String> categorias = new ArrayList<String>();
+	for (Publicacion publicacion : publicaciones) {
+	    if (!publicacion.getClase1().equals("")
+		    && !categorias.contains(publicacion.getClase1())) {
+		categorias.add(publicacion.getClase1());
+	    }
+	    if (!publicacion.getClase2().equals("")
+		    && !categorias.contains(publicacion.getClase2())) {
+		categorias.add(publicacion.getClase2());
+	    }
+	}
+
+	model.addAttribute("categorias", categorias);
+
 	model.addAttribute("publicaciones", publicaciones);
 
 	return "extras";

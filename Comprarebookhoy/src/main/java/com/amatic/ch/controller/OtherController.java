@@ -1,6 +1,9 @@
 package com.amatic.ch.controller;
 
 import java.io.IOException;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +28,9 @@ import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
 import com.amatic.ch.service.UserService;
 import com.dyuproject.openid.OpenIdUser;
+import com.timgroup.jgravatar.Gravatar;
+import com.timgroup.jgravatar.GravatarDefaultImage;
+import com.timgroup.jgravatar.GravatarRating;
 
 @Controller
 public class OtherController {
@@ -146,6 +152,25 @@ public class OtherController {
 	    ipAddress = request.getRemoteAddr();
 	}
 	return ipAddress;
+    }
+
+    public static String getGravatar80pxUrl(String email) throws IOException {
+	String gravatarUrl = "";
+	Gravatar gravatar = new Gravatar();
+	gravatar.setRating(GravatarRating.GENERAL_AUDIENCES);
+	gravatar.setDefaultImage(GravatarDefaultImage.IDENTICON);
+	String gravatarUrlIfExist = gravatar.getUrl(email);
+	URL u = new URL(gravatarUrlIfExist);
+	HttpURLConnection huc = (HttpURLConnection) u.openConnection();
+	huc.setRequestMethod("GET");
+	huc.setDoOutput(true);
+	huc.connect();
+	OutputStream os = huc.getOutputStream();
+	int code = huc.getResponseCode();
+	if (code != 404) {
+	    gravatarUrl = gravatarUrlIfExist;
+	}
+	return gravatarUrl;
     }
 
 }

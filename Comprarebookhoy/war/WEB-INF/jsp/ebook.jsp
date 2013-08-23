@@ -74,7 +74,7 @@
 				</div>				
 				<div class="span10">
 					${publicacion.articulo}
-					
+					<br>
 					<br><a href="${publicacion.script}" class="button color launch">Cómpralo Aquí</a>
 					<img src="${publicacion.script2}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 					<br>
@@ -108,7 +108,16 @@
 						<c:forEach var="comentario" items="${publicacion.comentariosDeref}" varStatus="status">
 							<li style="width: 100%;">
 								<div class="comments">
-									<div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=50" alt="" width="50" height="50" border="0" /> </div>
+									<div class="avatar">
+									<c:choose>
+									<c:when test="${empty comentario.gravatar }">
+									<img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=50" alt="" width="50" height="50" border="0" /> 
+									</c:when>
+									<c:otherwise>
+									<img src="${comentario.gravatar}" alt="" width="50" height="50" border="0" />
+									</c:otherwise>
+									</c:choose>
+									</div>
 									<div class="comment-des">
 										<div class="comment-by">
 										<c:choose>
