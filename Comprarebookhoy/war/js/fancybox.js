@@ -137,7 +137,7 @@
 				wrap     : '<div class="fancybox-wrap" tabIndex="-1"><div class="fancybox-skin"><div class="fancybox-outer"><div class="fancybox-inner"></div></div></div></div>',
 				image    : '<img class="fancybox-image" src="{href}" alt="" />',
 				iframe   : '<iframe id="fancybox-frame{rnd}" name="fancybox-frame{rnd}" class="fancybox-iframe" frameborder="0" vspace="0" hspace="0"' + ($.browser.msie ? ' allowtransparency="true"' : '') + '></iframe>',
-				error    : '<p class="fancybox-error">La solicitud no puede ser cargada.<br/>Por favor inténtalo más tarde.</p>',
+				error    : '<p class="fancybox-error">La solicitud no puede ser cargada.<br/>Por favor int&eacute;ntalo m&aacute;s tarde.</p>',
 				closeBtn : '<div title="Close" class="fancybox-item fancybox-close"></div>',
 				next     : '<a title="Next" class="fancybox-nav fancybox-next"><span></span></a>',
 				prev     : '<a title="Previous" class="fancybox-nav fancybox-prev"><span></span></a>'

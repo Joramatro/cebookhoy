@@ -66,7 +66,7 @@
 							<span class="dropcap dark">3</span>Nosotros venimos de una formación relacionada con la tecnología, y tras más de 6 años trabajando para distintas empresas TIC privadas y estudiando nuevos gadgets tecnológicos en nuestro tiempo libre, reunimos aquí todos nuestros conocimientos para intentar crear la mejor web de habla hispana sobre eBooks y productos relacionados. Nuestro objetivo es ser honestos y aportar valor a nuestros lectores. 
 						</p>
 						<p>
-							Reciéntemente hemos fundado nuestra propia empresa, dónde pretendemos ofrecer la mejor información y los mejores análisis para conseguir que aciertes con la compra del producto que buscas. Estamos aquí para ayudarte y que decidas con la mejor opinión creada posible, contacta con nosotros cuando así lo requieras.
+							Reciéntemente hemos fundado nuestra propia empresa, dónde pretendemos ofrecer la mejor información y los mejores análisis para conseguir que aciertes con la compra del producto que buscas. Estamos aquí para ayudarte y que decidas con la mejor opinión creada posible, <a href="/contacto">contacta</a> con nosotros cuando así lo requieras.
 						</p>
 					</div>	
 					<!-- end: History -->
@@ -84,7 +84,7 @@
 								<img src="/img/jorge_1.jpg" alt="team member">
 								<div class="team-name">Jorge Amat<span> / Creador de CEHoy</span></div>
 								<p>
-									 Jorge es un joven desarrollador de software con un gran espíritu emprendedor. Es el creador de la saga "Compra Hoy" y dedica una buena parte de su tiempo a mejorar la plataforma web que él mismo inició. Además colabora con otras empresas en Dublin donde reside hasta la fecha en busca de la Guinness perfecta. Como gran apasionado a los gadgets tecnológicos, también escribe artículos y anáisis que pueden ayudarte en la elección de tu producto favorito. 
+									 Jorge es un joven desarrollador de software con un gran espíritu emprendedor. Es el creador de la saga "Comprar Hoy" y dedica una buena parte de su tiempo a mejorar la plataforma web que él mismo inició. Además colabora con otras empresas en Dublin donde reside hasta la fecha en busca de la Guinness perfecta. Como gran apasionado a los gadgets tecnológicos, también escribe artículos y anáisis que pueden ayudarte en la elección de tu producto favorito. 
 								</p>
 								<div class="social_profiles">
 									<ul class="social-bookmarks">

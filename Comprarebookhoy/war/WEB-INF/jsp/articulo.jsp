@@ -69,7 +69,7 @@
 							&nbsp;&nbsp;(de ${publicacion.numComentarios} votantes)</li> 
 						</c:if>
 						<li><strong>Fecha&nbsp;</strong>&nbsp; <fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></li>
-						<li><strong>Autor&nbsp;</strong>&nbsp;  ${publicacion.autor}</li>
+						<%-- <li><strong>Autor&nbsp;</strong>&nbsp;  ${publicacion.autor}</li>--%>
 					</ul>					
 				</div>				
 				<div class="span10">
@@ -230,11 +230,11 @@
 						<c:if test="${publicacionRel.titulo ne publicacion.titulo }">	
 						<div class="span3">	
 							<div class="picture">
-								<a href="/blog/${publicacionRel.url}" rel="image" title="${publicacionRel.titulo}">
+								<a href="/blog/${publicacionRel.url}" title="${publicacionRel.titulo}">
 									<c:if test="${!empty publicacionRel.lImages }">
 									<img style="width: 270px;height: 180px;" src="${publicacionRel.lImages[0]}" alt="${publicacionRel.titulo}"/>
 									</c:if>
-									<div class="image-overlay-zoom"></div>
+									<div class="image-overlay-link"></div>
 								</a>
 							</div>
 							<div class="item-description">

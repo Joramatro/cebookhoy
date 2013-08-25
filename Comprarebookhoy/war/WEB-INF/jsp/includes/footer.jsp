@@ -64,7 +64,17 @@
 		
 		<!-- start: Container -->
 		<div class="container">
-			
+			<div style="margin-left:99px">
+				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- includes ch -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:970px;height:90px"
+				     data-ad-client="ca-pub-3168560600423825"
+				     data-ad-slot="2942822544"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>			
 			<!-- start: Row -->
 			<div class="row">
 
@@ -115,10 +125,10 @@
 								<div class="social-info-wrap">
 									<div class="social-info">
 										<div class="social-info-front social-facebook">
-											<a target="_blank" href="https://www.facebook.com/pages/Comprar-Ebook-Hoy/1409281269284939?fref=ts"></a>
+											<a target="_blank" href="https://www.facebook.com/comprarebookhoy"></a>
 										</div>
 										<div class="social-info-back social-facebook-hover">
-											<a target="_blank" href="https://www.facebook.com/pages/Comprar-Ebook-Hoy/1409281269284939?fref=ts"></a>
+											<a target="_blank" href="https://www.facebook.com/comprarebookhoy"></a>
 										</div>
 									</div>
 								</div>

@@ -55,7 +55,7 @@
 						<b>Comprar eBook Hoy</b>
 					</p>
 					<p>
-						Fitzwilliam Court, Winton Road
+						The Triangle, Ranelagh
 					</p>
 					<p>	
 						Dublin 6, Dublin, Irlanda
@@ -111,10 +111,10 @@
 				<!-- end: Contact Form -->
 
 				<!-- start: Social Sites -->
-				<div class="span5" style="padding-bottom: 12px;">
+				<div class="span5" style="padding-bottom: 12px;margin-bottom:100px">
 					<div class="title"><h3>Síguenos!</h3></div>
 					<ul class="social-bookmarks">
-						<li class="facebook"><a target="_blank" href="https://www.facebook.com/pages/Comprar-Ebook-Hoy/1409281269284939?fref=ts">facebook</a></li>
+						<li class="facebook"><a target="_blank" href="https://www.facebook.com/comprarebookhoy">facebook</a></li>
 						<li class="flickr"><a target="_blank" href="http://www.flickr.com/people/100459814@N05/">flickr</a></li>
 						<li class="googleplus"><a target="_blank" href="https://plus.google.com/108657243775074009859">googleplus</a></li>
 						<li class="linkedin"><a target="_blank" href="http://ie.linkedin.com/pub/jorge-amat-romero/2b/731/895">linkedin</a></li>

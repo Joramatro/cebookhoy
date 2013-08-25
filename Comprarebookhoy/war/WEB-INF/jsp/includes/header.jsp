@@ -89,12 +89,12 @@
 	</c:when>
 	<c:otherwise>
 		<title>Bienvenido a Comprar eBook Hoy</title> 
-		<meta name="description" content="Busca y encuentra tu eBook favorito, análisis de todos los lectores de eBooks y los mejores eReaders al mejor precio. Accede a la mejor información sobre eBooks"/>
+		<meta name="description" content="Busca y encuentra tu eBook preferido, análisis y recomendaciones de los mejores eReaders del mercado al mejor precio. Accede a la mejor información sobre los lectores de eBooks más vendidos"/>
 		<meta name="keywords" content="ebook, lector ebook, ereader, kindle, fundas ebook, ereaders mejor precio, kindle paperwhite, sony ebooks, mini ipad, woxter ebooks, wolter ebooks" />
 		<meta name="title" content="Lectores de eBooks en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
 		<!-- start: Facebook Open Graph -->
 		<meta property="og:title" content="Lectores de eBooks en Comprar eBooks Hoy"/>
-		<meta property="og:description" content="Busca y encuentra tu eBook favorito, análisis de todos los lectores de eBooks y los mejores eReaders al mejor precio. Accede a la mejor información sobre eBooks"/>
+		<meta property="og:description" content="Busca y encuentra tu eBook preferido, análisis y recomendaciones de los mejores eReaders del mercado al mejor precio. Accede a la mejor información sobre los lectores de eBooks más vendidos"/>
 		<meta property="og:type" content="principal"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com"/>
 		<meta property="og:image" content=""/>
@@ -167,7 +167,7 @@
 	                			<ul class="dropdown-menu">
 	                  				<li><a href="/ebooks/Kindle">Kindle 4</a></li>
 									<li><a href="/ebooks/Energy-Color-C7+-Touch">Energy Color C7+ Touch</a></li>
-									<li><a href="/blog/10-Razones-para-comprar-un-eReader-para-tus-hijos">Razones para comprar eReader a tus hijos</a></li>
+									<li><a href="/blog/7-Razones-para-comprar-un-eReader-para-tus-hijos">Razones para comprar eReader a tus hijos</a></li>
 	                			</ul>
 	              			</li>
 	              			<li id="menuExtras"><a href="/extras">Extras</a></li>
@@ -180,6 +180,17 @@
 	      	</div>
 			<!--end: Navbar -->
 			
+			<div style="margin-left:99px">
+				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- includes ch -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:970px;height:90px"
+				     data-ad-client="ca-pub-3168560600423825"
+				     data-ad-slot="2942822544"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
 		</div>
 		<!--end: Container-->			
 			
