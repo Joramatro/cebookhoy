@@ -111,7 +111,7 @@
 				<!-- end: Contact Form -->
 
 				<!-- start: Social Sites -->
-				<div class="span5" style="padding-bottom: 12px;margin-bottom:100px">
+				<div class="span5" style="padding-bottom: 12px;">
 					<div class="title"><h3>Síguenos!</h3></div>
 					<ul class="social-bookmarks">
 						<li class="facebook"><a target="_blank" href="https://www.facebook.com/comprarebookhoy">facebook</a></li>
@@ -123,19 +123,7 @@
 						<li class="youtube"><a target="_blank" href="http://www.youtube.com/channel/UCzRhBI19dHSSREeuSE3NBDA">youtube</a></li>
 					</ul>
 				</div>
-				<!-- end: Social Sites -->
-				<div>
-					<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-					<!-- rec mediano ch -->
-					<ins class="adsbygoogle"
-					     style="display:inline-block;width:300px;height:250px"
-					     data-ad-client="ca-pub-3168560600423825"
-					     data-ad-slot="6552423744"></ins>
-					<script>
-					(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
-				</div>
-			
+				<!-- end: Social Sites -->							
 			</div>
 			<!-- end: Row -->
 

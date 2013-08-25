@@ -75,7 +75,7 @@
 				<div class="span10">
 					${publicacion.articulo}
 					<br>
-					<br><a href="${publicacion.script}" class="button color launch">Cómpralo Aquí</a>
+					<br><a href="/venta/${publicacion.url}" class="button color launch">Cómpralo Hoy</a>
 					<img src="${publicacion.script2}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 					<br>
 					<!-- AddThis Button BEGIN -->
