@@ -50,14 +50,14 @@
 				<c:forEach var="publicacion" items="${publicaciones}" varStatus="status" >				
 				<div class="span4 portfolio-item ${publicacion.clase1} ${publicacion.clase2}">
 					<div class="picture">
-					<a href="${publicacion.script}">
+					<a href="/venta/extra/${publicacion.url}">
 					<c:if test="${!empty publicacion.lImages }">
 					<img src="${publicacion.lImages[0]}" alt="${publicacion.titulo}"/>
 					</c:if>
 					
 					<div class="image-overlay-link"></div></a>
 						<div class="item-description alt">
-							<h5><a href="${publicacion.script}">${publicacion.titulo}</a>
+							<h5><a href="/venta/extra/${publicacion.url}">${publicacion.titulo}</a>
 							<p>
 								${fn:replace(publicacion.resumen, newLineChar, "<p/><p>")}
 							</p>
@@ -65,24 +65,27 @@
 						<div class="post-meta"><span><i class="mini-ico-calendar"></i><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span><span style=""></div>
 					</div>	
 				</div>
-				<img src="${publicacion.script2}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 				</c:forEach>
 			</div>
 			<!-- end: articulo -->
 			
 			<div class="clear" style="padding-top: 25px;"></div>
-			<div class="span3" style="float: right;">		
+			
+			<%@ include file="/WEB-INF/jsp/includes/masleidos.jsp"%>	
+			
+			<div class="span3" style="float: right;margin-top: -265px;margin-right: -20px;">		
 				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- rec mediano ch -->
+				<!-- cuadrado ch -->
 				<ins class="adsbygoogle"
-				     style="display:inline-block;width:300px;height:250px"
+				     style="display:inline-block;width:250px;height:250px"
 				     data-ad-client="ca-pub-3168560600423825"
-				     data-ad-slot="6552423744"></ins>
+				     data-ad-slot="3926701345"></ins>
 				<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
 			</div>
 			
+			<%@ include file="/WEB-INF/jsp/includes/carrusel.jsp"%>
       	
 		</div>
 		<!--end: Container-->

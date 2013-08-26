@@ -75,6 +75,8 @@ public class LoginAspect {
 	    request.setAttribute("logout", "true");
 	    pvs.doGet(request, response);
 	    response.sendRedirect("/editar");
+	    response.flushBuffer();
+	    response.reset();
 	}
 
     }

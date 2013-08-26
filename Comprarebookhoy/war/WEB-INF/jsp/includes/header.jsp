@@ -65,10 +65,10 @@
 		<title>Listado de eBooks en Comprar eBook Hoy</title> 
 		<meta name="description" content="Análisis y revisiones de los mejores lectores de eBooks en la actualidad en Comprar eBook Hoy"/>
 		<meta name="keywords" content="análisis lectores ebooks, revisiones lectores ebooks, los mejores lectores de ebooks, análisis kindle, revisión kindle, análisis tablet, lectores de ebook" />
-		<meta name="title" content="Listado de eBooks en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="title" content="Análisis de eBooks en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
 		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="Listado de eBooks en Comprar eBooks Hoy"/>
-		<meta property="og:description" content="Análisis y revisiones de eBooks en Comprar eBooks Hoy"/>
+		<meta property="og:title" content="Análisis de eBooks en Comprar eBooks Hoy"/>
+		<meta property="og:description" content="Análisis y revisiones de los mejores lectores de eBooks en la actualidad en Comprar eBook Hoy"/>
 		<meta property="og:type" content="ebook"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/ebooks"/>
 		<meta property="og:image" content=""/>
@@ -76,12 +76,12 @@
 	</c:when>
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'articulos')}">
 		<title>Artículos sobre eBooks en Comprar eBook Hoy</title> 
-		<meta name="description" content="Análisis y artículos de los mejores lectores de eBooks en la actualidad en Comprar eBook Hoy"/>
-		<meta name="keywords" content="análisis lectores ebooks, artículos lectores ebooks, los mejores lectores de ebooks, artículos kindle, blog, análisis tablet, artículos de lectores de ebook" />
-		<meta name="title" content="Artículos sobre eBooks en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="description" content="Opinión y artículos de los mejores lectores de eBooks en la actualidad en Comprar eBook Hoy"/>
+		<meta name="keywords" content="opinion lectores ebooks, artículos lectores ebooks, los mejores lectores de ebooks, artículos kindle, blog, análisis tablet, artículos de lectores de ebook" />
+		<meta name="title" content="Opinión sobre eBooks en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
 		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="Artículos sobre eBooks en Comprar eBooks Hoy"/>
-		<meta property="og:description" content="Análisis y artículos sobre eBooks en Comprar eBooks Hoy"/>
+		<meta property="og:title" content="Opinión sobre eBooks en Comprar eBooks Hoy"/>
+		<meta property="og:description" content="Opinión y artículos sobre eBooks en Comprar eBooks Hoy"/>
 		<meta property="og:type" content="articulo"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/blog"/>
 		<meta property="og:image" content=""/>

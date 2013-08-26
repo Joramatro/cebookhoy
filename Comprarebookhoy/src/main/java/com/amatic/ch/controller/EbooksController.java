@@ -70,10 +70,20 @@ public class EbooksController {
 	List<Publicacion> publicaciones = publicacionService
 		.getUltimasPublicaciones(WebConstants.SessionConstants.EBOOK);
 
+	List<Publicacion> publicacionesMVE = publicacionService
+		.getPublicacionesMasVistas(WebConstants.SessionConstants.EBOOK);
+
+	List<Publicacion> publicacionesMVA = publicacionService
+		.getPublicacionesMasVistas(WebConstants.SessionConstants.ARTICULO);
+
 	List<Comentario> comentarios = comentarioService
 		.getUltimosComentarios();
 
 	model.addAttribute("comentarios", comentarios);
+
+	model.addAttribute("publicacionesMVE", publicacionesMVE);
+
+	model.addAttribute("publicacionesMVA", publicacionesMVA);
 
 	model.addAttribute("publicaciones", publicaciones);
 
@@ -113,6 +123,7 @@ public class EbooksController {
 	nuevoComentario.setWeb(web);
 	nuevoComentario.setGravatar(OtherController.getGravatar80pxUrl(email));
 	nuevoComentario.setIpAddress(OtherController.getClienAddress(request));
+	nuevoComentario.setPublicacion(publicacion);
 
 	Key<Comentario> keyNuevoComentario = comentarioService
 		.crearComentario(nuevoComentario);
@@ -145,6 +156,21 @@ public class EbooksController {
 		categorias.add(publicacion.getClase2());
 	    }
 	}
+
+	List<Publicacion> publicacionesMVE = publicacionService
+		.getPublicacionesMasVistas(WebConstants.SessionConstants.EBOOK);
+
+	List<Publicacion> publicacionesMVA = publicacionService
+		.getPublicacionesMasVistas(WebConstants.SessionConstants.ARTICULO);
+
+	List<Comentario> comentarios = comentarioService
+		.getUltimosComentarios();
+
+	model.addAttribute("comentarios", comentarios);
+
+	model.addAttribute("publicacionesMVE", publicacionesMVE);
+
+	model.addAttribute("publicacionesMVA", publicacionesMVA);
 
 	model.addAttribute("categorias", categorias);
 	model.addAttribute("publicaciones", publicaciones);

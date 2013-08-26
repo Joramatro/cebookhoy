@@ -142,7 +142,7 @@ Script2: <input type="text" id="script2" name="script2" size="100" maxlength="20
         <h1>Configuracion fotos publicacion</h1>
     </div>
     <blockquote>
-        <p>Sube 4 fotos a la publicacion</p>
+        <p>Sube fotos a la publicacion</p>
     </blockquote>
     <br>
     <!-- The file upload form used as target for the file upload widget -->

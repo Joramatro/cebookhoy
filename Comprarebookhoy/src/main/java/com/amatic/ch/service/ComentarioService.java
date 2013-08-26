@@ -23,4 +23,8 @@ public class ComentarioService {
 	return this.comentarioDao.getUltimosComentarios();
     }
 
+    public void update(Comentario comentario) {
+	this.comentarioDao.update(comentario);
+    }
+
 }

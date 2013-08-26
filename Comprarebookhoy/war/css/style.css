@@ -26,7 +26,7 @@ html { -webkit-font-smoothing: antialiased; }
 
 body {
 	font-family: 'Droid Sans';
-	font-size: 12px;
+	font-size: 13px;
 	color: #666;
 }
 
@@ -116,7 +116,7 @@ hr {
 	
 header {
 	background: #fff;
-	border-bottom: 5px solid #f6f6f6;
+	/*border-bottom: 5px solid #f6f6f6;*/
 }
 
 .brand  {
@@ -532,7 +532,7 @@ html[xmlns] .slides {display: block;}
 =================================================================== */
 .slide-caption {
 	width: auto;
-	max-width: 60%;
+	max-width: 49%;
 	padding: 10px 20px;
 	margin: 0 0 0px 0px;
 	position: absolute;

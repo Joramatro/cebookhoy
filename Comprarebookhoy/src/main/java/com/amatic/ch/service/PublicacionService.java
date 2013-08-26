@@ -44,4 +44,8 @@ public class PublicacionService {
 	this.PublicacionDao.saveContacto(contacto);
     }
 
+    public List<Publicacion> getPublicacionesMasVistas(String tipo) {
+	return this.PublicacionDao.getPublicacionesMasVistas(tipo);
+    }
+
 }

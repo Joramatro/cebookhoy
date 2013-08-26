@@ -3,6 +3,7 @@ package com.amatic.ch.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.googlecode.objectify.annotation.Embed;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
@@ -33,6 +34,8 @@ public class Comentario implements Serializable {
     private String ipAddress;
     @Index
     private String gravatar;
+    @Embed
+    private Publicacion publicacion;
 
     public String getWeb() {
 	return web;
@@ -104,6 +107,14 @@ public class Comentario implements Serializable {
 
     public void setGravatar(String gravatar) {
 	this.gravatar = gravatar;
+    }
+
+    public Publicacion getPublicacion() {
+	return publicacion;
+    }
+
+    public void setPublicacion(Publicacion publicacion) {
+	this.publicacion = publicacion;
     }
 
 }

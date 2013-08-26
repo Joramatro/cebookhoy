@@ -70,10 +70,20 @@ public class BlogController {
 	List<Publicacion> publicaciones = publicacionService
 		.getUltimasPublicaciones(WebConstants.SessionConstants.ARTICULO);
 
+	List<Publicacion> publicacionesMVE = publicacionService
+		.getPublicacionesMasVistas(WebConstants.SessionConstants.EBOOK);
+
+	List<Publicacion> publicacionesMVA = publicacionService
+		.getPublicacionesMasVistas(WebConstants.SessionConstants.ARTICULO);
+
 	List<Comentario> comentarios = comentarioService
 		.getUltimosComentarios();
 
 	model.addAttribute("comentarios", comentarios);
+
+	model.addAttribute("publicacionesMVE", publicacionesMVE);
+
+	model.addAttribute("publicacionesMVA", publicacionesMVA);
 
 	model.addAttribute("publicaciones", publicaciones);
 
@@ -145,6 +155,21 @@ public class BlogController {
 		categorias.add(publicacion.getClase2());
 	    }
 	}
+
+	List<Publicacion> publicacionesMVE = publicacionService
+		.getPublicacionesMasVistas(WebConstants.SessionConstants.EBOOK);
+
+	List<Publicacion> publicacionesMVA = publicacionService
+		.getPublicacionesMasVistas(WebConstants.SessionConstants.ARTICULO);
+
+	List<Comentario> comentarios = comentarioService
+		.getUltimosComentarios();
+
+	model.addAttribute("comentarios", comentarios);
+
+	model.addAttribute("publicacionesMVE", publicacionesMVE);
+
+	model.addAttribute("publicacionesMVA", publicacionesMVA);
 
 	model.addAttribute("categorias", categorias);
 	model.addAttribute("publicaciones", publicaciones);

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.amatic.ch.constants.WebConstants;
+import com.amatic.ch.dto.Comentario;
 import com.amatic.ch.dto.Publicacion;
 import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
@@ -59,6 +60,21 @@ public class ExtrasController {
 		categorias.add(publicacion.getClase2());
 	    }
 	}
+
+	List<Publicacion> publicacionesMVE = publicacionService
+		.getPublicacionesMasVistas(WebConstants.SessionConstants.EBOOK);
+
+	List<Publicacion> publicacionesMVA = publicacionService
+		.getPublicacionesMasVistas(WebConstants.SessionConstants.ARTICULO);
+
+	List<Comentario> comentarios = comentarioService
+		.getUltimosComentarios();
+
+	model.addAttribute("comentarios", comentarios);
+
+	model.addAttribute("publicacionesMVE", publicacionesMVE);
+
+	model.addAttribute("publicacionesMVA", publicacionesMVA);
 
 	model.addAttribute("categorias", categorias);
 

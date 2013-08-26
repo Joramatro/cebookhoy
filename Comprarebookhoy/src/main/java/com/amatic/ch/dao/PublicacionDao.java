@@ -22,4 +22,6 @@ public interface PublicacionDao {
 
     void saveContacto(Contacto contacto);
 
+    public List<Publicacion> getPublicacionesMasVistas(String tipo);
+
 }

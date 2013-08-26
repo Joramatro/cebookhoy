@@ -36,7 +36,7 @@
 			<!-- start: Flexslider -->
 			<div style="width: 550px;height: 435px; margin: 0 auto;" class="slider" >
 				<div id="flex1" class="flexslider home">
-					<a target="_blank" href="${publicacion.script}">
+					<a target="_blank" href="/venta/principal/${publicacion.url}">
 					<ul class="slides">
 						<c:forEach var="imagen" items="${publicacion.lImages}" varStatus="status" end="${fn:length(publicacion.lImages)}">
 						<li>
@@ -48,7 +48,6 @@
 						</c:forEach>
 					</ul>
 					</a>
-					<img src="${publicacion.script2}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 				</div>
 			</div>
 			<!-- end: Flexslider -->
@@ -64,19 +63,17 @@
 						<li><strong>Número visitas&nbsp;</strong>&nbsp;  ${publicacion.numVisitas}</li>
 						<c:if test="${publicacion.sumaPuntos gt 0 }">
 							<li><strong>Puntos&nbsp;</strong>&nbsp; 
-							<a target="_blank" href="${publicacion.script}"><b>${publicacion.sumaPuntos}</b></a>
-							<img src="${publicacion.script2}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-							&nbsp;&nbsp;(de ${publicacion.numComentarios} votantes)</li> 
+							<a href="#comments"><b>${publicacion.sumaPuntos}</b></a>
+							&nbsp;&nbsp;(de ${publicacion.votantes} votantes)</li> 
 						</c:if>
 						<li><strong>Fecha&nbsp;</strong>&nbsp; <fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></li>
-						<%-- <li><strong>Autor&nbsp;</strong>&nbsp;  ${publicacion.autor}</li>--%>
+						<li><strong>Autor&nbsp;</strong>&nbsp;  ${publicacion.autor}</li>
 					</ul>					
 				</div>				
 				<div class="span10">
 					${publicacion.articulo}
 					<br>
-					<br><a href="/venta/${publicacion.url}" class="button color launch">Cómpralo Hoy</a>
-					<img src="${publicacion.script2}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+					<br><a href="/venta/principal/${publicacion.url}" class="button color launch">Cómpralo Hoy</a>					
 					<br>
 					<!-- AddThis Button BEGIN -->
 					<div class="addthis_toolbox addthis_default_style ">
@@ -88,17 +85,93 @@
 					<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
 					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-509ce3d140135566"></script>
 					<!-- AddThis Button END -->
+					<br><br>
+					<p style="font-style: italic;">Por favor, no dudes en puntuar y comentar tu opinión ó aportar más detalles en la sección de <a href="#comments">comentarios</a></p>
 				</div>	
 				
 			</div>
 			<!-- end: Row -->
 			
 			
-			<hr>
+			<hr><hr>
+			
+				<!-- start: Row -->
+      		<div class="row">
+	
+				<div class="span9">
+					
+					<div class="title"><h3>También te puede interesar...</h3></div>
+					
+					<!-- start: Row -->
+		      		<div class="row">
+						<c:forEach var="publicacionRel" items="${publicaciones}" varStatus="status" end="5">
+						<c:if test="${publicacionRel.titulo ne publicacion.titulo }">	
+						<div class="span3">	
+							<div class="picture">
+								<a href="/ebooks/${publicacionRel.url}" title="${publicacionRel.titulo}">
+									<c:if test="${!empty publicacionRel.lImages }">
+									<img style="width: 270px;height: 180px;" src="${publicacionRel.lImages[0]}" alt="${publicacionRel.titulo}"/>
+									</c:if>
+									<div class="image-overlay-link"></div>
+								</a>
+							</div>
+							<div class="item-description">
+								<h4><a href="/ebooks/${publicacionRel.url}">${publicacionRel.titulo}</a></h4>
+								<p>
+									${fn:replace(publicacionRel.descripcion, newLineChar, "<p/><p>")}
+								</p>
+							</div>					
+        				</div>
+        				</c:if>
+        				</c:forEach>					
+					</div>
+				</div>
+				<div class="span3">
+					
+					<!-- start: Testimonials-->
+
+					<div class="testimonial-container">
+
+						<div class="title"><h3>Últimos Comentarios</h3></div>
+
+							<div class="testimonials-carousel" data-autorotate="3000">
+
+								<ul class="carousel">
+									<c:forEach var="comentario" items="${comentarios}" varStatus="status" >	
+									<li class="testimonial">
+										<div class="testimonials">${fn:substring(comentario.comentario, 0, 400)}
+										<c:if test="${fn:length(comentario.comentario)>400}">
+										...
+										</c:if>
+										</div>
+										<div class="testimonials-bg"></div>
+										<c:choose>
+										<c:when test="${comentario.publicacion.tipo eq 'EB' }">
+											<div class="testimonials-author">${comentario.nombre}, en <a href="/ebooks/${comentario.publicacion.url }">${comentario.publicacion.titulo}</a></div>
+										</c:when>	
+										<c:otherwise>
+											<div class="testimonials-author">${comentario.nombre}, en <a href="/blog/${comentario.publicacion.url }">${comentario.publicacion.titulo}</a></div>
+										</c:otherwise>
+										</c:choose>
+									</li>
+									</c:forEach>
+								</ul>
+
+							</div>
+
+						</div>
+
+					<!-- end: Testimonials-->
+					
+        		</div>
+			</div>
+			
+			<hr><hr>
+			
+		<%@ include file="/WEB-INF/jsp/includes/masleidos.jsp"%>
 			
 			
-			
-	<div class="row">			
+		<div class="row" style="margin-top: 35px;">			
 		<div class="span9">
 		<!-- start: Comments -->
 					<h4>Comentarios <span class="comments-amount">(${fn:length(publicacion.lComentarios)})</span></h4>
@@ -147,7 +220,7 @@
 					<div class="form-spacer"></div>
 					
 					<!-- Form -->
-					<div id="contact-form">
+					<div id="conmments-form">
 						<form action="/ebooks/${publicacion.url}/nuevoComentario" id="formComment" method="post">
 							
 							<div class="field">
@@ -225,71 +298,18 @@
 						</c:forEach>
 						</div>
 					</div>--%>
-					
-			<!-- start: Row -->
-      		<div class="row">
-	
-				<div class="span9">
-					
-					<div class="title"><h3>También te puede interesar...</h3></div>
-					
-					<!-- start: Row -->
-		      		<div class="row">
-						<c:forEach var="publicacionRel" items="${publicaciones}" varStatus="status" end="6">
-						<c:if test="${publicacionRel.titulo ne publicacion.titulo }">	
-						<div class="span3">	
-							<div class="picture">
-								<a href="/ebooks/${publicacionRel.url}" title="${publicacionRel.titulo}">
-									<c:if test="${!empty publicacionRel.lImages }">
-									<img style="width: 270px;height: 180px;" src="${publicacionRel.lImages[0]}" alt="${publicacionRel.titulo}"/>
-									</c:if>
-									<div class="image-overlay-link"></div>
-								</a>
-							</div>
-							<div class="item-description">
-								<h4><a href="/ebooks/${publicacionRel.url}">${publicacionRel.titulo}</a></h4>
-								<p>
-									${fn:replace(publicacionRel.descripcion, newLineChar, "<p/><p>")}
-								</p>
-							</div>					
-        				</div>
-        				</c:if>
-        				</c:forEach>					
-					</div>
-				</div>
-				<div class="span3">
-					
-					<!-- start: Testimonials-->
-
-					<div class="testimonial-container">
-
-						<div class="title"><h3>Últimos Comentarios</h3></div>
-
-							<div class="testimonials-carousel" data-autorotate="3000">
-
-								<ul class="carousel">
-									<c:forEach var="comentario" items="${comentarios}" varStatus="status" >	
-									<li class="testimonial">
-										<div class="testimonials">${fn:substring(comentario.comentario, 0, 400)}
-										<c:if test="${fn:length(comentario.comentario)>400}">
-										...
-										</c:if>
-										</div>
-										<div class="testimonials-bg"></div>
-										<div class="testimonials-author">${comentario.nombre}</div>
-									</li>
-									</c:forEach>
-								</ul>
-
-							</div>
-
-						</div>
-
-					<!-- end: Testimonials-->
-					
-        		</div>
+			
+			
+			<div style="position: absolute;top: 1000px;left: 55px;">
+				<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=14&l=ur1&category=kindle&banner=1XW3YZKJD421WHFJ1Q02&f=ifr" width="160" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 			</div>
-									
+			
+			<div style="position: absolute;top: 289px;right: 260px;">
+			<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=20&l=ur1&category=kindlestore&banner=0J2HENEFERESCPS25YR2&f=ifr" width="120" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+			</div>
+				
+				
+			<%@ include file="/WEB-INF/jsp/includes/carrusel.jsp"%>					
 		</div>
 		<!-- end: Container  -->
 	

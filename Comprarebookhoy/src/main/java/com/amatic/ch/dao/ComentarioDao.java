@@ -11,4 +11,6 @@ public interface ComentarioDao {
 
     public List<Comentario> getUltimosComentarios();
 
+    void update(Comentario comentario);
+
 }

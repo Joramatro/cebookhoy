@@ -20,6 +20,7 @@ import com.amatic.ch.constants.WebConstants;
 import com.amatic.ch.dto.Comentario;
 import com.amatic.ch.dto.Publicacion;
 import com.amatic.ch.dto.User;
+import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
 import com.amatic.ch.service.UserService;
 import com.amatic.ch.utils.ChannelUtils;
@@ -37,6 +38,9 @@ public class EditionController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private ComentarioService comentarioService;
 
     @RequestMapping(value = { "/edicion/nuevo" }, method = { RequestMethod.GET,
 	    RequestMethod.POST })
@@ -99,14 +103,16 @@ public class EditionController {
 	    articulo = articulo.replaceAll("\n", "</p><p>");
 	    articulo = articulo.concat("</p>");
 
-	    articulo = articulo
-		    .replaceAll("<a>", "<a href=\"" + script + "\">");
-	    articulo = articulo
-		    .replaceAll(
-			    "</a>",
-			    "</a><img src=\""
-				    + script2
-				    + "\" width=\"1\" height=\"1\" border=\"0\" alt=\"\" style=\"border:none !important; margin:0px !important;\" />");
+	    articulo = articulo.replaceAll("<a>", "<a href=\"/venta/principal/"
+		    + publicacion.getUrl() + "\">");
+	    i = 1;
+	    while (articulo.contains("**")) {
+		if (i % 2 != 0) {
+		    articulo = articulo.replaceFirst("**", "<b>");
+		} else {
+		    articulo = articulo.replaceFirst("**", "<\b>");
+		}
+	    }
 
 	    publicacion.setArticulo(articulo);
 	    publicacion.setKeywords(keywords);
@@ -206,6 +212,35 @@ public class EditionController {
 	List<Ref<Comentario>> lComentarios = publicacion.getlComentarios();
 	lComentarios.remove(1);
 	publicacionService.update(publicacion);
+    }
+
+    @RequestMapping(value = { "/edicion/actualizarComentarios" }, method = {
+	    RequestMethod.GET, RequestMethod.POST })
+    public void getActualizar(ModelMap model, HttpServletRequest request,
+	    HttpServletResponse response) throws IOException {
+	HttpSession session = request.getSession();
+
+	List<Publicacion> publicaciones = publicacionService
+		.getPublicaciones(WebConstants.SessionConstants.EBOOK);
+
+	for (Publicacion publicacion : publicaciones) {
+	    List<Comentario> comentarios = publicacion.getComentariosDeref();
+	    for (Comentario comentario : comentarios) {
+		comentario.setPublicacion(publicacion);
+		comentarioService.update(comentario);
+	    }
+	}
+
+	List<Publicacion> publicacionesblog = publicacionService
+		.getPublicaciones(WebConstants.SessionConstants.EBOOK);
+
+	for (Publicacion publicacion : publicacionesblog) {
+	    List<Comentario> comentarios = publicacion.getComentariosDeref();
+	    for (Comentario comentario : comentarios) {
+		comentario.setPublicacion(publicacion);
+		comentarioService.update(comentario);
+	    }
+	}
     }
 
 }

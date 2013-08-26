@@ -33,4 +33,15 @@ public class ComentarioDaoImpl implements ComentarioDao {
 	return ultimosComentarios;
     }
 
+    @Override
+    public void update(Comentario comentario) {
+	Comentario comentarioUpd = ofy().load().type(Comentario.class)
+		.id(comentario.getId()).safeGet();
+
+	comentarioUpd.setPublicacion(comentario.getPublicacion());
+
+	ofy().save().entity(comentarioUpd);
+
+    }
+
 }

@@ -70,23 +70,27 @@
 			<!-- end: ebooks -->
 			
 			<div class="clear" style="padding-top: 25px;"></div>
-			<div class="span3" style="float: right;">				
+			
+			<%@ include file="/WEB-INF/jsp/includes/masleidos.jsp"%>
+			
+			<div class="span3" style="float: right;margin-top: -265px;margin-right: -20px;">				
 				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- rec mediano ch -->
+				<!-- cuadrado ch -->
 				<ins class="adsbygoogle"
-				     style="display:inline-block;width:300px;height:250px"
+				     style="display:inline-block;width:250px;height:250px"
 				     data-ad-client="ca-pub-3168560600423825"
-				     data-ad-slot="6552423744"></ins>
+				     data-ad-slot="3926701345"></ins>
 				<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>					
-       		</div>      	
+       		</div>
+       		<%@ include file="/WEB-INF/jsp/includes/carrusel.jsp"%>      	
 		</div>
-		<!--end: Container-->
-				
+		
 	</div>
 	<!-- end: Wrapper  -->
-	
+		<!--end: Container-->
+			
 <%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
 
 </body>

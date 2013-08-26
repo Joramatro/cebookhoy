@@ -221,6 +221,17 @@ public class Publicacion implements Serializable {
 	return sumaPuntos;
     }
 
+    public int getVotantes() {
+	List<Comentario> lComentarios = this.getComentariosDeref();
+	int votantes = 0;
+	for (Comentario comentario : lComentarios) {
+	    if (comentario.getPuntos() > 0) {
+		votantes++;
+	    }
+	}
+	return votantes;
+    }
+
     public int getNumComentarios() {
 	return lComentarios.size();
     }

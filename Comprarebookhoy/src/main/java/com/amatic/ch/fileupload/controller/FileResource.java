@@ -116,15 +116,13 @@ public class FileResource {
 	    articulo = articulo
 		    .replaceAll(
 			    "<img>",
-			    "<br><a target=\"_blank\" href=\""
-				    + publicacion.getScript()
+			    "<br><a target=\"_blank\" href=\"/venta/principal/"
+				    + publicacion.getTitulo()
 				    + "\"><img src=\""
 				    + url
 				    + "\" title=\""
 				    + publicacion.getTitulo()
-				    + "\" style=\"width:300px; height:250px; margin-left: 28%;\"/></a><img src=\""
-				    + publicacion.getScript2()
-				    + "\" width=\"1\" height=\"1\" border=\"0\" alt=\"\" style=\"border:none !important; margin:0px !important;\" /><br> ");
+				    + "\" style=\"width:300px; height:250px; margin-left: 28%;\"/></a><br> ");
 	    publicacion.setArticulo(articulo);
 	}
 	publicacionService.update(publicacion);

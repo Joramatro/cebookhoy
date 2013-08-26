@@ -54,6 +54,15 @@ public class PublicacionDaoImpl implements PublicacionDao {
     }
 
     @Override
+    public List<Publicacion> getPublicacionesMasVistas(String tipo) {
+
+	List<Publicacion> publicaciones = ofy().load().type(Publicacion.class)
+		.filter("tipo", tipo).order("-numVisitas").list();
+
+	return publicaciones;
+    }
+
+    @Override
     public void update(Publicacion publicacion) {
 	Publicacion publicacionUpd = ofy().load().type(Publicacion.class)
 		.id(publicacion.getId()).safeGet();
