@@ -146,7 +146,17 @@
 		
 		<!--start: Container -->
 		<div class="container">
-			
+			<%-- <div>
+				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- includes ch -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:970px;height:90px"
+				     data-ad-client="ca-pub-3168560600423825"
+				     data-ad-slot="2942822544"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>--%>
 			<!--start: Navbar -->
 			<div class="navbar navbar-inverse">
 	    		<div class="navbar-inner">
@@ -179,18 +189,7 @@
 	        	</div>
 	      	</div>
 			<!--end: Navbar -->
-			
-			<div style="margin-left:99px">
-				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- includes ch -->
-				<ins class="adsbygoogle"
-				     style="display:inline-block;width:970px;height:90px"
-				     data-ad-client="ca-pub-3168560600423825"
-				     data-ad-slot="2942822544"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-			</div>
+						
 		</div>
 		<!--end: Container-->			
 			

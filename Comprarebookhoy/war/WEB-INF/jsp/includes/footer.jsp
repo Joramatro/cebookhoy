@@ -44,7 +44,7 @@
 				<div class="span1">
 						
 					<div id="footer-menu-back-to-top">
-						<a href="index.html#"></a>
+						<a href="/"></a>
 					</div>
 				
 				</div>
@@ -76,7 +76,7 @@
 				</script>
 			</div>			
 			<!-- start: Row -->
-			<div class="row">
+			<div class="row" style="margin-top: 20px;">
 
 				<!-- start: About -->
 				<div class="span3">

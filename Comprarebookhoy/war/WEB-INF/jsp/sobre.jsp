@@ -66,7 +66,7 @@
 							<span class="dropcap dark">3</span>Nosotros venimos de una formación relacionada con la tecnología, y tras más de 6 años trabajando para distintas empresas TIC privadas y estudiando nuevos gadgets tecnológicos en nuestro tiempo libre, reunimos aquí todos nuestros conocimientos para intentar crear la mejor web de habla hispana sobre eBooks y productos relacionados. Nuestro objetivo es ser honestos y aportar valor a nuestros lectores. 
 						</p>
 						<p>
-							Reciéntemente hemos fundado nuestra propia empresa, dónde pretendemos ofrecer la mejor información y los mejores análisis para conseguir que aciertes con la compra del producto que buscas. Estamos aquí para ayudarte y que decidas con la mejor opinión creada posible, <a href="/contacto">contacta</a> con nosotros cuando así lo requieras.
+							Reciéntemente hemos iniciado nuestra propia empresa, dónde pretendemos ofrecer la mejor información y los mejores análisis para conseguir que aciertes con la compra del producto que buscas. Estamos aquí para ayudarte y que decidas con la mejor opinión creada posible, <a href="/contacto">contacta</a> con nosotros cuando así lo requieras.
 						</p>
 					</div>	
 					<!-- end: History -->

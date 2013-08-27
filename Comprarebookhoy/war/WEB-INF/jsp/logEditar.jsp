@@ -149,7 +149,7 @@
 				<div class="span1">
 						
 					<div id="footer-menu-back-to-top">
-						<a href="index.html#"></a>
+						<a href="/"></a>
 					</div>
 				
 				</div>

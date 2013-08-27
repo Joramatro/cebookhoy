@@ -73,8 +73,6 @@
 					<!-- start: Contact Form -->
 					<div id="contact-form">
 
-						<form method="post" action="contact.html">
-
 							<fieldset>
 								<div class="clearfix">
 									<label for="name"><span>Nombre:</span></label>
@@ -101,8 +99,6 @@
 									<button tabindex="3" id="btnContact" type="button" class="btn btn-succes btn-large">Enviar Mensaje</button>
 								</div>
 							</fieldset>
-
-						</form>
 
 					</div>
 					<!-- end: Contact Form -->

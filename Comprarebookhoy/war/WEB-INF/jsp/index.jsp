@@ -121,10 +121,11 @@
 			</div>
 		
 		<hr>			
-		<div class="title"><h3>Últimas Publicaciones</h3></div>
+			<%@ include file="/WEB-INF/jsp/includes/masleidos.jsp"%>
 			
+		<hr>	
+		<div class="title"><h3>Últimas Publicaciones</h3></div>			
     	<div class="container">
-	
 			<!-- start: Portfolio -->
 			<div id="portfolio-wrapper" class="row">
 				<% pageContext.setAttribute("newLineChar", "\n"); %>
@@ -167,12 +168,12 @@
 				</div>
 				</c:forEach>				
 			</div>
-			<!-- end: Portfolio -->
-      	
+			<!-- end: Portfolio -->     	
 		</div>
 		<!--end: Container-->
-		<hr>
-			<%@ include file="/WEB-INF/jsp/includes/masleidos.jsp"%>			
+		<hr>			
+			
+						
 			<%@ include file="/WEB-INF/jsp/includes/carrusel.jsp"%>
 			
 		</div>

@@ -304,7 +304,7 @@
 				<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=14&l=ur1&category=kindle&banner=1XW3YZKJD421WHFJ1Q02&f=ifr" width="160" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 			</div>
 			
-			<div style="position: absolute;top: 289px;right: 260px;">
+			<div style="position: absolute;top: 198px;right: 260px;">
 			<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=20&l=ur1&category=kindlestore&banner=0J2HENEFERESCPS25YR2&f=ifr" width="120" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 			</div>
 				

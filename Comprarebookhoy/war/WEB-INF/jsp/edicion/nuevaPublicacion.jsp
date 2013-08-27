@@ -336,7 +336,7 @@ Script2: <input type="text" id="script2" name="script2" size="100" maxlength="20
 				<div class="span1">
 						
 					<div id="footer-menu-back-to-top">
-						<a href="index.html#"></a>
+						<a href="#"></a>
 					</div>
 				
 				</div>
