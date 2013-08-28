@@ -114,4 +114,7 @@ $(function(){
 	    });
 });
 
+function replyComment(nbrComment){
+	$("#nbrComment").val(nbrComment);
+}
 

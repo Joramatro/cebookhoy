@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -156,6 +157,31 @@ public class EditionController {
 	    NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
 
+	Publicacion publicacion = publicacionService.getPublicacion(titulo,
+		tipo);
+	session.setAttribute("publicacion", publicacion);
+
+	model.addAttribute("publicacion", publicacion);
+
+	return "edicion/editarPublicacion";
+
+    }
+
+    @RequestMapping(value = { "/{tipoedit}/{titulo}/editar" }, method = {
+	    RequestMethod.GET, RequestMethod.POST })
+    public String editarPublicacion(ModelMap model,
+	    @PathVariable("titulo") String titulo,
+	    @PathVariable("tipoedit") String tipoedit,
+	    HttpServletRequest request, HttpServletResponse response)
+	    throws IOException, NoSuchAlgorithmException {
+	HttpSession session = request.getSession();
+	String tipo = "";
+	if (tipoedit.equals(WebConstants.SessionConstants.tipo1)) {
+	    tipo = WebConstants.SessionConstants.EBOOK;
+
+	} else if (tipoedit.equals(WebConstants.SessionConstants.tipo2)) {
+	    tipo = WebConstants.SessionConstants.ARTICULO;
+	}
 	Publicacion publicacion = publicacionService.getPublicacion(titulo,
 		tipo);
 	session.setAttribute("publicacion", publicacion);

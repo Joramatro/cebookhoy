@@ -36,7 +36,11 @@
 	
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver" p:order="1" />
 	
-	
+		<!-- Map returned view name "rssViewer" to bean id "rssViewer" -->
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="0" />
+	</bean>
+	<bean id="rssViewer" class="com.amatic.ch.rss.CustomRssViewer" />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
@@ -45,6 +49,7 @@
 		<property name="suffix">
 			<value>.jsp</value>
 		</property>
+		<property name="order" value="1" />
 	</bean>
 	
 	<bean id="jsonMessageConverter"
@@ -129,6 +134,6 @@
 	      </property>
 	    </bean>
 	  </property>
-	</bean>
+	</bean>	
 	
 </beans>

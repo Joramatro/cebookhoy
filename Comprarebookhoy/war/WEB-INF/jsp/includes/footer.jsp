@@ -193,7 +193,9 @@
 		<div class="container">
 		
 			<div class="span12">
+			
 				<p>
+				<a style="margin-right: 25px;" href="http://www.comprarebookhoy.com/rssfeed" accesskey="r"><img src="/img/rss.gif" alt="RSS"/>RSS</a>
 					&copy; 2013, <a href="/">Comprar eBook Hoy</a><i style="margin-top: -18px;" class="ico-color ico-sun"></i>
 				</p>
 			</div>

@@ -192,6 +192,7 @@
 									</c:choose>
 									</div>
 									<div class="comment-des">
+										<a title="Responder mensaje citando" href="#comments-form" onclick="javascript:replyComment('${status.count}');" style="font-size:14px;" >#${status.count}</a>
 										<div class="comment-by">
 										<c:choose>
 										<c:when test="${empty comentario.web}">
@@ -203,14 +204,18 @@
 										</c:choose>
 										<span class="reply"><span style="color:#aaa">/ </span><b>&nbsp;${comentario.puntos}</b> puntos</span> <span class="date"><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="both" dateStyle="medium" timeStyle="short" value="${comentario.fecha}"/></span></div>
 										<p>
+										<c:if test="${!empty comentario.comentarioReply}">
+											<span style="color:#0088cc;">@${comentario.comentarioReplyNombre} &nbsp;</span><a onmouseover="document.getElementById('comment_ref_${status.count}').style.display='block'" onmouseout="document.getElementById('comment_ref_${status.count}').style.display='none';" onclick="document.getElementById('comment_ref_${status.count}').style.display='none';" class="ancla_referencia">#${comentario.comentarioReplyNbr}<span class="referencia" id="comment_ref_${status.count}" style="display:none;font-size: 13px;">${comentario.comentarioReply}</span></a> &nbsp;
+										</c:if>
+										
 										${fn:replace(comentario.comentario, newLineChar, "<p/><p>")}
 										</p>
 									</div>
 								</div>		
-							</li>
+							</li>						
 						</c:forEach>
 						</ol>
-
+	
 					</div>
 					<!-- end: Comments -->
 					<div class="clear" style="padding-top: 35px;"></div>
@@ -220,9 +225,9 @@
 					<div class="form-spacer"></div>
 					
 					<!-- Form -->
-					<div id="conmments-form">
+					<div id="comments-form">
 						<form action="/ebooks/${publicacion.url}/nuevoComentario" id="formComment" method="post">
-							
+							<input id="nbrComment" name="nbrComment" type="hidden"/>
 							<div class="field">
 								<label>Nombre: <span>*</span></label>
 								<input id="comNombre" type="text" name="nombre" class="text" />

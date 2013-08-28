@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.amatic.ch.constants.WebConstants;
 import com.amatic.ch.dto.Comentario;
+import com.amatic.ch.dto.Deref;
 import com.amatic.ch.dto.Publicacion;
 import com.amatic.ch.exception.UnknownResourceException;
 import com.amatic.ch.service.ComentarioService;
@@ -97,9 +98,10 @@ public class BlogController {
 	    @RequestParam("email") String email,
 	    @RequestParam("puntos") String puntos,
 	    @RequestParam("comentario") String comentario,
-	    @RequestParam("web") String web, HttpServletRequest request,
-	    HttpServletResponse response) throws IOException,
-	    NoSuchAlgorithmException {
+	    @RequestParam("web") String web,
+	    @RequestParam("nbrComment") String nbrComment,
+	    HttpServletRequest request, HttpServletResponse response)
+	    throws IOException, NoSuchAlgorithmException {
 
 	String titulo = url.replaceAll("-", " ");
 	Publicacion publicacion = publicacionService.getPublicacion(titulo,
@@ -113,8 +115,16 @@ public class BlogController {
 	}
 
 	List<Ref<Comentario>> lComentarios = publicacion.getlComentarios();
-
 	Comentario nuevoComentario = new Comentario();
+	if (!nbrComment.equals("") && Integer.parseInt(nbrComment) > 0) {
+	    Ref<Comentario> refComentReply = lComentarios.get(Integer
+		    .parseInt(nbrComment) - 1);
+	    Comentario comentReply = Deref.deref(refComentReply);
+	    nuevoComentario.setComentarioReply(comentReply.getComentario());
+	    nuevoComentario.setComentarioReplyNombre(comentReply.getNombre());
+	    nuevoComentario.setComentarioReplyNbr(nbrComment);
+	}
+
 	nuevoComentario.setFecha(new Date());
 	nuevoComentario.setMail(email);
 	nuevoComentario.setNombre(nombre);
@@ -123,6 +133,7 @@ public class BlogController {
 	nuevoComentario.setWeb(web);
 	nuevoComentario.setGravatar(OtherController.getGravatar80pxUrl(email));
 	nuevoComentario.setIpAddress(OtherController.getClienAddress(request));
+	nuevoComentario.setPublicacion(publicacion);
 
 	Key<Comentario> keyNuevoComentario = comentarioService
 		.crearComentario(nuevoComentario);

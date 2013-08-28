@@ -2416,4 +2416,22 @@ form#newsletter input[type=submit] {
 	}
 	
 }
-	
+
+/* Caja Reply*/
+.referencia {
+background-color: #F4F4F4;
+border-top: 1px solid #ccc;
+border-right: 3px solid #ccc;
+border-bottom: 3px solid #ccc;
+border-left: 1px solid #ccc;
+color: #333;
+font: 11px Arial, Helvetica, sans-serif;
+padding: 5px;
+position: absolute;
+width: 300px;
+z-index: 4;
+}
+
+a.ancla_referencia {
+padding: 0 2px;
+}	

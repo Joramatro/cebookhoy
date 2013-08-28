@@ -10,6 +10,9 @@ public interface WebConstants extends Constants {
 	String EBOOK = "EB";
 	String ACCESORIO = "AC";
 
+	String tipo1 = "ebooks";
+	String tipo2 = "blog";
+
 	String logo1 = "http://www.amazon.es/s/?_encoding=UTF8&camp=3626&creative=24822&field-keywords=woxter%20ebook&linkCode=ur2&rh=i%3Aaps%2Ck%3Awoxter%20ebook&tag=comprarebookh-21&url=search-alias%3Daps";
 	String logo1img = "https://ir-es.amazon-adsystem.com/e/ir?t=comprarebookh-21&l=ur2&o=30";
 
