@@ -113,7 +113,7 @@ public class EditionController {
 		    articulo = articulo.replaceFirst("\\*\\*", "<b>");
 		    i++;
 		} else {
-		    articulo = articulo.replaceFirst("\\*\\*", "<\b>");
+		    articulo = articulo.replaceFirst("\\*\\*", "</b>");
 		    i++;
 		}
 	    }
