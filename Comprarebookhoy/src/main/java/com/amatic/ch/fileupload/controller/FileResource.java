@@ -117,7 +117,7 @@ public class FileResource {
 		    .replaceAll(
 			    "<img>",
 			    "<br><a target=\"_blank\" href=\"/venta/principal/"
-				    + publicacion.getTitulo()
+				    + publicacion.getUrl()
 				    + "\"><img src=\""
 				    + url
 				    + "\" title=\""

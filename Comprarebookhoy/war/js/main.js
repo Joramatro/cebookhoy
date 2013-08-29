@@ -22,7 +22,8 @@ $(function(){
 	        	  "autor": $("#autor").val(),
 	        	  "titulo2": $("#titulo2").val(),
 	        	  "script": $("#script").val(),
-	        	  "script2": $("#script2").val()
+	        	  "script2": $("#script2").val(),
+	        	  "disponible": $("#disponible").val()
 	          },
 		      success: function(text){
 //		    	  var nameChn = ($("#nameChannel").val()).replace(/\s/g , "-")

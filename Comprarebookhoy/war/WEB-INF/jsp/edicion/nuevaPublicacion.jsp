@@ -92,29 +92,12 @@ Keywords: <input type="text" style="width: 433px;"id="keywords" name="keywords" 
 <br><br>
 Descripcion: <input type="text" style="width: 633px;" id="descripcion" name="descripcion" size="160" maxlength="160">
 <br><br>
-Clase1: <select id="clase1" name="clase1">
-				  <option value=""></option>
-				  <option value="Novedades">Novedades</option>
-				  <option value="Sony">Sony</option>
-				  <option value="Energy Sistem">Energy Sistem</option>
-				  <option value="Wolder">Wolder</option>
-				  <option value="Woxter">Woxter</option>
-				  <option value="Papyre">Papyre</option>
-				  <option value="Kindle">Kindle</option>
-				  <option value="Otros">Otros</option>
-				  <option value="Fundas">Fundas</option>
-				</select>
-Clase2: <select id="clase2" name="clase2">
-				  <option value=""></option>
-				  <option value="Novedades">Novedades</option>
-				  <option value="Sony">Sony</option>
-				  <option value="Energy Sistem">Energy Sistem</option>
-				  <option value="Wolder">Wolder</option>
-				  <option value="Woxter">Woxter</option>
-				  <option value="Papyre">Papyre</option>
-				  <option value="Kindle">Kindle</option>
-				  <option value="Otros">Otros</option>
-				  <option value="Fundas">Fundas</option>
+Clase1: <input type="text" id="clase1" name="clase1" size="20" maxlength="20"/>
+Clase2: <input type="text" id="clase2" name="clase2" size="20" maxlength="20"/>
+<br><br>
+Disponible: <select id="disponible" name="disponible">
+				  <option value="S">Si</option>
+				  <option value="N">No</option>
 				</select>				
 <br><br>
 Resumen<br>

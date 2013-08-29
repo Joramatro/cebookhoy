@@ -20,8 +20,8 @@ public class PublicacionService {
 	this.PublicacionDao.crearPublicacion(publicacion);
     }
 
-    public Publicacion getPublicacion(String titulo, String tipo) {
-	return this.PublicacionDao.getPublicacion(titulo, tipo);
+    public Publicacion getPublicacion(String key, String tipo) {
+	return this.PublicacionDao.getPublicacion(key, tipo);
     }
 
     public List<Publicacion> getUltimasPublicaciones(String tipo) {

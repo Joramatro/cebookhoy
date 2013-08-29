@@ -74,7 +74,7 @@
 		<meta property="og:image" content=""/>
 		<!-- end: Facebook Open Graph -->
 	</c:when>
-	<c:when test="${fn:contains(pageContext.request.requestURI, 'articulos')}">
+	<c:when test="${fn:contains(pageContext.request.requestURI, 'blog')}">
 		<title>Artículos sobre eBooks en Comprar eBook Hoy</title> 
 		<meta name="description" content="Opinión y artículos de los mejores lectores de eBooks en la actualidad en Comprar eBook Hoy"/>
 		<meta name="keywords" content="opinion lectores ebooks, artículos lectores ebooks, los mejores lectores de ebooks, artículos kindle, blog, análisis tablet, artículos de lectores de ebook" />

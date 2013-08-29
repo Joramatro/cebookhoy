@@ -22,10 +22,10 @@ public class PublicacionDaoImpl implements PublicacionDao {
     }
 
     @Override
-    public Publicacion getPublicacion(String titulo, String tipo) {
+    public Publicacion getPublicacion(String key, String tipo) {
 
 	Publicacion publicacion = ofy().load().type(Publicacion.class)
-		.filter("titulo", titulo).filter("tipo", tipo).first().get();
+		.filter("key", key).filter("tipo", tipo).first().get();
 
 	return publicacion;
     }

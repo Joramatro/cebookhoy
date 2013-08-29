@@ -73,7 +73,9 @@
 				<div class="span10">
 					${publicacion.articulo}
 					<br>
-					<br><a href="/venta/principal/${publicacion.url}" class="button color launch">Cómpralo Hoy</a>					
+					<c:if test="${publicacion.disponible ne 'N'}">
+						<br><a href="/venta/principal/${publicacion.url}" class="button color launch">Cómpralo Hoy</a>
+					</c:if>					
 					<br>
 					<!-- AddThis Button BEGIN -->
 					<div class="addthis_toolbox addthis_default_style ">

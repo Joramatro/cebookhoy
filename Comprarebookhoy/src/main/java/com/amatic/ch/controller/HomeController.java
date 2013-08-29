@@ -1,6 +1,7 @@
 package com.amatic.ch.controller;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +24,7 @@ import com.amatic.ch.exception.UnknownResourceException;
 import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
 import com.amatic.ch.service.UserService;
+import com.amatic.ch.utils.WebUtils;
 import com.dyuproject.openid.OpenIdUser;
 
 @Controller
@@ -100,19 +102,21 @@ public class HomeController {
     @RequestMapping(value = { "/venta/{tipo}/{url}" }, method = { RequestMethod.GET })
     public String getVenta(ModelMap model, @PathVariable String url,
 	    @PathVariable String tipo, HttpServletRequest request,
-	    HttpServletResponse response) throws IOException {
+	    HttpServletResponse response) throws IOException,
+	    NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
 
-	String titulo = url.replaceAll("-", " ");
+	String key = WebUtils.SHA1(url.replaceAll("-", " "));
 	Publicacion publicacion = null;
 	if (tipo.equals("principal")) {
-	    publicacion = publicacionService.getPublicacion(titulo,
+	    publicacion = publicacionService.getPublicacion(key,
 		    WebConstants.SessionConstants.EBOOK);
-	} else if (tipo.equals("blog")) {
-	    publicacion = publicacionService.getPublicacion(titulo,
-		    WebConstants.SessionConstants.ARTICULO);
+	    if (publicacion == null) {
+		publicacion = publicacionService.getPublicacion(key,
+			WebConstants.SessionConstants.ARTICULO);
+	    }
 	} else if (tipo.equals("extra")) {
-	    publicacion = publicacionService.getPublicacion(titulo,
+	    publicacion = publicacionService.getPublicacion(key,
 		    WebConstants.SessionConstants.ACCESORIO);
 	} else if (tipo.equals("marca")) {
 	    publicacion = new Publicacion();

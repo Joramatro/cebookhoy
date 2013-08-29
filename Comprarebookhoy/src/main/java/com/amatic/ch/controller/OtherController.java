@@ -1,9 +1,6 @@
 package com.amatic.ch.controller;
 
 import java.io.IOException;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -27,10 +24,8 @@ import com.amatic.ch.dto.User;
 import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
 import com.amatic.ch.service.UserService;
+import com.amatic.ch.utils.WebUtils;
 import com.dyuproject.openid.OpenIdUser;
-import com.timgroup.jgravatar.Gravatar;
-import com.timgroup.jgravatar.GravatarDefaultImage;
-import com.timgroup.jgravatar.GravatarRating;
 
 @Controller
 public class OtherController {
@@ -127,12 +122,12 @@ public class OtherController {
 	    }
 	    try {
 		userA = this.userService.findUser(mail);
-		userA.setIpAddress(this.getClienAddress(request));
+		userA.setIpAddress(WebUtils.getClienAddress(request));
 		userA = this.userService.updateUserIp(userA);
 	    } catch (com.googlecode.objectify.NotFoundException nf) {
 		userA = new User();
 		userA.setMail(mail);
-		userA.setIpAddress(this.getClienAddress(request));
+		userA.setIpAddress(WebUtils.getClienAddress(request));
 		this.userService.create(userA, false);
 		User.setCont(0);
 		userA.setNewUser(true);
@@ -143,34 +138,6 @@ public class OtherController {
 	}
 
 	response.sendRedirect("/edicion/nuevo");
-    }
-
-    public static String getClienAddress(HttpServletRequest request) {
-	request.getHeader("VIA");
-	String ipAddress = request.getHeader("X-FORWARDED-FOR");
-	if (ipAddress == null) {
-	    ipAddress = request.getRemoteAddr();
-	}
-	return ipAddress;
-    }
-
-    public static String getGravatar80pxUrl(String email) throws IOException {
-	String gravatarUrl = "";
-	Gravatar gravatar = new Gravatar();
-	gravatar.setRating(GravatarRating.GENERAL_AUDIENCES);
-	gravatar.setDefaultImage(GravatarDefaultImage.IDENTICON);
-	String gravatarUrlIfExist = gravatar.getUrl(email);
-	URL u = new URL(gravatarUrlIfExist);
-	HttpURLConnection huc = (HttpURLConnection) u.openConnection();
-	huc.setRequestMethod("GET");
-	huc.setDoOutput(true);
-	huc.connect();
-	OutputStream os = huc.getOutputStream();
-	int code = huc.getResponseCode();
-	if (code != 404) {
-	    gravatarUrl = gravatarUrlIfExist;
-	}
-	return gravatarUrl;
     }
 
 }

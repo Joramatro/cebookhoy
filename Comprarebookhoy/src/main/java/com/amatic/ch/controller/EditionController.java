@@ -24,7 +24,7 @@ import com.amatic.ch.dto.User;
 import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
 import com.amatic.ch.service.UserService;
-import com.amatic.ch.utils.ChannelUtils;
+import com.amatic.ch.utils.WebUtils;
 import com.google.appengine.labs.repackaged.com.google.common.base.Throwables;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Ref;
@@ -52,8 +52,7 @@ public class EditionController {
 	return "edicion/nuevaPublicacion";
     }
 
-    @RequestMapping(value = { "/edicion/guardarPublicacion" }, method = {
-	    RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = { "/edicion/guardarPublicacion" }, method = { RequestMethod.POST })
     public void guardarPublicacion(ModelMap model,
 	    @RequestParam("titulo") String titulo,
 	    @RequestParam("descripcion") String descripcion,
@@ -67,6 +66,7 @@ public class EditionController {
 	    @RequestParam("titulo2") String titulo2,
 	    @RequestParam("script") String script,
 	    @RequestParam("script2") String script2,
+	    @RequestParam("disponible") String disponible,
 	    HttpServletRequest request, HttpServletResponse response)
 	    throws IOException, NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
@@ -76,7 +76,7 @@ public class EditionController {
 
 	Publicacion publicacion = new Publicacion();
 	try {
-	    publicacion.setKey(ChannelUtils.SHA1(titulo));
+	    publicacion.setKey(WebUtils.SHA1(WebUtils.cleanTildes(titulo)));
 	    publicacion.setNumVisitas(0);
 	    publicacion.setTitulo(titulo);
 	    publicacion.setUser(Ref.create(Key.create(User.class,
@@ -124,6 +124,7 @@ public class EditionController {
 	    publicacion.setTitulo2(titulo2);
 	    publicacion.setScript(script);
 	    publicacion.setScript2(script2);
+	    publicacion.setDisponible(disponible);
 
 	    publicacionService.crearPublicacion(publicacion);
 	} catch (Exception e) {
@@ -139,7 +140,7 @@ public class EditionController {
 	// WebConstants.SessionConstants.RC_USER, user);
 
 	request.getSession().setAttribute("tituloNuevaPublicacion",
-		publicacion.getTitulo());
+		publicacion.getKey());
 
 	request.getSession().setAttribute("tipoNuevaPublicacion",
 		publicacion.getTipo());
@@ -157,8 +158,8 @@ public class EditionController {
 	    NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
 
-	Publicacion publicacion = publicacionService.getPublicacion(titulo,
-		tipo);
+	Publicacion publicacion = publicacionService.getPublicacion(
+		WebUtils.SHA1(WebUtils.cleanTildes(titulo)), tipo);
 	session.setAttribute("publicacion", publicacion);
 
 	model.addAttribute("publicacion", publicacion);
@@ -167,10 +168,10 @@ public class EditionController {
 
     }
 
-    @RequestMapping(value = { "/{tipoedit}/{titulo}/editar" }, method = {
+    @RequestMapping(value = { "/{tipoedit}/{url}/editar" }, method = {
 	    RequestMethod.GET, RequestMethod.POST })
     public String editarPublicacion(ModelMap model,
-	    @PathVariable("titulo") String titulo,
+	    @PathVariable("url") String url,
 	    @PathVariable("tipoedit") String tipoedit,
 	    HttpServletRequest request, HttpServletResponse response)
 	    throws IOException, NoSuchAlgorithmException {
@@ -182,8 +183,8 @@ public class EditionController {
 	} else if (tipoedit.equals(WebConstants.SessionConstants.tipo2)) {
 	    tipo = WebConstants.SessionConstants.ARTICULO;
 	}
-	Publicacion publicacion = publicacionService.getPublicacion(titulo,
-		tipo);
+	String key = WebUtils.SHA1(url.replaceAll("-", " "));
+	Publicacion publicacion = publicacionService.getPublicacion(key, tipo);
 	session.setAttribute("publicacion", publicacion);
 
 	model.addAttribute("publicacion", publicacion);
@@ -229,11 +230,12 @@ public class EditionController {
     @RequestMapping(value = { "/edicion/limpiarComentario" }, method = {
 	    RequestMethod.GET, RequestMethod.POST })
     public void getLogEditar(ModelMap model, HttpServletRequest request,
-	    HttpServletResponse response) throws IOException {
+	    HttpServletResponse response) throws IOException,
+	    NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
 
-	Publicacion publicacion = publicacionService.getPublicacion("Kindle",
-		WebConstants.SessionConstants.EBOOK);
+	Publicacion publicacion = publicacionService.getPublicacion(
+		WebUtils.SHA1("Kindle"), WebConstants.SessionConstants.EBOOK);
 
 	List<Ref<Comentario>> lComentarios = publicacion.getlComentarios();
 	lComentarios.remove(1);
@@ -258,7 +260,7 @@ public class EditionController {
 	}
 
 	List<Publicacion> publicacionesblog = publicacionService
-		.getPublicaciones(WebConstants.SessionConstants.EBOOK);
+		.getPublicaciones(WebConstants.SessionConstants.ARTICULO);
 
 	for (Publicacion publicacion : publicacionesblog) {
 	    List<Comentario> comentarios = publicacion.getComentariosDeref();
@@ -266,6 +268,30 @@ public class EditionController {
 		comentario.setPublicacion(publicacion);
 		comentarioService.update(comentario);
 	    }
+	}
+    }
+
+    @RequestMapping(value = { "/edicion/actualizarPublicaciones" }, method = {
+	    RequestMethod.GET, RequestMethod.POST })
+    public void getActualizarPublicaciones(ModelMap model,
+	    HttpServletRequest request, HttpServletResponse response)
+	    throws IOException, NoSuchAlgorithmException {
+
+	List<Publicacion> publicaciones = publicacionService
+		.getPublicaciones(WebConstants.SessionConstants.EBOOK);
+	for (Publicacion publicacion : publicaciones) {
+	    publicacion.setKey(WebUtils.SHA1(WebUtils.cleanTildes(publicacion
+		    .getTitulo())));
+	    publicacionService.update(publicacion);
+	}
+
+	List<Publicacion> publicacionesblog = publicacionService
+		.getPublicaciones(WebConstants.SessionConstants.ARTICULO);
+
+	for (Publicacion publicacion : publicacionesblog) {
+	    publicacion.setKey(WebUtils.SHA1(WebUtils.cleanTildes(publicacion
+		    .getTitulo())));
+	    publicacionService.update(publicacion);
 	}
     }
 

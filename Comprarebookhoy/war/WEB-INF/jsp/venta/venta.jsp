@@ -8,6 +8,6 @@
 <head>
 </head>
 <body onload="window.location.href = '${publicacion.script}'">
-<img src="https://ir-es.amazon-adsystem.com/e/ir?t=comprarebookh-21&l=ur2&o=30" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<img src="${publicacion.script2}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 </body>
 </html>

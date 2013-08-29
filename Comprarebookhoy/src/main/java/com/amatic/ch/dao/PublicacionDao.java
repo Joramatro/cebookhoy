@@ -10,7 +10,7 @@ public interface PublicacionDao {
 
     public void crearPublicacion(Publicacion publicacion);
 
-    public Publicacion getPublicacion(String titulo, String tipo);
+    public Publicacion getPublicacion(String key, String tipo);
 
     public List<Publicacion> getUltimasPublicaciones(String tipo);
 

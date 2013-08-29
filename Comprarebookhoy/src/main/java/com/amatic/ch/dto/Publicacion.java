@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.amatic.ch.utils.WebUtils;
 import com.googlecode.objectify.Ref;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
@@ -59,6 +60,8 @@ public class Publicacion implements Serializable {
     String script2;
     @Load
     List<Ref<Comentario>> lComentarios = new ArrayList<Ref<Comentario>>();
+    @Index
+    String disponible;
 
     public String getAutor() {
 	return autor;
@@ -201,7 +204,7 @@ public class Publicacion implements Serializable {
     }
 
     public String getUrl() {
-	String url = this.titulo.replaceAll(" ", "-");
+	String url = WebUtils.cleanTildes(this.titulo.replaceAll(" ", "-"));
 	if (url.endsWith("-")) {
 	    url = url.substring(0, url.length() - 1);
 	}
@@ -258,6 +261,14 @@ public class Publicacion implements Serializable {
 
     public void setScript2(String script2) {
 	this.script2 = script2;
+    }
+
+    public String getDisponible() {
+	return disponible;
+    }
+
+    public void setDisponible(String disponible) {
+	this.disponible = disponible;
     }
 
 }

@@ -7,35 +7,19 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.amatic.ch.constants.WebConstants;
-import com.amatic.ch.dto.Comentario;
-import com.amatic.ch.dto.Publicacion;
-import com.amatic.ch.service.ComentarioService;
-import com.amatic.ch.service.PublicacionService;
-import com.amatic.ch.service.UserService;
 import com.dyuproject.openid.OpenIdUser;
 
 @Controller
-public class ExtrasController {
+public class ExtrasController extends PublicacionAbstract {
 
     List<Integer> sessions = new ArrayList<Integer>();
-
-    @Autowired
-    private PublicacionService publicacionService;
-
-    @Autowired
-    private UserService userService;
-
-    @Autowired
-    private ComentarioService comentarioService;
 
     @Resource(name = "OIdUserBean")
     OpenIdUser oIdUserBean;
@@ -44,41 +28,7 @@ public class ExtrasController {
     public String getAccesorios(ModelMap model, HttpServletRequest request,
 	    HttpServletResponse response) throws IOException {
 
-	HttpSession session = request.getSession();
-
-	List<Publicacion> publicaciones = publicacionService
-		.getPublicaciones(WebConstants.SessionConstants.ACCESORIO);
-
-	List<String> categorias = new ArrayList<String>();
-	for (Publicacion publicacion : publicaciones) {
-	    if (!publicacion.getClase1().equals("")
-		    && !categorias.contains(publicacion.getClase1())) {
-		categorias.add(publicacion.getClase1());
-	    }
-	    if (!publicacion.getClase2().equals("")
-		    && !categorias.contains(publicacion.getClase2())) {
-		categorias.add(publicacion.getClase2());
-	    }
-	}
-
-	List<Publicacion> publicacionesMVE = publicacionService
-		.getPublicacionesMasVistas(WebConstants.SessionConstants.EBOOK);
-
-	List<Publicacion> publicacionesMVA = publicacionService
-		.getPublicacionesMasVistas(WebConstants.SessionConstants.ARTICULO);
-
-	List<Comentario> comentarios = comentarioService
-		.getUltimosComentarios();
-
-	model.addAttribute("comentarios", comentarios);
-
-	model.addAttribute("publicacionesMVE", publicacionesMVE);
-
-	model.addAttribute("publicacionesMVA", publicacionesMVA);
-
-	model.addAttribute("categorias", categorias);
-
-	model.addAttribute("publicaciones", publicaciones);
+	setPublicaciones(model, WebConstants.SessionConstants.ACCESORIO);
 
 	return "extras";
     }
