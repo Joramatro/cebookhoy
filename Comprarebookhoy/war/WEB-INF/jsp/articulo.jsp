@@ -93,8 +93,7 @@
 				
 			</div>
 			<!-- end: Row -->
-			
-						
+									
 			<hr><hr>
 			
 				<!-- start: Row -->
