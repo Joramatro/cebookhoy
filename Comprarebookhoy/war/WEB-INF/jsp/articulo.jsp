@@ -76,7 +76,8 @@
 					<c:if test="${publicacion.disponible ne 'N'}">
 						<br><a href="/venta/principal/${publicacion.url}" class="button color launch">Cómpralo Hoy</a>
 					</c:if>					
-					<br>					
+					<br>
+										
 					<!-- AddThis Button BEGIN -->
 					<div class="addthis_toolbox addthis_default_style ">
 					<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
