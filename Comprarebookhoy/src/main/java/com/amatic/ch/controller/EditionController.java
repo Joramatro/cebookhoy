@@ -3,12 +3,13 @@ package com.amatic.ch.controller;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
-import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -25,14 +26,14 @@ import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
 import com.amatic.ch.service.UserService;
 import com.amatic.ch.utils.WebUtils;
-import com.google.appengine.labs.repackaged.com.google.common.base.Throwables;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Ref;
 
 @Controller
 public class EditionController {
 
-    Logger logger = Logger.getLogger(EditionController.class.getName());
+    private static final Logger log = LoggerFactory
+	    .getLogger(EditionController.class);
 
     @Autowired
     private PublicacionService publicacionService;
@@ -109,9 +110,9 @@ public class EditionController {
 	    i = 1;
 	    while (articulo.contains("**")) {
 		if (i % 2 != 0) {
-		    articulo = articulo.replaceFirst("**", "<b>");
+		    articulo = articulo.replaceFirst("\\*\\*", "<b>");
 		} else {
-		    articulo = articulo.replaceFirst("**", "<\b>");
+		    articulo = articulo.replaceFirst("\\*\\*", "<\b>");
 		}
 	    }
 
@@ -128,7 +129,7 @@ public class EditionController {
 
 	    publicacionService.crearPublicacion(publicacion);
 	} catch (Exception e) {
-	    logger.warning(Throwables.getStackTraceAsString(e));
+	    log.error("error en editioncontroller", e);
 	}
 	//
 	// List<Ref<Publicacion>> lChannels = user.getChannels();
@@ -209,7 +210,7 @@ public class EditionController {
 
 	    publicacionService.update(publicacion);
 	} catch (Exception e) {
-	    logger.warning(Throwables.getStackTraceAsString(e));
+	    log.error("error en editioncontroller", e);
 	}
 
 	session.setAttribute("publicacion", null);

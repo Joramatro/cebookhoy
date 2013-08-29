@@ -19,6 +19,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.amatic.ch.dto.Publicacion;
@@ -39,6 +41,9 @@ import com.google.appengine.labs.repackaged.com.google.common.collect.Lists;
 
 @Path("/file")
 public class FileResource {
+
+    private static final Logger log = LoggerFactory
+	    .getLogger(FileResource.class);
 
     private final BlobstoreService blobstoreService = BlobstoreServiceFactory
 	    .getBlobstoreService();
@@ -88,54 +93,62 @@ public class FileResource {
     public Response post(@Context HttpServletRequest req,
 	    @Context HttpServletResponse res) throws IOException,
 	    URISyntaxException {
-	Map<String, BlobKey> blobs = blobstoreService.getUploadedBlobs(req);
-	BlobKey blobKey = blobs.get("files[]");
-	// res.sendRedirect(blobKey.getKeyString() + "/meta");
+	try {
+	    Map<String, BlobKey> blobs = blobstoreService.getUploadedBlobs(req);
+	    BlobKey blobKey = blobs.get("files[]");
+	    // res.sendRedirect(blobKey.getKeyString() + "/meta");
 
-	BlobInfo info = blobInfoFactory.loadBlobInfo(blobKey);
-	HttpSession session = req.getSession();
+	    BlobInfo info = blobInfoFactory.loadBlobInfo(blobKey);
+	    HttpSession session = req.getSession();
 
-	String name = info.getFilename();
-	long size = info.getSize();
+	    String name = info.getFilename();
+	    long size = info.getSize();
 
-	ImagesService imagesService = ImagesServiceFactory.getImagesService();
+	    ImagesService imagesService = ImagesServiceFactory
+		    .getImagesService();
 
-	int sizeImage = ImagesService.SERVING_SIZES_LIMIT;
-	String url = imagesService.getServingUrl(ServingUrlOptions.Builder
-		.withBlobKey(blobKey).crop(true).imageSize(sizeImage));
+	    int sizeImage = ImagesService.SERVING_SIZES_LIMIT;
+	    String url = imagesService.getServingUrl(ServingUrlOptions.Builder
+		    .withBlobKey(blobKey).crop(true).imageSize(sizeImage));
 
-	Publicacion publicacion = publicacionService.getPublicacion(
-		(String) session.getAttribute("tituloNuevaPublicacion"),
-		(String) session.getAttribute("tipoNuevaPublicacion"));
-	List<String> lImages = publicacion.getlImages();
-	lImages.add(url);
-	List<String> lImagesKeys = publicacion.getlImagesKeys();
-	lImagesKeys.add(blobKey.getKeyString());
-	String articulo = publicacion.getArticulo();
-	if (lImages.size() == 3) {
-	    articulo = articulo
-		    .replaceAll(
-			    "<img>",
-			    "<br><a target=\"_blank\" href=\"/venta/principal/"
-				    + publicacion.getUrl()
-				    + "\"><img src=\""
-				    + url
-				    + "\" title=\""
-				    + publicacion.getTitulo()
-				    + "\" style=\"width:300px; height:250px; margin-left: 28%;\"/></a><br> ");
-	    publicacion.setArticulo(articulo);
+	    Publicacion publicacion = publicacionService.getPublicacion(
+		    (String) session.getAttribute("tituloNuevaPublicacion"),
+		    (String) session.getAttribute("tipoNuevaPublicacion"));
+	    List<String> lImages = publicacion.getlImages();
+	    lImages.add(url);
+	    List<String> lImagesKeys = publicacion.getlImagesKeys();
+	    lImagesKeys.add(blobKey.getKeyString());
+	    String articulo = publicacion.getArticulo();
+	    if (lImages.size() == 3) {
+		articulo = articulo
+			.replaceAll(
+				"<img>",
+				"<br><a target=\"_blank\" href=\"/venta/principal/"
+					+ publicacion.getUrl()
+					+ "\"><img src=\""
+					+ url
+					+ "\" title=\""
+					+ publicacion.getTitulo()
+					+ "\" style=\"width:300px; height:250px; margin-left: 28%;\"/></a><br> ");
+		publicacion.setArticulo(articulo);
+	    }
+	    publicacionService.update(publicacion);
+	    int sizePreview = 80;
+	    String urlPreview = imagesService
+		    .getServingUrl(ServingUrlOptions.Builder
+			    .withBlobKey(blobKey).crop(true)
+			    .imageSize(sizePreview));
+
+	    FileMeta meta = new FileMeta(name, size, url, urlPreview);
+
+	    List<FileMeta> metas = Lists.newArrayList(meta);
+	    Entity entity = new Entity(metas);
+
+	    return Response.ok(entity, MediaType.APPLICATION_JSON).build();
+	} catch (Exception e) {
+	    log.error("error en fileResource al subir imagen", e);
+	    return null;
 	}
-	publicacionService.update(publicacion);
-	int sizePreview = 80;
-	String urlPreview = imagesService
-		.getServingUrl(ServingUrlOptions.Builder.withBlobKey(blobKey)
-			.crop(true).imageSize(sizePreview));
-
-	FileMeta meta = new FileMeta(name, size, url, urlPreview);
-
-	List<FileMeta> metas = Lists.newArrayList(meta);
-	Entity entity = new Entity(metas);
-	return Response.ok(entity, MediaType.APPLICATION_JSON).build();
     }
 
     /* step 4. download the file */
