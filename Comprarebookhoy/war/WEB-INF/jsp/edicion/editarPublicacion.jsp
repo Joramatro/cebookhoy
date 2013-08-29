@@ -96,21 +96,7 @@ Titulo: <input type="text" style="width: 433px;" id="titulo" name="titulo" size=
 
 
 <form method="POST" action="/edicion/guardarEdicionPublicacion">
-Titulo2: <input type="text" style="width: 433px;" id="titulo2" name="titulo2" size="120" maxlength="120"><br><br>
-Keywords: <input type="text" style="width: 433px;"id="keywords" name="keywords" size="150" maxlength="150">
-<br><br>
-Descripcion: <input type="text" style="width: 633px;" id="descripcion" name="descripcion" size="160" maxlength="160">
-<br><br>
-Clase1: <input type="text" id="clase1" name="clase1" size="20" maxlength="20"/>
-Clase2: <input type="text" id="clase2" name="clase2" size="20" maxlength="20"/>
-<br><br>
-Disponible: <select id="disponible" name="disponible">
-				  <option value="S">Si</option>
-				  <option value="N">No</option>
-				</select>	
-<br><br>
-Resumen<br>
-<textarea style="width: 833px;" rows="10" id="resumen" name="resumen" value=""></textarea>
+
 <br><br>
 Articulo
 <br>
