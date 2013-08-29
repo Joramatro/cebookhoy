@@ -106,7 +106,7 @@
 					
 					<!-- start: Row -->
 		      		<div class="row">
-						<c:forEach var="publicacionRel" items="${publicaciones}" varStatus="status" end="5">
+						<c:forEach var="publicacionRel" items="${publicaciones}" varStatus="status" end="2">
 						<c:if test="${publicacionRel.titulo ne publicacion.titulo }">	
 						<div class="span3">	
 							<div class="picture">

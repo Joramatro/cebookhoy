@@ -35,7 +35,7 @@
 				<ul class="option-set" data-option-key="filter">
 					<li><a href="#filter" class="selected" data-option-value="*">Todos</a></li>
 					<c:forEach var="categoria" items="${categorias}" varStatus="status" >
-						<li><a href="#filter" data-option-value="..${fn:replace(categoria, " ", separadorClase)}">${categoria}</a></li>
+						<li><a href="#filter" data-option-value=".${fn:replace(categoria, " ", separadorClase)}">${categoria}</a></li>
 					</c:forEach>
 				</ul>
 			</div> 
