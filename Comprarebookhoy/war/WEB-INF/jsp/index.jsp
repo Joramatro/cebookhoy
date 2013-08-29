@@ -122,56 +122,7 @@
 		
 		<hr>			
 			<%@ include file="/WEB-INF/jsp/includes/masleidos.jsp"%>
-			
-		<hr>	
-		<div class="title"><h3>Últimas Publicaciones</h3></div>			
-    	<div class="container">
-			<!-- start: Portfolio -->
-			<div id="portfolio-wrapper" class="row">
-				<% pageContext.setAttribute("newLineChar", "\n"); %>
-				<c:forEach var="publicacion" items="${publicacionesEbooks}" varStatus="status" end="5">				
-				<div class="span4 portfolio-item nature people">
-					<div class="picture"><a href="/ebooks/${publicacion.url}" title="${publicacion.titulo}">
-					
-					<c:if test="${!empty publicacion.lImages }">
-					<img src="${publicacion.lImages[0]}" alt="${publicacion.titulo}"/>
-					</c:if>
-					
-					<div class="image-overlay-link"></div></a>
-						<div class="item-description alt">
-							<h5><a href="/ebooks/${publicacion.url}">${publicacion.titulo}</a></h5>
-							<p>
-								${fn:replace(publicacion.resumen, newLineChar, "<p/><p>")}
-							</p>
-						</div>
-						<div class="post-meta"><span><i class="mini-ico-calendar"></i><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span><%-- <span style=""><i class="mini-ico-user"></i>  <a href="/ebooks/${publicacion.url}">Jorge Amat</a></span>--%> <span><i class="mini-ico-comment"></i><a href="/ebooks/${publicacion.url}/#comments">${fn:length(publicacion.lComentarios)} comments</a></span></div>
-					</div>	
-				</div>
-				</c:forEach>
-				<c:forEach var="publicacion" items="${publicacionesBlog}" varStatus="status" end="5">				
-				<div class="span4 portfolio-item nature people">
-					<div class="picture"><a href="/blog/${publicacion.url}" title="${publicacion.titulo}">
-					
-					<c:if test="${!empty publicacion.lImages }">
-					<img src="${publicacion.lImages[0]}" alt="${publicacion.titulo}"/>
-					</c:if>
-					
-					<div class="image-overlay-link"></div></a>
-						<div class="item-description alt">
-							<h5><a href="/blog/${publicacion.url}">${publicacion.titulo}</a></h5>
-							<p>
-								${fn:replace(publicacion.resumen, newLineChar, "<p/><p>")}
-							</p>
-						</div>
-						<div class="post-meta"><span><i class="mini-ico-calendar"></i><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span><%-- <span style=""><i class="mini-ico-user"></i>  <a href="/blog/${publicacion.url}">Jorge Amat</a></span>--%> <span><i class="mini-ico-comment"></i><a href="/blog/${publicacion.url}/#comments">${fn:length(publicacion.lComentarios)} comments</a></span></div>
-					</div>	
-				</div>
-				</c:forEach>				
-			</div>
-			<!-- end: Portfolio -->     	
-		</div>
-		<!--end: Container-->
-		<hr>			
+						
 			
 						
 			<%@ include file="/WEB-INF/jsp/includes/carrusel.jsp"%>

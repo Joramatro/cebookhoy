@@ -111,8 +111,10 @@ public class EditionController {
 	    while (articulo.contains("**")) {
 		if (i % 2 != 0) {
 		    articulo = articulo.replaceFirst("\\*\\*", "<b>");
+		    i++;
 		} else {
 		    articulo = articulo.replaceFirst("\\*\\*", "<\b>");
+		    i++;
 		}
 	    }
 
