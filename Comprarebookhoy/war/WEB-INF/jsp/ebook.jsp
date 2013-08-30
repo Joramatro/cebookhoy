@@ -242,7 +242,7 @@
 							<input id="nbrComment" name="nbrComment" type="hidden"/>
 							<div class="field">
 								<label>Nombre: <span>*</span></label>
-								<input id="comNombre" type="text" name="nombre" maxlength="20" class="text" />
+								<input id="comNombre" type="text" name="nombre" maxlength="30" class="text" />
 							</div>
 
 							<div class="field">
@@ -252,7 +252,7 @@
 							
 							<div class="field">
 								<label>Web: </label>
-								<input type="text" name="web" class="text" maxlength="100" />
+								<input type="text" name="web" class="text" maxlength="90" />
 							</div>							
 							
 							<div class="field">

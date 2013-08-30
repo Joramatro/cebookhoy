@@ -240,17 +240,17 @@
 							<input id="nbrComment" name="nbrComment" type="hidden"/>
 							<div class="field">
 								<label>Nombre: <span>*</span></label>
-								<input id="comNombre" type="text" name="nombre" class="text" />
+								<input id="comNombre" type="text" name="nombre" class="text" maxlength="30"/>
 							</div>
 
 							<div class="field">
 								<label>Email: (No será publicado) <span>*</span></label>
-								<input id="comEmail" type="text" name="email" class="text" />
+								<input id="comEmail" type="text" name="email" class="text" maxlength="40"/>
 							</div>
 							
 							<div class="field">
 								<label>Web: </label>
-								<input type="text" name="web" class="text" />
+								<input type="text" name="web" class="text" maxlength="90"/>
 							</div>							
 							
 							<div class="field">
