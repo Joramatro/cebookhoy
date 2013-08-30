@@ -164,6 +164,21 @@ public class HomeController {
 	    } else if (url.equals("nexus7")) {
 		publicacion.setScript(WebConstants.SessionConstants.nexus7);
 		publicacion.setScript2(WebConstants.SessionConstants.nexus7img);
+	    } else if (url.equals("SonyReader6")) {
+		publicacion
+			.setScript("http://www.amazon.es/gp/product/B00910TG9G/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00910TG9G&linkCode=as2&tag=comprarebookh-21");
+		publicacion
+			.setScript2("http://ir-es.amazon-adsystem.com/e/ir?t=comprarebookh-21&l=as2&o=30&a=B00910TG9G");
+	    } else if (url.equals("NookSimpleTouch")) {
+		publicacion
+			.setScript("http://www.amazon.es/gp/product/140053271X/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=140053271X&linkCode=as2&tag=comprarebookh-21");
+		publicacion
+			.setScript2("http://ir-es.amazon-adsystem.com/e/ir?t=comprarebookh-21&l=as2&o=30&a=140053271X");
+	    } else if (url.equals("SonyReaderPRST2")) {
+		publicacion
+			.setScript("http://www.amazon.es/gp/product/B00910TFSI/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00910TFSI&linkCode=as2&tag=comprarebookh-21");
+		publicacion
+			.setScript2("http://ir-es.amazon-adsystem.com/e/ir?t=comprarebookh-21&l=as2&o=30&a=B00910TFSI");
 	    } else {
 		publicacion = null;
 	    }

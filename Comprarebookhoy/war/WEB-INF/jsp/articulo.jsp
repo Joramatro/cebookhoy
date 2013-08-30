@@ -38,7 +38,7 @@
 				<div id="flex1" class="flexslider home">
 					<a target="_blank" href="/venta/principal/${publicacion.url}">
 					<ul class="slides">
-						<c:forEach var="imagen" items="${publicacion.lImages}" varStatus="status" end="${fn:length(publicacion.lImages)}">
+						<c:forEach var="imagen" items="${publicacion.lImages}" varStatus="status">
 						<li>
 							<img style="width: 420px;height: 420px;" src="${imagen}"  alt="${publicacion.titulo}" />
 							<div class="slide-caption n">

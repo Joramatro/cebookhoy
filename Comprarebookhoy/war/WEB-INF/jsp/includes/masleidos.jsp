@@ -97,7 +97,7 @@
 								</a>
 							</div>
 							<div class="item-description">
-								<h4><a href="/ebooks/${publicacionMVA.url}">${publicacionMVA.titulo}</a></h4>
+								<h4><a href="/blog/${publicacionMVA.url}">${publicacionMVA.titulo}</a></h4>
 								<p>
 									${fn:replace(publicacionMVA.descripcion, newLineChar, "<p/><p>")}
 								</p>
