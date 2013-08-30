@@ -104,7 +104,7 @@ Articulo
 ${publicacion.articulo}
 </div>
 <br>
-<textarea style="width: 833px;" rows="40" id="articulo" name="articulo" >${publicacion.articulo}</textarea>
+<textarea style="width: 833px;" rows="75" id="articulo" name="articulo" >${publicacion.articulo}</textarea>
 <br><br>
 Script: <input type="text"  id="script" name="script" size="100" maxlength="200"><br><br>				
 Script2: <input type="text" id="script2" name="script2" size="100" maxlength="200"><br><br>

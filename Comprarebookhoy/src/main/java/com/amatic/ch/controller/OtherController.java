@@ -49,7 +49,7 @@ public class OtherController {
     public String getContacto(ModelMap model, HttpServletRequest request,
 	    HttpServletResponse response) throws IOException {
 
-	return "contacto";
+	return "contacta";
     }
 
     @RequestMapping(value = { "/sobre" }, method = { RequestMethod.GET,

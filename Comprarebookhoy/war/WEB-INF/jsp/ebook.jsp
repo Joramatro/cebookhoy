@@ -82,11 +82,21 @@
 					<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
 					<a class="addthis_button_tweet"></a>
 					<a class="addthis_button_pinterest_pinit"></a>
-					<a class="addthis_counter addthis_pill_style"></a>
+					<a class="addthis_counter addthis_pill_style"></a>&nbsp;&nbsp;
+					<g:plusone href="/ebooks/${publicacion.url}" align="right" size="medium"></g:plusone>
 					</div>
 					<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
 					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-509ce3d140135566"></script>
 					<!-- AddThis Button END -->
+					<!-- Botón +1. -->
+					<script type="text/javascript">
+					  (function() {
+					    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+					    po.src = 'https://apis.google.com/js/plusone.js';
+					    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+					  })();
+					</script> 
+					
 					<br><br>
 					<p style="font-style: italic;">Por favor, no dudes en puntuar y comentar tu opinión ó aportar más detalles en la sección de <a href="#comments">comentarios</a></p>
 				</div>	
@@ -232,17 +242,17 @@
 							<input id="nbrComment" name="nbrComment" type="hidden"/>
 							<div class="field">
 								<label>Nombre: <span>*</span></label>
-								<input id="comNombre" type="text" name="nombre" class="text" />
+								<input id="comNombre" type="text" name="nombre" maxlength="20" class="text" />
 							</div>
 
 							<div class="field">
 								<label>Email: (No será publicado) <span>*</span></label>
-								<input id="comEmail" type="text" name="email" class="text" />
+								<input id="comEmail" type="text" name="email" maxlength="40" class="text" />
 							</div>
 							
 							<div class="field">
 								<label>Web: </label>
-								<input type="text" name="web" class="text" />
+								<input type="text" name="web" class="text" maxlength="100" />
 							</div>							
 							
 							<div class="field">

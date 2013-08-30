@@ -6,6 +6,7 @@ import java.util.Date;
 import com.googlecode.objectify.annotation.Embed;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 
 @Entity
 public class Comentario implements Serializable {
@@ -17,27 +18,27 @@ public class Comentario implements Serializable {
 
     @Id
     Long id;
-
+    @Index
     private int puntos;
     private String comentario;
-
+    @Index
     private Date fecha;
-
+    @Index
     private String mail;
-
+    @Index
     private String nombre;
-
+    @Index
     private String web;
-
+    @Index
     private String ipAddress;
-
+    @Index
     private String gravatar;
     @Embed
     private Publicacion publicacion;
     private String comentarioReply;
-
+    @Index
     private String comentarioReplyNombre;
-
+    @Index
     private String comentarioReplyNbr;
 
     public String getWeb() {

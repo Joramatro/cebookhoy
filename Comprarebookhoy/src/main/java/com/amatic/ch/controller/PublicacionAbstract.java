@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -88,6 +89,7 @@ public abstract class PublicacionAbstract {
 		categorias.add(publicacion.getClase2());
 	    }
 	}
+	Collections.sort(categorias);
 
 	List<Publicacion> publicacionesMVE = publicacionService
 		.getPublicacionesMasVistas(WebConstants.SessionConstants.EBOOK);
@@ -99,11 +101,8 @@ public abstract class PublicacionAbstract {
 		.getUltimosComentarios();
 
 	model.addAttribute("comentarios", comentarios);
-
 	model.addAttribute("publicacionesMVE", publicacionesMVE);
-
 	model.addAttribute("publicacionesMVA", publicacionesMVA);
-
 	model.addAttribute("categorias", categorias);
 	model.addAttribute("publicaciones", publicaciones);
     }
