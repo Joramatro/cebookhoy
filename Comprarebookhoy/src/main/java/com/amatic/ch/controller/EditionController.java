@@ -74,7 +74,9 @@ public class EditionController {
 
 	User user = (User) session
 		.getAttribute(WebConstants.SessionConstants.RC_USER);
-
+	if (user == null) {
+	    response.sendRedirect("/editar");
+	}
 	Publicacion publicacion = new Publicacion();
 	try {
 	    publicacion.setKey(WebUtils.SHA1(WebUtils.cleanTildes(titulo)));
@@ -160,7 +162,11 @@ public class EditionController {
 	    HttpServletResponse response) throws IOException,
 	    NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
-
+	User user = (User) session
+		.getAttribute(WebConstants.SessionConstants.RC_USER);
+	if (user == null) {
+	    response.sendRedirect("/editar");
+	}
 	Publicacion publicacion = publicacionService.getPublicacion(
 		WebUtils.SHA1(WebUtils.cleanTildes(titulo)), tipo);
 	session.setAttribute("publicacion", publicacion);
@@ -179,6 +185,12 @@ public class EditionController {
 	    HttpServletRequest request, HttpServletResponse response)
 	    throws IOException, NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
+	User user = (User) session
+		.getAttribute(WebConstants.SessionConstants.RC_USER);
+	if (user == null) {
+	    response.sendRedirect("/editar");
+	}
+
 	String tipo = "";
 	if (tipoedit.equals(WebConstants.SessionConstants.tipo1)) {
 	    tipo = WebConstants.SessionConstants.EBOOK;
@@ -203,6 +215,11 @@ public class EditionController {
 	    HttpServletRequest request, HttpServletResponse response)
 	    throws IOException, NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
+	User user = (User) session
+		.getAttribute(WebConstants.SessionConstants.RC_USER);
+	if (user == null) {
+	    response.sendRedirect("/editar");
+	}
 
 	Publicacion publicacion = (Publicacion) session
 		.getAttribute("publicacion");

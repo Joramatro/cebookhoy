@@ -84,10 +84,10 @@
 				<c:choose>
 				<c:when test="${empty user}">
 				   <div id="msg"></div>				
-		           <h2><i class="ico-keynote ico-white"></i><a id="login" href="#" class="btn login">Login para editores</a></h2>
+		           <h1><i class="ico-keynote ico-white"></i><a id="login" href="#" class="btn login">Login para editores</a></h1>
 		        </c:when>
 				<c:otherwise>
-					<h2><i class="ico-keynote ico-white"></i><a id="logout" href="#" class="btn logout">Logout</a></h2>
+					<h1><i class="ico-keynote ico-white"></i><a id="logout" href="#" class="btn logout">Logout</a></h1>
 				</c:otherwise>
 				</c:choose>
 			</div>

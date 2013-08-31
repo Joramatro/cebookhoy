@@ -17,7 +17,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-keynote ico-white"></i>Sobre Nosotros</h2>
+				<h1><i class="ico-keynote ico-white"></i>Sobre Nosotros</h1>
 
 			</div>
 			<!-- end: Container  -->
@@ -89,7 +89,7 @@
 								<div class="social_profiles">
 									<ul class="social-bookmarks">
 										<li class="facebook"><a target="_blank" href="https://www.facebook.com/jorge.amat.ro">facebook</a></li>
-										<li class="googleplus"><a target="_blank" href="https://plus.google.com/108657243775074009859/posts">googleplus</a></li>
+										<li class="googleplus"><a target="_blank" href="https://plus.google.com/108657243775074009859/" rel=”me”>googleplus</a></li>
 										<li class="linkedin"><a target="_blank" href="http://ie.linkedin.com/pub/jorge-amat-romero/2b/731/895">linkedin</a></li>
 										<li class="twitter"><a target="_blank" href="https://twitter.com/Jorge_Amat1">twitter</a></li>
 										<li class="pinterest"><a target="_blank" href="http://pinterest.com/jorgeamatro/">pinterest</a></li>

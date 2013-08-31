@@ -61,7 +61,7 @@ public class RssController {
 	    SampleContent content = new SampleContent();
 	    content.setTitle(publicacionArticulo.getTitulo());
 	    content.setAuthor(publicacionArticulo.getAutor());
-	    content.setUrl("http://www.comprarebookhoy.com/ebooks/"
+	    content.setUrl("http://www.comprarebookhoy.com/blog/"
 		    + publicacionArticulo.getUrl());
 	    content.setSummary(Jsoup.parse(publicacionArticulo.getArticulo())
 		    .text());
@@ -75,7 +75,7 @@ public class RssController {
 		content.getCategories().add(category2);
 	    }
 	    content.setDescription(publicacionArticulo.getDescripcion());
-	    content.setComments("http://www.comprarebookhoy.com/ebooks/"
+	    content.setComments("http://www.comprarebookhoy.com/blog/"
 		    + publicacionArticulo.getUrl() + "/#comments");
 	    content.setCreatedDate(publicacionArticulo.getFechaCreacion());
 	    items.add(content);

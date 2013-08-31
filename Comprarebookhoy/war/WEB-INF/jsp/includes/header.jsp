@@ -8,105 +8,6 @@
 
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<c:choose>
-		<c:when test="${!empty publicacion}">
-		<title>${publicacion.titulo} en Comprar eBook Hoy</title> 
-		<meta name="description" content="${publicacion.descripcion}"/>
-		<meta name="keywords" content="${publicacion.keywords}" />
-		<meta name="title" content="${publicacion.titulo} en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
-		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="${publicacion.titulo}"/>
-		<meta property="og:description" content="${publicacion.descripcion}"/>
-		<meta property="og:type" content="ebooks"/>
-		<meta property="og:url" content="http://www.comprarebookhoy.com"/>
-		<meta property="og:image" content=""/>
-		<!-- end: Facebook Open Graph -->
-	</c:when>
-	<c:when test="${fn:contains(pageContext.request.requestURI, 'extras')}">
-		<title>Extras en Comprar eBook Hoy</title> 
-		<meta name="description" content="Accede a todos los extras para tu eBook como fundas para protegerlo, adaptadores de corriente ó luces de lectura"/>
-		<meta name="keywords" content="extras ebook, accesorios ebook, adaptador corriente, luz lectura, funda kindle, funda ebook, funda lector ebook, funda ereader" />
-		<meta name="title" content="Extras en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
-		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="Extras en Comprar eBooks Hoy"/>
-		<meta property="og:description" content="Accede a todos los extras para tu eBook como fundas para protegerlo, adaptadores de corriente ó luces de lectura"/>
-		<meta property="og:type" content="extras"/>
-		<meta property="og:url" content="http://www.comprarebookhoy.com/extras"/>
-		<meta property="og:image" content=""/>
-		<!-- end: Facebook Open Graph -->		
-	</c:when>
-	<c:when test="${fn:contains(pageContext.request.requestURI, 'sobre')}">
-		<title>Sobre Nosotros y Comprar eBook Hoy</title> 
-		<meta name="description" content="Toda la información sobre los que trabajamos en Comprar eBook Hoy, su experiencia y valores profesionales"/>
-		<meta name="keywords" content="sobre nosotros ebooks, sobre ebooks, nosotros ebook, sobre kindle, sobre fundas ebook, sobre ereaders, sobre lectores de ebook" />
-		<meta name="title" content="Sobre Nosotros en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
-		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="Sobre Nosotros en Comprar eBooks Hoy"/>
-		<meta property="og:description" content="Toda la información sobre los que trabajamos en Comprar eBook Hoy, su experiencia y valores profesionales"/>
-		<meta property="og:type" content="sobre"/>
-		<meta property="og:url" content="http://www.comprarebookhoy.com/sobre"/>
-		<meta property="og:image" content=""/>
-		<!-- end: Facebook Open Graph -->
-	</c:when>
-	<c:when test="${fn:contains(pageContext.request.requestURI, 'contacto')}">
-		<title>Contacta con Comprar eBook Hoy</title> 
-		<meta name="description" content="Contacta con los que trabajamos en Comprar eBook Hoy"/>
-		<meta name="keywords" content="contacta nosotros ebooks, contacta ebooks, contacta ebook, contacta kindle, contacta fundas ebook, contacta ereaders, contacta lectores de ebook" />
-		<meta name="title" content="Contacta en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
-		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="Contacta en Comprar eBooks Hoy"/>
-		<meta property="og:description" content="Contacta con los que trabajamos en Comprar eBook Hoy"/>
-		<meta property="og:type" content="contacto"/>
-		<meta property="og:url" content="http://www.comprarebookhoy.com/contacto"/>
-		<meta property="og:image" content=""/>
-		<!-- end: Facebook Open Graph -->
-	</c:when>
-	<c:when test="${fn:contains(pageContext.request.requestURI, 'ebooks')}">
-		<title>Listado de eBooks en Comprar eBook Hoy</title> 
-		<meta name="description" content="Análisis y revisiones de los mejores lectores de eBooks en la actualidad en Comprar eBook Hoy"/>
-		<meta name="keywords" content="análisis lectores ebooks, revisiones lectores ebooks, los mejores lectores de ebooks, análisis kindle, revisión kindle, análisis tablet, lectores de ebook" />
-		<meta name="title" content="Análisis de eBooks en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
-		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="Análisis de eBooks en Comprar eBooks Hoy"/>
-		<meta property="og:description" content="Análisis y revisiones de los mejores lectores de eBooks en la actualidad en Comprar eBook Hoy"/>
-		<meta property="og:type" content="ebook"/>
-		<meta property="og:url" content="http://www.comprarebookhoy.com/ebooks"/>
-		<meta property="og:image" content=""/>
-		<!-- end: Facebook Open Graph -->
-	</c:when>
-	<c:when test="${fn:contains(pageContext.request.requestURI, 'blog')}">
-		<title>Artículos sobre eBooks en Comprar eBook Hoy</title> 
-		<meta name="description" content="Opinión y artículos de los mejores lectores de eBooks en la actualidad en Comprar eBook Hoy"/>
-		<meta name="keywords" content="opinion lectores ebooks, artículos lectores ebooks, los mejores lectores de ebooks, artículos kindle, blog, análisis tablet, artículos de lectores de ebook" />
-		<meta name="title" content="Opinión sobre eBooks en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
-		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="Opinión sobre eBooks en Comprar eBooks Hoy"/>
-		<meta property="og:description" content="Opinión y artículos sobre eBooks en Comprar eBooks Hoy"/>
-		<meta property="og:type" content="articulo"/>
-		<meta property="og:url" content="http://www.comprarebookhoy.com/blog"/>
-		<meta property="og:image" content=""/>
-		<!-- end: Facebook Open Graph -->
-	</c:when>
-	<c:otherwise>
-		<title>Bienvenido a Comprar eBook Hoy</title> 
-		<meta name="description" content="Busca y encuentra tu eBook preferido, análisis y recomendaciones de los mejores eReaders del mercado al mejor precio. Accede a la mejor información sobre los lectores de eBooks más vendidos"/>
-		<meta name="keywords" content="ebook, lector ebook, ereader, kindle, fundas ebook, ereaders mejor precio, kindle paperwhite, sony ebooks, mini ipad, woxter ebooks, wolter ebooks" />
-		<meta name="title" content="Lectores de eBooks en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
-		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="Lectores de eBooks en Comprar eBooks Hoy"/>
-		<meta property="og:description" content="Busca y encuentra tu eBook preferido, análisis y recomendaciones de los mejores eReaders del mercado al mejor precio. Accede a la mejor información sobre los lectores de eBooks más vendidos"/>
-		<meta property="og:type" content="principal"/>
-		<meta property="og:url" content="http://www.comprarebookhoy.com"/>
-		<meta property="og:image" content=""/>
-		<!-- end: Facebook Open Graph -->		
-	</c:otherwise>		
-	</c:choose>
-	
-	
-	<meta name="author" content="Comprar eBook Hoy"/>
-	
-	
-	
 	<meta name="robots" content="index,all" />
 	<meta name="revisit-after" content="1 days" />
 	<meta name="lang" content="es" />
@@ -115,8 +16,217 @@
 	<!-- start: Mobile Specific -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- end: Mobile Specific -->
+	<c:choose>
+	<c:when test="${!empty publicacion && publicacion.tipo eq 'EB'}">
+		<title>${publicacion.titulo} en Comprar eBook Hoy</title> 
+		<meta name="description" content="${publicacion.descripcion}"/>
+		<meta name="keywords" content="${publicacion.keywords}" />
+		<meta name="title" content="${publicacion.titulo} en Comprar eBook Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="author" content="Jorge Amat" />
+		<meta name="copyright" content="CEHoy" />
+		<meta name="application-name" content="${publicacion.titulo} en Comprar eBook Hoy" />
+		<!-- start: Facebook Open Graph -->
+		<meta property="og:title" content="${publicacion.titulo}"/>
+		<meta property="og:description" content="${publicacion.descripcion}"/>
+		<meta property="og:type" content="ebooks"/>
+		<meta property="og:url" content="http://www.comprarebookhoy.com/ebooks/${publicacion.url}"/>
+		<meta property="og:image" content="${publicacion.lImages[0]}"/>
+		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<!-- end: Facebook Open Graph -->
+		<!-- start: Twitter tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@ComprareBookHoy">
+		<meta name="twitter:creator" content="@Jorge_Amat1">
+		<meta name="twitter:title" content="${publicacion.titulo}">
+		<meta name="twitter:description" content="${publicacion.resumen}">
+		<meta name="twitter:image" content="${publicacion.lImages[0]}">
+		<!-- end: Twitter tags -->
+		<link rel=”canonical” href=”http://www.comprarebookhoy.com/ebooks/${publicacion.url}“/>
+	</c:when>
+	<c:when test="${!empty publicacion && publicacion.tipo eq 'AR'}">
+		<title>${publicacion.titulo} en Comprar eBook Hoy</title> 
+		<meta name="description" content="${publicacion.descripcion}"/>
+		<meta name="keywords" content="${publicacion.keywords}" />
+		<meta name="title" content="${publicacion.titulo} en Comprar eBook Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="author" content="Jorge Amat" />
+		<meta name="copyright" content="CEHoy" />
+		<meta name="application-name" content="${publicacion.titulo} en Comprar eBook Hoy" />
+		<!-- start: Facebook Open Graph -->
+		<meta property="og:title" content="${publicacion.titulo}"/>
+		<meta property="og:description" content="${publicacion.descripcion}"/>
+		<meta property="og:type" content="articulos"/>
+		<meta property="og:url" content="http://www.comprarebookhoy.com/blog/${publicacion.url}"/>
+		<meta property="og:image" content="${publicacion.lImages[0]}"/>
+		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<!-- end: Facebook Open Graph -->
+		<!-- start: Twitter tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@ComprareBookHoy">
+		<meta name="twitter:creator" content="@Jorge_Amat1">
+		<meta name="twitter:title" content="${publicacion.titulo}">
+		<meta name="twitter:description" content="${publicacion.resumen}">
+		<meta name="twitter:image" content="${publicacion.lImages[0]}">
+		<!-- end: Twitter tags -->
+		<link rel=”canonical” href=”http://www.comprarebookhoy.com/blog/${publicacion.url}“/>
+	</c:when>	
+	<c:when test="${fn:contains(pageContext.request.requestURI, 'extras')}">
+		<title>Extras en Comprar eBook Hoy</title> 
+		<meta name="description" content="Accede a todos los extras para comprar accesorios a tu ebook como fundas para protegerlo, adaptadores de corriente ó luces de lectura"/>
+		<meta name="keywords" content="extras ebook, accesorios ebook, comprar accesorio, adaptador corriente, luz lectura, comprar funda kindle, comprar funda ebook, comprar funda lector ebook, comprar funda ereader" />
+		<meta name="title" content="Extras en Comprar eBook Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="author" content="Jorge Amat" />
+		<meta name="copyright" content="CEHoy" />
+		<meta name="application-name" content="Extras en Comprar eBook Hoy" />
+		<!-- start: Facebook Open Graph -->
+		<meta property="og:title" content="Extras en Comprar eBook Hoy"/>
+		<meta property="og:description" content="Accede a todos los extras para comprar accesorios a tu ebook como fundas para protegerlo, adaptadores de corriente ó luces de lectura"/>
+		<meta property="og:type" content="extras"/>
+		<meta property="og:url" content="http://www.comprarebookhoy.com/extras"/>
+		<meta property="og:image" content="${publicaciones[0].lImages[0]}"/>
+		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<!-- end: Facebook Open Graph -->
+		<!-- start: Twitter tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@ComprareBookHoy">
+		<meta name="twitter:creator" content="@ComprareBookHoy">
+		<meta name="twitter:title" content="Extras en Comprar eBook Hoy">
+		<meta name="twitter:description" content="Accede a todos los extras para comprar accesorios a tu ebook como fundas para protegerlo, adaptadores de corriente ó luces de lectura">
+		<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
+		<link rel=”canonical” href=”http://www.comprarebookhoy.com/extras“/>
+		<!-- end: Twitter tags -->		
+	</c:when>
+	<c:when test="${fn:contains(pageContext.request.requestURI, 'sobre')}">
+		<title>Sobre Nosotros y Comprar eBook Hoy</title> 
+		<meta name="description" content="Toda la información sobre los que trabajamos en Comprar eBook Hoy, su experiencia y valores profesionales"/>
+		<meta name="keywords" content="sobre nosotros ebooks, sobre ebooks, nosotros ebook, sobre kindle, sobre fundas ebook, sobre ereaders, sobre lectores de ebook" />
+		<meta name="title" content="Sobre Nosotros en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="author" content="Jorge Amat" />
+		<meta name="copyright" content="CEHoy" />
+		<meta name="application-name" content="Sobre Nosotros en Comprar eBook Hoy" />
+		<!-- start: Facebook Open Graph -->
+		<meta property="og:title" content="Sobre Nosotros en Comprar eBook Hoy"/>
+		<meta property="og:description" content="Toda la información sobre los que trabajamos en Comprar eBook Hoy, su experiencia y valores profesionales"/>
+		<meta property="og:type" content="sobre"/>
+		<meta property="og:url" content="http://www.comprarebookhoy.com/sobre"/>
+		<meta property="og:image" content="/img/parallax-slider/3.jpg"/>
+		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<!-- end: Facebook Open Graph -->
+		<!-- start: Twitter tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@ComprareBookHoy">
+		<meta name="twitter:creator" content="@Jorge_Amat1">
+		<meta name="twitter:title" content="Sobre nosotros en Comprar eBook Hoy">
+		<meta name="twitter:description" content="Toda la información sobre los que trabajamos en Comprar eBook Hoy, su experiencia y valores profesionales">
+		<meta name="twitter:image" content="/img/parallax-slider/3.jpg">
+		<!-- end: Twitter tags -->
+		<link rel=”canonical” href=”http://www.comprarebookhoy.com/sobre“/>	
+	</c:when>
+	<c:when test="${fn:contains(pageContext.request.requestURI, 'contacto')}">
+		<title>Contacta con Comprar eBook Hoy</title> 
+		<meta name="description" content="Contacta con los que trabajamos en Comprar eBook Hoy"/>
+		<meta name="keywords" content="contacta nosotros ebooks, contacta ebooks, contacta ebook, contacta kindle, contacta fundas ebook, contacta ereaders, contacta lectores de ebook" />
+		<meta name="title" content="Contacta en Comprar eBooks Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="author" content="Jorge Amat" />
+		<meta name="copyright" content="CEHoy" />
+		<meta name="application-name" content="Contacto en Comprar eBook Hoy" />
+		<!-- start: Facebook Open Graph -->
+		<meta property="og:title" content="Contacta en Comprar eBook Hoy"/>
+		<meta property="og:description" content="Contacta con los que trabajamos en Comprar eBook Hoy"/>
+		<meta property="og:type" content="contacto"/>
+		<meta property="og:url" content="http://www.comprarebookhoy.com/contacto"/>
+		<meta property="og:image" content="/img/parallax-slider/2.jpg"/>
+		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<!-- end: Facebook Open Graph -->
+		<!-- start: Twitter tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@ComprareBookHoy">
+		<meta name="twitter:creator" content="@Jorge_Amat1">
+		<meta name="twitter:title" content="Contacta con nosotros en Comprar eBook Hoy">
+		<meta name="twitter:description" content="Contacta con los que trabajamos en Comprar eBook Hoy">
+		<meta name="twitter:image" content="/img/parallax-slider/2.jpg">
+		<!-- end: Twitter tags -->
+		<link rel=”canonical” href=”http://www.comprarebookhoy.com/contacto“/>
+	</c:when>
+	<c:when test="${fn:contains(pageContext.request.requestURI, 'ebooks')}">
+		<title>Listado de eBooks en Comprar eBook Hoy</title> 
+		<meta name="description" content="Análisis y revisiones de los mejores lectores de ebooks en la actualidad para que puedas comprar tu ebook preferido"/>
+		<meta name="keywords" content="análisis lectores ebooks, comprar lectores ereaders, comprar lectores de ebooks, análisis kindle, comprar kindle, análisis tablet, lectores de ebook" />
+		<meta name="title" content="Análisis de eBooks para comprar tu ebook preferido. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="author" content="Jorge Amat" />
+		<meta name="copyright" content="CEHoy" />
+		<meta name="application-name" content="eBooks en Comprar eBook Hoy" />
+		<!-- start: Facebook Open Graph -->
+		<meta property="og:title" content="Análisis de eBooks para comprar tu ebook favorito"/>
+		<meta property="og:description" content="Análisis y revisiones de los mejores lectores de eBooks en la actualidad para que puedas comprar tu ebook favorito"/>
+		<meta property="og:type" content="ebook"/>
+		<meta property="og:url" content="http://www.comprarebookhoy.com/ebooks"/>
+		<meta property="og:image" content="${publicaciones[0].lImages[0]}"/>
+		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<!-- end: Facebook Open Graph -->
+		<!-- start: Twitter tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@ComprareBookHoy">
+		<meta name="twitter:creator" content="@ComprareBookHoy">
+		<meta name="twitter:title" content="Análisis de eBooks para comprar tu ebook favorito en Comprar eBook Hoy">
+		<meta name="twitter:description" content="Análisis y revisiones de los mejores lectores de ebooks en la actualidad para que puedas comprar tu ebook preferido">
+		<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
+		<link rel=”canonical” href=”http://www.comprarebookhoy.com/ebooks“/>
+		<!-- end: Twitter tags -->		
+	</c:when>
+	<c:when test="${fn:contains(pageContext.request.requestURI, 'blog')}">
+		<title>Artículos sobre eBooks en Comprar eBook Hoy</title> 
+		<meta name="description" content="Opinión y artículos en nuestro blog de los mejores lectores de ebooks en la actualidad para que puedas comprar tu ebook preferido"/>
+		<meta name="keywords" content="opinion lectores ebooks, artículos lectores ebooks, comprar lectores de ebooks, artículos kindle, blog ereaders, comprar ereader, lectores ebooks" />
+		<meta name="title" content="Opinión y artículos sobre ereaders para comprar tu ebook preferido. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="author" content="Jorge Amat" />
+		<meta name="copyright" content="CEHoy" />
+		<meta name="application-name" content="Blog en Comprar eBook Hoy" />
+		<!-- start: Facebook Open Graph -->
+		<meta property="og:title" content="Opinión sobre ebooks para comprar tu ebook favorito"/>
+		<meta property="og:description" content="Opinión y artículos en nuestro blog de los mejores lectores de eBooks en la actualidad para que puedas comprar tu ebook favorito"/>
+		<meta property="og:type" content="articulo"/>
+		<meta property="og:url" content="http://www.comprarebookhoy.com/blog"/>
+		<meta property="og:image" content="${publicaciones[0].lImages[0]}"/>
+		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<!-- end: Facebook Open Graph -->
+		<!-- start: Twitter tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@ComprareBookHoy">
+		<meta name="twitter:creator" content="@ComprareBookHoy">
+		<meta name="twitter:title" content="Opinión y artículos sobre ereaders para comprar tu ebook preferido en Comprar eBook Hoy">
+		<meta name="twitter:description" content="Opinión y artículos en nuestro blog de los mejores lectores de eBooks en la actualidad para que puedas comprar tu ebook favorito">
+		<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
+		<!-- end: Twitter tags -->
+		<link rel=”canonical” href=”http://www.comprarebookhoy.com/blog“/>		
+	</c:when>
+	<c:otherwise>
+		<title>Bienvenido a Comprar eBook Hoy</title> 
+		<meta name="description" content="Analizamos y detallamos los mejores ereaders del mercado para que puedas comprar tu ebook preferido al mejor precio. Accede a la mejor información sobre los lectores de ebooks más vendidos"/>
+		<meta name="keywords" content="ebook, comprar lector ebook, comprar ereader, kindle, fundas ebook, comprar ereaders mejor precio, comprar kindle paperwhite, sony ebooks, mini ipad, comprar woxter ebooks, comprar wolter ebooks" />
+		<meta name="title" content="Lectores de eBooks en Comprar eBook Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="author" content="Jorge Amat" />
+		<meta name="copyright" content="CEHoy" />
+		<meta name="application-name" content="Lectores de ebooks en Comprar eBook Hoy" />
+		<!-- start: Facebook Open Graph -->
+		<meta property="og:title" content="Lectores de eBooks en Comprar eBook Hoy"/>
+		<meta property="og:description" content="Analizamos y detallamos los mejores ereaders del mercado para que puedas comprar tu ebook favorito al mejor precio. Accede a la mejor información sobre los lectores de ebooks más vendidos"/>
+		<meta property="og:type" content="principal"/>
+		<meta property="og:url" content="http://www.comprarebookhoy.com"/>
+		<meta property="og:image" content="/img/parallax-slider/1.jpg"/>
+		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<!-- end: Facebook Open Graph -->
+		<!-- start: Twitter tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@ComprareBookHoy">
+		<meta name="twitter:creator" content="@ComprareBookHoy">
+		<meta name="twitter:title" content="Lectores de eBooks en Comprar eBook Hoy">
+		<meta name="twitter:description" content="Analizamos y detallamos los mejores ereaders del mercado para que puedas comprar tu ebook favorito al mejor precio. Accede a la mejor información sobre los lectores de ebooks más vendidos">
+		<meta name="twitter:image" content="/img/parallax-slider/1.jpg">
+		<!-- end: Twitter tags -->				
+		<link rel=”canonical” href=”http://www.comprarebookhoy.com“/>
+	</c:otherwise>		
+	</c:choose>
 	
-
     <!-- start: CSS -->
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">

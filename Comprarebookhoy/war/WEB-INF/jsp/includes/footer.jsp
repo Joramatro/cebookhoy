@@ -196,7 +196,7 @@
 			
 				<p>
 				<a style="margin-right: 25px;" href="http://www.comprarebookhoy.com/rssfeed" accesskey="r"><img src="/img/rss.gif" alt="RSS"/>RSS</a>
-					&copy; 2013, <a href="/">Comprar eBook Hoy</a><i style="margin-top: -18px;" class="ico-color ico-sun"></i>
+					&copy; 2013, <a target="_blank" rel="publisher" href="https://plus.google.com/b/103298424982329605824/103298424982329605824/posts">Comprar eBook Hoy</a><i style="margin-top: -18px;" class="ico-color ico-sun"></i>
 				</p>
 			</div>
 	

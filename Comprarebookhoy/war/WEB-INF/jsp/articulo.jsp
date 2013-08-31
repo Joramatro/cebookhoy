@@ -17,7 +17,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-book ico-white"></i>${publicacion.titulo}</h2>
+				<h1><i class="ico-book ico-white"></i>${publicacion.titulo}</h1>
 
 			</div>
 			<!-- end: Container  -->
@@ -59,7 +59,7 @@
 			<div class="row">
 				
 				<div class="span2">					
-					<ul class="project-info">
+					<ul class="project-info" style="font-size: 12px;">
 						<li><strong>Número visitas&nbsp;</strong>&nbsp;  ${publicacion.numVisitas}</li>
 						<c:if test="${publicacion.sumaPuntos gt 0 }">
 							<li><strong>Puntos&nbsp;</strong>&nbsp; 
@@ -67,7 +67,7 @@
 							&nbsp;&nbsp;(de ${publicacion.votantes} votantes)</li> 
 						</c:if>
 						<li><strong>Fecha&nbsp;</strong>&nbsp; <fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></li>
-						<li><strong>Autor&nbsp;</strong>&nbsp;  ${publicacion.autor}</li>
+						<li><strong>Autor&nbsp;</strong>&nbsp; <a target="_blank" href="https://plus.google.com/u/0/105725464925282994749/" rel=”author”>${publicacion.autor}</a></li>
 					</ul>					
 				</div>				
 				<div class="span10">

@@ -122,7 +122,7 @@ Script2: <input type="text" id="script2" name="script2" size="100" maxlength="20
 <div id="divFotos" style="display:none">
     <br>
     <div class="page-header">
-        <h1>Configuracion fotos publicacion</h1>
+        <h2>Configuracion fotos publicacion</h2>
     </div>
     <blockquote>
         <p>Sube fotos a la publicacion</p>

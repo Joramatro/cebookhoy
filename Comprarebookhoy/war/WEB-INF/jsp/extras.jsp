@@ -15,7 +15,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-lightbulb ico-white"></i>Extras</h2>
+				<h1><i class="ico-lightbulb ico-white"></i>Extras</h1>
 
 			</div>
 			<!-- end: Container  -->

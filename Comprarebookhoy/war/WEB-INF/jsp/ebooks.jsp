@@ -15,7 +15,7 @@
 			<!-- start: Container -->
 			<div class="container">
 
-				<h2><i class="ico-lightbulb ico-white"></i>eBooks</h2>
+				<h1><i class="ico-lightbulb ico-white"></i>eBooks</h1>
 
 			</div>
 			<!-- end: Container  -->

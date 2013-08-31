@@ -17,7 +17,7 @@
   </div>            
 
 <div class="subheader" style="margin-left:20px">
-    <h1>Log In</h1> para editar en Comprar eBook Hoy
+    <h2>Log In</h2> para editar en Comprar eBook Hoy
 </div>
 <div id="mainbar">
 
