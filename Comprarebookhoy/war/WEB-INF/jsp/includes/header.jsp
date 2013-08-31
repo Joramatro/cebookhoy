@@ -38,7 +38,7 @@
 		<meta name="twitter:site" content="@ComprareBookHoy">
 		<meta name="twitter:creator" content="@Jorge_Amat1">
 		<meta name="twitter:title" content="${publicacion.titulo}">
-		<meta name="twitter:description" content="${publicacion.resumen}">
+		<meta name="twitter:description" content="${publicacion.descripcion}">
 		<meta name="twitter:image" content="${publicacion.lImages[0]}">
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/ebooks/${publicacion.url}“/>
@@ -64,7 +64,7 @@
 		<meta name="twitter:site" content="@ComprareBookHoy">
 		<meta name="twitter:creator" content="@Jorge_Amat1">
 		<meta name="twitter:title" content="${publicacion.titulo}">
-		<meta name="twitter:description" content="${publicacion.resumen}">
+		<meta name="twitter:description" content="${publicacion.descripcion}">
 		<meta name="twitter:image" content="${publicacion.lImages[0]}">
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/blog/${publicacion.url}“/>
