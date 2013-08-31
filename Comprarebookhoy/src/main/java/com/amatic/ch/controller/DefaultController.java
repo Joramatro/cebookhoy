@@ -22,4 +22,12 @@ public class DefaultController {
 		+ uri);
 	// return "errors/error";
     }
+
+    @RequestMapping("/error/400")
+    public void badRequest(HttpServletRequest request) {
+	request.getRequestURI();
+	String uri = request.getRequestURI();
+	throw new UnknownResourceException("bad request for path " + uri);
+	// return "errors/error";
+    }
 }

@@ -22,6 +22,7 @@ import com.amatic.ch.constants.WebConstants;
 import com.amatic.ch.dto.Comentario;
 import com.amatic.ch.dto.Publicacion;
 import com.amatic.ch.dto.User;
+import com.amatic.ch.fileupload.controller.FileResource;
 import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
 import com.amatic.ch.service.UserService;
@@ -109,6 +110,10 @@ public class EditionController {
 
 	    articulo = articulo.replaceAll("<a>", "<a href=\"/venta/principal/"
 		    + publicacion.getUrl() + "\">");
+	    articulo = articulo.replaceAll("<href *",
+		    "<a target=\"_blank\" href=");
+	    articulo = articulo.replaceAll("</href>", "</a>");
+
 	    i = 1;
 	    while (articulo.contains("**")) {
 		if (i % 2 != 0) {
@@ -234,6 +239,47 @@ public class EditionController {
 
 	session.setAttribute("publicacion", null);
 	response.sendRedirect("/");
+
+    }
+
+    @RequestMapping(value = { "/edicion/guardarEdicionFotosPub" }, method = {
+	    RequestMethod.GET, RequestMethod.POST })
+    public void guardarFotosEdicionPublicacion(ModelMap model,
+	    @RequestParam("articulo") String articulo,
+	    HttpServletRequest request, HttpServletResponse response)
+	    throws IOException, NoSuchAlgorithmException {
+	HttpSession session = request.getSession();
+	User user = (User) session
+		.getAttribute(WebConstants.SessionConstants.RC_USER);
+	if (user == null) {
+	    response.sendRedirect("/editar");
+	}
+
+	Publicacion publicacion = (Publicacion) session
+		.getAttribute("publicacion");
+	try {
+	    // articulo = articulo.replaceAll("\n", "");
+	    publicacion.setArticulo(articulo);
+
+	    request.getSession().setAttribute("tituloNuevaPublicacion",
+		    publicacion.getKey());
+
+	    request.getSession().setAttribute("tipoNuevaPublicacion",
+		    publicacion.getTipo());
+	    FileResource fr = new FileResource();
+	    for (String image : publicacion.getlImagesKeys()) {
+		fr.delete(image, request, response);
+	    }
+
+	    publicacion.getlImages().clear();
+	    publicacion.getlImagesKeys().clear();
+	    publicacionService.update(publicacion);
+	} catch (Exception e) {
+	    log.error("error en editioncontroller", e);
+	}
+
+	session.setAttribute("publicacion", null);
+	return;
 
     }
 

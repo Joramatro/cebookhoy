@@ -37,8 +37,8 @@ public class PublicacionDaoImpl implements PublicacionDao {
 		.type(Publicacion.class).filter("tipo", tipo)
 		.order("-fechaCreacion").list();
 
-	if (ultimasPublicaciones.size() > 10) {
-	    ultimasPublicaciones = ultimasPublicaciones.subList(0, 10);
+	if (ultimasPublicaciones.size() > 12) {
+	    ultimasPublicaciones = ultimasPublicaciones.subList(0, 12);
 	}
 
 	return ultimasPublicaciones;

@@ -40,6 +40,7 @@
 		<meta name="twitter:title" content="${publicacion.titulo}">
 		<meta name="twitter:description" content="${publicacion.descripcion}">
 		<meta name="twitter:image" content="${publicacion.lImages[0]}">
+		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/ebooks/${publicacion.url}“/>
 	</c:when>
@@ -66,6 +67,7 @@
 		<meta name="twitter:title" content="${publicacion.titulo}">
 		<meta name="twitter:description" content="${publicacion.descripcion}">
 		<meta name="twitter:image" content="${publicacion.lImages[0]}">
+		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/blog/${publicacion.url}“/>
 	</c:when>	
@@ -92,8 +94,9 @@
 		<meta name="twitter:title" content="Extras en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Accede a todos los extras para comprar accesorios a tu ebook como fundas para protegerlo, adaptadores de corriente ó luces de lectura">
 		<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
-		<link rel=”canonical” href=”http://www.comprarebookhoy.com/extras“/>
+		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->		
+		<link rel=”canonical” href=”http://www.comprarebookhoy.com/extras“/>
 	</c:when>
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'sobre')}">
 		<title>Sobre Nosotros y Comprar eBook Hoy</title> 
@@ -118,6 +121,7 @@
 		<meta name="twitter:title" content="Sobre nosotros en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Toda la información sobre los que trabajamos en Comprar eBook Hoy, su experiencia y valores profesionales">
 		<meta name="twitter:image" content="/img/parallax-slider/3.jpg">
+		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/sobre“/>	
 	</c:when>
@@ -144,6 +148,7 @@
 		<meta name="twitter:title" content="Contacta con nosotros en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Contacta con los que trabajamos en Comprar eBook Hoy">
 		<meta name="twitter:image" content="/img/parallax-slider/2.jpg">
+		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/contacto“/>
 	</c:when>
@@ -170,6 +175,7 @@
 		<meta name="twitter:title" content="Análisis de eBooks para comprar tu ebook favorito en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Análisis y revisiones de los mejores lectores de ebooks en la actualidad para que puedas comprar tu ebook preferido">
 		<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
+		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/ebooks“/>
 		<!-- end: Twitter tags -->		
 	</c:when>
@@ -196,6 +202,7 @@
 		<meta name="twitter:title" content="Opinión y artículos sobre ereaders para comprar tu ebook preferido en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Opinión y artículos en nuestro blog de los mejores lectores de eBooks en la actualidad para que puedas comprar tu ebook favorito">
 		<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
+		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/blog“/>		
 	</c:when>
@@ -222,6 +229,7 @@
 		<meta name="twitter:title" content="Lectores de eBooks en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Analizamos y detallamos los mejores ereaders del mercado para que puedas comprar tu ebook favorito al mejor precio. Accede a la mejor información sobre los lectores de ebooks más vendidos">
 		<meta name="twitter:image" content="/img/parallax-slider/1.jpg">
+		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->				
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com“/>
 	</c:otherwise>		

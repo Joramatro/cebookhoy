@@ -34,6 +34,32 @@ $(function(){
     });
 });
 
+$(function(){ 
+    $("#btnGuardarIrFotos").live('click', function() {
+    	//check name channel is not repeated
+//    	if(channelExists){
+//    		alert("channel name repeated");
+//    		return;
+//    	}
+    	$.ajax({
+		      type: "POST",
+		      url: "/edicion/guardarEdicionFotosPub",
+		      dataType: "html",
+		      cache: false,
+	          data: {
+	        	  "titulo": $("#titulo").val(),
+	        	  "articulo": $("#articulo").val(),
+	        	  "tipo": $("#tipo").val()
+	          },
+		      success: function(text){
+//		    	  var nameChn = ($("#nameChannel").val()).replace(/\s/g , "-")
+//		    	  $("#startChannel-form").attr("action", "/ch/" + nameChn);
+//		    	  $("#nameChannelUpload").val($("#nameChannel").val());
+		      }
+		    });
+    });
+});
+
 
 
 function validateEmail(email) {   

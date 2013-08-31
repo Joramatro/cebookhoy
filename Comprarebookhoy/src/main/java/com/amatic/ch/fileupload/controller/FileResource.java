@@ -65,14 +65,15 @@ public class FileResource {
 	} catch (BlobstoreFailureException bfe) {
 	    status = Status.NOT_FOUND;
 	}
-	HttpSession session = req.getSession();
-	Publicacion publicacion = publicacionService.getPublicacion(
-		(String) session.getAttribute("tituloNuevaPublicacion"),
-		(String) session.getAttribute("tipoNuevaPublicacion"));
-	List<String> lImages = publicacion.getlImages();
-	lImages.remove(key);
-	publicacionService.update(publicacion);
-
+	if (publicacionService != null) {
+	    HttpSession session = req.getSession();
+	    Publicacion publicacion = publicacionService.getPublicacion(
+		    (String) session.getAttribute("tituloNuevaPublicacion"),
+		    (String) session.getAttribute("tipoNuevaPublicacion"));
+	    List<String> lImages = publicacion.getlImages();
+	    lImages.remove(key);
+	    publicacionService.update(publicacion);
+	}
 	return Response.status(status).build();
     }
 
