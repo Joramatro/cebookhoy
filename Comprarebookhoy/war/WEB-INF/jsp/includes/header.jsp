@@ -296,6 +296,7 @@
 	                  				<li><a href="/ebooks/Kindle">Kindle 4</a></li>
 									<li><a href="/ebooks/Energy-Color-C7+-Touch">Energy Color C7+ Touch</a></li>
 									<li><a href="/blog/7-Razones-para-comprar-un-eReader-para-tus-hijos">Razones para comprar eReader a tus hijos</a></li>
+									<li><a href="/blog/Los-lectores-de-ebooks-mas-vendidos">Los lectores de ebooks más vendidos</a></li>
 	                			</ul>
 	              			</li>
 	              			<li id="menuExtras"><a href="/extras">Extras</a></li>

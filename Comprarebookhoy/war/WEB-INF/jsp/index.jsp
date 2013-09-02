@@ -13,28 +13,28 @@
 
 		<div id="da-slider" class="da-slider">
 			<div class="da-slide">
-				<h2>KINDLE PAPERWHITE 3G</h2>
+				<h2>Kindle Paperwhite 3G</h2>
 				<p>La tecnología unica Paperwhite y larga duración de batería hacen de el un gran contendiente.</p>
 				<a href="/venta/principal/Kindle-Paperwhite-3G" class="da-link">COMPRAR HOY</a>				
-				<div class="da-img"><img src="/img/parallax-slider/1.jpg" style="width: 430px;height:280px;" alt="image01" /></div>
+				<div class="da-img"><a href="/ebooks/Kindle-Paperwhite-3G"><img src="/img/parallax-slider/1.jpg" style="width: 370px;height:340px;" alt="Kindle Paperwhite 3G" /></a></div>
 			</div>
 			<div class="da-slide">
 				<h2>Energy Color C7+ Touch</h2>
 				<p>Lee y reproduce todo tipo de contenido multimedia de alta definición.</p>
 				<a href="/venta/principal/Energy-Color-C7+-Touch" class="da-link">COMPRAR HOY</a>
-				<div class="da-img"><img src="/img/parallax-slider/3.jpg" style="width: 430px;height:280px;" alt="image03" /></div>
+				<div class="da-img"><a href="/ebooks/Energy-Color-C7+-Touch"><img src="/img/parallax-slider/3.jpg" style="width: 370px;height:340px;" alt="Energy Color C7+ Touch" /></a></div>
 			</div>
 			<div class="da-slide">
 				<h2>Kindle Fire HD</h2>
 				<p>Delgado, ligero y portátil. Sensacional pantalla de 7 pulgadas.</p>
 				<a href="/venta/principal/Kindle-Fire-HD" class="da-link">COMPRAR HOY</a>
-				<div class="da-img"><img src="/img/parallax-slider/2.jpg" style="width: 430px;height:280px;" alt="image02" /></div>
+				<div class="da-img"><a href="/ebooks/Kindle-Fire-HD"><img src="/img/parallax-slider/2.jpg" style="width: 370px;height:340px;" alt="Kindle Fire HD" /></a></div>
 			</div>
 			<div class="da-slide">
-				<h2>KINDLE 4</h2>
+				<h2>Kindle 4</h2>
 				<p>Con Wifi y pantalla táctil de tinta electrónica E-Ink</p>
 				<a href="/venta/principal/Kindle" class="da-link">COMPRAR HOY</a>
-				<div class="da-img"><img src="/img/parallax-slider/4.jpg" style="width: 430px;height:280px;" alt="image04" /></div>
+				<div class="da-img"><a href="/ebooks/Kindle"><img src="/img/parallax-slider/4.jpg" style="width: 370px;height:340px;" alt="Kindle 4" /></a></div>
 			</div>
 			<nav class="da-arrows">
 				<span class="da-arrows-prev"></span>
