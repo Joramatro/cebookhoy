@@ -208,19 +208,27 @@
 
 <!-- start: Java Script -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/js/jquery-1.8.2.js"></script>
-<script src="/js/bootstrap.js"></script>
-<script src="/js/isotope.js"></script>
-<script src="/js/jquery.imagesloaded.js"></script>
-<script src="/js/flexslider.js"></script>
-<script src="/js/carousel.js"></script>
-<script src="/js/jquery.cslider.js"></script>
-<script src="/js/slider.js"></script>
-<script src="/js/fancybox.js"></script>
-<script defer="defer" src="/js/custom.js"></script>
-<script src="/js/apprise-v2.js"></script>
-<script src="/js/main.js"></script>
+<script src="/js/jquery-1.8.2.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/isotope.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/flexslider.min.js"></script>
+<script src="/js/carousel.min.js"></script>
+<script src="/js/jquery.cslider.min.js"></script>
+<script src="/js/slider.min.js"></script>
+<script src="/js/fancybox.min.js"></script>
+<script defer="defer" src="/js/custom.min.js"></script>
+<script async src="/js/apprise-v2.min.js"></script>
+<script async src="/js/main.js"></script>
 
+<script>
+$("head").append("<link rel='stylesheet' type='text/css' href='/css/apprise-v2.css' />");
+$("head").append("<link rel='stylesheet' type='text/css' href='/css/icons.css' />");
+$("head").append("<link rel='stylesheet' type='text/css' href='/css/icons-color.css' />");
+$("head").append("<link rel='stylesheet' type='text/css' href='/css/social-icons.min.css' />");
+$("head").append("<link rel='stylesheet' type='text/css' href='/css/hover.css' />");
+$("head").append("<link rel='stylesheet' type='text/css' href='/css/fancybox.css' />");
+</script>
 <script>
 	var pathname = window.location.pathname;
 	var parts = pathname.split('/');

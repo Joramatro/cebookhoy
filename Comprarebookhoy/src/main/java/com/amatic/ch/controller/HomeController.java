@@ -3,6 +3,7 @@ package com.amatic.ch.controller;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -50,6 +51,7 @@ public class HomeController {
 	    HttpServletResponse response) throws IOException {
 
 	HttpSession session = request.getSession();
+	response.setDateHeader("Expires", (new Date()).getTime() + 604800000L);
 	// User user = (User) session
 	// .getAttribute(WebConstants.SessionConstants.RC_USER);
 	// // Ref<?> value has not been initialized

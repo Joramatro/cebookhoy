@@ -235,16 +235,25 @@
 	</c:otherwise>		
 	</c:choose>
 	
+	<style>
+	@font-face {
+	  font-family: 'Droid Sans';
+	  font-style: normal;
+	  font-weight: 400;
+	  src: local('Droid Sans'), local('DroidSans'), url(http://themes.googleusercontent.com/static/fonts/droidsans/v3/s-BiyweUPV0v-yRb-cjciBsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+	}
+	@font-face {
+	  font-family: 'Droid Sans';
+	  font-style: normal;
+	  font-weight: 700;
+	  src: local('Droid Sans Bold'), local('DroidSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/droidsans/v3/EFpQQyG9GqCrobXxL-KRMQFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
+	}
+	</style>
     <!-- start: CSS -->
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="/css/style.css" rel="stylesheet">
-	<link href="/css/parallax-slider.css" rel="stylesheet">
-	<link rel="stylesheet" href="/css/apprise-v2.css" type="text/css" />
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Boogaloo">
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Economica:700,400italic">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/css/parallax-slider.css" rel="stylesheet">   
+	<link href="/css/style.min.css" rel="stylesheet">
 	<!-- end: CSS -->
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -252,9 +261,6 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-	<!--[if IE 9]>
-      <link href="css/styleie9.css" rel="stylesheet">
-    <![endif]-->
 
 </head>
 <body>

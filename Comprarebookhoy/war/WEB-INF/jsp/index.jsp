@@ -16,25 +16,25 @@
 				<h2>Kindle Paperwhite 3G</h2>
 				<p>La tecnología unica Paperwhite y larga duración de batería hacen de el un gran contendiente.</p>
 				<a href="/venta/principal/Kindle-Paperwhite-3G" class="da-link">COMPRAR HOY</a>				
-				<div class="da-img"><a href="/ebooks/Kindle-Paperwhite-3G"><img src="/img/parallax-slider/1.jpg" style="width: 370px;height:340px;" alt="Kindle Paperwhite 3G" /></a></div>
+				<div class="da-img"><a href="/ebooks/Kindle-Paperwhite-3G"><img src="http://lh5.ggpht.com/s0UD2hN426tPocZw_4hVj1BndR5ttcSJRmcGPZuJy_ekDS9fNZH_DgQbfHR3QWcnxyla_gmhSp4yXOrwOw6RzV7di_M=s1600-c" style="width: 370px;height:340px;" alt="Kindle Paperwhite 3G" /></a></div>
 			</div>
 			<div class="da-slide">
 				<h2>Energy Color C7+ Touch</h2>
 				<p>Lee y reproduce todo tipo de contenido multimedia de alta definición.</p>
 				<a href="/venta/principal/Energy-Color-C7+-Touch" class="da-link">COMPRAR HOY</a>
-				<div class="da-img"><a href="/ebooks/Energy-Color-C7+-Touch"><img src="/img/parallax-slider/3.jpg" style="width: 370px;height:340px;" alt="Energy Color C7+ Touch" /></a></div>
+				<div class="da-img"><a href="/ebooks/Energy-Color-C7+-Touch"><img src="http://lh3.ggpht.com/ULTstyLS28T160RpvQ3aWXIguFgO7KfAXBkDZ4g3SojBlm9tb6w5lX-CQwHTE4stQM-Ww8zr_iWGBFxsIi1fgvWUA_To=s1600-c" style="width: 370px;height:340px;" alt="Energy Color C7+ Touch" /></a></div>
 			</div>
 			<div class="da-slide">
 				<h2>Kindle Fire HD</h2>
 				<p>Delgado, ligero y portátil. Sensacional pantalla de 7 pulgadas.</p>
 				<a href="/venta/principal/Kindle-Fire-HD" class="da-link">COMPRAR HOY</a>
-				<div class="da-img"><a href="/ebooks/Kindle-Fire-HD"><img src="/img/parallax-slider/2.jpg" style="width: 370px;height:340px;" alt="Kindle Fire HD" /></a></div>
+				<div class="da-img"><a href="/ebooks/Kindle-Fire-HD"><img src="http://lh3.ggpht.com/T4u45F2id9l6G4N0dG4N501utUS0i9gZ-k1OcDT_QAg269KfcLXkZ4c2ayPFq54oU1_0-Vws66JnNHyrtb3LKZDEURpv=s1600-c" style="width: 370px;height:340px;" alt="Kindle Fire HD" /></a></div>
 			</div>
 			<div class="da-slide">
 				<h2>Kindle 4</h2>
 				<p>Con Wifi y pantalla táctil de tinta electrónica E-Ink</p>
 				<a href="/venta/principal/Kindle" class="da-link">COMPRAR HOY</a>
-				<div class="da-img"><a href="/ebooks/Kindle"><img src="/img/parallax-slider/4.jpg" style="width: 370px;height:340px;" alt="Kindle 4" /></a></div>
+				<div class="da-img"><a href="/ebooks/Kindle"><img src="http://lh6.ggpht.com/2yOdMN6oD92BcytMlKSRXCrjnuQmGyw0ri_Fdl2WCEIHoblpfuShMGB3BIn0-_lzUY4Y2YWX_B5uXLLwdTsXp8YacCE=s1600-c" style="width: 370px;height:340px;" alt="Kindle 4" /></a></div>
 			</div>
 			<nav class="da-arrows">
 				<span class="da-arrows-prev"></span>
