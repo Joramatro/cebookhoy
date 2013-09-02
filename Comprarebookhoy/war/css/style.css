@@ -538,7 +538,7 @@ html[xmlns] .slides {display: block;}
 	position: absolute;
 	display: block;
 	left: -56%;
-	bottom: 20px;
+	bottom: 0px;
 	background: rgba(0, 0, 0, 0.7);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#b3000000',GradientType=0 ); /* IE6-8 */
 }

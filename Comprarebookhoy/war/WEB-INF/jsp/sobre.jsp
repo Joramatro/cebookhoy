@@ -63,7 +63,7 @@
 							<span class="dropcap color">2</span>Desde hace ya unos años, los eBooks han irrumpido con fuerza en el mercado, y se presetan claramente como la opción preferida entre los lectores más avidos, y los que no lo son tanto. Sin lugar a dudas, es el presente y futuro de la lectura.
 						</p>
 						<p>
-							<span class="dropcap dark">3</span>Nosotros venimos de una formación relacionada con la tecnología, y tras más de 6 años trabajando para distintas empresas TIC privadas y estudiando nuevos gadgets tecnológicos en nuestro tiempo libre, reunimos aquí todos nuestros conocimientos para intentar crear la mejor web de habla hispana sobre eBooks y productos relacionados. Nuestro objetivo es ser honestos y aportar valor a nuestros lectores. 
+							<span class="dropcap dark">3</span>Nosotros venimos de una formación relacionada con la tecnología, y tras más de 10 años trabajando para distintas empresas TIC privadas y estudiando nuevos gadgets tecnológicos en nuestro tiempo libre, reunimos aquí todos nuestros conocimientos para intentar crear la mejor web de habla hispana sobre eBooks y productos relacionados. Nuestro objetivo es ser honestos y aportar valor a nuestros lectores. 
 						</p>
 						<p>
 							Reciéntemente hemos iniciado nuestra propia empresa, dónde pretendemos ofrecer la mejor información y los mejores análisis para conseguir que aciertes con la compra del producto que buscas. Estamos aquí para ayudarte y que decidas con la mejor opinión creada posible, <a href="/contacto">contacta</a> con nosotros cuando así lo requieras.
@@ -71,15 +71,13 @@
 					</div>	
 					<!-- end: History -->
 
-					<!-- start: Team -->	
+	
 					<div id="team">
 						
 						<div class="title"><h3>Equipo</h3></div>
-						
-						<!-- start: Row -->
+											
 						<div class="row">
 						
-							<!-- start: About Member -->
 							<div class="span4">
 								<img src="/img/jorge_1.jpg" alt="team member">
 								<div class="team-name">Jorge Amat<span> / Creador de CEHoy</span></div>
@@ -95,15 +93,12 @@
 										<li class="pinterest"><a target="_blank" href="http://pinterest.com/jorgeamatro/">pinterest</a></li>
 									</ul>
 								</div>	
-							</div>
-							<!-- end: About Member -->
-	
+							</div>	
 						
 						</div>
-						<!-- end: Row -->
 
 					</div>
-					<!-- end: Team -->
+
 					
 					
 				</div>	
