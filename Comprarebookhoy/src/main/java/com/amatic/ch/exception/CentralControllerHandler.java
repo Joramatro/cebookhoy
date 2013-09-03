@@ -2,6 +2,8 @@ package com.amatic.ch.exception;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.ConversionNotSupportedException;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -10,8 +12,13 @@ import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.amatic.ch.fileupload.controller.FileResource;
+
 @ControllerAdvice
 public class CentralControllerHandler {
+    private static final Logger log = LoggerFactory
+	    .getLogger(FileResource.class);
+
     // 400
     @ExceptionHandler({ MissingServletRequestParameterException.class,
 	    ConversionNotSupportedException.class, TypeMismatchException.class,
@@ -19,6 +26,8 @@ public class CentralControllerHandler {
 	    HttpMessageNotWritableException.class })
     public String handleMyException(Exception exception,
 	    HttpServletRequest request) {
+
+	log.error("error Bad Request", exception);
 	return "/error/error_dinamic";
     }
 

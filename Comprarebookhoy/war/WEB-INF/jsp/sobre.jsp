@@ -31,7 +31,7 @@
 	<div id="wrapper">
 				
 		<!--start: Container -->
-    	<div class="container">
+    	<div class="container" style=" padding-bottom: 100px; ">
 	
 			<!--start: Row -->
 	    	<div class="row">
@@ -71,7 +71,7 @@
 					</div>	
 					<!-- end: History -->
 
-	
+					<!--  
 					<div id="team">
 						
 						<div class="title"><h3>Equipo</h3></div>
@@ -98,8 +98,7 @@
 						</div>
 
 					</div>
-
-					
+					-->					
 					
 				</div>	
 				
