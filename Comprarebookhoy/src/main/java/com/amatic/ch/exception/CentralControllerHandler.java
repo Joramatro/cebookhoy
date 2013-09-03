@@ -1,9 +1,28 @@
 package com.amatic.ch.exception;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.ConversionNotSupportedException;
+import org.springframework.beans.TypeMismatchException;
+import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.http.converter.HttpMessageNotWritableException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class CentralControllerHandler {
+    // 400
+    @ExceptionHandler({ MissingServletRequestParameterException.class,
+	    ConversionNotSupportedException.class, TypeMismatchException.class,
+	    HttpMessageNotReadableException.class,
+	    HttpMessageNotWritableException.class })
+    public String handleMyException(Exception exception,
+	    HttpServletRequest request) {
+	return "/error/error_dinamic";
+    }
+
+    // 500ConversionNotSupportedException
 
     // @ExceptionHandler({PersonNotFoundException.class})
     // public ResponseEntity<String>

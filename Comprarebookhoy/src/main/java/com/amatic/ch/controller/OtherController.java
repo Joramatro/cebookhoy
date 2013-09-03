@@ -24,6 +24,7 @@ import com.amatic.ch.dto.User;
 import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
 import com.amatic.ch.service.UserService;
+import com.amatic.ch.utils.Mail;
 import com.amatic.ch.utils.WebUtils;
 import com.dyuproject.openid.OpenIdUser;
 
@@ -66,6 +67,8 @@ public class OtherController {
 	    throws IOException {
 	Email emailObj = new Email(email);
 	publicacionService.saveEmail(emailObj);
+	Mail.sendMail("Nueva suscribcion de: " + email,
+		"Nueva Suscripcion CEHoy");
 	return;
     }
 
@@ -80,6 +83,8 @@ public class OtherController {
 	contacto.setMessage(message);
 	contacto.setName(name);
 	publicacionService.saveContacto(contacto);
+	Mail.sendMail("Nuevo contacto de: " + email + "\n Nombre: " + name
+		+ "\n Mensaje:" + message, "Nuevo Contacto CEHOY");
 	return;
     }
 

@@ -20,6 +20,7 @@ import com.amatic.ch.dto.Publicacion;
 import com.amatic.ch.exception.UnknownResourceException;
 import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
+import com.amatic.ch.utils.Mail;
 import com.amatic.ch.utils.WebUtils;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Ref;
@@ -72,6 +73,9 @@ public abstract class PublicacionAbstract {
 	lComentarios.add(Ref.create(keyNuevoComentario));
 
 	publicacionService.update(publicacion);
+	Mail.sendMail(
+		"Comentario de:" + email + "\n Dejado en:"
+			+ publicacion.getUrl(), "Nuevo Comentario CEHOY");
     }
 
     void setPublicaciones(ModelMap model, String tipo) {
