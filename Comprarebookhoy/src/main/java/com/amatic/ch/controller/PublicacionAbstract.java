@@ -131,6 +131,13 @@ public abstract class PublicacionAbstract {
 	List<Publicacion> publicaciones = publicacionService
 		.getUltimasPublicaciones(tipo);
 
+	List<Publicacion> publicacionesInteresantes = new ArrayList<Publicacion>();
+	for (Publicacion publicacionNoRep : publicaciones) {
+	    if (!publicacion.getKey().equals(publicacionNoRep.getKey())) {
+		publicacionesInteresantes.add(publicacionNoRep);
+	    }
+	}
+
 	List<Publicacion> publicacionesMVE = publicacionService
 		.getPublicacionesMasVistas(WebConstants.SessionConstants.EBOOK);
 
@@ -146,6 +153,6 @@ public abstract class PublicacionAbstract {
 
 	model.addAttribute("publicacionesMVA", publicacionesMVA);
 
-	model.addAttribute("publicaciones", publicaciones);
+	model.addAttribute("publicaciones", publicacionesInteresantes);
     }
 }

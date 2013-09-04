@@ -31,7 +31,7 @@
 </url>
 <url>
   <loc>http://www.comprarebookhoy.com/extras</loc>
-  <changefreq>daily</changefreq>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://www.comprarebookhoy.com/blog</loc>
@@ -62,10 +62,6 @@
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.comprarebookhoy.com/ebooks/Sony-Reader-PRS-T2</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
   <loc>http://www.comprarebookhoy.com/ebooks/Sony-Reader-PRS-T2/</loc>
   <changefreq>weekly</changefreq>
 </url>
@@ -74,43 +70,7 @@
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.comprarebookhoy.com/ebooks/Nook-Simple-Touch-vs-Kindle/</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://www.comprarebookhoy.com/ebooks/Google-Nexus-7/</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://www.comprarebookhoy.com/ebooks/Kindle-Paperwhite-3G/</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://www.comprarebookhoy.com/ebooks/Kindle/</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://www.comprarebookhoy.com/ebooks/Energy-Color-C7+-Touch/</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://www.comprarebookhoy.com/blog/Los-lectores-de-ebooks-mas-vendidos/</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://www.comprarebookhoy.com/blog/Mejor-lector-ebook-android-gratis/</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://www.comprarebookhoy.com/blog/7-Razones-para-comprar-un-eReader-para-tus-hijos/</loc>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
   <loc>http://www.comprarebookhoy.com/politica-de-privacidad</loc>
   <changefreq>yearly</changefreq>
-</url>
-<url>
-  <loc>http://www.comprarebookhoy.com/ebooks/Kindle-Fire-HD/</loc>
-  <changefreq>weekly</changefreq>
 </url>
 </urlset>

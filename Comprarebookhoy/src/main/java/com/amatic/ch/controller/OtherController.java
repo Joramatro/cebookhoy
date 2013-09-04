@@ -60,15 +60,14 @@ public class OtherController {
 
 	return "sobre";
     }
-
-    @RequestMapping(value = { "/politica-de-privacidad" }, method = {
-	    RequestMethod.GET, RequestMethod.POST })
-    public String getPoliticaPrivacidad(ModelMap model,
-	    HttpServletRequest request, HttpServletResponse response)
-	    throws IOException {
+    
+    @RequestMapping(value = { "/politica-de-privacidad" }, method = { RequestMethod.GET,
+	    RequestMethod.POST })
+    public String getPoliticaPrivacidad(ModelMap model, HttpServletRequest request,
+	    HttpServletResponse response) throws IOException {
 
 	return "privacidad";
-    }
+    }    
 
     @RequestMapping(value = { "/suscribir" }, method = { RequestMethod.POST })
     public void getSubscripcion(ModelMap model, HttpServletRequest request,

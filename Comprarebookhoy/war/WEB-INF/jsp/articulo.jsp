@@ -127,8 +127,7 @@
 					
 					<!-- start: Row -->
 		      		<div class="row">
-						<c:forEach var="publicacionRel" items="${publicaciones}" varStatus="status" end="2">
-						<c:if test="${publicacionRel.titulo ne publicacion.titulo }">	
+						<c:forEach var="publicacionRel" items="${publicaciones}" varStatus="status" end="2">	
 						<div class="span3">	
 							<div class="picture">
 								<a href="/blog/${publicacionRel.url}" title="${publicacionRel.titulo}">
@@ -145,7 +144,6 @@
 								</p>
 							</div>					
         				</div>
-        				</c:if>
         				</c:forEach>					
 					</div>
 				</div>

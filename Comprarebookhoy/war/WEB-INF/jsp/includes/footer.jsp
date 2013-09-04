@@ -166,12 +166,12 @@
 					<!-- end: Follow Us -->
 				
 					<!-- start: Newsletter -->
-					<form id="newsletter" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="validarEmail();return false;">
+					<form id="newsletter" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=ComprarEbookHoy', 'popupwindow', 'scrollbars=yes,width=550,height=520');">
 						<h3>Suscríbete</h3>
 						<p>Por favor, dejanos tu email</p>
 						<label for="newsletter_input">@:</label>
 						<input type="text" name="email" id="newsletter_input">
-						<input type="submit" id="newsletter_submit" value="Enviar">			
+						<input type="submit" id="btnSuscripcion" value="Enviar">			
 						<input type="hidden" value="ComprarEbookHoy" name="uri"/>
 						<input type="hidden" name="loc" value="es_ES"/>						
 					</form>

@@ -78,28 +78,28 @@ function validateEmail(email) {
 //	  return false;
 //	}
 
-function validarEmail(){
+$(function(){ 
+    $("#btnSuscripcion").on('click', function() {
 	  var email = $("#newsletter_input").val();
-	  if (validateEmail(email)) {
-    	$.ajax({
-		      type: "POST",
-		      url: "/suscribir",
-		      dataType: "html",
-		      cache: false,
-	          data: {
-	        	  "email": $("#newsletter_input").val()
-	          },
-		      success: function(text){
-		    	  Apprise("Por favor, sigue las instrucciones en la nueva ventana abierta. Gracias por suscribirte a nuestras publicaciones!");
-		    	  window.open('http://feedburner.google.com/fb/a/mailverify?uri=ComprarEbookHoy', 'popupwindow', 'scrollbars=yes,width=550,height=520');
-		    	  return true;
-		    	  $("#newsletter_input").val("");
-		      }
-		    });
-    }else {
-	    alert("Por favor, introduce un email correcto");
-	  }
-}
+		  if (validateEmail(email)) {
+	    	$.ajax({
+			      type: "POST",
+			      url: "/suscribir",
+			      dataType: "html",
+			      cache: false,
+		          data: {
+		        	  "email": $("#newsletter_input").val()
+		          },
+			      success: function(text){
+			    	  Apprise("Por favor, sigue las instrucciones mostradas en la nueva ventana abierta. Gracias por suscribirte a nuestras publicaciones!");
+			    	  $("#newsletter_input").val("");
+			      }
+			    });
+	    }else {
+		    alert("Por favor, introduce tu email en la siguiente ventana y sigue las instrucciones mostradas.");
+		}
+    });
+});
 
 function validarComentarios(){
 	  var email = $("#comEmail").val();
