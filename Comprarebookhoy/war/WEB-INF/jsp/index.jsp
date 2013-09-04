@@ -129,7 +129,7 @@
 			<!-- start: Portfolio -->
 			<div id="portfolio-wrapper" class="row">
 				<% pageContext.setAttribute("newLineChar", "\n"); %>
-				<c:forEach var="publicacion" items="${publicacionesEbooks}" varStatus="status" end="5">				
+				<c:forEach var="publicacion" items="${publicacionesEbooks}" varStatus="status" end="8">				
 				<div class="span4 portfolio-item nature people">
 					<div class="picture"><a href="/ebooks/${publicacion.url}" title="${publicacion.titulo}">
 					
@@ -148,7 +148,7 @@
 					</div>	
 				</div>
 				</c:forEach>
-				<c:forEach var="publicacion" items="${publicacionesBlog}" varStatus="status" end="5">				
+				<c:forEach var="publicacion" items="${publicacionesBlog}" varStatus="status" end="8">				
 				<div class="span4 portfolio-item nature people">
 					<div class="picture"><a href="/blog/${publicacion.url}" title="${publicacion.titulo}">
 					

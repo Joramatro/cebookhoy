@@ -90,7 +90,9 @@ function validarEmail(){
 	        	  "email": $("#newsletter_input").val()
 	          },
 		      success: function(text){
-		    	  Apprise("Gracias por suscribirte a nuestras publicaciones!");
+		    	  Apprise("Por favor, sigue las instrucciones en la nueva ventana abierta. Gracias por suscribirte a nuestras publicaciones!");
+		    	  window.open('http://feedburner.google.com/fb/a/mailverify?uri=ComprarEbookHoy', 'popupwindow', 'scrollbars=yes,width=550,height=520');
+		    	  return true;
 		    	  $("#newsletter_input").val("");
 		      }
 		    });

@@ -53,6 +53,17 @@
 				</div>
 			</div>
 			<!-- end: Flexslider -->
+			<div style="position: absolute;top: 310px;right: 44px;">
+			<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- rec grande recomendado ch -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:336px;height:280px"
+				     data-ad-client="ca-pub-3168560600423825"
+				     data-ad-slot="5882295745"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>			
 			
 			<hr>
 			
@@ -76,7 +87,7 @@
 					${publicacion.articulo}
 					<br>
 					<c:if test="${publicacion.disponible ne 'N'}">
-						<br><a href="/venta/principal/${publicacion.url}" class="button color launch">Cómpralo Hoy</a>
+						<br><a href="/venta/principal/${publicacion.url}" class="button color launch">Cómpralo Hoy!</a>
 					</c:if>					
 					<br>															
 					<!-- AddThis Button BEGIN -->

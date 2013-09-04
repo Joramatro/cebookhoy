@@ -795,6 +795,9 @@ input[type="button"] {float: left;}
 .button.light:hover {background:#72b626;}
 
 .button.color {color:#fff; background:#72b626;}
+
+.button.color.launch {color: #fff;background: red;}
+
 .button.color:hover {background:#aaa;}
 
 /* Input Button */

@@ -86,10 +86,10 @@
        		</div>
        		<%@ include file="/WEB-INF/jsp/includes/carrusel.jsp"%>      	
 		</div>
-		
+		<!--end: Container-->
 	</div>
 	<!-- end: Wrapper  -->
-		<!--end: Container-->
+		
 			
 <%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
 

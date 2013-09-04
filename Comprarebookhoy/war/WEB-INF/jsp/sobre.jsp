@@ -149,43 +149,15 @@
 				
 			</div>
 			<!--end: Row-->
-	
 		</div>
-		<!--end: Container-->
-				
-		<!--start: Container -->
-    	<div class="container">	
-      		
-			<hr>
-		
-			<!-- start Clients List -->	
-			<div class="clients-carousel">
-		
-				<ul class="slides clients">
-					<li><a target="_blank" href="/venta/marca/logo1" title="woxter" ><img src="/img/logos/2.png"/></a></li>
-					<li><a target="_blank" href="/venta/marca/logo2" title="android"><img src="/img/logos/2.png" /></a></li>	
-					<li><a target="_blank" href="/venta/marca/logo3" title="kindle"><img src="/img/logos/3.png" /></a></li>
-					<li><a target="_blank" href="/venta/marca/logo4" title="wolder"><img src="/img/logos/4.png" /></a></li>
-					<li><a target="_blank" href="/venta/marca/logo5" title="kindle"><img src="/img/logos/5.png"/></a></li>
-					<li><a target="_blank" href="/venta/marca/logo6" title="ipad mini"><img src="/img/logos/6.png" /></a></li>
-					<li><a target="_blank" href="/venta/marca/logo7" title="kobo glo"><img src="/img/logos/7.png" /></a></li>
-					<li><a target="_blank" href="/venta/marca/logo8" title="nook"><img src="/img/logos/8.png" /></a></li>										
-					<li><a target="_blank" href="/venta/marca/logo9" title="sony"><img src="/img/logos/9.png" /></a></li>
-					<li><a target="_blank" href="/venta/marca/logo10" title="papyre"><img src="/img/logos/10.png" /></a></li>
-				</ul>
-		
-			</div>
-			<!-- end Clients List -->
-		
-			<hr>
-		
-		</div>
-		<!--end: Container-->	
-
+		<div>
+			<%@ include file="/WEB-INF/jsp/includes/carrusel.jsp"%>
+		</div> 
+		<!--end: Container-->		
 	</div>
-	<!-- end: Wrapper  -->			
-
-<%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
+	<!-- end: Wrapper  -->		
+	
+	<%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
 
 </body>
 </html>	

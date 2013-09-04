@@ -130,7 +130,7 @@ public class FileResource {
 					+ url
 					+ "\" title=\""
 					+ publicacion.getTitulo()
-					+ "\" style=\"width:300px; height:280px; margin-left: 28%;\"/></a><br> ");
+					+ "\" style=\"width:430px; height:400px; margin-left: 28%;\"/></a><br> ");
 		publicacion.setArticulo(articulo);
 	    }
 	    publicacionService.update(publicacion);

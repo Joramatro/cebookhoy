@@ -166,12 +166,14 @@
 					<!-- end: Follow Us -->
 				
 					<!-- start: Newsletter -->
-					<form action="/subscripcion" method="POST" id="newsletter">
+					<form id="newsletter" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="validarEmail();return false;">
 						<h3>Suscríbete</h3>
 						<p>Por favor, dejanos tu email</p>
 						<label for="newsletter_input">@:</label>
 						<input type="text" name="email" id="newsletter_input">
-						<input type="submit" onclick="validarEmail();return false;" id="newsletter_submit" value="Enviar">
+						<input type="submit" id="newsletter_submit" value="Enviar">			
+						<input type="hidden" value="ComprarEbookHoy" name="uri"/>
+						<input type="hidden" name="loc" value="es_ES"/>						
 					</form>
 					<!-- end: Newsletter -->
 				
@@ -195,8 +197,10 @@
 			<div class="span12">
 			
 				<p>
-				<a style="margin-right: 25px;" href="http://www.comprarebookhoy.com/rssfeed" accesskey="r"><img src="/img/rss.gif" alt="RSS"/>RSS</a>
-					&copy; 2013, <a target="_blank" rel="publisher" href="https://plus.google.com/b/103298424982329605824/103298424982329605824/posts">Comprar eBook Hoy</a><i style="margin-top: -18px;" class="ico-color ico-sun"></i>
+				<a style="margin-right: 35px;" href="http://feeds.feedburner.com/ComprarEbookHoy"><img src="http://feeds.feedburner.com/~fc/ComprarEbookHoy?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+				<a style="margin-right: 35px;" href="http://www.comprarebookhoy.com/rssfeed" accesskey="r"><img src="/img/rss.gif" alt="RSS"/>RSS</a>
+				&copy; 2013, <a target="_blank" rel="publisher" href="https://plus.google.com/b/103298424982329605824/103298424982329605824/posts">Comprar eBook Hoy</a><i style="margin-top: -18px;" class="ico-color ico-sun"></i>
+				<a style="margin-left: 19px;" href="/politica-de-privacidad">Política de privacidad</a>					
 				</p>
 			</div>
 	
