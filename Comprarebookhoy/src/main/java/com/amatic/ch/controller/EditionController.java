@@ -258,7 +258,21 @@ public class EditionController {
 	Publicacion publicacion = (Publicacion) session
 		.getAttribute("publicacion");
 	try {
-	    // articulo = articulo.replaceAll("\n", "");
+	    // reemplazo tercera imagen
+	    List<String> lImagenes = publicacion.getlImages();
+	    if (lImagenes.size() >= 3) {
+		articulo = articulo
+			.replaceAll(
+				"<br><a target=\"_blank\" href=\"/venta/principal/"
+					+ publicacion.getUrl()
+					+ "\"><img src=\""
+					+ lImagenes.get(2)
+					+ "\" title=\""
+					+ publicacion.getTitulo()
+					+ "\" style=\"width:430px; height:400px; margin-left: 28%;\"/></a><br> ",
+				"<img>");
+	    }
+
 	    publicacion.setArticulo(articulo);
 
 	    request.getSession().setAttribute("tituloNuevaPublicacion",

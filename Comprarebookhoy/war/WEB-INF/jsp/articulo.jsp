@@ -223,7 +223,7 @@
 										<a href="http://${comentario.web}"><strong>${comentario.nombre}</strong></a>
 										</c:otherwise>
 										</c:choose>
-										<span class="reply"><span style="color:#aaa">/ </span><b>&nbsp;${comentario.puntos}</b> puntos</span><span class="date"><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="both" dateStyle="medium" timeStyle="short" value="${comentario.fecha}"/></span></div>
+										<span class="reply"><span style="color:#aaa"><c:if test="${comentario.puntos gt 0}">/ </span><b>&nbsp;${comentario.puntos}</b> puntos</c:if></span><span class="date"><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="both" dateStyle="medium" timeStyle="short" value="${comentario.fecha}"/></span></div>
 										<p>
 										<c:if test="${!empty comentario.comentarioReply}">
 											<span style="color:#0088cc;">@${comentario.comentarioReplyNombre} &nbsp;</span><a onmouseover="document.getElementById('comment_ref_${status.count}').style.display='block'" onmouseout="document.getElementById('comment_ref_${status.count}').style.display='none';" onclick="document.getElementById('comment_ref_${status.count}').style.display='none';" class="ancla_referencia">#${comentario.comentarioReplyNbr}<span class="referencia" id="comment_ref_${status.count}" style="display:none;font-size: 13px;">${comentario.comentarioReply}</span></a> &nbsp;
@@ -265,14 +265,14 @@
 							</div>							
 							
 							<div class="field">
-								<label>Puntos: </label>
-								<select name="puntos" style="width: 6%;" title="Por favor, valora (5 lo mejor) este producto">
-								  <option value="0"></option>
-								  <option value="1">1</option>
-								  <option value="2">2</option>
-								  <option value="3">3</option>
-								  <option value="4">4</option>
+								<label>Dar Puntos: </label>
+								<select name="puntos" style="width: 7%;" title="Por favor, valora (5 lo mejor) este producto">
 								  <option value="5">5</option>
+								  <option value="4">4</option>
+								  <option value="3">3</option>
+								  <option value="2">2</option>
+								  <option value="1">1</option>
+								  <option value="0">No puntuar</option>
 								</select>
 							</div>
 

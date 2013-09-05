@@ -73,7 +73,7 @@
 			
 			<%@ include file="/WEB-INF/jsp/includes/masleidos.jsp"%>
 			
-			<div class="span3" style="float: right;margin-top: -410px;margin-right: -20px;">				
+			<div id="banGoogleVistos" class="span3" style="float: right;margin-top: -410px;margin-right: -20px;">				
 				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- cuadrado ch -->
 				<ins class="adsbygoogle"
@@ -92,6 +92,11 @@
 		
 			
 <%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
+<script>
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		$("#banGoogleVistos").hide();
+	}
+</script>
 
 </body>
 </html>				

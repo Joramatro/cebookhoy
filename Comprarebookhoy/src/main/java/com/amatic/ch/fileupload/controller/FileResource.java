@@ -110,7 +110,8 @@ public class FileResource {
 
 	    int sizeImage = ImagesService.SERVING_SIZES_LIMIT;
 	    String url = imagesService.getServingUrl(ServingUrlOptions.Builder
-		    .withBlobKey(blobKey).crop(true).imageSize(sizeImage));
+		    .withBlobKey(blobKey).crop(true).imageSize(sizeImage)
+		    .secureUrl(true));
 
 	    Publicacion publicacion = publicacionService.getPublicacion(
 		    (String) session.getAttribute("tituloNuevaPublicacion"),
@@ -137,8 +138,8 @@ public class FileResource {
 	    int sizePreview = 80;
 	    String urlPreview = imagesService
 		    .getServingUrl(ServingUrlOptions.Builder
-			    .withBlobKey(blobKey).crop(true)
-			    .imageSize(sizePreview));
+			    .withBlobKey(blobKey).crop(false)
+			    .imageSize(sizePreview).secureUrl(true));
 
 	    FileMeta meta = new FileMeta(name, size, url, urlPreview);
 
