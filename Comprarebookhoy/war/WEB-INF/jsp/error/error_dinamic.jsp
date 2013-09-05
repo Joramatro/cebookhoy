@@ -187,7 +187,7 @@
 	  <h2>Error: <c:out value="${type.value }"/></h2>
   </c:forEach>
 
-  <div class="desc">Parece que no va a poder ser<br>Clicka <a href="javascript:history.go(-1);" style="color:red">aquí</a> para volver atrás</div>
+  <div class="desc">Parece que no va a poder ser<br>Clicka <a href="javascript:history.go(-1);" style="color:red">aquí</a> para volver atrás<br> ó clicka <a href="/" style="color:rgb(79, 182, 157)">aquí</a> para volver al Inicio</div>
 </div>
 <!--  
 		<div class="lbox">

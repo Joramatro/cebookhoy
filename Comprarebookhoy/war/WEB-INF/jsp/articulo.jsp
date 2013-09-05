@@ -53,7 +53,7 @@
 				</div>
 			</div>
 			<!-- end: Flexslider -->
-			<div style="position: absolute;top: 310px;right: 44px;">
+			<div id="banGoogle" style="position: absolute;top: 310px;right: 44px;">
 			<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- rec grande recomendado ch -->
 				<ins class="adsbygoogle"
@@ -326,11 +326,11 @@
 					</div>--%>
 			
 			
-			<div style="position: absolute;top: 1000px;left: 55px;">
+			<div id="banAmazonHorizontal" style="position: absolute;top: 1000px;left: 55px;">
 				<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=14&l=ur1&category=kindle&banner=1XW3YZKJD421WHFJ1Q02&f=ifr" width="160" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 			</div>
 			
-			<div style="position: absolute;top: 198px;right: 260px;">
+			<div id="banAmazonEsquina" style="position: absolute;top: 198px;right: 260px;">
 			<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=20&l=ur1&category=kindlestore&banner=0J2HENEFERESCPS25YR2&f=ifr" width="120" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 			</div>
 				
@@ -343,6 +343,13 @@
 	<!-- end: Wrapper -->		
 	
 <%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
+<script>
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		$("#banAmazonHorizontal").hide();
+		$("#banAmazonEsquina").hide();
+		$("#banGoogle").hide();
+	}
+</script>
 
 </body>
 </html>

@@ -19,10 +19,10 @@
 				<div class="da-img"><a href="/ebooks/Kindle-Paperwhite-3G"><img src="http://lh5.ggpht.com/s0UD2hN426tPocZw_4hVj1BndR5ttcSJRmcGPZuJy_ekDS9fNZH_DgQbfHR3QWcnxyla_gmhSp4yXOrwOw6RzV7di_M=s1600-c" style="width: 370px;height:340px;" alt="Kindle Paperwhite 3G" /></a></div>
 			</div>
 			<div class="da-slide">
-				<h2>Energy Color C7+ Touch</h2>
-				<p>Lee y reproduce todo tipo de contenido multimedia de alta definición.</p>
-				<a href="/venta/principal/Energy-Color-C7+-Touch" class="da-link">COMPRAR HOY</a>
-				<div class="da-img"><a href="/ebooks/Energy-Color-C7+-Touch"><img src="http://lh3.ggpht.com/ULTstyLS28T160RpvQ3aWXIguFgO7KfAXBkDZ4g3SojBlm9tb6w5lX-CQwHTE4stQM-Ww8zr_iWGBFxsIi1fgvWUA_To=s1600-c" style="width: 370px;height:340px;" alt="Energy Color C7+ Touch" /></a></div>
+				<h2>Kobo Aura HD</h2>
+				<p>Kobo Aura HD vs Kindle Paperwhite: ¿ Con cuál te quedas?</p>
+				<a href="/venta/principal/Kobo-Aura-HD" class="da-link">COMPRAR HOY</a>
+				<div class="da-img"><a href="/ebooks/Kobo-Aura-HD"><img src="http://lh6.ggpht.com/U_vR1uD9V06zMaX3FPqwf_xOZsGyvtp1nuF1mH_ixn5NldhWIIzDA6rdchls1goQnsLPx71PjwDJaR6JUheAy_ztlaSt=s1600-c" style="width: 370px;height:340px;" alt="Energy Color C7+ Touch" /></a></div>
 			</div>
 			<div class="da-slide">
 				<h2>Kindle Fire HD</h2>
