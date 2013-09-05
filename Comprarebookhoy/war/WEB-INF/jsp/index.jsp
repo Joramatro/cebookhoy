@@ -22,7 +22,7 @@
 				<h2>Kobo Aura HD</h2>
 				<p>Kobo Aura HD vs Kindle Paperwhite: ¿ Con cuál te quedas?</p>
 				<a href="/venta/principal/Kobo-Aura-HD" class="da-link">COMPRAR HOY</a>
-				<div class="da-img"><a href="/ebooks/Kobo-Aura-HD"><img src="http://lh6.ggpht.com/U_vR1uD9V06zMaX3FPqwf_xOZsGyvtp1nuF1mH_ixn5NldhWIIzDA6rdchls1goQnsLPx71PjwDJaR6JUheAy_ztlaSt=s1600-c" style="width: 370px;height:340px;" alt="Energy Color C7+ Touch" /></a></div>
+				<div class="da-img"><a href="/ebooks/Kobo-Aura-HD-Analisis"><img src="http://lh6.ggpht.com/U_vR1uD9V06zMaX3FPqwf_xOZsGyvtp1nuF1mH_ixn5NldhWIIzDA6rdchls1goQnsLPx71PjwDJaR6JUheAy_ztlaSt=s1600-c" style="width: 370px;height:340px;" alt="Energy Color C7+ Touch" /></a></div>
 			</div>
 			<div class="da-slide">
 				<h2>Kindle Fire HD</h2>
