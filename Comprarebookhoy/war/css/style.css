@@ -519,13 +519,11 @@ html[xmlns] .slides {display: block;}
 /* Caption
 =================================================================== */
 .slide-caption {
-	width: auto;
-	max-width: 49%;
+	width: 69%;
 	padding: 10px 20px;
 	margin: 0 0 0px 0px;
 	position: absolute;
 	display: block;
-	left: -56%;
 	bottom: 0px;
 	background: rgba(0, 0, 0, 0.7);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#b3000000',GradientType=0 ); /* IE6-8 */

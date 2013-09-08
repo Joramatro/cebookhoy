@@ -64,7 +64,7 @@
 		
 		<!-- start: Container -->
 		<div class="container">
-			<div style="margin-left:99px">
+			<div id="banGoogleFooter" style="margin-left:99px">
 				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- includes ch -->
 				<ins class="adsbygoogle"
@@ -74,7 +74,12 @@
 				<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
-			</div>			
+			</div>
+			<script>
+				if($('#footer').width() < 1345){
+					$("#banGoogleFooter").hide();
+				}
+			</script>			
 			<!-- start: Row -->
 			<div class="row" style="margin-top: 20px;">
 
@@ -139,10 +144,10 @@
 								<div class="social-info-wrap">
 									<div class="social-info">
 										<div class="social-info-front social-youtube">
-											<a target="_blank" href="http://www.youtube.com/channel/UCzRhBI19dHSSREeuSE3NBDA"></a>
+											<a target="_blank" href="http://www.youtube.com/channel/UC56PXmN4WM5oxZWE0XHOCjA"></a>
 										</div>
 										<div class="social-info-back social-youtube-hover">
-											<a target="_blank" href="http://www.youtube.com/channel/UCzRhBI19dHSSREeuSE3NBDA"></a>
+											<a target="_blank" href="http://www.youtube.com/channel/UC56PXmN4WM5oxZWE0XHOCjA"></a>
 										</div>	
 									</div>
 								</div>
@@ -167,10 +172,10 @@
 				
 					<!-- start: Newsletter -->
 					<form id="newsletter" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=ComprarEbookHoy', 'popupwindow', 'scrollbars=yes,width=550,height=520');">
-						<h3>Suscríbete</h3>
+						<h3>Suscríbete! &nbsp; <a href="http://www.comprarebookhoy.com/rssfeed" accesskey="r"><img src="/img/rssmenu.png" alt="RSS"></a></h3>
 						<p>Por favor, dejanos tu email</p>
 						<label for="newsletter_input">@:</label>
-						<input type="text" name="email" id="newsletter_input">
+						<input style="border: 1px solid #29a9df;" type="text" name="email" id="newsletter_input">
 						<input type="submit" id="btnSuscripcion" value="Enviar">			
 						<input type="hidden" value="ComprarEbookHoy" name="uri"/>
 						<input type="hidden" name="loc" value="es_ES"/>						
@@ -209,7 +214,6 @@
 		
 	</div>	
 	<!-- end: Copyright -->
-
 <!-- start: Java Script -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="/js/jquery-1.8.2.min.js"></script>
@@ -260,5 +264,14 @@ $("head").append("<link rel='stylesheet' type='text/css' href='/css/fancybox.css
   ga('create', 'UA-43441645-1', 'comprarebookhoy.com');
   ga('send', 'pageview');
 
+</script>
+<script>
+$(window).bind('resize', function () { 
+	if($('#footer').width() < 1345){
+		$("#banGoogleFooter").hide();
+	}else{
+		$("#banGoogleFooter").show();
+	}
+});
 </script>
 <!-- end: Java Script -->

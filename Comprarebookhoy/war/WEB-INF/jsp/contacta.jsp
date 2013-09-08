@@ -116,7 +116,7 @@
 						<li class="linkedin"><a target="_blank" href="http://ie.linkedin.com/pub/jorge-amat-romero/2b/731/895">linkedin</a></li>
 						<li class="twitter"><a target="_blank" href="https://twitter.com/ComprareBookHoy">twitter</a></li>
 						<li class="yelp"><a target="_blank" href="http://www.yelp.ie/user_details?userid=4t6COjQHIXnO4eZKT8WwLA">yelp</a></li>
-						<li class="youtube"><a target="_blank" href="http://www.youtube.com/channel/UCzRhBI19dHSSREeuSE3NBDA">youtube</a></li>
+						<li class="youtube"><a target="_blank" href="http://www.youtube.com/channel/UC56PXmN4WM5oxZWE0XHOCjA">youtube</a></li>
 					</ul>
 				</div>
 				<!-- end: Social Sites -->							

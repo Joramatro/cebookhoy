@@ -14,7 +14,7 @@
 	<!-- end: Meta -->
 	
 	<!-- start: Mobile Specific -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- end: Mobile Specific -->
 	<c:choose>
 	<c:when test="${!empty publicacion && publicacion.tipo eq 'EB'}">
@@ -291,7 +291,7 @@
 	          		</a>
 					<a class="brand" href="/"><i class="ico-book-open circle"></i>Comprar eBook <span>Hoy</span>.</a>
 	          		<div class="nav-collapse collapse">
-	            		<ul id="menuSuperior" class="nav">
+	            		<ul id="menuSuperior" class="nav" style="margin-right:-30px;">
 							<li id="menuInicio">
 	                			<a href="/">Inicio</a>
 	              			</li>
@@ -309,6 +309,7 @@
 	              			<li id="menuBlog"><a href="/blog">Blog</a></li>	              																			
 							<li id="menuSobre"><a href="/sobre">Sobre nosotros</a></li>
 	              			<li id="menuContacto"><a href="/contacto">Contacto</a></li>
+	              			<li style="margin-top: -8px;"><a href="#newsletter" accesskey="r"><img src="/img/rssmenu.png" alt="RSS"></a></li>
 	            		</ul>
 	          		</div>
 	        	</div>

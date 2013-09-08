@@ -53,17 +53,7 @@
 				</div>
 			</div>
 			<!-- end: Flexslider -->
-			<div id="banGoogle" style="position: absolute;top: 310px;right: 44px;">
-			<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- rec grande recomendado ch -->
-				<ins class="adsbygoogle"
-				     style="display:inline-block;width:336px;height:280px"
-				     data-ad-client="ca-pub-3168560600423825"
-				     data-ad-slot="5882295745"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-			</div>
+
 			<hr>
 			
 			<% pageContext.setAttribute("newLineChar", "\n"); %>
@@ -221,7 +211,7 @@
 										<strong>${comentario.nombre}</strong>
 										</c:when>
 										<c:otherwise>
-										<a href="http://${comentario.web}"><strong>${comentario.nombre}</strong></a>
+										<a rel="nofollow" href="http://${comentario.web}"><strong>${comentario.nombre}</strong></a>
 										</c:otherwise>
 										</c:choose>
 										 <span class="reply"><span style="color:#aaa"><c:if test="${comentario.puntos gt 0}">/ </span><b>&nbsp;${comentario.puntos}</b> puntos</c:if></span><span class="date"><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="both" dateStyle="medium" timeStyle="short" value="${comentario.fecha}"/></span></div>
@@ -267,7 +257,7 @@
 							
 							<div class="field">
 								<label>Dar Puntos: </label>
-								<select name="puntos" style="width: 7%;" title="Por favor, valora (5 lo mejor) este producto">
+								<select name="puntos" style="width: 9%;" title="Por favor, valora (5 lo mejor) este producto">
 								  <option value="5">5</option>
 								  <option value="4">4</option>
 								  <option value="3">3</option>
@@ -324,18 +314,8 @@
 							</c:if>
 						</c:forEach>
 						</div>
-					</div>--%>
-			
-			
-			<div id="banAmazonHorizontal" style="position: absolute;top: 1000px;left: 55px;">
-				<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=14&l=ur1&category=kindle&banner=1XW3YZKJD421WHFJ1Q02&f=ifr" width="160" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-			</div>
-			
-			<div id="banAmazonEsquina" style="position: absolute;top: 198px;right: 260px;">
-			<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=20&l=ur1&category=kindlestore&banner=0J2HENEFERESCPS25YR2&f=ifr" width="120" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-			</div>
-				
-				
+					</div>--%>			
+								
 			<%@ include file="/WEB-INF/jsp/includes/carrusel.jsp"%>					
 		</div>
 		<!-- end: Container  -->
@@ -343,13 +323,69 @@
 	</div>
 	<!-- end: Wrapper -->		
 	
-<%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
-<script>
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		$("#banAmazonHorizontal").hide();
-		$("#banAmazonEsquina").hide();
-		$("#banGoogle").hide();
-	}
-</script>
+	<%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
+
+	<div id="banGoogle" style="position: absolute;top: 310px;right: 44px;">
+		<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- rec grande recomendado ch -->
+		<ins class="adsbygoogle"
+		     style="display:inline-block;width:336px;height:280px"
+		     data-ad-client="ca-pub-3168560600423825"
+		     data-ad-slot="5882295745"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+	<script>
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			$("#banGoogle").hide();
+		}
+		if($('#footer').width() < 1345){
+			$("#banGoogle").hide();
+		}
+	</script>
+	<div id="banAmazonHorizontal" style="position: absolute;top: 1000px;left: 55px;">
+		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=14&l=ur1&category=kindle&banner=1XW3YZKJD421WHFJ1Q02&f=ifr" width="160" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+	</div>
+	<script>
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			$("#banAmazonHorizontal").hide();
+		}
+		if($('#footer').width() < 1079){
+			$("#banAmazonHorizontal").hide();
+		}
+	</script>
+	
+	<div id="banAmazonEsquina" style="position: absolute;top: 198px;right: 260px;">
+	<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=20&l=ur1&category=kindlestore&banner=0J2HENEFERESCPS25YR2&f=ifr" width="120" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+	</div>
+	<script>
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			$("#banAmazonEsquina").hide();
+		}
+		if($('#footer').width() < 1345){
+			$("#banAmazonEsquina").hide();
+		}
+	</script>
+	<script>
+	$(window).bind('resize', function () { 
+		if($('#footer').width() < 1345){
+			$("#banGoogle").hide();
+		}else{
+			$("#banGoogle").show();
+		}
+		if($('#footer').width() < 1079){
+			$("#banAmazonHorizontal").hide();
+		}else{
+			$("#banAmazonHorizontal").show();
+		}
+		if($('#footer').width() < 1345){
+			$("#banAmazonEsquina").hide();
+		}else{
+			$("#banAmazonEsquina").show();
+		}
+	});
+	</script>
+
 </body>
 </html>

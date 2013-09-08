@@ -152,7 +152,7 @@ public class HomeController {
 	    } else if (url.equals("logo10")) {
 		publicacion.setScript(WebConstants.SessionConstants.logo10);
 		publicacion.setScript2(WebConstants.SessionConstants.logo10img);
-	    } else if (url.equals("KindleFlash")) {
+	    } else if (url.equals("kindleFlash")) {
 		publicacion
 			.setScript(WebConstants.SessionConstants.kindleFlash);
 		publicacion
