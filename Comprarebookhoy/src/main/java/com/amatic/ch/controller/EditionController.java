@@ -63,6 +63,8 @@ public class EditionController {
 	    @RequestParam("keywords") String keywords,
 	    @RequestParam("clase1") String clase1,
 	    @RequestParam("clase2") String clase2,
+	    @RequestParam("clase3") String clase3,
+	    @RequestParam("clase4") String clase4,
 	    @RequestParam("tipo") String tipo,
 	    @RequestParam("autor") String autor,
 	    @RequestParam("titulo2") String titulo2,
@@ -129,6 +131,8 @@ public class EditionController {
 	    publicacion.setKeywords(keywords);
 	    publicacion.setClase1(clase1);
 	    publicacion.setClase2(clase2);
+	    publicacion.setClase3(clase3);
+	    publicacion.setClase4(clase4);
 	    publicacion.setTipo(tipo);
 	    publicacion.setAutor(autor);
 	    publicacion.setTitulo2(titulo2);
@@ -333,10 +337,18 @@ public class EditionController {
 
 	for (Publicacion publicacion : publicaciones) {
 	    List<Comentario> comentarios = publicacion.getComentariosDeref();
+	    List<Ref<Comentario>> lComentarios = publicacion.getlComentarios();
+	    int i = 0;
 	    for (Comentario comentario : comentarios) {
-		comentario.setPublicacion(publicacion);
-		comentarioService.update(comentario);
+		if (comentario != null) {
+		    comentario.setPublicacion(publicacion);
+		    comentarioService.update(comentario);
+		} else {
+		    lComentarios.remove(i);
+		    publicacionService.update(publicacion);
+		}
 	    }
+
 	}
 
 	List<Publicacion> publicacionesblog = publicacionService
@@ -344,9 +356,16 @@ public class EditionController {
 
 	for (Publicacion publicacion : publicacionesblog) {
 	    List<Comentario> comentarios = publicacion.getComentariosDeref();
+	    List<Ref<Comentario>> lComentarios = publicacion.getlComentarios();
+	    int i = 0;
 	    for (Comentario comentario : comentarios) {
-		comentario.setPublicacion(publicacion);
-		comentarioService.update(comentario);
+		if (comentario != null) {
+		    comentario.setPublicacion(publicacion);
+		    comentarioService.update(comentario);
+		} else {
+		    lComentarios.remove(i);
+		    publicacionService.update(publicacion);
+		}
 	    }
 	}
     }
@@ -362,6 +381,12 @@ public class EditionController {
 	for (Publicacion publicacion : publicaciones) {
 	    publicacion.setKey(WebUtils.SHA1(WebUtils.cleanTildes(publicacion
 		    .getTitulo())));
+	    if (publicacion.getClase3() == null) {
+		publicacion.setClase3("");
+	    }
+	    if (publicacion.getClase4() == null) {
+		publicacion.setClase4("");
+	    }
 	    publicacionService.update(publicacion);
 	}
 
@@ -371,6 +396,12 @@ public class EditionController {
 	for (Publicacion publicacion : publicacionesblog) {
 	    publicacion.setKey(WebUtils.SHA1(WebUtils.cleanTildes(publicacion
 		    .getTitulo())));
+	    if (publicacion.getClase3() == null) {
+		publicacion.setClase3("");
+	    }
+	    if (publicacion.getClase4() == null) {
+		publicacion.setClase4("");
+	    }
 	    publicacionService.update(publicacion);
 	}
     }

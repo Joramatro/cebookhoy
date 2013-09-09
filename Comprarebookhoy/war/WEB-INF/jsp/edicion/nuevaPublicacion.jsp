@@ -94,6 +94,8 @@ Descripcion: <input type="text" style="width: 633px;" id="descripcion" name="des
 <br><br>
 Clase1: <input type="text" id="clase1" name="clase1" size="20" maxlength="20"/>
 Clase2: <input type="text" id="clase2" name="clase2" size="20" maxlength="20"/>
+ClasePr3: <input type="text" id="clase3" name="clase3" size="20" maxlength="20"/>
+ClasePr4: <input type="text" id="clase4" name="clase4" size="20" maxlength="20"/>
 <br><br>
 Disponible: <select id="disponible" name="disponible">
 				  <option value="S">Si</option>
@@ -506,7 +508,7 @@ Script2: <input type="text" id="script2" name="script2" size="100" maxlength="20
 		<script src="/js/jquery.fileupload-fp.js"></script>
 		<!-- The File Upload user interface plugin -->
 		<script src="/js/jquery.fileupload-ui.js"></script>  
-		<script src="/js/main.js"></script>
+		<script src="/js/main-v10.js"></script>
 
 
 <script>

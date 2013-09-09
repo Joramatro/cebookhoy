@@ -508,7 +508,7 @@ Script2: <input type="text" id="script2" name="script2" size="100" maxlength="20
 		<script src="/js/jquery.fileupload-fp.js"></script>
 		<!-- The File Upload user interface plugin -->
 		<script src="/js/jquery.fileupload-ui.js"></script>  
-		<script src="/js/main.js"></script>
+		<script src="/js/main-v10.js"></script>
 
 
 <script>

@@ -31,6 +31,15 @@ public class CentralControllerHandler {
 	return "/error/error_dinamic";
     }
 
+    // 400
+    @ExceptionHandler({ Exception.class })
+    public String handleException(Exception exception,
+	    HttpServletRequest request) {
+
+	log.error("error ", exception);
+	return "/error/error_dinamic";
+    }
+
     // 500ConversionNotSupportedException
 
     // @ExceptionHandler({PersonNotFoundException.class})

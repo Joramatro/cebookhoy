@@ -9,6 +9,7 @@ import com.amatic.ch.utils.WebUtils;
 import com.googlecode.objectify.Ref;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Ignore;
 import com.googlecode.objectify.annotation.Index;
 import com.googlecode.objectify.annotation.Load;
 
@@ -48,6 +49,14 @@ public class Publicacion implements Serializable {
     String clase1;
     @Index
     String clase2;
+    @Index
+    String clase3;
+    @Index
+    String clase4;
+    @Ignore
+    String clase5;
+    @Ignore
+    String clase6;
     @Index
     String tipo;
     @Index
@@ -269,6 +278,38 @@ public class Publicacion implements Serializable {
 
     public void setDisponible(String disponible) {
 	this.disponible = disponible;
+    }
+
+    public String getClase3() {
+	return clase3;
+    }
+
+    public void setClase3(String clase3) {
+	this.clase3 = clase3;
+    }
+
+    public String getClase4() {
+	return clase4;
+    }
+
+    public void setClase4(String clase4) {
+	this.clase4 = clase4;
+    }
+
+    public String getClase5() {
+	return clase5;
+    }
+
+    public void setClase5(String clase5) {
+	this.clase5 = clase5;
+    }
+
+    public String getClase6() {
+	return clase6;
+    }
+
+    public void setClase6(String clase6) {
+	this.clase6 = clase6;
     }
 
 }

@@ -32,23 +32,29 @@
 		<div class="container">
 
 			<div id="filters">
-				<ul class="option-set" data-option-key="filter">
-					<li><a href="#filter" class="selected" data-option-value="*">Todos</a></li>
+				<ul id="optionSet1" class="option-set" data-option-key="filter">
+					<li><a id="filter10" href="#filter" class="selected">Todos</a></li>
 					<c:forEach var="categoria" items="${categorias}" varStatus="status" >
-						<li><a href="#filter" data-option-value='.${fn:replace(categoria, " ", separadorClase)}'>${categoria}</a></li>
+						<li><a id="filter1${status.count}" href="#filter" class='${fn:replace(categoria, " ", separadorClase)}'>${categoria}</a></li>
 					</c:forEach>
 				</ul>
-			</div> 
+				<ul id="optionSet2" class="option-set" data-option-key="filter">
+					<li><a id="filter20" href="#filter" class="selected">Cualquier precio</a></li>
+					<c:forEach var="categoriaPrecio" items="${categoriasPrecio}" varStatus="status" >
+						<li><a id="filter2${status.count}" href="#filter" class='${fn:replace(categoriaPrecio, " ", separadorClase)}'>${categoriaPrecio}</a></li>
+					</c:forEach>
+				</ul>
+			</div>  
 		</div>
 		<!-- end: Container  -->
-				
+		
 		<!--start: Container -->
     	<div class="container">
 			<!-- start: ebooks -->
 			<div id="portfolio-wrapper" class="row">
 				<% pageContext.setAttribute("newLineChar", "\n"); %>
 				<c:forEach var="publicacion" items="${publicaciones}" varStatus="status" >				
-				<div class='span4 portfolio-item ${fn:replace(publicacion.clase1, " ", separadorClase)} ${fn:replace(publicacion.clase2, " ", separadorClase)}'>
+				<div class='span4 portfolio-item ${fn:replace(publicacion.clase1, " ", separadorClase)} ${fn:replace(publicacion.clase2, " ", separadorClase)} ${fn:replace(publicacion.clase3, " ", separadorClase)} ${fn:replace(publicacion.clase4, " ", separadorClase)} ${fn:replace(publicacion.clase5, " ", separadorClase)} ${fn:replace(publicacion.clase6, " ", separadorClase)}'>
 					<div class="picture"><a href="/ebooks/${publicacion.url}" title="${publicacion.titulo}">
 					
 					<c:if test="${!empty publicacion.lImages }">

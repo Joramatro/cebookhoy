@@ -95,6 +95,28 @@ public abstract class PublicacionAbstract {
 	}
 	Collections.sort(categorias);
 
+	List<String> categoriasPrecio = new ArrayList<String>();
+	for (Publicacion publicacion : publicaciones) {
+	    if (!publicacion.getClase3().equals("")
+		    && !categoriasPrecio.contains(publicacion.getClase3())) {
+		categoriasPrecio.add(publicacion.getClase3());
+	    }
+	    if (!publicacion.getClase4().equals("")
+		    && !categoriasPrecio.contains(publicacion.getClase4())) {
+		categoriasPrecio.add(publicacion.getClase4());
+	    }
+
+	    if (!publicacion.getClase3().equals("")) {
+		publicacion.setClase5(publicacion.getClase1()
+			+ publicacion.getClase3());
+		if (!publicacion.getClase2().equals("")) {
+		    publicacion.setClase6(publicacion.getClase2()
+			    + publicacion.getClase3());
+		}
+	    }
+	}
+	Collections.sort(categoriasPrecio);
+
 	List<Publicacion> publicacionesMVE = publicacionService
 		.getPublicacionesMasVistas(WebConstants.SessionConstants.EBOOK);
 
@@ -108,6 +130,7 @@ public abstract class PublicacionAbstract {
 	model.addAttribute("publicacionesMVE", publicacionesMVE);
 	model.addAttribute("publicacionesMVA", publicacionesMVA);
 	model.addAttribute("categorias", categorias);
+	model.addAttribute("categoriasPrecio", categoriasPrecio);
 	model.addAttribute("publicaciones", publicaciones);
     }
 

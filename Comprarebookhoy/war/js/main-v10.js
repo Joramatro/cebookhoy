@@ -18,6 +18,8 @@ $(function(){
 	        	  "keywords": $("#keywords").val(),
 	        	  "clase1": $("#clase1").val(),
 	        	  "clase2": $("#clase2").val(),
+	        	  "clase3": $("#clase3").val(),
+	        	  "clase4": $("#clase4").val(),
 	        	  "tipo": $("#tipo").val(),
 	        	  "autor": $("#autor").val(),
 	        	  "titulo2": $("#titulo2").val(),
@@ -147,4 +149,50 @@ function replyComment(nbrComment){
 	$("#nbrComment").val(nbrComment);
 }
 
+
+$(function(){
+	
+	    $("a[id^='filter1']").on('click', function() {
+//	    	alert($(this).attr('class'));
+//			alert($('#optionSet2 .selected').attr('class'));
+			var myclass = $('#optionSet2 .selected').attr('class');
+    		myclass = myclass.replace(' selected','');
+    		myclass = myclass.replace('selected','');
+    		var myclass2 = $(this).attr('class');
+    		myclass2 = myclass2.replace(' selected','');
+    		myclass2 = myclass2.replace('selected','');
+	    	if($('#optionSet2 .selected').attr('class')=='selected' && myclass2==''){
+	    		$('#portfolio-wrapper').isotope({ filter: '*'});
+	    	}else if($('#optionSet2 .selected').attr('class')=='selected'){
+	    		$('#portfolio-wrapper').isotope({ filter: '.'+ myclass2+'' });
+	    	}else if(myclass2==''){
+	    		$('#portfolio-wrapper').isotope({ filter: '.'+myclass+'' });
+	    	}else{
+	    		
+				$('#portfolio-wrapper').isotope({ filter: '.'+myclass2+myclass+''});
+	    	}	
+	    });
+	
+		$("a[id^='filter2']").on('click', function() {
+//			alert($(this).attr('class'));
+//			alert($('#optionSet1 .selected').attr('class'));
+			var myclass = $('#optionSet1 .selected').attr('class');
+    		myclass = myclass.replace(' selected','');
+    		myclass = myclass.replace('selected','');
+    		var myclass2 = $(this).attr('class');
+    		myclass2 = myclass2.replace(' selected','');
+    		myclass2 = myclass2.replace('selected','');
+			if($('#optionSet1 .selected').attr('class')=='selected' && myclass2==''){
+	    		$('#portfolio-wrapper').isotope({ filter: '*'});
+	    	}else if($('#optionSet1 .selected').attr('class')=='selected'){
+	    		$('#portfolio-wrapper').isotope({ filter: '.'+ myclass2+'' });
+	    	}else if(myclass2==''){
+	    		$('#portfolio-wrapper').isotope({ filter: '.'+myclass+'' });
+	    	}else{
+	    		
+				$('#portfolio-wrapper').isotope({ filter: '.'+myclass+myclass2+''});
+	    	}
+		});
+
+});
 

@@ -74,12 +74,7 @@
 				<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
-			</div>
-			<script>
-				if($('#footer').width() < 1345){
-					$("#banGoogleFooter").hide();
-				}
-			</script>			
+			</div>			
 			<!-- start: Row -->
 			<div class="row" style="margin-top: 20px;">
 
@@ -227,7 +222,7 @@
 <script src="/js/fancybox.min.js"></script>
 <script defer="defer" src="/js/custom.min.js"></script>
 <script async src="/js/apprise-v2.min.js"></script>
-<script async src="/js/main.js"></script>
+<script async src="/js/main-v10.js"></script>
 
 <script>
 $("head").append("<link rel='stylesheet' type='text/css' href='/css/apprise-v2.css' />");
