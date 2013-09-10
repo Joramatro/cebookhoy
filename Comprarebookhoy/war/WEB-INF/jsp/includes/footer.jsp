@@ -13,7 +13,7 @@
 				<!-- start: Footer Menu Logo -->
 				<div class="span2">
 					<div id="footer-menu-logo">
-						<div id="logo-chart"></div><a class="brand" href="/">CE<span>HOY</span>.</a>
+						<div id="logo-chart"></div><a class="brand" href="http://www.comprarebookhoy.com/">CE<span>HOY</span>.</a>
 					</div>
 				</div>
 				<!-- end: Footer Menu Logo -->
@@ -25,7 +25,7 @@
 
 						<ul id="footer-nav">
 
-							<li><a href="/">Inicio</a></li>
+							<li><a href="http://www.comprarebookhoy.com/">Inicio</a></li>
 
 							<li><a href="/ebooks">eBooks</a></li>
 
@@ -44,7 +44,7 @@
 				<div class="span1">
 						
 					<div id="footer-menu-back-to-top">
-						<a href="/"></a>
+						<a href="http://www.comprarebookhoy.com/"></a>
 					</div>
 				
 				</div>
@@ -249,16 +249,6 @@ $("head").append("<link rel='stylesheet' type='text/css' href='/css/fancybox.css
 	}else{
 		$("#menuInicio").addClass('active');
 	}
-</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-43441645-1', 'comprarebookhoy.com');
-  ga('send', 'pageview');
-
 </script>
 <script>
 $(window).bind('resize', function () { 

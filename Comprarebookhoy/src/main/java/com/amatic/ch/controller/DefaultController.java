@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.amatic.ch.exception.UnknownResourceException;
-import com.amatic.ch.fileupload.controller.FileResource;
 
 /**
  * Default controller that exists to return a proper REST response for unmapped
@@ -18,7 +17,7 @@ import com.amatic.ch.fileupload.controller.FileResource;
 public class DefaultController {
 
     private static final Logger log = LoggerFactory
-	    .getLogger(FileResource.class);
+	    .getLogger(DefaultController.class);
 
     @RequestMapping("/**")
     public void unmappedRequest(HttpServletRequest request) {

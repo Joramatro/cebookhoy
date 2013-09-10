@@ -12,12 +12,10 @@ import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.amatic.ch.fileupload.controller.FileResource;
-
 @ControllerAdvice
 public class CentralControllerHandler {
     private static final Logger log = LoggerFactory
-	    .getLogger(FileResource.class);
+	    .getLogger(CentralControllerHandler.class);
 
     // 400
     @ExceptionHandler({ MissingServletRequestParameterException.class,
@@ -28,16 +26,15 @@ public class CentralControllerHandler {
 	    HttpServletRequest request) {
 
 	log.error("error Bad Request", exception);
-	return "/error/error_dinamic";
+	return "error/error_dinamic";
     }
 
-    // 400
     @ExceptionHandler({ Exception.class })
     public String handleException(Exception exception,
 	    HttpServletRequest request) {
 
 	log.error("error ", exception);
-	return "/error/error_dinamic";
+	return "error/error_dinamic";
     }
 
     // 500ConversionNotSupportedException

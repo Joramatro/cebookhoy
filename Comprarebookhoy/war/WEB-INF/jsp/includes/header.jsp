@@ -153,16 +153,16 @@
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/contacto“/>
 	</c:when>
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'ebooks')}">
-		<title>Listado de eBooks en Comprar eBook Hoy</title> 
-		<meta name="description" content="Análisis y revisiones de los mejores lectores de ebooks en la actualidad para que puedas comprar tu ebook preferido"/>
-		<meta name="keywords" content="análisis lectores ebooks, comprar lectores ereaders, comprar lectores de ebooks, análisis kindle, comprar kindle, análisis tablet, lectores de ebook" />
-		<meta name="title" content="Análisis de eBooks para comprar tu ebook preferido. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<title>eBooks y precios en Comprar eBook Hoy</title> 
+		<meta name="description" content="Análisis y precios de los mejores lectores de ebooks en la actualidad para que puedas comprar tu ebook preferido y comparar precios"/>
+		<meta name="keywords" content="análisis lectores ebooks, comprar lectores ereaders, comprar lectores de ebooks, análisis kindle, comprar kindle, comparar precios, lectores de ebook" />
+		<meta name="title" content="Análisis y precios de eBooks para comprar tu ebook preferido. - Comprar eBook Hoy - www.comprarebookhoy.com" />
 		<meta name="author" content="Jorge Amat" />
 		<meta name="copyright" content="CEHoy" />
 		<meta name="application-name" content="eBooks en Comprar eBook Hoy" />
 		<!-- start: Facebook Open Graph -->
 		<meta property="og:title" content="Análisis de eBooks para comprar tu ebook favorito"/>
-		<meta property="og:description" content="Análisis y revisiones de los mejores lectores de eBooks en la actualidad para que puedas comprar tu ebook favorito"/>
+		<meta property="og:description" content="Análisis y comparaciones de precios de los mejores lectores de eBooks en la actualidad para que puedas comprar tu ebook favorito"/>
 		<meta property="og:type" content="ebook"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/ebooks"/>
 		<meta property="og:image" content="${publicaciones[0].lImages[0]}"/>
@@ -172,8 +172,8 @@
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:site" content="@ComprareBookHoy">
 		<meta name="twitter:creator" content="@ComprareBookHoy">
-		<meta name="twitter:title" content="Análisis de eBooks para comprar tu ebook favorito en Comprar eBook Hoy">
-		<meta name="twitter:description" content="Análisis y revisiones de los mejores lectores de ebooks en la actualidad para que puedas comprar tu ebook preferido">
+		<meta name="twitter:title" content="Análisis y precios de eBooks para comprar tu ebook favorito en Comprar eBook Hoy">
+		<meta name="twitter:description" content="Análisis y precios de los mejores lectores de ebooks en la actualidad para que puedas comprar tu ebook preferido">
 		<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/ebooks“/>
@@ -261,7 +261,16 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-43441645-1', 'comprarebookhoy.com');
+	  ga('send', 'pageview');
+	
+	</script>
 </head>
 <body>
 	

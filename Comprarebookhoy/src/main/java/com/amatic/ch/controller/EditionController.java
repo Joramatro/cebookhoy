@@ -2,6 +2,7 @@ package com.amatic.ch.controller;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -336,8 +337,11 @@ public class EditionController {
 		.getPublicaciones(WebConstants.SessionConstants.EBOOK);
 
 	for (Publicacion publicacion : publicaciones) {
-	    List<Comentario> comentarios = publicacion.getComentariosDeref();
 	    List<Ref<Comentario>> lComentarios = publicacion.getlComentarios();
+	    if (lComentarios == null) {
+		lComentarios = new ArrayList<Ref<Comentario>>();
+	    }
+	    List<Comentario> comentarios = publicacion.getComentariosDeref();
 	    int i = 0;
 	    for (Comentario comentario : comentarios) {
 		if (comentario != null) {
@@ -394,6 +398,21 @@ public class EditionController {
 		.getPublicaciones(WebConstants.SessionConstants.ARTICULO);
 
 	for (Publicacion publicacion : publicacionesblog) {
+	    publicacion.setKey(WebUtils.SHA1(WebUtils.cleanTildes(publicacion
+		    .getTitulo())));
+	    if (publicacion.getClase3() == null) {
+		publicacion.setClase3("");
+	    }
+	    if (publicacion.getClase4() == null) {
+		publicacion.setClase4("");
+	    }
+	    publicacionService.update(publicacion);
+	}
+
+	List<Publicacion> publicacionesExtras = publicacionService
+		.getPublicaciones(WebConstants.SessionConstants.ACCESORIO);
+
+	for (Publicacion publicacion : publicacionesExtras) {
 	    publicacion.setKey(WebUtils.SHA1(WebUtils.cleanTildes(publicacion
 		    .getTitulo())));
 	    if (publicacion.getClase3() == null) {
