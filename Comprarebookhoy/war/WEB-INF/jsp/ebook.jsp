@@ -70,7 +70,7 @@
 								<li><strong>Puntos&nbsp;</strong>&nbsp; 
 								<a href="#comments"><b><span itemprop="ratingValue">${publicacion.sumaPuntos}</span></b></a>
 								&nbsp;&nbsp;(de <span itemprop="ratingCount">${publicacion.votantes}</span> votantes)</li>
-								<div style="display:block"><span itemprop="ratingBest">${publicacion.votantes *5}</span></div>
+								<div style="display:block"><span itemprop="bestRating">5</span></div>
 							</div> 
 						</c:if>
 						<li><strong>Fecha&nbsp;</strong>&nbsp;<span id="_datePublished5" itemprop="datePublished" content="<fmt:setLocale value='es_ES' scope='session'/><fmt:formatDate type='date' dateStyle='short' value='${publicacion.fechaCreacion}'/>"> <fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span></li>
@@ -79,7 +79,8 @@
 					</ul>					
 				</div>				
 				<div class="span10">
-					<meta id="_articleBody7" itemprop="articleBody" content="${publicacion.articulo}">				
+					<meta id="_articleBody7" itemprop="articleBody" content="${fn:replace(publicacion.articulo, "\"", "'")}">
+					${publicacion.articulo}				
 					<br>
 					<c:if test="${publicacion.disponible ne 'N'}">
 						<br><a href="/venta/principal/${publicacion.url}" class="button color launch">Cómpralo Hoy!</a>
@@ -193,13 +194,16 @@
 			
 			<hr><hr>
 			
-		<%@ include file="/WEB-INF/jsp/includes/masleidos.jsp"%>
+			<%@ include file="/WEB-INF/jsp/includes/masleidos.jsp"%>
 			
 			
-		<div class="row" style="margin-top: 35px;">			
-		<div class="span9">
-		<!-- start: Comments -->
-					<h4>Comentarios <span class="comments-amount">(${fn:length(publicacion.lComentarios)})</span></h4>
+			<div class="row" style="margin-top: 35px;">			
+				<div class="span9">
+				<!-- start: Comments -->
+				 <h4>Comentarios <span class="comments-amount">(${fn:length(publicacion.lComentarios)})</span></h4>
+							
+				<c:choose>
+				<c:when test="${publicacion.votantes gt 0}">
 					<div itemscope itemtype="http://data-vocabulary.org/Review-aggregate" id="comments" class="comments-sec">
 						<div style="display:none"><span  itemprop="itemreviewed">${publicacion.titulo}</span><span itemprop="count">${publicacion.votantes}</span><span itemprop="best">5</span></div>
 						<ol class="commentlist">
@@ -240,62 +244,107 @@
 							</li>						
 						</c:forEach>
 						</ol>
-	
+		
 					</div>
+				</c:when>
+				<c:otherwise>
+					<div id="comments" class="comments-sec">
+						<ol class="commentlist">
+						<c:forEach var="comentario" items="${publicacion.comentariosDeref}" varStatus="status">
+							<li style="width: 100%;">
+								<div class="comments">
+									<div class="avatar">
+									<c:choose>
+									<c:when test="${empty comentario.gravatar }">
+									<img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=50" alt="" width="50" height="50" border="0" /> 
+									</c:when>
+									<c:otherwise>
+									<img src="${comentario.gravatar}" alt="" width="50" height="50" border="0" />
+									</c:otherwise>
+									</c:choose>
+									</div>
+									<div class="comment-des">
+										<a title="Responder mensaje citando" href="#comments-form" onclick="javascript:replyComment('${status.count}');" style="font-size:14px;" >#${status.count}</a>
+										<div class="comment-by">
+										<c:choose>
+										<c:when test="${empty comentario.web}">
+										<strong><span>${comentario.nombre}</span></strong>
+										</c:when>
+										<c:otherwise>
+										<a rel="nofollow" href="http://${comentario.web}"><strong>${comentario.nombre}</strong></a>
+										</c:otherwise>
+										</c:choose>
+										 <span class="reply"><span style="color:#aaa"><c:if test="${comentario.puntos gt 0}">/ </span><b>&nbsp;<span>${comentario.puntos}</span></b> puntos</c:if></span><span class="date"><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="both" dateStyle="medium" timeStyle="short" value="${comentario.fecha}"/></span></div>
+										<p>
+										<c:if test="${!empty comentario.comentarioReply}">
+											<span style="color:#0088cc;">@${comentario.comentarioReplyNombre} &nbsp;</span><a onmouseover="document.getElementById('comment_ref_${status.count}').style.display='block'" onmouseout="document.getElementById('comment_ref_${status.count}').style.display='none';" onclick="document.getElementById('comment_ref_${status.count}').style.display='none';" class="ancla_referencia">#${comentario.comentarioReplyNbr}<span class="referencia" id="comment_ref_${status.count}" style="display:none;font-size: 13px;">${comentario.comentarioReply}</span></a> &nbsp;
+										</c:if>
+										
+										<span>${fn:replace(comentario.comentario, newLineChar, "<p/><p>")}</span>
+										</p>
+									</div>
+								</div>		
+							</li>						
+						</c:forEach>
+						</ol>
+		
+					</div>
+				</c:otherwise>
+				</c:choose>
 					<!-- end: Comments -->
-					<div class="clear" style="padding-top: 35px;"></div>
+				<div class="clear" style="padding-top: 35px;"></div>
 
-					<!-- start: Comment Add -->
-					<h4>Deja un comentario</h4>
-					<div class="form-spacer"></div>
-					
-					<!-- Form -->
-					<div id="comments-form">
-						<form action="/ebooks/${publicacion.url}/nuevoComentario" id="formComment" method="post">
-							<input id="nbrComment" name="nbrComment" type="hidden"/>
-							<div class="field">
-								<label>Nombre: <span>*</span></label>
-								<input id="comNombre" type="text" name="nombre" maxlength="30" class="text" />
-							</div>
+				<!-- start: Comment Add -->
+				<h4>Deja un comentario</h4>
+				<div class="form-spacer"></div>
+				
+				<!-- Form -->
+				<div id="comments-form">
+					<form action="/ebooks/${publicacion.url}/nuevoComentario" id="formComment" method="post">
+						<input id="nbrComment" name="nbrComment" type="hidden"/>
+						<div class="field">
+							<label>Nombre: <span>*</span></label>
+							<input id="comNombre" type="text" name="nombre" maxlength="30" class="text" />
+						</div>
 
-							<div class="field">
-								<label>Email: (No será publicado) <span>*</span></label>
-								<input id="comEmail" type="text" name="email" maxlength="40" class="text" />
-							</div>
-							
-							<div class="field">
-								<label>Web: </label>
-								<input type="text" name="web" class="text" maxlength="90" />
-							</div>							
-							
-							<div class="field">
-								<label>Dar Puntos: </label>
-								<select name="puntos" style="width: 9%;" title="Por favor, valora (5 lo mejor) este producto">
-								  <option value="5">5</option>
-								  <option value="4">4</option>
-								  <option value="3">3</option>
-								  <option value="2">2</option>
-								  <option value="1">1</option>
-								  <option value="0">No puntuar</option>
-								</select>
-							</div>
-
-							<div class="field">
-								<label>Comentario: <span>*</span></label>
-								<textarea id="comComentario" name="comentario" class="text textarea" ></textarea>
-							</div>
-							
-							<label>El comentario puede tardar unos instantes en aparecer publicado una vez enviado</label>
-							
-							<div class="field">
-							<br>
-								<input type="button" id="send" value="Enviar" onclick="if(validarComentarios()){this.form.submit()}"/>
-							</div>
-							<input name="url" type="hidden" value="${publicacion.url}"/>
-
-						</form>
+						<div class="field">
+							<label>Email: (No será publicado) <span>*</span></label>
+							<input id="comEmail" type="text" name="email" maxlength="40" class="text" />
+						</div>
 						
-					</div>		
+						<div class="field">
+							<label>Web: </label>
+							<input type="text" name="web" class="text" maxlength="90" />
+						</div>							
+						
+						<div class="field">
+							<label>Dar Puntos: </label>
+							<select name="puntos" style="width: 9%;" title="Por favor, valora (5 lo mejor) este producto">
+							  <option value="5">5</option>
+							  <option value="4">4</option>
+							  <option value="3">3</option>
+							  <option value="2">2</option>
+							  <option value="1">1</option>
+							  <option value="0">No puntuar</option>
+							</select>
+						</div>
+
+						<div class="field">
+							<label>Comentario: <span>*</span></label>
+							<textarea id="comComentario" name="comentario" class="text textarea" ></textarea>
+						</div>
+						
+						<label>El comentario puede tardar unos instantes en aparecer publicado una vez enviado</label>
+						
+						<div class="field">
+						<br>
+							<input type="button" id="send" value="Enviar" onclick="if(validarComentarios()){this.form.submit()}"/>
+						</div>
+						<input name="url" type="hidden" value="${publicacion.url}"/>
+
+					</form>
+					
+				</div>		
 
 					<!-- end: Comment Add -->
 			</div>
