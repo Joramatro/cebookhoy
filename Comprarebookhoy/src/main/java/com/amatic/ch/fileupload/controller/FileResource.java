@@ -127,7 +127,7 @@ public class FileResource {
 				"<img>",
 				"<br><a target=\"_blank\" href=\"/venta/principal/"
 					+ publicacion.getUrl()
-					+ "\"><img src=\""
+					+ "\"><img id=\"_image6\" itemprop=\"image\"  src=\""
 					+ url
 					+ "\" title=\""
 					+ publicacion.getTitulo()
