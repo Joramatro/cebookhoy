@@ -66,11 +66,10 @@
 					<ul class="project-info" style="font-size: 12px;">
 						<li><strong>Número visitas&nbsp;</strong>&nbsp;  ${publicacion.numVisitas}</li>
 						<c:if test="${publicacion.sumaPuntos gt 0 }">
-							<div id="_aggregateRating9" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+							<div>
 								<li><strong>Puntos&nbsp;</strong>&nbsp; 
-								<a href="#comments"><b><span itemprop="ratingValue">${publicacion.sumaPuntos}</span></b></a>
-								&nbsp;&nbsp;(de <span itemprop="ratingCount">${publicacion.votantes}</span> votantes)</li>
-								<div style="display:block"><span itemprop="bestRating">5</span></div>
+								<a href="#comments"><b><span>${publicacion.sumaPuntos}</span></b></a>
+								&nbsp;&nbsp;(de <span>${publicacion.votantes}</span> votantes)</li>								
 							</div> 
 						</c:if>
 						<li><strong>Fecha&nbsp;</strong>&nbsp;<span id="_datePublished5" itemprop="datePublished" content="<fmt:setLocale value='es_ES' scope='session'/><fmt:formatDate type='date' dateStyle='short' value='${publicacion.fechaCreacion}'/>"> <fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span></li>
