@@ -210,12 +210,12 @@
 		<title>Bienvenido a Comprar eBook Hoy</title> 
 		<meta name="description" content="Analizamos los mejores lectores de ebooks del mercado para que puedas comprar tu ebook reader preferido al mejor precio y online. Accede a la mejor información para comprar el mejor ebook de tinta electrónica"/>
 		<meta name="keywords" content="ebook, comprar lector ebook, comprar ebook reader, kindle, fundas ebook, comprar readers mejor precio, comprar kindle paperwhite, sony ebooks, mini ipad, comprar woxter ebooks, comprar ereader" />
-		<meta name="title" content="eBook Readers en Comprar eBook Hoy. - Comprar eBook Hoy - www.comprarebookhoy.com" />
+		<meta name="title" content="eReaders en Comprar eBook Hoy online" />
 		<meta name="author" content="Jorge Amat" />
 		<meta name="copyright" content="Comprar eBook Hoy" />
 		<meta name="application-name" content="eBook Readers en Comprar eBook Hoy" />
 		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="eBook Readers en Comprar eBook Hoy"/>
+		<meta property="og:title" content="eReaders en Comprar eBook online"/>
 		<meta property="og:description" content="Analizamos los mejores lectores de ebooks del mercado para que puedas comprar tu ebook reader preferido al mejor precio y online. Accede a la mejor información para comprar el mejor ebook de tinta electrónica"/>
 		<meta property="og:type" content="principal"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com"/>
@@ -226,8 +226,8 @@
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:site" content="@ComprareBookHoy">
 		<meta name="twitter:creator" content="@ComprareBookHoy">
-		<meta name="twitter:title" content="Lectores de eBooks en Comprar eBook Hoy">
-		<meta name="twitter:description" content="Detallamos los mejores ebooks del mercado para que puedas comprar tu ebook reader preferido al mejor precio y online. Ebooks de tinta electrónica al detalle">
+		<meta name="twitter:title" content="eReaders en Comprar eBook Hoy online">
+		<meta name="twitter:description" content="Analizamos los mejores lectores de ebooks del mercado para que puedas comprar tu ebook reader preferido al mejor precio y online. Accede a la mejor información para comprar el mejor ebook de tinta electrónica">
 		<meta name="twitter:image" content="http://lh6.ggpht.com/2yOdMN6oD92BcytMlKSRXCrjnuQmGyw0ri_Fdl2WCEIHoblpfuShMGB3BIn0-_lzUY4Y2YWX_B5uXLLwdTsXp8YacCE=s1600-c">
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->				

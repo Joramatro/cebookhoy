@@ -56,7 +56,7 @@
       		<!-- start: Hero Unit - Main hero unit for a primary marketing message or call to action -->
       		<div class="hero-unit">
 				<h3>
-					Organiza todos tus e-books y autores: los e-books están siendo cada vez más y más populares, gracias a lo fácil que es llevarlos contigo y transferirlos
+					Los e-books están siendo cada vez más y más populares, gracias a lo fácil que es llevarlos contigo y transferirlos. Aquí te ayudaremos a compar el ebook con pantalla de tinta electrónica que más se ajuste a tus necesidades.
 				</h3>
         		<p><a class="btn btn-primary btn-large" href="/blog">Ir al Blog</a></p>
       		</div>
@@ -101,7 +101,7 @@
 							<i class="ico-ok ico-white circle-color-full"></i>
 							<div class="icons-box-vert-info">
 								<h3>Más Barato</h3>
-								<p>Muchas obras de las bibliotecas en línea permiten la lectura de clásicos sin ningún coste.</p>
+								<p>En Comprar eBook Hoy te aninamos a que te conectes a las bibliotecas en línea ya que te permitirán la lectura de clásicos sin ningún coste.</p>
 							</div>
 							<div class="clear"></div>
 						</div>
