@@ -11,8 +11,8 @@
 	<%@ include file="/WEB-INF/jsp/includes/header.jsp"%>
 	
 	<!-- start: Page Title -->
-	<div>
-		<span>Nombres fotos de ${publicacion.titulo}</span>
+	<div class="container">	
+		<br><br><span>Nombres fotos</span><br><br>
 		<table>
 		<c:forEach var="nombreFoto" items="${pubNombresFotos}" varStatus="status">
 		<tr>
@@ -22,7 +22,7 @@
 		</tr>
 		</c:forEach>
 		</table>
-		<span>Urls fotos</span>
+		<br><br><span>Urls fotos</span><br><br>
 		<table>
 		<c:forEach var="url" items="${pubUrlsFotos}" varStatus="status">
 		<tr>
@@ -32,7 +32,7 @@
 		</tr>
 		</c:forEach>
 		</table>
-		<span>Keys fotos</span>
+		<br><br><span>Keys fotos</span><br><br>
 		<table>
 		<c:forEach var="key" items="${pubKeysFotos}" varStatus="status">
 		<tr>
@@ -43,7 +43,6 @@
 		</c:forEach>
 		</table>
 	</div>
-
 
 	<%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
 </html>
