@@ -40,6 +40,8 @@ public class Publicacion implements Serializable {
     @Index
     List<String> lImagesKeys = new ArrayList<String>();
     @Index
+    List<String> lImagesNames = new ArrayList<String>();
+    @Index
     String descripcion;
     String resumen;
     String articulo;
@@ -61,6 +63,18 @@ public class Publicacion implements Serializable {
     String tipo;
     @Index
     String autor;
+    @Index
+    String googleAutor;
+    @Index
+    String portada;
+    @Index
+    String tituloPortada;
+    @Index
+    String descPortada;
+    @Index
+    String destacado;
+    @Index
+    String numeros;
     @Index
     String titulo2;
     @Index
@@ -310,6 +324,62 @@ public class Publicacion implements Serializable {
 
     public void setClase6(String clase6) {
 	this.clase6 = clase6;
+    }
+
+    public String getGoogleAutor() {
+	return googleAutor;
+    }
+
+    public void setGoogleAutor(String googleAutor) {
+	this.googleAutor = googleAutor;
+    }
+
+    public List<String> getlImagesNames() {
+	return lImagesNames;
+    }
+
+    public void setlImagesNames(List<String> lImagesNames) {
+	this.lImagesNames = lImagesNames;
+    }
+
+    public String getPortada() {
+	return portada;
+    }
+
+    public void setPortada(String portada) {
+	this.portada = portada;
+    }
+
+    public String getDestacado() {
+	return destacado;
+    }
+
+    public void setDestacado(String destacado) {
+	this.destacado = destacado;
+    }
+
+    public String getNumeros() {
+	return numeros;
+    }
+
+    public void setNumeros(String numeros) {
+	this.numeros = numeros;
+    }
+
+    public String getDescPortada() {
+	return descPortada;
+    }
+
+    public void setDescPortada(String descPortada) {
+	this.descPortada = descPortada;
+    }
+
+    public String getTituloPortada() {
+	return tituloPortada;
+    }
+
+    public void setTituloPortada(String tituloPortada) {
+	this.tituloPortada = tituloPortada;
     }
 
 }

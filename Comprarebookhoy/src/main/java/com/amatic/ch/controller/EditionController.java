@@ -23,6 +23,7 @@ import com.amatic.ch.constants.WebConstants;
 import com.amatic.ch.dto.Comentario;
 import com.amatic.ch.dto.Publicacion;
 import com.amatic.ch.dto.User;
+import com.amatic.ch.exception.UnknownResourceException;
 import com.amatic.ch.fileupload.controller.FileResource;
 import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
@@ -68,6 +69,12 @@ public class EditionController {
 	    @RequestParam("clase4") String clase4,
 	    @RequestParam("tipo") String tipo,
 	    @RequestParam("autor") String autor,
+	    @RequestParam("googleAutor") String googleAutor,
+	    @RequestParam("portada") String portada,
+	    @RequestParam("descPortada") String descPortada,
+	    @RequestParam("tituloPortada") String tituloPortada,
+	    @RequestParam("destacado") String destacado,
+	    @RequestParam("numeros") String numeros,
 	    @RequestParam("titulo2") String titulo2,
 	    @RequestParam("script") String script,
 	    @RequestParam("script2") String script2,
@@ -90,15 +97,21 @@ public class EditionController {
 		    user.getMail())));
 	    publicacion.setResumen(resumen);
 	    publicacion.setDescripcion(descripcion);
+	    publicacion.setNumeros(numeros);
 
 	    int i = 1;
 	    int punto = 1;
 	    articulo = "<p>" + articulo;
 	    while (articulo.contains("\n\n")) {
 		if (i % 2 != 0) {
-		    articulo = articulo.replaceFirst("\n\n",
-			    "</p><br><br><h2><span class=\"dropcap color\">"
-				    + punto + "</span>");
+		    if (publicacion.getNumeros().equals("S")) {
+			articulo = articulo.replaceFirst("\n\n",
+				"</p><br><br><h2><span class=\"dropcap color\">"
+					+ punto + "</span>");
+		    } else {
+			articulo = articulo.replaceFirst("\n\n",
+				"</p><br><br><h2>");
+		    }
 		    punto++;
 		    if (i == 1) {
 			articulo = articulo.replaceFirst("<br>", "</p><br>");
@@ -136,6 +149,11 @@ public class EditionController {
 	    publicacion.setClase4(clase4);
 	    publicacion.setTipo(tipo);
 	    publicacion.setAutor(autor);
+	    publicacion.setGoogleAutor(googleAutor);
+	    publicacion.setPortada(portada);
+	    publicacion.setDescPortada(descPortada);
+	    publicacion.setTituloPortada(tituloPortada);
+	    publicacion.setDestacado(destacado);
 	    publicacion.setTitulo2(titulo2);
 	    publicacion.setScript(script);
 	    publicacion.setScript2(script2);
@@ -207,9 +225,16 @@ public class EditionController {
 
 	} else if (tipoedit.equals(WebConstants.SessionConstants.tipo2)) {
 	    tipo = WebConstants.SessionConstants.ARTICULO;
+	} else if (tipoedit.equals(WebConstants.SessionConstants.tipo3)) {
+	    tipo = WebConstants.SessionConstants.ACCESORIO;
 	}
 	String key = WebUtils.SHA1(url.replaceAll("-", " "));
 	Publicacion publicacion = publicacionService.getPublicacion(key, tipo);
+	if (publicacion == null) {
+	    String uri = request.getRequestURI();
+	    throw new UnknownResourceException("No existe la publicacion: "
+		    + uri);
+	}
 	session.setAttribute("publicacion", publicacion);
 
 	model.addAttribute("publicacion", publicacion);
@@ -218,10 +243,27 @@ public class EditionController {
 
     }
 
-    @RequestMapping(value = { "/edicion/guardarEdicionPublicacion" }, method = {
-	    RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = { "/edicion/guardarEdicionPublicacion" }, method = { RequestMethod.POST })
     public void guardarEdicionPublicacion(ModelMap model,
 	    @RequestParam("articulo") String articulo,
+	    @RequestParam("portada") String portada,
+	    @RequestParam("destacado") String destacado,
+	    @RequestParam("descPortada") String descPortada,
+	    @RequestParam("tituloPortada") String tituloPortada,
+	    @RequestParam("tipo") String tipo,
+	    @RequestParam("titulo") String titulo,
+	    @RequestParam("titulo2") String titulo2,
+	    @RequestParam("resumen") String resumen,
+	    @RequestParam("descripcion") String descripcion,
+	    @RequestParam("autor") String autor,
+	    @RequestParam("googleAutor") String googleAutor,
+	    @RequestParam("clase1") String clase1,
+	    @RequestParam("clase2") String clase2,
+	    @RequestParam("clase3") String clase3,
+	    @RequestParam("clase4") String clase4,
+	    @RequestParam("script") String script,
+	    @RequestParam("script2") String script2,
+	    @RequestParam("disponible") String disponible,
 	    HttpServletRequest request, HttpServletResponse response)
 	    throws IOException, NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
@@ -236,6 +278,25 @@ public class EditionController {
 	try {
 	    // articulo = articulo.replaceAll("\n", "");
 	    publicacion.setArticulo(articulo);
+	    publicacion.setPortada(portada);
+	    publicacion.setDestacado(destacado);
+	    publicacion.setTipo(tipo);
+	    publicacion.setTitulo(titulo);
+	    publicacion.setKey(WebUtils.SHA1(WebUtils.cleanTildes(titulo)));
+	    publicacion.setTitulo2(titulo2);
+	    publicacion.setResumen(resumen);
+	    publicacion.setDescripcion(descripcion);
+	    publicacion.setDescPortada(descPortada);
+	    publicacion.setTituloPortada(tituloPortada);
+	    publicacion.setAutor(autor);
+	    publicacion.setGoogleAutor(googleAutor);
+	    publicacion.setClase1(clase1);
+	    publicacion.setClase2(clase2);
+	    publicacion.setClase3(clase3);
+	    publicacion.setClase4(clase4);
+	    publicacion.setScript(script);
+	    publicacion.setScript2(script2);
+	    publicacion.setDisponible(disponible);
 
 	    publicacionService.update(publicacion);
 	} catch (Exception e) {
@@ -251,6 +312,24 @@ public class EditionController {
 	    RequestMethod.GET, RequestMethod.POST })
     public void guardarFotosEdicionPublicacion(ModelMap model,
 	    @RequestParam("articulo") String articulo,
+	    @RequestParam("portada") String portada,
+	    @RequestParam("destacado") String destacado,
+	    @RequestParam("descPortada") String descPortada,
+	    @RequestParam("tituloPortada") String tituloPortada,
+	    @RequestParam("tipo") String tipo,
+	    @RequestParam("titulo") String titulo,
+	    @RequestParam("titulo2") String titulo2,
+	    @RequestParam("resumen") String resumen,
+	    @RequestParam("descripcion") String descripcion,
+	    @RequestParam("autor") String autor,
+	    @RequestParam("googleAutor") String googleAutor,
+	    @RequestParam("clase1") String clase1,
+	    @RequestParam("clase2") String clase2,
+	    @RequestParam("clase3") String clase3,
+	    @RequestParam("clase4") String clase4,
+	    @RequestParam("script") String script,
+	    @RequestParam("script2") String script2,
+	    @RequestParam("disponible") String disponible,
 	    HttpServletRequest request, HttpServletResponse response)
 	    throws IOException, NoSuchAlgorithmException {
 	HttpSession session = request.getSession();
@@ -259,10 +338,31 @@ public class EditionController {
 	if (user == null) {
 	    response.sendRedirect("/editar");
 	}
-
-	Publicacion publicacion = (Publicacion) session
-		.getAttribute("publicacion");
 	try {
+	    Publicacion publicacion = (Publicacion) session
+		    .getAttribute("publicacion");
+
+	    publicacion.setArticulo(articulo);
+	    publicacion.setPortada(portada);
+	    publicacion.setDestacado(destacado);
+	    publicacion.setTipo(tipo);
+	    publicacion.setTitulo(titulo);
+	    publicacion.setKey(WebUtils.SHA1(WebUtils.cleanTildes(titulo)));
+	    publicacion.setTitulo2(titulo2);
+	    publicacion.setResumen(resumen);
+	    publicacion.setDescripcion(descripcion);
+	    publicacion.setDescPortada(descPortada);
+	    publicacion.setTituloPortada(tituloPortada);
+	    publicacion.setAutor(autor);
+	    publicacion.setGoogleAutor(googleAutor);
+	    publicacion.setClase1(clase1);
+	    publicacion.setClase2(clase2);
+	    publicacion.setClase3(clase3);
+	    publicacion.setClase4(clase4);
+	    publicacion.setScript(script);
+	    publicacion.setScript2(script2);
+	    publicacion.setDisponible(disponible);
+
 	    // reemplazo tercera imagen
 	    List<String> lImagenes = publicacion.getlImages();
 	    if (lImagenes.size() >= 3) {
@@ -272,13 +372,11 @@ public class EditionController {
 					+ publicacion.getUrl()
 					+ "\"><img src=\""
 					+ lImagenes.get(2)
-					+ "\" title=\""
-					+ publicacion.getTitulo()
+					+ "\" alt=\""
+					+ publicacion.getDescripcion()
 					+ "\" style=\"width:430px; height:400px; margin-left: 28%;\"/></a><br> ",
 				"<img>");
 	    }
-
-	    publicacion.setArticulo(articulo);
 
 	    request.getSession().setAttribute("tituloNuevaPublicacion",
 		    publicacion.getKey());
@@ -391,6 +489,31 @@ public class EditionController {
 	    if (publicacion.getClase4() == null) {
 		publicacion.setClase4("");
 	    }
+	    if (publicacion.getDescPortada() == null) {
+		publicacion.setDescPortada("");
+	    }
+	    if (publicacion.getDestacado() == null) {
+		publicacion.setDestacado("N");
+	    }
+	    if (publicacion.getGoogleAutor() == null) {
+		publicacion
+			.setGoogleAutor("https://plus.google.com/u/0/108657243775074009859?rel=author");
+	    }
+	    if (publicacion.getlImagesNames() == null) {
+		publicacion.setlImagesNames(new ArrayList<String>());
+	    }
+	    if (publicacion.getNumeros() == null) {
+		publicacion.setNumeros("S");
+	    }
+	    if (publicacion.getPortada() == null) {
+		publicacion.setPortada("N");
+	    }
+	    if (publicacion.getTituloPortada() == null) {
+		publicacion.setTituloPortada(publicacion.getTitulo());
+	    }
+	    if (publicacion.getDisponible() == null) {
+		publicacion.setDisponible("S");
+	    }
 	    publicacionService.update(publicacion);
 	}
 
@@ -405,6 +528,31 @@ public class EditionController {
 	    }
 	    if (publicacion.getClase4() == null) {
 		publicacion.setClase4("");
+	    }
+	    if (publicacion.getDescPortada() == null) {
+		publicacion.setDescPortada("");
+	    }
+	    if (publicacion.getDestacado() == null) {
+		publicacion.setDestacado("N");
+	    }
+	    if (publicacion.getGoogleAutor() == null) {
+		publicacion
+			.setGoogleAutor("https://plus.google.com/u/0/108657243775074009859?rel=author");
+	    }
+	    if (publicacion.getlImagesNames() == null) {
+		publicacion.setlImagesNames(new ArrayList<String>());
+	    }
+	    if (publicacion.getNumeros() == null) {
+		publicacion.setNumeros("S");
+	    }
+	    if (publicacion.getPortada() == null) {
+		publicacion.setPortada("N");
+	    }
+	    if (publicacion.getTituloPortada() == null) {
+		publicacion.setTituloPortada(publicacion.getTitulo());
+	    }
+	    if (publicacion.getDisponible() == null) {
+		publicacion.setDisponible("S");
 	    }
 	    publicacionService.update(publicacion);
 	}
@@ -421,8 +569,87 @@ public class EditionController {
 	    if (publicacion.getClase4() == null) {
 		publicacion.setClase4("");
 	    }
+	    if (publicacion.getDescPortada() == null) {
+		publicacion.setDescPortada("");
+	    }
+	    if (publicacion.getDestacado() == null) {
+		publicacion.setDestacado("S");
+	    }
+	    if (publicacion.getGoogleAutor() == null) {
+		publicacion
+			.setGoogleAutor("https://plus.google.com/u/0/108657243775074009859?rel=author");
+	    }
+	    if (publicacion.getlImagesNames() == null) {
+		publicacion.setlImagesNames(new ArrayList<String>());
+	    }
+	    if (publicacion.getNumeros() == null) {
+		publicacion.setNumeros("S");
+	    }
+	    if (publicacion.getPortada() == null) {
+		publicacion.setPortada("S");
+	    }
+	    if (publicacion.getTituloPortada() == null) {
+		publicacion.setTituloPortada("");
+	    }
+	    if (publicacion.getDisponible() == null) {
+		publicacion.setDisponible("S");
+	    }
 	    publicacionService.update(publicacion);
 	}
+    }
+
+    @RequestMapping(value = { "/edicion/pubUrlTitulo" }, method = { RequestMethod.GET })
+    public String getPubUrlTitulo(ModelMap model, HttpServletRequest request,
+	    HttpServletResponse response) throws IOException {
+	List<Publicacion> publicacionesEbook = publicacionService
+		.getPublicaciones(WebConstants.SessionConstants.EBOOK);
+
+	List<Publicacion> publicacionesBlog = publicacionService
+		.getPublicaciones(WebConstants.SessionConstants.ARTICULO);
+
+	List<Publicacion> publicacionesExtra = publicacionService
+		.getPublicaciones(WebConstants.SessionConstants.ACCESORIO);
+
+	model.addAttribute("publicacionesEbook", publicacionesEbook);
+
+	model.addAttribute("publicacionesBlog", publicacionesBlog);
+
+	model.addAttribute("publicacionesExtra", publicacionesExtra);
+
+	return "edicion/pubUrlTitulo";
+    }
+
+    @RequestMapping(value = { "/{tipoedit}/{url}/infoFotos" }, method = { RequestMethod.GET })
+    public String verNombreFotos(ModelMap model,
+	    @PathVariable("url") String url,
+	    @PathVariable("tipoedit") String tipoedit,
+	    HttpServletRequest request, HttpServletResponse response)
+	    throws IOException, NoSuchAlgorithmException {
+	HttpSession session = request.getSession();
+	User user = (User) session
+		.getAttribute(WebConstants.SessionConstants.RC_USER);
+	if (user == null) {
+	    response.sendRedirect("/editar");
+	}
+
+	String tipo = "";
+	if (tipoedit.equals(WebConstants.SessionConstants.tipo1)) {
+	    tipo = WebConstants.SessionConstants.EBOOK;
+	} else if (tipoedit.equals(WebConstants.SessionConstants.tipo2)) {
+	    tipo = WebConstants.SessionConstants.ARTICULO;
+	} else if (tipoedit.equals(WebConstants.SessionConstants.tipo3)) {
+	    tipo = WebConstants.SessionConstants.ACCESORIO;
+	}
+
+	String key = WebUtils.SHA1(url.replaceAll("-", " "));
+	Publicacion publicacion = publicacionService.getPublicacion(key, tipo);
+
+	model.addAttribute("pubNombresFotos", publicacion.getlImagesNames());
+	model.addAttribute("pubUrlsFotos", publicacion.getlImages());
+	model.addAttribute("pubKeysFotos", publicacion.getlImagesKeys());
+
+	return "edicion/pubNombresFotos";
+
     }
 
 }

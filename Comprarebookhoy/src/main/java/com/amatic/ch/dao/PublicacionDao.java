@@ -24,4 +24,6 @@ public interface PublicacionDao {
 
     public List<Publicacion> getPublicacionesMasVistas(String tipo);
 
+    public List<Publicacion> getPublicacionesDestacadas();
+
 }

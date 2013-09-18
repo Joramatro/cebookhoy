@@ -120,6 +120,9 @@ public class FileResource {
 	    lImages.add(url);
 	    List<String> lImagesKeys = publicacion.getlImagesKeys();
 	    lImagesKeys.add(blobKey.getKeyString());
+	    List<String> lImagesNames = publicacion.getlImagesNames();
+	    lImagesNames.add(name);
+
 	    String articulo = publicacion.getArticulo();
 	    if (lImages.size() == 3) {
 		articulo = articulo
@@ -129,8 +132,8 @@ public class FileResource {
 					+ publicacion.getUrl()
 					+ "\"><img id=\"_image6\" itemprop=\"image\"  src=\""
 					+ url
-					+ "\" title=\""
-					+ publicacion.getTitulo()
+					+ "\" alt=\""
+					+ publicacion.getDescripcion()
 					+ "\" style=\"width:430px; height:400px; margin-left: 28%;\"/></a><br> ");
 		publicacion.setArticulo(articulo);
 	    }

@@ -12,7 +12,7 @@
     
      <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="/css/style.css" rel="stylesheet">
+	<%@ include file="/WEB-INF/jsp/includes/styles.jsp"%>
 	<link href="/css/parallax-slider.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">

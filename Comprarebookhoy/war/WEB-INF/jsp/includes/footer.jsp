@@ -223,7 +223,9 @@
 <script src="/js/fancybox.min.js"></script>
 <script defer="defer" src="/js/custom.min.js"></script>
 <script async src="/js/apprise-v2.min.js"></script>
-<script async src="/js/main-v10.js"></script>
+
+<%@ include file="/WEB-INF/jsp/includes/scripts.jsp"%>
+
 
 <script>
 $("head").append("<link rel='stylesheet' type='text/css' href='/css/apprise-v2.css' />");

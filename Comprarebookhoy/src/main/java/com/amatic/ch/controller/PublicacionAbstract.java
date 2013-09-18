@@ -132,6 +132,7 @@ public abstract class PublicacionAbstract {
 	model.addAttribute("categorias", categorias);
 	model.addAttribute("categoriasPrecio", categoriasPrecio);
 	model.addAttribute("publicaciones", publicaciones);
+
     }
 
     void setPublicacion(String url, HttpServletRequest request, ModelMap model,
@@ -141,7 +142,7 @@ public abstract class PublicacionAbstract {
 	Publicacion publicacion = publicacionService.getPublicacion(key, tipo);
 	if (publicacion == null) {
 	    String uri = request.getRequestURI();
-	    throw new UnknownResourceException("There is no resource for path "
+	    throw new UnknownResourceException("No existe la publicacion: "
 		    + uri);
 	    // return "channelNotFound";
 	}

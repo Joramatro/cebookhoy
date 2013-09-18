@@ -12,30 +12,46 @@
 	<div class="slider-wrapper">
 
 		<div id="da-slider" class="da-slider">
-			<div class="da-slide">
-				<h2>Kindle Paperwhite 3G</h2>
-				<p>La tecnología unica Paperwhite y larga duración de batería hacen de el un gran contendiente.</p>
-				<a href="/venta/principal/Kindle-Paperwhite-3G" class="da-link">COMPRAR HOY</a>				
-				<div class="da-img"><a href="/ebooks/Kindle-Paperwhite-3G"><img src="http://lh5.ggpht.com/s0UD2hN426tPocZw_4hVj1BndR5ttcSJRmcGPZuJy_ekDS9fNZH_DgQbfHR3QWcnxyla_gmhSp4yXOrwOw6RzV7di_M=s1600-c" style="width: 370px;height:340px;" alt="Kindle Paperwhite 3G" /></a></div>
-			</div>
-			<div class="da-slide">
-				<h2>Kobo Aura HD</h2>
-				<p>Kobo Aura HD vs Kindle Paperwhite: ¿ Con cuál te quedas?</p>
-				<a href="/venta/principal/Kobo-Aura-HD-Analisis" class="da-link">COMPRAR HOY</a>
-				<div class="da-img"><a href="/ebooks/Kobo-Aura-HD-Analisis"><img src="https://lh4.ggpht.com/DmosWtM3Bv39mIqmjF9tm86ToFDjFSScZPSvGrrYSyTTRWBi_YDrgV-OkKOc-YmSCKxD-WyTeZUovI433SIkW6KpBYpqgA=s1600-c" style="width: 370px;height:340px;" alt="Energy Color C7+ Touch" /></a></div>
-			</div>
-			<div class="da-slide">
-				<h2>Kindle Fire HD</h2>
-				<p>Delgado, ligero y portátil. Sensacional pantalla de 7 pulgadas.</p>
-				<a href="/venta/principal/Kindle-Fire-HD" class="da-link">COMPRAR HOY</a>
-				<div class="da-img"><a href="/ebooks/Kindle-Fire-HD"><img src="http://lh3.ggpht.com/T4u45F2id9l6G4N0dG4N501utUS0i9gZ-k1OcDT_QAg269KfcLXkZ4c2ayPFq54oU1_0-Vws66JnNHyrtb3LKZDEURpv=s1600-c" style="width: 370px;height:340px;" alt="Kindle Fire HD" /></a></div>
-			</div>
-			<div class="da-slide">
-				<h2>Kindle 4</h2>
-				<p>Con Wifi y pantalla táctil de tinta electrónica E-Ink</p>
-				<a href="/venta/principal/Kindle" class="da-link">COMPRAR HOY</a>
-				<div class="da-img"><a href="/ebooks/Kindle"><img src="http://lh6.ggpht.com/2yOdMN6oD92BcytMlKSRXCrjnuQmGyw0ri_Fdl2WCEIHoblpfuShMGB3BIn0-_lzUY4Y2YWX_B5uXLLwdTsXp8YacCE=s1600-c" style="width: 370px;height:340px;" alt="Kindle 4" /></a></div>
-			</div>
+			<c:forEach var="publicacion" items="${publicacionesEbooks}" varStatus="status" end="3">
+				<c:if test="${publicacion.portada eq 'S'}">
+					<div class="da-slide">
+						<h2>${publicacion.tituloPortada}</h2>
+						<p>${publicacion.descPortada}</p>
+						<a href="/venta/principal/${publicacion.url}" class="da-link">COMPRAR HOY</a>
+						<div class="da-img">
+							<c:choose>
+								<c:when test="${publicacion.tipo eq 'EB' }">
+									<a href="/ebooks/${publicacion.url}">
+								</c:when>	
+								<c:otherwise>
+									<a href="/blog/${publicacion.url}">
+								</c:otherwise>
+							</c:choose>
+							<img src="${publicacion.lImages[1]}" style="width: 370px;height:340px;" alt="${publicacion.titulo}" /></a>
+						</div>
+					</div>							
+				</c:if>
+			</c:forEach>
+			<c:forEach var="publicacion" items="${publicacionesBlog}" varStatus="status" end="3">
+				<c:if test="${publicacion.portada eq 'S'}">
+					<div class="da-slide">
+						<h2>${publicacion.tituloPortada}</h2>
+						<p>${publicacion.descPortada}</p>
+						<a href="/venta/principal/${publicacion.url}" class="da-link">COMPRAR HOY</a>
+						<div class="da-img">
+							<c:choose>
+								<c:when test="${publicacion.tipo eq 'EB' }">
+									<a href="/ebooks/${publicacion.url}">
+								</c:when>	
+								<c:otherwise>
+									<a href="/blog/${publicacion.url}">
+								</c:otherwise>
+							</c:choose>
+							<img src="${publicacion.lImages[2]}" style="width: 370px;height:340px;" alt="${publicacion.titulo}" /></a>
+						</div>
+					</div>							
+				</c:if>
+			</c:forEach>			
 			<nav class="da-arrows">
 				<span class="da-arrows-prev"></span>
 				<span class="da-arrows-next"></span>
@@ -58,7 +74,7 @@
 				<h3>
 					Los e-books están siendo cada vez más y más populares, gracias a lo fácil que es llevarlos contigo y transferirlos. Aquí te ayudaremos a compar el ebook con pantalla de tinta electrónica que más se ajuste a tus necesidades.
 				</h3>
-        		<p><a class="btn btn-primary btn-large" href="/blog">Ir al Blog</a></p>
+        		<p><a class="btn btn-primary btn-large" href="/blog">ver Blog</a> &nbsp;&nbsp;<a class="btn btn-primary btn-large" href="/ebooks">ver eBooks</a></p>
       		</div>
 			<!-- end: Hero Unit -->
       		

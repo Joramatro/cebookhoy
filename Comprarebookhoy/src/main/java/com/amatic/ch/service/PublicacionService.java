@@ -48,4 +48,8 @@ public class PublicacionService {
 	return this.PublicacionDao.getPublicacionesMasVistas(tipo);
     }
 
+    public List<Publicacion> getPublicacionesDestacadas() {
+	return this.PublicacionDao.getPublicacionesDestacadas();
+    }
+
 }

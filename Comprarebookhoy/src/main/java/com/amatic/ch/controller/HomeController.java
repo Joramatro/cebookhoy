@@ -85,6 +85,9 @@ public class HomeController {
 	List<Publicacion> publicacionesMVA = publicacionService
 		.getPublicacionesMasVistas(WebConstants.SessionConstants.ARTICULO);
 
+	List<Publicacion> publicacionesDestacadas = publicacionService
+		.getPublicacionesDestacadas();
+
 	List<Comentario> comentarios = comentarioService
 		.getUltimosComentarios();
 
@@ -97,6 +100,8 @@ public class HomeController {
 	model.addAttribute("publicacionesEbooks", publicacionesEbooks);
 
 	model.addAttribute("publicacionesBlog", publicacionesBlog);
+
+	model.addAttribute("publicacionesDestacadas", publicacionesDestacadas);
 
 	return "index";
     }

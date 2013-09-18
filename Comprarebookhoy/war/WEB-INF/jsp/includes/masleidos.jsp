@@ -16,7 +16,7 @@
 							<div class="picture">
 								<a href="/ebooks/${publicacionMVE.url}" title="${publicacionMVE.titulo}">
 									<c:if test="${!empty publicacionMVE.lImages }">
-									<img style="width: 270px;height: 240px;" src="${publicacionMVE.lImages[0]}" alt="${publicacionMVE.titulo}"/>
+									<img style="width: 270px;height: 240px;" src="${publicacionMVE.lImages[1]}" alt="${publicacionMVE.titulo}"/>
 									</c:if>
 									<div class="image-overlay-link"></div>
 								</a>
@@ -91,7 +91,7 @@
 							<div class="picture">
 								<a href="/blog/${publicacionMVA.url}" title="${publicacionMVA.titulo}">
 									<c:if test="${!empty publicacionMVA.lImages }">
-									<img style="width: 270px;height: 240px;" src="${publicacionMVA.lImages[0]}" alt="${publicacionMVA.titulo}"/>
+									<img style="width: 270px;height: 240px;" src="${publicacionMVA.lImages[1]}" alt="${publicacionMVA.titulo}"/>
 									</c:if>
 									<div class="image-overlay-link"></div>
 								</a>

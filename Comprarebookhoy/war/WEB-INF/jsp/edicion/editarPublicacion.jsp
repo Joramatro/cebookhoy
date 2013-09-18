@@ -8,11 +8,11 @@
 <html lang="es">
 <html>
   <head>
-    <title>Editar Publicacion (solo articulo de momento)</title>
+    <title>Editar Publicacion </title>
     
      <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="/css/style.css" rel="stylesheet">
+	<%@ include file="/WEB-INF/jsp/includes/styles.jsp"%>
 	<link href="/css/parallax-slider.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
@@ -81,21 +81,56 @@
 				
 		<!--start: Container -->
     	<div class="container">
+<!--  
 <form method="GET" action="/edicion/cargarPublicacion">   
     	<h2><i class="ico-keynote ico-white"></i><a id="logout" href="#" class="btn logout">Logout</a></h2>
- Tipo: <select name="tipo" id="tipo">
-				  <option value="AR">Articulo</option>
-				  <option value="EB">eBook</option>
-				  <option value="AC">Accesorio</option>
-				</select><br><br>
-Autor: <input type="text" style="width: 433px;" id="autor" name="autor" size="25" maxlength="50"><br><br>				
-Titulo: <input type="text" style="width: 433px;" id="titulo" name="titulo" size="70" maxlength="70"><br><br>
 <input type="submit" value="Cargar"/>
 </form>
-
-
+-->
 
 <form method="POST" action="/edicion/guardarEdicionPublicacion">
+Tipo: <select name="tipo" id="tipo">
+				  <option value="AR" ${publicacion.tipo == 'AR' ? 'selected' : ''}>Articulo</option>
+				  <option value="EB" ${publicacion.tipo == 'EB' ? 'selected' : ''}>eBook</option>
+				  <option value="AC" ${publicacion.tipo == 'AC' ? 'selected' : ''}>Accesorio</option>
+				</select><br><br>			
+Titulo: <input type="text" style="width: 350px;" id="titulo" name="titulo" size="70" maxlength="70" value="${publicacion.titulo}"/><br><br>
+
+ Portada: <select name="portada" id="portada">
+ 				  <option value="N" ${publicacion.destacado == 'N' ? 'selected' : ''}>No</option>
+				  <option value="S" ${publicacion.portada == 'S' ? 'selected' : ''}>Si</option>
+				</select><br><br>
+
+Titulo Portada: <input type="text" id="tituloPortada" name="tituloPortada" size="100" maxlength="100" value="${publicacion.tituloPortada}"/><br><br>
+
+Descripcion Portada: <input type="text" style="width: 433px;" id="descPortada" name="descPortada" size="150" maxlength="150" value="${publicacion.descPortada}"/><br><br>
+				
+ Destacado: <select name="destacado" id="destacado">
+ 				  <option value="N" ${publicacion.destacado == 'N' ? 'selected' : ''}>No</option>
+				  <option value="S" ${publicacion.destacado == 'S' ? 'selected' : ''}>Si</option>
+				</select><br><br>
+				
+Titulo2: <input type="text" style="width: 433px;" id="titulo2" name="titulo2" size="120" maxlength="120" value="${publicacion.titulo2}"/><br><br>				
+				
+Resumen: <br>
+<textarea style="width: 833px;" rows="10" id="resumen" name="resumen">${publicacion.resumen}</textarea>
+<br><br>
+
+Descripcion: <input type="text" style="width: 433px;" id="descripcion" name="descripcion" size="70" maxlength="70" value="${publicacion.descripcion}"/><br><br>
+
+Autor: <input type="text" id="autor" name="autor" size="100" maxlength="100" value="${publicacion.autor}"/><br><br>
+
+Google+: <input type="text" style="width: 433px;" id="googleAutor" name="googleAutor" size="250" maxlength="570" value="${publicacion.googleAutor}"/><br><br>	
+
+Clase1: <input type="text" id="clase1" name="clase1" size="20" maxlength="20" value="${publicacion.clase1}"/>
+Clase2: <input type="text" id="clase2" name="clase2" size="20" maxlength="20" value="${publicacion.clase2}"/>
+ClasePr3: <input type="text" id="clase3" name="clase3" size="20" maxlength="20" value="${publicacion.clase3}"/>
+ClasePr4: <input type="text" id="clase4" name="clase4" size="20" maxlength="20" value="${publicacion.clase4}"/>
+<br><br>
+Disponible: <select id="disponible" name="disponible">
+				  <option value="S" ${publicacion.disponible == 'S' ? 'selected' : ''}>Si</option>
+				  <option value="N" ${publicacion.disponible == 'N' ? 'selected' : ''}>No</option>
+				</select>							
 
 <br><br>
 Articulo
@@ -106,8 +141,8 @@ ${publicacion.articulo}
 <br>
 <textarea style="width: 833px;" rows="75" id="articulo" name="articulo" >${publicacion.articulo}</textarea>
 <br><br>
-Script: <input type="text"  id="script" name="script" size="100" maxlength="200"><br><br>				
-Script2: <input type="text" id="script2" name="script2" size="100" maxlength="200"><br><br>
+Script: <input type="text" style="width: 600px;" id="script" name="script" size="300" maxlength="300" value="${publicacion.script}"/><br><br>				
+Script2: <input type="text" style="width: 600px;" id="script2" name="script2" size="300" maxlength="300" value="${publicacion.script2}"><br><br>
 <table width="50%" border="0" align="center" cellpadding="10" cellspacing="0">
 <tr>
 <td><div align="center">
@@ -185,9 +220,7 @@ Script2: <input type="text" id="script2" name="script2" size="100" maxlength="20
         </ul>
     </div>
     <br><br><br>
-    <div>
-    	<a href="/editar"><button class="btn">Crear otra Publicacion</button></a>
-    </div>
+
 </div>
     
 <!-- modal-gallery is the modal dialog used for the image gallery -->
@@ -508,7 +541,8 @@ Script2: <input type="text" id="script2" name="script2" size="100" maxlength="20
 		<script src="/js/jquery.fileupload-fp.js"></script>
 		<!-- The File Upload user interface plugin -->
 		<script src="/js/jquery.fileupload-ui.js"></script>  
-		<script src="/js/main-v10.js"></script>
+
+		<%@ include file="/WEB-INF/jsp/includes/scripts.jsp"%>
 
 
 <script>

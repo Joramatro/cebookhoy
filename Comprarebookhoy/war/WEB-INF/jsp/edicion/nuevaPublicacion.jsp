@@ -12,7 +12,7 @@
     
      <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="/css/style.css" rel="stylesheet">
+	<%@ include file="/WEB-INF/jsp/includes/styles.jsp"%>
 	<link href="/css/parallax-slider.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
@@ -85,12 +85,24 @@
 				  <option value="EB">eBook</option>
 				  <option value="AC">Accesorio</option>
 				</select><br><br>
-Autor: <input type="text" style="width: 433px;" id="autor" name="autor" size="25" maxlength="50"><br><br>				
-Titulo: <input type="text" style="width: 433px;" id="titulo" name="titulo" size="70" maxlength="70"><br><br>
-Titulo2: <input type="text" style="width: 433px;" id="titulo2" name="titulo2" size="120" maxlength="120"><br><br>
-Keywords: <input type="text" style="width: 433px;"id="keywords" name="keywords" size="150" maxlength="150">
+ Portada: <select name="portada" id="portada">
+ 				  <option value="N">No</option>
+				  <option value="S">Si</option>
+				</select><br><br>
+Titulo Portada: <input type="text" id="tituloPortada" name="tituloPortada" size="100" maxlength="100" /><br><br>				
+Desc Portada: <input type="text" style="width: 433px;" id="descPortada" name="descPortada" size="150" maxlength="150"/><br><br>
+
+Destacado: <select name="destacado" id="destacado">
+				  <option value="N">No</option>
+				  <option value="S">Si</option>
+				</select><br><br>									
+Autor: <input type="text" id="autor" name="autor" size="25" maxlength="50"/><br><br>	
+Google+: <input type="text" style="width: 433px;" id="googleAutor" name="googleAutor" value="https://plus.google.com/u/0/108657243775074009859?rel=author" size="250" maxlength="570"/><br><br>			
+Titulo: <input type="text" style="width: 350px;" id="titulo" name="titulo" size="70" maxlength="70"/><br><br>
+Titulo2: <input type="text" style="width: 433px;" id="titulo2" name="titulo2" size="120" maxlength="120"/><br><br>
+Keywords: <input type="text" style="width: 433px;"id="keywords" name="keywords" size="150" maxlength="150"/>
 <br><br>
-Descripcion: <input type="text" style="width: 633px;" id="descripcion" name="descripcion" size="160" maxlength="160">
+Descripcion: <input type="text" style="width: 633px;" id="descripcion" name="descripcion" size="160" maxlength="160"/>
 <br><br>
 Clase1: <input type="text" id="clase1" name="clase1" size="20" maxlength="20"/>
 Clase2: <input type="text" id="clase2" name="clase2" size="20" maxlength="20"/>
@@ -100,7 +112,11 @@ ClasePr4: <input type="text" id="clase4" name="clase4" size="20" maxlength="20"/
 Disponible: <select id="disponible" name="disponible">
 				  <option value="S">Si</option>
 				  <option value="N">No</option>
-				</select>				
+				</select><br><br>
+Numeros: <select id="numeros" name="numeros">
+				  <option value="S">Si</option>
+				  <option value="N">No</option>
+				</select>								
 <br><br>
 Resumen<br>
 <textarea style="width: 833px;" rows="10" id="resumen" name="resumen"></textarea>
@@ -109,8 +125,8 @@ Articulo
 <br>
 <textarea style="width: 833px;" rows="75" id="articulo" name="articulo"></textarea>
 <br><br>
-Script: <input type="text"  id="script" name="script" size="100" maxlength="200"><br><br>				
-Script2: <input type="text" id="script2" name="script2" size="100" maxlength="200"><br><br>
+Script: <input type="text" style="width: 600px;" id="script" name="script" size="300" maxlength="300"><br><br>				
+Script2: <input type="text" style="width: 600px;" id="script2" name="script2" size="300" maxlength="300"><br><br>
 <table width="50%" border="0" align="center" cellpadding="10" cellspacing="0">
 <tr>
 <td><div align="center">
@@ -508,7 +524,8 @@ Script2: <input type="text" id="script2" name="script2" size="100" maxlength="20
 		<script src="/js/jquery.fileupload-fp.js"></script>
 		<!-- The File Upload user interface plugin -->
 		<script src="/js/jquery.fileupload-ui.js"></script>  
-		<script src="/js/main-v10.js"></script>
+		
+		<%@ include file="/WEB-INF/jsp/includes/scripts.jsp"%>
 
 
 <script>

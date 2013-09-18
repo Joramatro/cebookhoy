@@ -45,6 +45,16 @@ public class PublicacionDaoImpl implements PublicacionDao {
     }
 
     @Override
+    public List<Publicacion> getPublicacionesDestacadas() {
+
+	List<Publicacion> publicacionesDestacadas = ofy().load()
+		.type(Publicacion.class).filter("destacado", "S")
+		.order("-fechaCreacion").list();
+
+	return publicacionesDestacadas;
+    }
+
+    @Override
     public List<Publicacion> getPublicaciones(String tipo) {
 
 	List<Publicacion> publicaciones = ofy().load().type(Publicacion.class)
@@ -90,9 +100,16 @@ public class PublicacionDaoImpl implements PublicacionDao {
 	updatePublicacion.setClase4(publicacion.getClase4());
 	updatePublicacion.setTipo(publicacion.getTipo());
 	updatePublicacion.setAutor(publicacion.getAutor());
+	updatePublicacion.setGoogleAutor(publicacion.getGoogleAutor());
+	updatePublicacion.setDestacado(publicacion.getDestacado());
+	updatePublicacion.setPortada(publicacion.getPortada());
+	updatePublicacion.setNumeros(publicacion.getNumeros());
+	updatePublicacion.setTituloPortada(publicacion.getTituloPortada());
+	updatePublicacion.setDescPortada(publicacion.getDescPortada());
 	updatePublicacion.setTitulo2(publicacion.getTitulo2());
 	updatePublicacion.setScript(publicacion.getScript());
 	updatePublicacion.setScript2(publicacion.getScript2());
+	updatePublicacion.setDisponible(publicacion.getDisponible());
     }
 
     @Override

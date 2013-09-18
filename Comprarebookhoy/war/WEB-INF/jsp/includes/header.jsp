@@ -111,7 +111,7 @@
 		<meta property="og:description" content="Toda la información sobre los que trabajamos en Comprar eBook Hoy, su experiencia y valores profesionales"/>
 		<meta property="og:type" content="sobre"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/sobre"/>
-		<meta property="og:image" content="https://lh4.ggpht.com/DmosWtM3Bv39mIqmjF9tm86ToFDjFSScZPSvGrrYSyTTRWBi_YDrgV-OkKOc-YmSCKxD-WyTeZUovI433SIkW6KpBYpqgA=s1600-c"/>
+		<meta property="og:image" content="/img/img-meta/logoGrande.jpg"/>
 		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
 		<!-- end: Facebook Open Graph -->
 		<!-- start: Twitter tags -->
@@ -120,7 +120,7 @@
 		<meta name="twitter:creator" content="@Jorge_Amat1">
 		<meta name="twitter:title" content="Sobre nosotros en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Toda la información sobre los que trabajamos en Comprar eBook Hoy, su experiencia y valores profesionales">
-		<meta name="twitter:image" content="https://lh4.ggpht.com/DmosWtM3Bv39mIqmjF9tm86ToFDjFSScZPSvGrrYSyTTRWBi_YDrgV-OkKOc-YmSCKxD-WyTeZUovI433SIkW6KpBYpqgA=s1600-c">
+		<meta name="twitter:image" content="/img/img-meta/logoGrande.jpg">
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/sobre“/>	
@@ -138,7 +138,7 @@
 		<meta property="og:description" content="Contacta con los que trabajamos en Comprar eBook Hoy"/>
 		<meta property="og:type" content="contacto"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/contacto"/>
-		<meta property="og:image" content="http://lh5.ggpht.com/s0UD2hN426tPocZw_4hVj1BndR5ttcSJRmcGPZuJy_ekDS9fNZH_DgQbfHR3QWcnxyla_gmhSp4yXOrwOw6RzV7di_M=s1600-c"/>
+		<meta property="og:image" content="/img/img-meta/logoGrande.jpg"/>
 		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
 		<!-- end: Facebook Open Graph -->
 		<!-- start: Twitter tags -->
@@ -147,7 +147,7 @@
 		<meta name="twitter:creator" content="@Jorge_Amat1">
 		<meta name="twitter:title" content="Contacta con nosotros en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Contacta con los que trabajamos en Comprar eBook Hoy">
-		<meta name="twitter:image" content="http://lh5.ggpht.com/s0UD2hN426tPocZw_4hVj1BndR5ttcSJRmcGPZuJy_ekDS9fNZH_DgQbfHR3QWcnxyla_gmhSp4yXOrwOw6RzV7di_M=s1600-c">
+		<meta name="twitter:image" content="/img/img-meta/logoGrande.jpg">
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/contacto“/>
@@ -165,7 +165,11 @@
 		<meta property="og:description" content="Análisis y precios de los mejores eBook readers en la actualidad para que puedas comprar tu ebook de tinta electrónica preferido y comparar online"/>
 		<meta property="og:type" content="ebook"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/ebooks"/>
-		<meta property="og:image" content="${publicaciones[0].lImages[0]}"/>
+		<c:if test="${!empty publicaciones}">
+			<c:if test="${!empty publicaciones[0].lImages}">
+				<meta property="og:image" content="${publicaciones[0].lImages[0]}"/>
+			</c:if>
+		</c:if>
 		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
 		<!-- end: Facebook Open Graph -->
 		<!-- start: Twitter tags -->
@@ -174,7 +178,11 @@
 		<meta name="twitter:creator" content="@ComprareBookHoy">
 		<meta name="twitter:title" content="Análisis y precios de eBooks para comprar tu ebook favorito en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Análisis y precios de los mejores lectores de ebooks en la actualidad para que puedas comprar tu ebook preferido">
-		<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
+		<c:if test="${!empty publicaciones}">
+			<c:if test="${!empty publicaciones[0].lImages}">
+				<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
+			</c:if>
+		</c:if>
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/ebooks“/>
 		<!-- end: Twitter tags -->		
@@ -192,7 +200,11 @@
 		<meta property="og:description" content="Opinión y artículos en nuestro blog de los mejores eBook readers en la actualidad para que puedas comprar tu ebook de tinta electrónica online"/>
 		<meta property="og:type" content="articulo"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/blog"/>
-		<meta property="og:image" content="${publicaciones[0].lImages[0]}"/>
+		<c:if test="${!empty publicaciones}">
+			<c:if test="${!empty publicaciones[0].lImages}">
+				<meta property="og:image" content="${publicaciones[0].lImages[0]}"/>
+			</c:if>
+		</c:if>
 		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
 		<!-- end: Facebook Open Graph -->
 		<!-- start: Twitter tags -->
@@ -201,7 +213,11 @@
 		<meta name="twitter:creator" content="@ComprareBookHoy">
 		<meta name="twitter:title" content="Opinión y artículos sobre ereaders para comprar tu ebook preferido en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Opinión y artículos en nuestro blog de los mejores lectores de eBooks en la actualidad para que puedas comprar tu ebook favorito">
-		<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
+		<c:if test="${!empty publicaciones}">
+			<c:if test="${!empty publicaciones[0].lImages}">
+				<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
+			</c:if>
+		</c:if>
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/blog“/>		
@@ -219,7 +235,7 @@
 		<meta property="og:description" content="Analizamos los mejores lectores de ebooks del mercado para que puedas comprar tu ebook reader preferido al mejor precio y online. Accede a la mejor información para comprar el mejor ebook de tinta electrónica"/>
 		<meta property="og:type" content="principal"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com"/>
-		<meta property="og:image" content="http://lh6.ggpht.com/2yOdMN6oD92BcytMlKSRXCrjnuQmGyw0ri_Fdl2WCEIHoblpfuShMGB3BIn0-_lzUY4Y2YWX_B5uXLLwdTsXp8YacCE=s1600-c"/>
+		<meta property="og:image" content="/img/img-meta/logoGrande.jpg"/>
 		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
 		<!-- end: Facebook Open Graph -->
 		<!-- start: Twitter tags -->
@@ -228,7 +244,7 @@
 		<meta name="twitter:creator" content="@ComprareBookHoy">
 		<meta name="twitter:title" content="eReaders en Comprar eBook Hoy online">
 		<meta name="twitter:description" content="Analizamos los mejores lectores de ebooks del mercado para que puedas comprar tu ebook reader preferido al mejor precio y online. Accede a la mejor información para comprar el mejor ebook de tinta electrónica">
-		<meta name="twitter:image" content="http://lh6.ggpht.com/2yOdMN6oD92BcytMlKSRXCrjnuQmGyw0ri_Fdl2WCEIHoblpfuShMGB3BIn0-_lzUY4Y2YWX_B5uXLLwdTsXp8YacCE=s1600-c">
+		<meta name="twitter:image" content="/img/img-meta/logoGrande.jpg">
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->				
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com“/>
@@ -253,7 +269,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="/css/parallax-slider.css" rel="stylesheet">   
-	<link href="/css/style.min.css" rel="stylesheet">
+	<%@ include file="/WEB-INF/jsp/includes/styles.jsp"%>
 	<!-- end: CSS -->
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -308,11 +324,17 @@
 							<li class="dropdown">
 	                			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Destacados<b class="caret"></b></a>
 	                			<ul class="dropdown-menu">
-	                  				<li><a href="/ebooks/Kindle">Kindle 4</a></li>
-									<li><a href="/ebooks/Energy-Color-C7+-Touch">Energy Color C7+ Touch</a></li>
-									<li><a href="/blog/7-Razones-para-comprar-un-eReader-para-tus-hijos">Razones para comprar eReader a tus hijos</a></li>
-									<li><a href="/blog/Los-lectores-de-ebooks-mas-vendidos">Los lectores de ebooks más vendidos</a></li>
-	                			</ul>
+	                				<c:forEach var="publicacion" items="${publicacionesDestacadas}" varStatus="status" end="5">
+										<c:choose>
+											<c:when test="${publicacion.tipo eq 'EB' }">
+												<li><a href="/ebooks/${publicacion.url}">${publicacion.titulo}</a></li>
+											</c:when>	
+											<c:otherwise>
+												<li><a href="/blog/${publicacion.url}">${publicacion.titulo}</a></li>
+											</c:otherwise>
+										</c:choose>										
+	                  				</c:forEach>	                					                  				
+								</ul>
 	              			</li>
 	              			<li id="menuExtras"><a href="/extras">Extras</a></li>
 	              			<li id="menuBlog"><a href="/blog">Blog</a></li>	              																			

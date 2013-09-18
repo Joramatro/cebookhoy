@@ -73,7 +73,7 @@
 							</div> 
 						</c:if>
 						<li><strong>Fecha&nbsp;</strong>&nbsp;<span id="_datePublished5" itemprop="datePublished" content="<fmt:setLocale value='es_ES' scope='session'/><fmt:formatDate type='date' dateStyle='short' value='${publicacion.fechaCreacion}'/>"> <fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span></li>
-						<li><strong>Autor&nbsp;</strong>&nbsp; <a target="_blank" href="https://plus.google.com/u/0/108657243775074009859?rel=author" rel=”author”><span id="_author3" itemprop="author" itemscope itemtype="http://schema.org/Person">
+						<li><strong>Autor&nbsp;</strong>&nbsp; <a target="_blank" href="${publicacion.googleAutor}" rel=”author”><span id="_author3" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <span itemprop="name">${publicacion.autor}</span></span></a></li>
 					</ul>					
 				</div>				

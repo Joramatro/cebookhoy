@@ -1,4 +1,4 @@
-package com.amatic.ch.aop.login;
+package com.amatic.ch.aop;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
