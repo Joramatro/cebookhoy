@@ -6,8 +6,6 @@ Disallow: /js/
 Disallow: /css/
 Disallow: /img/
 Disallow: /venta/
-Disallow: /editar/
-Disallow: /edicion/
 
 User-agent: Googlebot-Image
 Allow: /
