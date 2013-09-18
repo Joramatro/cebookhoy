@@ -26,8 +26,8 @@ public class ComentarioDaoImpl implements ComentarioDao {
 	List<Comentario> ultimosComentarios = ofy().load()
 		.type(Comentario.class).order("-fecha").list();
 
-	if (ultimosComentarios.size() > 30) {
-	    ultimosComentarios = ultimosComentarios.subList(0, 30);
+	if (ultimosComentarios.size() > 40) {
+	    ultimosComentarios = ultimosComentarios.subList(0, 40);
 	}
 
 	return ultimosComentarios;

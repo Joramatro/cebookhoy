@@ -37,8 +37,8 @@ public class PublicacionDaoImpl implements PublicacionDao {
 		.type(Publicacion.class).filter("tipo", tipo)
 		.order("-fechaCreacion").list();
 
-	if (ultimasPublicaciones.size() > 12) {
-	    ultimasPublicaciones = ultimasPublicaciones.subList(0, 12);
+	if (ultimasPublicaciones.size() > 15) {
+	    ultimasPublicaciones = ultimasPublicaciones.subList(0, 15);
 	}
 
 	return ultimasPublicaciones;
@@ -52,6 +52,16 @@ public class PublicacionDaoImpl implements PublicacionDao {
 		.order("-fechaCreacion").list();
 
 	return publicacionesDestacadas;
+    }
+
+    @Override
+    public List<Publicacion> getPublicacionesPortada() {
+
+	List<Publicacion> publicacionesPortada = ofy().load()
+		.type(Publicacion.class).filter("portada", "S")
+		.order("-fechaCreacion").list();
+
+	return publicacionesPortada;
     }
 
     @Override

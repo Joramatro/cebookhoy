@@ -88,6 +88,9 @@ public class HomeController {
 	List<Publicacion> publicacionesDestacadas = publicacionService
 		.getPublicacionesDestacadas();
 
+	List<Publicacion> publicacionesPortada = publicacionService
+		.getPublicacionesPortada();
+
 	List<Comentario> comentarios = comentarioService
 		.getUltimosComentarios();
 
@@ -102,6 +105,8 @@ public class HomeController {
 	model.addAttribute("publicacionesBlog", publicacionesBlog);
 
 	model.addAttribute("publicacionesDestacadas", publicacionesDestacadas);
+
+	model.addAttribute("publicacionesPortada", publicacionesPortada);
 
 	return "index";
     }

@@ -483,37 +483,37 @@ public class EditionController {
 	for (Publicacion publicacion : publicaciones) {
 	    publicacion.setKey(WebUtils.SHA1(WebUtils.cleanTildes(publicacion
 		    .getTitulo())));
-	    if (publicacion.getClase3() == null) {
-		publicacion.setClase3("");
-	    }
-	    if (publicacion.getClase4() == null) {
-		publicacion.setClase4("");
-	    }
-	    if (publicacion.getDescPortada() == null) {
-		publicacion.setDescPortada("");
-	    }
-	    if (publicacion.getDestacado() == null) {
-		publicacion.setDestacado("N");
-	    }
-	    if (publicacion.getGoogleAutor() == null) {
-		publicacion
-			.setGoogleAutor("https://plus.google.com/u/0/108657243775074009859?rel=author");
-	    }
-	    if (publicacion.getlImagesNames() == null) {
-		publicacion.setlImagesNames(new ArrayList<String>());
-	    }
-	    if (publicacion.getNumeros() == null) {
-		publicacion.setNumeros("S");
-	    }
-	    if (publicacion.getPortada() == null) {
-		publicacion.setPortada("N");
-	    }
-	    if (publicacion.getTituloPortada() == null) {
-		publicacion.setTituloPortada(publicacion.getTitulo());
-	    }
-	    if (publicacion.getDisponible() == null) {
-		publicacion.setDisponible("S");
-	    }
+	    // if (publicacion.getClase3() == null) {
+	    // publicacion.setClase3("");
+	    // }
+	    // if (publicacion.getClase4() == null) {
+	    // publicacion.setClase4("");
+	    // }
+	    // if (publicacion.getDescPortada() == null) {
+	    // publicacion.setDescPortada("");
+	    // }
+	    // if (publicacion.getDestacado() == null) {
+	    // publicacion.setDestacado("N");
+	    // }
+	    // if (publicacion.getGoogleAutor() == null) {
+	    // publicacion
+	    // .setGoogleAutor("https://plus.google.com/u/0/108657243775074009859?rel=author");
+	    // }
+	    // if (publicacion.getlImagesNames() == null) {
+	    // publicacion.setlImagesNames(new ArrayList<String>());
+	    // }
+	    // if (publicacion.getNumeros() == null) {
+	    // publicacion.setNumeros("S");
+	    // }
+	    // if (publicacion.getPortada() == null) {
+	    // publicacion.setPortada("N");
+	    // }
+	    // if (publicacion.getTituloPortada() == null) {
+	    // publicacion.setTituloPortada(publicacion.getTitulo());
+	    // }
+	    // if (publicacion.getDisponible() == null) {
+	    // publicacion.setDisponible("S");
+	    // }
 	    publicacionService.update(publicacion);
 	}
 
@@ -523,37 +523,37 @@ public class EditionController {
 	for (Publicacion publicacion : publicacionesblog) {
 	    publicacion.setKey(WebUtils.SHA1(WebUtils.cleanTildes(publicacion
 		    .getTitulo())));
-	    if (publicacion.getClase3() == null) {
-		publicacion.setClase3("");
-	    }
-	    if (publicacion.getClase4() == null) {
-		publicacion.setClase4("");
-	    }
-	    if (publicacion.getDescPortada() == null) {
-		publicacion.setDescPortada("");
-	    }
-	    if (publicacion.getDestacado() == null) {
-		publicacion.setDestacado("N");
-	    }
-	    if (publicacion.getGoogleAutor() == null) {
-		publicacion
-			.setGoogleAutor("https://plus.google.com/u/0/108657243775074009859?rel=author");
-	    }
-	    if (publicacion.getlImagesNames() == null) {
-		publicacion.setlImagesNames(new ArrayList<String>());
-	    }
-	    if (publicacion.getNumeros() == null) {
-		publicacion.setNumeros("S");
-	    }
-	    if (publicacion.getPortada() == null) {
-		publicacion.setPortada("N");
-	    }
-	    if (publicacion.getTituloPortada() == null) {
-		publicacion.setTituloPortada(publicacion.getTitulo());
-	    }
-	    if (publicacion.getDisponible() == null) {
-		publicacion.setDisponible("S");
-	    }
+	    // if (publicacion.getClase3() == null) {
+	    // publicacion.setClase3("");
+	    // }
+	    // if (publicacion.getClase4() == null) {
+	    // publicacion.setClase4("");
+	    // }
+	    // if (publicacion.getDescPortada() == null) {
+	    // publicacion.setDescPortada("");
+	    // }
+	    // if (publicacion.getDestacado() == null) {
+	    // publicacion.setDestacado("N");
+	    // }
+	    // if (publicacion.getGoogleAutor() == null) {
+	    // publicacion
+	    // .setGoogleAutor("https://plus.google.com/u/0/108657243775074009859?rel=author");
+	    // }
+	    // if (publicacion.getlImagesNames() == null) {
+	    // publicacion.setlImagesNames(new ArrayList<String>());
+	    // }
+	    // if (publicacion.getNumeros() == null) {
+	    // publicacion.setNumeros("S");
+	    // }
+	    // if (publicacion.getPortada() == null) {
+	    // publicacion.setPortada("N");
+	    // }
+	    // if (publicacion.getTituloPortada() == null) {
+	    // publicacion.setTituloPortada(publicacion.getTitulo());
+	    // }
+	    // if (publicacion.getDisponible() == null) {
+	    // publicacion.setDisponible("S");
+	    // }
 	    publicacionService.update(publicacion);
 	}
 
@@ -563,37 +563,37 @@ public class EditionController {
 	for (Publicacion publicacion : publicacionesExtras) {
 	    publicacion.setKey(WebUtils.SHA1(WebUtils.cleanTildes(publicacion
 		    .getTitulo())));
-	    if (publicacion.getClase3() == null) {
-		publicacion.setClase3("");
-	    }
-	    if (publicacion.getClase4() == null) {
-		publicacion.setClase4("");
-	    }
-	    if (publicacion.getDescPortada() == null) {
-		publicacion.setDescPortada("");
-	    }
-	    if (publicacion.getDestacado() == null) {
-		publicacion.setDestacado("S");
-	    }
-	    if (publicacion.getGoogleAutor() == null) {
-		publicacion
-			.setGoogleAutor("https://plus.google.com/u/0/108657243775074009859?rel=author");
-	    }
-	    if (publicacion.getlImagesNames() == null) {
-		publicacion.setlImagesNames(new ArrayList<String>());
-	    }
-	    if (publicacion.getNumeros() == null) {
-		publicacion.setNumeros("S");
-	    }
-	    if (publicacion.getPortada() == null) {
-		publicacion.setPortada("S");
-	    }
-	    if (publicacion.getTituloPortada() == null) {
-		publicacion.setTituloPortada("");
-	    }
-	    if (publicacion.getDisponible() == null) {
-		publicacion.setDisponible("S");
-	    }
+	    // if (publicacion.getClase3() == null) {
+	    // publicacion.setClase3("");
+	    // }
+	    // if (publicacion.getClase4() == null) {
+	    // publicacion.setClase4("");
+	    // }
+	    // if (publicacion.getDescPortada() == null) {
+	    // publicacion.setDescPortada("");
+	    // }
+	    // if (publicacion.getDestacado() == null) {
+	    // publicacion.setDestacado("N");
+	    // }
+	    // if (publicacion.getGoogleAutor() == null) {
+	    // publicacion
+	    // .setGoogleAutor("https://plus.google.com/u/0/108657243775074009859?rel=author");
+	    // }
+	    // if (publicacion.getlImagesNames() == null) {
+	    // publicacion.setlImagesNames(new ArrayList<String>());
+	    // }
+	    // if (publicacion.getNumeros() == null) {
+	    // publicacion.setNumeros("N");
+	    // }
+	    // if (publicacion.getPortada() == null) {
+	    // publicacion.setPortada("N");
+	    // }
+	    // if (publicacion.getTituloPortada() == null) {
+	    // publicacion.setTituloPortada("");
+	    // }
+	    // if (publicacion.getDisponible() == null) {
+	    // publicacion.setDisponible("N");
+	    // }
 	    publicacionService.update(publicacion);
 	}
     }

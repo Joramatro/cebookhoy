@@ -52,4 +52,8 @@ public class PublicacionService {
 	return this.PublicacionDao.getPublicacionesDestacadas();
     }
 
+    public List<Publicacion> getPublicacionesPortada() {
+	return this.PublicacionDao.getPublicacionesPortada();
+    }
+
 }

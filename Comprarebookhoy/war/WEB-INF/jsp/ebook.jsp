@@ -74,7 +74,7 @@
 						</c:if>
 						<li><strong>Fecha&nbsp;</strong>&nbsp;<span id="_datePublished5" itemprop="datePublished" content="<fmt:setLocale value='es_ES' scope='session'/><fmt:formatDate type='date' dateStyle='short' value='${publicacion.fechaCreacion}'/>"> <fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="date" dateStyle="long" value="${publicacion.fechaCreacion}"/></span></li>
 						<li><strong>Autor&nbsp;</strong>&nbsp; <a target="_blank" href="${publicacion.googleAutor}" rel=”author”><span id="_author3" itemprop="author" itemscope itemtype="http://schema.org/Person">
-<span itemprop="name">${publicacion.autor}</span></span></a></li>
+						<span itemprop="name">${publicacion.autor}</span></span></a></li>
 					</ul>					
 				</div>				
 				<div class="span10">
@@ -82,7 +82,7 @@
 					${publicacion.articulo}				
 					<br>
 					<c:if test="${publicacion.disponible ne 'N'}">
-						<br><a href="/venta/principal/${publicacion.url}" class="button color launch">Cómpralo Hoy!</a>
+						<br><h2><a href="/venta/principal/${publicacion.url}" class="button color launch">Cómpralo Hoy!</a></h2>
 					</c:if>					
 					<br>
 					<!-- AddThis Button BEGIN -->
@@ -106,7 +106,7 @@
 					</script> 
 					
 					<br><br>
-					<p style="font-style: italic;">Por favor, no dudes en puntuar y comentar tu opinión ó aportar más detalles en la sección de <a href="#comments">comentarios</a></p>
+					<p style="font-style: italic;">Por favor, no dudes en puntuar y comentar tu opinión para aportar más detalles sobre el producto en la sección de <a href="#comments">comentarios</a></p>
 				</div>	
 				
 			</div>

@@ -97,7 +97,7 @@ Tipo: <select name="tipo" id="tipo">
 Titulo: <input type="text" style="width: 350px;" id="titulo" name="titulo" size="70" maxlength="70" value="${publicacion.titulo}"/><br><br>
 
  Portada: <select name="portada" id="portada">
- 				  <option value="N" ${publicacion.destacado == 'N' ? 'selected' : ''}>No</option>
+ 				  <option value="N" ${publicacion.portada == 'N' ? 'selected' : ''}>No</option>
 				  <option value="S" ${publicacion.portada == 'S' ? 'selected' : ''}>Si</option>
 				</select><br><br>
 

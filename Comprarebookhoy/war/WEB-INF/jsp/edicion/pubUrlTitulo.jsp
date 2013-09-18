@@ -17,13 +17,24 @@
 	<!-- start: Page Title -->
 	<div class="container">
 	
-	
-		<br><br><span>Tipo Principal</span><br><br>
+	<% 
+	  int port = request.getServerPort();
+	  StringBuilder result = new StringBuilder();
+	  result.append(request.getScheme())
+	        .append("://")
+	        .append(request.getServerName());
+
+	  if (port != 80) {
+	    result.append(':')
+	          .append(port);
+	  }
+	 %>
+		<br><br><span>Tipo Ebooks</span><br><br>
 		<table>
 		<c:forEach var="publicacion" items="${publicacionesEbook}" varStatus="status">
 		<tr>
 			<td>
-				${publicacion.url}
+				<%=result.toString()%>/ebooks/${publicacion.url}
 			</td>
 			<td>
 				${publicacion.titulo}
@@ -39,7 +50,7 @@
 		<c:forEach var="publicacion" items="${publicacionesBlog}" varStatus="status">
 		<tr>
 			<td>
-				${publicacion.url}
+				<%=result.toString()%>/blog/${publicacion.url}
 			</td>
 			<td>
 				${publicacion.titulo}
@@ -47,15 +58,14 @@
 		</tr>
 		</c:forEach>
 		</table>
-	
-	
-	
+		
+		
 		<br><br><span>Tipo Extra</span><br><br>
 		<table>
 		<c:forEach var="publicacion" items="${publicacionesExtra}" varStatus="status">
 		<tr>
 			<td>
-				${publicacion.url}
+				<%=result.toString()%>/venta/extra/${publicacion.url}
 			</td>
 			<td>
 				${publicacion.titulo}
@@ -63,9 +73,9 @@
 		</tr>
 		</c:forEach>
 		</table>
-	
-	
 		
+		
+	
 		<br><br><span>Todos los titulos</span><br><br>
 		<table>
 		<c:forEach var="publicacion" items="${publicacionesEbook}" varStatus="status">
@@ -81,41 +91,67 @@
 				${publicacion.titulo}
 			</td>
 		</tr>
-		</c:forEach>
-		<c:forEach var="publicacion" items="${publicacionesExtra}" varStatus="status">
-		<tr>
-			<td>
-				${publicacion.titulo}
-			</td>
-		</tr>
-		</c:forEach>
-		</table>
+		</c:forEach>		
+		</table>	
 		
-		<br><br><span>Todas URLS</span><br><br>
+		
+		<br><br><span>Todas las descripciones</span><br><br>
 		<table>
 		<c:forEach var="publicacion" items="${publicacionesEbook}" varStatus="status">
 		<tr>
 			<td>
-				${publicacion.url}
+				${publicacion.descripcion}
 			</td>
 		</tr>
 		</c:forEach>
 		<c:forEach var="publicacion" items="${publicacionesBlog}" varStatus="status">
 		<tr>
 			<td>
-				${publicacion.url}
-			</td>
-		</tr>
-		</c:forEach>
-		<c:forEach var="publicacion" items="${publicacionesExtra}" varStatus="status">
-		<tr>
-			<td>
-				${publicacion.url}
+				${publicacion.descripcion}
 			</td>
 		</tr>
 		</c:forEach>		
-		
 		</table>
+		
+		
+		<br><br><span>Todas las keywords</span><br><br>
+		<table>
+		<c:forEach var="publicacion" items="${publicacionesEbook}" varStatus="status">
+		<tr>
+			<td>
+				${publicacion.keywords}
+			</td>
+		</tr>
+		</c:forEach>
+		<c:forEach var="publicacion" items="${publicacionesBlog}" varStatus="status">
+		<tr>
+			<td>
+				${publicacion.keywords}
+			</td>
+		</tr>
+		</c:forEach>		
+		</table>
+		
+		
+			
+		<br><br><span>Todos las Urls
+		<table>
+		<c:forEach var="publicacion" items="${publicacionesEbook}" varStatus="status">
+		<tr>
+			<td>
+				<%=result.toString()%>/ebooks/${publicacion.url}
+			</td>
+		</tr>
+		</c:forEach>
+		<c:forEach var="publicacion" items="${publicacionesBlog}" varStatus="status">
+		<tr>
+			<td>
+				<%=result.toString()%>/blog/${publicacion.url}
+			</td>
+		</tr>
+		</c:forEach>
+		</table>
+		
 	
 	</div>
 	<%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>

@@ -26,4 +26,6 @@ public interface PublicacionDao {
 
     public List<Publicacion> getPublicacionesDestacadas();
 
+    public List<Publicacion> getPublicacionesPortada();
+
 }

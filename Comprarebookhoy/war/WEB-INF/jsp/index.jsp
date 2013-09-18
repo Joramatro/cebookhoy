@@ -12,45 +12,25 @@
 	<div class="slider-wrapper">
 
 		<div id="da-slider" class="da-slider">
-			<c:forEach var="publicacion" items="${publicacionesEbooks}" varStatus="status" end="3">
-				<c:if test="${publicacion.portada eq 'S'}">
-					<div class="da-slide">
-						<h2>${publicacion.tituloPortada}</h2>
-						<p>${publicacion.descPortada}</p>
-						<a href="/venta/principal/${publicacion.url}" class="da-link">COMPRAR HOY</a>
-						<div class="da-img">
-							<c:choose>
-								<c:when test="${publicacion.tipo eq 'EB' }">
-									<a href="/ebooks/${publicacion.url}">
-								</c:when>	
-								<c:otherwise>
-									<a href="/blog/${publicacion.url}">
-								</c:otherwise>
-							</c:choose>
-							<img src="${publicacion.lImages[1]}" style="width: 370px;height:340px;" alt="${publicacion.titulo}" /></a>
-						</div>
-					</div>							
-				</c:if>
-			</c:forEach>
-			<c:forEach var="publicacion" items="${publicacionesBlog}" varStatus="status" end="3">
-				<c:if test="${publicacion.portada eq 'S'}">
-					<div class="da-slide">
-						<h2>${publicacion.tituloPortada}</h2>
-						<p>${publicacion.descPortada}</p>
-						<a href="/venta/principal/${publicacion.url}" class="da-link">COMPRAR HOY</a>
-						<div class="da-img">
-							<c:choose>
-								<c:when test="${publicacion.tipo eq 'EB' }">
-									<a href="/ebooks/${publicacion.url}">
-								</c:when>	
-								<c:otherwise>
-									<a href="/blog/${publicacion.url}">
-								</c:otherwise>
-							</c:choose>
-							<img src="${publicacion.lImages[2]}" style="width: 370px;height:340px;" alt="${publicacion.titulo}" /></a>
-						</div>
-					</div>							
-				</c:if>
+			<c:forEach var="publicacion" items="${publicacionesPortada}" varStatus="status" end="3">
+				<div class="da-slide">
+					<h2>${publicacion.tituloPortada}</h2>
+					<p>${publicacion.descPortada}</p>
+					<a href="/venta/principal/${publicacion.url}" class="da-link">COMPRAR HOY</a>
+					<div class="da-img">
+						<c:choose>
+							<c:when test="${publicacion.tipo eq 'EB' }">
+								<a href="/ebooks/${publicacion.url}">
+							</c:when>	
+							<c:otherwise>
+								<a href="/blog/${publicacion.url}">
+							</c:otherwise>
+						</c:choose>
+						<c:if test="${!empty publicacion.lImages }">
+							<img src="${publicacion.lImages[3]}" style="width: 370px;height:340px;" alt="${publicacion.titulo}" /></a>
+						</c:if>
+					</div>
+				</div>							
 			</c:forEach>			
 			<nav class="da-arrows">
 				<span class="da-arrows-prev"></span>
