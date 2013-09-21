@@ -111,10 +111,10 @@
 								<div class="social-info-wrap">
 									<div class="social-info">
 										<div class="social-info-front social-twitter">
-											<a target="_blank" href="https://twitter.com/ComprareBookHoy"></a>
+											<a target="_blank" href="https://twitter.com/ComprarHoy"></a>
 										</div>
 										<div class="social-info-back social-twitter-hover">
-											<a target="_blank" href="https://twitter.com/ComprareBookHoy"></a>
+											<a target="_blank" href="https://twitter.com/ComprarHoy"></a>
 										</div>	
 									</div>
 								</div>
@@ -125,10 +125,10 @@
 								<div class="social-info-wrap">
 									<div class="social-info">
 										<div class="social-info-front social-facebook">
-											<a target="_blank" href="https://www.facebook.com/comprarebookhoy"></a>
+											<a target="_blank" href="https://www.facebook.com/comprarhoy"></a>
 										</div>
 										<div class="social-info-back social-facebook-hover">
-											<a target="_blank" href="https://www.facebook.com/comprarebookhoy"></a>
+											<a target="_blank" href="https://www.facebook.com/comprarhoy"></a>
 										</div>
 									</div>
 								</div>
