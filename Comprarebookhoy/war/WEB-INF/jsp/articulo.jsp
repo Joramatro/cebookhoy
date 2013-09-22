@@ -36,7 +36,9 @@
 			<!-- start: Flexslider -->
 			<div style="width: 550px;height: 435px; margin: 0 auto;" class="slider" >
 				<div id="flex1" class="flexslider home">
-					<a target="_blank" href="/venta/principal/${publicacion.url}">
+					<c:if test="${publicacion.script ne '#' }">
+						<a target="_blank" href="/venta/principal/${publicacion.url}">
+					</c:if>
 					<ul class="slides">
 						<c:forEach var="imagen" items="${publicacion.lImages}" varStatus="status">
 						<c:if test="${status.count ne 3}">

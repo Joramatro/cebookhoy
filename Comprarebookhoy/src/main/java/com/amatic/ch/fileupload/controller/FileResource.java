@@ -124,17 +124,24 @@ public class FileResource {
 	    lImagesNames.add(name);
 
 	    String articulo = publicacion.getArticulo();
+	    String replaceimg = "<br>";
+	    if (!publicacion.getScript().equals("#")) {
+		replaceimg += "<a target=\"_blank\" href=\"/venta/principal/"
+			+ publicacion.getUrl() + "\">";
+	    }
+	    replaceimg += "<img id=\"_image6\" itemprop=\"image\"  src=\""
+		    + url
+		    + "\" alt=\""
+		    + publicacion.getDescripcion()
+		    + "\" style=\"width:400px; height:250px; margin-left: 28%;\"/>";
+	    if (!publicacion.getScript().equals("#")) {
+		replaceimg += "</a>";
+	    }
+	    replaceimg += "<br> ";
+
 	    if (lImages.size() == 3) {
-		articulo = articulo
-			.replaceAll(
-				"<img>",
-				"<br><a target=\"_blank\" href=\"/venta/principal/"
-					+ publicacion.getUrl()
-					+ "\"><img id=\"_image6\" itemprop=\"image\"  src=\""
-					+ url
-					+ "\" alt=\""
-					+ publicacion.getDescripcion()
-					+ "\" style=\"width:430px; height:400px; margin-left: 28%;\"/></a><br> ");
+		articulo = articulo.replaceAll("<img>", replaceimg);
+
 		publicacion.setArticulo(articulo);
 	    }
 	    publicacionService.update(publicacion);
