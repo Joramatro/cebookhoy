@@ -207,7 +207,7 @@
 			pw.close();
 			%>
 			<br/> <br/>
-			<p>Por favor, envia esta traza al <a href="mailto:jorge.amat@comprarebookhoy.com">administrator</a></p>
+			<p>Por favor, envia esta traza al <a href="mailto:hola@comprarebookhoy.com">administrator</a></p>
 		</div>
 -->
 </body>

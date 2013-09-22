@@ -31,11 +31,11 @@
 		<meta property="og:type" content="ebooks"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/ebooks/${publicacion.url}"/>
 		<meta property="og:image" content="${publicacion.lImages[0]}"/>
-		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<meta property="og:email" content="hola@comprarebookhoy.com"/>
 		<!-- end: Facebook Open Graph -->
 		<!-- start: Twitter tags -->
 		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@ComprareBookHoy">
+		<meta name="twitter:site" content="@ComprarHoy">
 		<meta name="twitter:creator" content="@Jorge_Amat1">
 		<meta name="twitter:title" content="${publicacion.titulo}">
 		<meta name="twitter:description" content="${publicacion.descripcion}">
@@ -58,11 +58,11 @@
 		<meta property="og:type" content="articulos"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/blog/${publicacion.url}"/>
 		<meta property="og:image" content="${publicacion.lImages[0]}"/>
-		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<meta property="og:email" content="hola@comprarebookhoy.com"/>
 		<!-- end: Facebook Open Graph -->
 		<!-- start: Twitter tags -->
 		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@ComprareBookHoy">
+		<meta name="twitter:site" content="@ComprarHoy">
 		<meta name="twitter:creator" content="@Jorge_Amat1">
 		<meta name="twitter:title" content="${publicacion.titulo}">
 		<meta name="twitter:description" content="${publicacion.descripcion}">
@@ -85,12 +85,12 @@
 		<meta property="og:type" content="extras"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/extras"/>
 		<meta property="og:image" content="${publicaciones[0].lImages[0]}"/>
-		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<meta property="og:email" content="hola@comprarebookhoy.com"/>
 		<!-- end: Facebook Open Graph -->
 		<!-- start: Twitter tags -->
 		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@ComprareBookHoy">
-		<meta name="twitter:creator" content="@ComprareBookHoy">
+		<meta name="twitter:site" content="@ComprarHoy">
+		<meta name="twitter:creator" content="@ComprarHoy">
 		<meta name="twitter:title" content="Extras en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Accede a todos los extras para comprar accesorios a tu ebook como fundas para protegerlo, adaptadores de corriente ó luces de lectura">
 		<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
@@ -112,11 +112,11 @@
 		<meta property="og:type" content="sobre"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/sobre"/>
 		<meta property="og:image" content="/img/img-meta/logoGrande.jpg"/>
-		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<meta property="og:email" content="hola@comprarebookhoy.com"/>
 		<!-- end: Facebook Open Graph -->
 		<!-- start: Twitter tags -->
 		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@ComprareBookHoy">
+		<meta name="twitter:site" content="@ComprarHoy">
 		<meta name="twitter:creator" content="@Jorge_Amat1">
 		<meta name="twitter:title" content="Sobre nosotros en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Toda la información sobre los que trabajamos en Comprar eBook Hoy, su experiencia y valores profesionales">
@@ -139,11 +139,11 @@
 		<meta property="og:type" content="contacto"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/contacto"/>
 		<meta property="og:image" content="/img/img-meta/logoGrande.jpg"/>
-		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<meta property="og:email" content="hola@comprarebookhoy.com"/>
 		<!-- end: Facebook Open Graph -->
 		<!-- start: Twitter tags -->
 		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@ComprareBookHoy">
+		<meta name="twitter:site" content="@ComprarHoy">
 		<meta name="twitter:creator" content="@Jorge_Amat1">
 		<meta name="twitter:title" content="Contacta con nosotros en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Contacta con los que trabajamos en Comprar eBook Hoy">
@@ -170,12 +170,12 @@
 				<meta property="og:image" content="${publicaciones[0].lImages[0]}"/>
 			</c:if>
 		</c:if>
-		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<meta property="og:email" content="hola@comprarebookhoy.com"/>
 		<!-- end: Facebook Open Graph -->
 		<!-- start: Twitter tags -->
 		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@ComprareBookHoy">
-		<meta name="twitter:creator" content="@ComprareBookHoy">
+		<meta name="twitter:site" content="@ComprarHoy">
+		<meta name="twitter:creator" content="@ComprarHoy">
 		<meta name="twitter:title" content="Análisis y precios de eBooks para comprar tu ebook favorito en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Análisis y precios de los mejores lectores de ebooks en la actualidad para que puedas comprar tu ebook preferido">
 		<c:if test="${!empty publicaciones}">
@@ -205,12 +205,12 @@
 				<meta property="og:image" content="${publicaciones[0].lImages[0]}"/>
 			</c:if>
 		</c:if>
-		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<meta property="og:email" content="hola@comprarebookhoy.com"/>
 		<!-- end: Facebook Open Graph -->
 		<!-- start: Twitter tags -->
 		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@ComprareBookHoy">
-		<meta name="twitter:creator" content="@ComprareBookHoy">
+		<meta name="twitter:site" content="@ComprarHoy">
+		<meta name="twitter:creator" content="@ComprarHoy">
 		<meta name="twitter:title" content="Opinión y artículos sobre ereaders para comprar tu ebook preferido en Comprar eBook Hoy">
 		<meta name="twitter:description" content="Opinión y artículos en nuestro blog de los mejores lectores de eBooks en la actualidad para que puedas comprar tu ebook favorito">
 		<c:if test="${!empty publicaciones}">
@@ -236,12 +236,12 @@
 		<meta property="og:type" content="principal"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com"/>
 		<meta property="og:image" content="/img/img-meta/logoGrande.jpg"/>
-		<meta property="og:email" content="jorge.amat@comprarebookhoy.com"/>
+		<meta property="og:email" content="hola@comprarebookhoy.com"/>
 		<!-- end: Facebook Open Graph -->
 		<!-- start: Twitter tags -->
 		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@ComprareBookHoy">
-		<meta name="twitter:creator" content="@ComprareBookHoy">
+		<meta name="twitter:site" content="@ComprarHoy">
+		<meta name="twitter:creator" content="@ComprarHoy">
 		<meta name="twitter:title" content="eReaders en Comprar eBook Hoy online">
 		<meta name="twitter:description" content="Analizamos los mejores lectores de ebooks del mercado para que puedas comprar tu ebook reader preferido al mejor precio y online. Accede a la mejor información para comprar el mejor ebook de tinta electrónica">
 		<meta name="twitter:image" content="/img/img-meta/logoGrande.jpg">

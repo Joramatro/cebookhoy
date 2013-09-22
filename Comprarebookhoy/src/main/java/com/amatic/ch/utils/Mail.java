@@ -26,7 +26,7 @@ public class Mail {
 	    msg.setFrom(new InternetAddress("jorge.amatro@gmail.com",
 		    "Jorge Combrar Ebook Hoy News"));
 	    msg.addRecipient(Message.RecipientType.TO, new InternetAddress(
-		    "jorge.amat@comprarebookhoy.com", "Jorge Amat"));
+		    "hola@comprarebookhoy.com", "Jorge Amat"));
 	    msg.setSubject(subject);
 	    msg.setText(msgBody);
 	    Transport.send(msg);
