@@ -153,10 +153,10 @@
 								<div class="social-info-wrap">
 									<div class="social-info">
 										<div class="social-info-front social-flickr">
-											<a target="_blank" href="http://www.flickr.com/people/comprarhoy/"></a>
+											<a target="_blank" href="http://www.flickr.com/photos/comprarhoy/"></a>
 										</div>
 										<div class="social-info-back social-flickr-hover">
-											<a target="_blank" href="http://www.flickr.com/people/comprarhoy/"></a>
+											<a target="_blank" href="http://www.flickr.com/photos/comprarhoy/"></a>
 										</div>	
 									</div>
 								</div>
