@@ -111,7 +111,7 @@
 					<div class="title"><h3>Síguenos!</h3></div>
 					<ul class="social-bookmarks">
 						<li class="facebook"><a target="_blank" href="https://www.facebook.com/comprarhoy">facebook</a></li>
-						<li class="flickr"><a target="_blank" href="http://www.flickr.com/people/comprarhoy/">flickr</a></li>
+						<li class="flickr"><a target="_blank" href="http://www.flickr.com/photos/comprarhoy/">flickr</a></li>
 						<li class="googleplus"><a target="_blank" href="https://plus.google.com/108657243775074009859">googleplus</a></li>
 						<li class="linkedin"><a target="_blank" href="http://ie.linkedin.com/pub/jorge-amat-romero/2b/731/895">linkedin</a></li>
 						<li class="twitter"><a target="_blank" href="https://twitter.com/ComprarHoy">twitter</a></li>
