@@ -54,7 +54,7 @@
       		<!-- start: Hero Unit - Main hero unit for a primary marketing message or call to action -->
       		<div class="hero-unit">
 				<h3>
-					Los e-books están siendo cada vez más y más populares, gracias a lo fácil que es llevarlos contigo y transferirlos. Aquí te ayudaremos a compar el ebook con pantalla de tinta electrónica que más se ajuste a tus necesidades.
+					Los e-books están siendo cada vez más y más populares, gracias a lo fácil que es llevarlos contigo y transferirlos. Aquí te ayudaremos a comprar el ebook con pantalla de tinta electrónica que más se ajuste a tus necesidades.
 				</h3>
         		<p><a class="btn btn-primary btn-large" href="/blog">ver Blog</a> &nbsp;&nbsp;<a class="btn btn-primary btn-large" href="/ebooks">ver eBooks</a></p>
       		</div>

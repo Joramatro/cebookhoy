@@ -139,10 +139,10 @@
 								<div class="social-info-wrap">
 									<div class="social-info">
 										<div class="social-info-front social-youtube">
-											<a target="_blank" href="http://www.youtube.com/channel/UC56PXmN4WM5oxZWE0XHOCjA"></a>
+											<a target="_blank" href="https://www.youtube.com/user/comprarhoy"></a>
 										</div>
 										<div class="social-info-back social-youtube-hover">
-											<a target="_blank" href="http://www.youtube.com/channel/UC56PXmN4WM5oxZWE0XHOCjA"></a>
+											<a target="_blank" href="https://www.youtube.com/user/comprarhoy"></a>
 										</div>	
 									</div>
 								</div>
@@ -153,10 +153,10 @@
 								<div class="social-info-wrap">
 									<div class="social-info">
 										<div class="social-info-front social-flickr">
-											<a target="_blank" href="http://www.flickr.com/people/100459814@N05/"></a>
+											<a target="_blank" href="http://www.flickr.com/people/comprarhoy/"></a>
 										</div>
 										<div class="social-info-back social-flickr-hover">
-											<a target="_blank" href="http://www.flickr.com/people/100459814@N05/"></a>
+											<a target="_blank" href="http://www.flickr.com/people/comprarhoy/"></a>
 										</div>	
 									</div>
 								</div>
