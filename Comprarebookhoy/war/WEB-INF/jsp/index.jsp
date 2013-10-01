@@ -16,9 +16,21 @@
 				<div class="da-slide">
 					<h2>${publicacion.tituloPortada}</h2>
 					<p>${publicacion.descPortada}</p>
-					<c:if test="${publicacion.script ne '#' }">
+					<c:choose>
+					<c:when test="${publicacion.script ne '#' }">
 						<a href="/venta/principal/${publicacion.url}" class="da-link">COMPRAR HOY</a>
-					</c:if>
+					</c:when>
+					<c:otherwise>
+						<c:choose>
+						<c:when test="${publicacion.tipo eq 'EB' }">
+							<a href="/ebooks/${publicacion.url}" class="da-link">LEER MÁS</a>
+						</c:when>
+						<c:otherwise>
+							<a href="/blog/${publicacion.url}" class="da-link">LEER MÁS</a>
+						</c:otherwise>
+						</c:choose>	
+					</c:otherwise>
+					</c:choose>					
 					<div class="da-img">
 						<c:choose>
 							<c:when test="${publicacion.tipo eq 'EB' }">
