@@ -35,7 +35,7 @@
 				<ul class="option-set" data-option-key="filter">
 					<li><a href="#filter" class="selected" data-option-value="*">Todos</a></li>
 					<c:forEach var="categoria" items="${categorias}" varStatus="status" >
-						<li><a href="#filter" data-option-value=".${categoria}">${categoria}</a></li>
+						<li><a href="#filter" data-option-value=".${fn:replace(categoria, " ", separadorClase)}">${categoria}</a></li>
 					</c:forEach>
 				</ul>
 			</div> 
@@ -48,7 +48,7 @@
 			<div id="portfolio-wrapper" class="row">
 				<% pageContext.setAttribute("newLineChar", "\n"); %>
 				<c:forEach var="publicacion" items="${publicaciones}" varStatus="status" >				
-				<div class="span4 portfolio-item ${publicacion.clase1} ${publicacion.clase2}">
+				<div class="span4 portfolio-item ${fn:replace(publicacion.clase1, " ", separadorClase)} ${fn:replace(publicacion.clase2, " ", separadorClase)}">
 					<div class="picture">
 					<a href="/venta/extra/${publicacion.url}">
 					<c:if test="${!empty publicacion.lImages }">
