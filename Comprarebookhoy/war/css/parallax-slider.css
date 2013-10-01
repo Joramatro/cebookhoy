@@ -65,7 +65,7 @@
 .da-slide h2{
 	color: #fff;
 	font-size: 66px;
-	width: 45%;
+	width: 52%;
 	top: 60px;
 	white-space: nowrap;
 	z-index: 10;
@@ -80,7 +80,7 @@
 .da-slide p{
 	background: rgba(0,0,0,.7);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#b3000000',GradientType=0 ); /* IE6-8 */
-	width: 45%;
+	width: 52%;
 	padding: 28px 20px 18px 20px;
 	top: 156px;
 	color: #fff;
