@@ -58,7 +58,7 @@
 					<div class="picture"><a href="/ebooks/${publicacion.url}" title="${publicacion.titulo}">
 					
 					<c:if test="${!empty publicacion.lImages }">
-					<img src="${publicacion.lImages[0]}" alt="${publicacion.titulo}"/>
+					<img pagespeed_no_defer="" src="${publicacion.lImages[0]}" alt="${publicacion.titulo}"/>
 					</c:if>
 					
 					<div class="image-overlay-link"></div></a>
