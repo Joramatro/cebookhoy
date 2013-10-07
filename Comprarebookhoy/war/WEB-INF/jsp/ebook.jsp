@@ -238,7 +238,7 @@
 											<span style="color:#0088cc;">@${comentario.comentarioReplyNombre} &nbsp;</span><a onmouseover="document.getElementById('comment_ref_${status.count}').style.display='block'" onmouseout="document.getElementById('comment_ref_${status.count}').style.display='none';" onclick="document.getElementById('comment_ref_${status.count}').style.display='none';" class="ancla_referencia">#${comentario.comentarioReplyNbr}<span class="referencia" id="comment_ref_${status.count}" style="display:none;font-size: 13px;">${comentario.comentarioReply}</span></a> &nbsp;
 										</c:if>
 										
-										<span itemprop="description">${fn:replace(comentario.comentario, newLineChar, "<p/><p>")}</span>
+										<span itemprop="description">${fn:replace(comentario.comentario, newLineChar, "<br>")}</span>
 										</p>
 									</div>
 								</div>		
@@ -281,7 +281,7 @@
 											<span style="color:#0088cc;">@${comentario.comentarioReplyNombre} &nbsp;</span><a onmouseover="document.getElementById('comment_ref_${status.count}').style.display='block'" onmouseout="document.getElementById('comment_ref_${status.count}').style.display='none';" onclick="document.getElementById('comment_ref_${status.count}').style.display='none';" class="ancla_referencia">#${comentario.comentarioReplyNbr}<span class="referencia" id="comment_ref_${status.count}" style="display:none;font-size: 13px;">${comentario.comentarioReply}</span></a> &nbsp;
 										</c:if>
 										
-										<span>${fn:replace(comentario.comentario, newLineChar, "<p/><p>")}</span>
+										<span>${fn:replace(comentario.comentario, newLineChar, "<br>")}</span>
 										</p>
 									</div>
 								</div>		
