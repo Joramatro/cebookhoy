@@ -109,6 +109,7 @@ public class Publicacion implements Serializable {
 	    Ref<Comentario> refComentario = it.next();
 	    Comentario comentario = Deref.deref(refComentario);
 	    if ((comentario == null)
+		    || (comentario.getPublicado() == null)
 		    || (comentario != null && comentario.getPublicado().equals(
 			    "N"))) {
 		it.remove();
