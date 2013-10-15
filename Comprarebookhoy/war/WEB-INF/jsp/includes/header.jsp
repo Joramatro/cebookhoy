@@ -320,26 +320,26 @@
 							<li id="menuInicio">
 	                			<a href="/">Inicio</a>
 	              			</li>
-	              			<li id="menuEbooks"><a href="/ebooks">eBooks</a></li>
+	              			<li id="menuEbooks"><a title="eBooks" href="/ebooks">eBooks</a></li>
 							<li class="dropdown">
 	                			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Destacados<b class="caret"></b></a>
 	                			<ul class="dropdown-menu">
 	                				<c:forEach var="publicacion" items="${publicacionesDestacadas}" varStatus="status" end="5">
 										<c:choose>
 											<c:when test="${publicacion.tipo eq 'EB' }">
-												<li><a href="/ebooks/${publicacion.url}">${publicacion.titulo}</a></li>
+												<li><a title="${publicacion.titulo}" href="/ebooks/${publicacion.url}">${publicacion.titulo}</a></li>
 											</c:when>	
 											<c:otherwise>
-												<li><a href="/blog/${publicacion.url}">${publicacion.titulo}</a></li>
+												<li><a title="${publicacion.titulo}" href="/blog/${publicacion.url}">${publicacion.titulo}</a></li>
 											</c:otherwise>
 										</c:choose>										
 	                  				</c:forEach>	                					                  				
 								</ul>
 	              			</li>
-	              			<li id="menuExtras"><a href="/extras">Extras</a></li>
-	              			<li id="menuBlog"><a href="/blog">Blog</a></li>	              																			
-							<li id="menuSobre"><a href="/sobre">Sobre nosotros</a></li>
-	              			<li id="menuContacto"><a href="/contacto">Contacto</a></li>
+	              			<li id="menuExtras"><a title="Extras" href="/extras">Extras</a></li>
+	              			<li id="menuBlog"><a title="Blog" href="/blog">Blog</a></li>	              																			
+							<li id="menuSobre"><a title="Sobre" href="/sobre">Sobre nosotros</a></li>
+	              			<li id="menuContacto"><a title="Contacto" href="/contacto">Contacto</a></li>
 	              			<li style="margin-top: -8px;"><a href="#newsletter" accesskey="r"><img src="/img/rssmenu.png" alt="RSS"></a></li>
 	            		</ul>
 	          		</div>

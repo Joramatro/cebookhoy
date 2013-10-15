@@ -22,7 +22,7 @@
 								</a>
 							</div>
 							<div class="item-description">
-								<h4><a href="/ebooks/${publicacionMVE.url}">${publicacionMVE.titulo}</a></h4>
+								<h4><a title="${publicacionMVE.titulo}" href="/ebooks/${publicacionMVE.url}">${publicacionMVE.titulo}</a></h4>
 								<p>
 									${fn:replace(publicacionMVE.descripcion, newLineChar, "<p/><p>")}
 								</p>
@@ -59,10 +59,10 @@
 										<div class="testimonials-bg"></div>
 										<c:choose>
 										<c:when test="${comentario.publicacion.tipo eq 'EB' }">
-											<div class="testimonials-author">${comentario.nombre}, en <a href="/ebooks/${comentario.publicacion.url }">${comentario.publicacion.titulo}</a></div>
+											<div class="testimonials-author">${comentario.nombre}, en <a title="${comentario.publicacion.titulo}" href="/ebooks/${comentario.publicacion.url }">${comentario.publicacion.titulo}</a></div>
 										</c:when>	
 										<c:otherwise>
-											<div class="testimonials-author">${comentario.nombre}, en <a href="/blog/${comentario.publicacion.url }">${comentario.publicacion.titulo}</a></div>
+											<div class="testimonials-author">${comentario.nombre}, en <a title="${comentario.publicacion.titulo}" href="/blog/${comentario.publicacion.url }">${comentario.publicacion.titulo}</a></div>
 										</c:otherwise>
 										</c:choose>
 									</li>
@@ -97,7 +97,7 @@
 								</a>
 							</div>
 							<div class="item-description">
-								<h4><a href="/blog/${publicacionMVA.url}">${publicacionMVA.titulo}</a></h4>
+								<h4><a title="${publicacionMVA.titulo}" href="/blog/${publicacionMVA.url}">${publicacionMVA.titulo}</a></h4>
 								<p>
 									${fn:replace(publicacionMVA.descripcion, newLineChar, "<p/><p>")}
 								</p>

@@ -23,10 +23,10 @@
 					<c:otherwise>
 						<c:choose>
 						<c:when test="${publicacion.tipo eq 'EB' }">
-							<a href="/ebooks/${publicacion.url}" class="da-link">LEER MÁS</a>
+							<a title="${publicacion.titulo}" href="/ebooks/${publicacion.url}" class="da-link">LEER MÁS</a>
 						</c:when>
 						<c:otherwise>
-							<a href="/blog/${publicacion.url}" class="da-link">LEER MÁS</a>
+							<a title="${publicacion.titulo}" href="/blog/${publicacion.url}" class="da-link">LEER MÁS</a>
 						</c:otherwise>
 						</c:choose>	
 					</c:otherwise>
@@ -34,10 +34,10 @@
 					<div class="da-img">
 						<c:choose>
 							<c:when test="${publicacion.tipo eq 'EB' }">
-								<a href="/ebooks/${publicacion.url}">
+								<a title="${publicacion.titulo}" href="/ebooks/${publicacion.url}">
 							</c:when>	
 							<c:otherwise>
-								<a href="/blog/${publicacion.url}">
+								<a title="${publicacion.titulo}" href="/blog/${publicacion.url}">
 							</c:otherwise>
 						</c:choose>
 						<c:if test="${!empty publicacion.lImages && fn:length(publicacion.lImages) gt 3 }">
@@ -68,7 +68,7 @@
 				<h3>
 					Los e-books están siendo cada vez más y más populares, gracias a lo fácil que es llevarlos contigo y transferirlos. Aquí te ayudaremos a comprar el ebook con pantalla de tinta electrónica que más se ajuste a tus necesidades.
 				</h3>
-        		<p><a class="btn btn-primary btn-large" href="/blog">ver Blog</a> &nbsp;&nbsp;<a class="btn btn-primary btn-large" href="/ebooks">ver eBooks</a></p>
+        		<p><a class="btn btn-primary btn-large" title="Blog" href="/blog">ver Blog</a> &nbsp;&nbsp;<a class="btn btn-primary btn-large" title="eBooks" href="/ebooks">ver eBooks</a></p>
       		</div>
 			<!-- end: Hero Unit -->
       		
@@ -149,7 +149,7 @@
 					
 					<div class="image-overlay-link"></div></a>
 						<div class="item-description alt">
-							<h5><a href="/ebooks/${publicacion.url}">${publicacion.titulo}</a></h5>
+							<h5><a title="${publicacion.titulo}" href="/ebooks/${publicacion.url}">${publicacion.titulo}</a></h5>
 							<p>
 								${fn:replace(publicacion.resumen, newLineChar, "<p/><p>")}
 							</p>
@@ -168,7 +168,7 @@
 					
 					<div class="image-overlay-link"></div></a>
 						<div class="item-description alt">
-							<h5><a href="/blog/${publicacion.url}">${publicacion.titulo}</a></h5>
+							<h5><a title="${publicacion.titulo}" href="/blog/${publicacion.url}">${publicacion.titulo}</a></h5>
 							<p>
 								${fn:replace(publicacion.resumen, newLineChar, "<p/><p>")}
 							</p>
