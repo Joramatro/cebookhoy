@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -21,7 +20,6 @@ import com.amatic.ch.constants.WebConstants;
 import com.amatic.ch.dto.Contacto;
 import com.amatic.ch.dto.Email;
 import com.amatic.ch.dto.User;
-import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
 import com.amatic.ch.service.UserService;
 import com.amatic.ch.utils.Mail;
@@ -39,12 +37,6 @@ public class OtherController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private ComentarioService comentarioService;
-
-    @Resource(name = "OIdUserBean")
-    OpenIdUser oIdUserBean;
-
     @RequestMapping(value = { "/contacto" }, method = { RequestMethod.GET,
 	    RequestMethod.POST })
     public String getContacto(ModelMap model, HttpServletRequest request,
@@ -60,14 +52,15 @@ public class OtherController {
 
 	return "sobre";
     }
-    
-    @RequestMapping(value = { "/politica-de-privacidad" }, method = { RequestMethod.GET,
-	    RequestMethod.POST })
-    public String getPoliticaPrivacidad(ModelMap model, HttpServletRequest request,
-	    HttpServletResponse response) throws IOException {
+
+    @RequestMapping(value = { "/politica-de-privacidad" }, method = {
+	    RequestMethod.GET, RequestMethod.POST })
+    public String getPoliticaPrivacidad(ModelMap model,
+	    HttpServletRequest request, HttpServletResponse response)
+	    throws IOException {
 
 	return "privacidad";
-    }    
+    }
 
     @RequestMapping(value = { "/suscribir" }, method = { RequestMethod.POST })
     public void getSubscripcion(ModelMap model, HttpServletRequest request,

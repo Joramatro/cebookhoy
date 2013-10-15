@@ -209,6 +209,7 @@
 						<div style="display:none"><span  itemprop="itemreviewed">${publicacion.titulo}</span><span itemprop="count">${publicacion.votantes}</span><span itemprop="best">5</span></div>
 						<ol class="commentlist">
 						<c:forEach var="comentario" items="${publicacion.comentariosDeref}" varStatus="status">
+							<c:if test="${comentario.publicado ne 'N'}">
 							<li style="width: 100%;">
 								<div class="comments">
 									<div class="avatar">
@@ -235,14 +236,15 @@
 										 <span class="reply"><span style="color:#aaa"><c:if test="${comentario.puntos gt 0}">/ </span><b>&nbsp;<span itemprop="rating">${comentario.puntos}</span></b> puntos</c:if></span><span class="date"><time itemprop="dtreviewed" datetime="<fmt:setLocale value='es_ES' scope='session'/><fmt:formatDate type='date' dateStyle='short' value='${comentario.fecha}'/>"><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="both" dateStyle="medium" timeStyle="short" value="${comentario.fecha}"/></time></span></div>
 										<p>
 										<c:if test="${!empty comentario.comentarioReply}">
-											<span style="color:#0088cc;">@${comentario.comentarioReplyNombre} &nbsp;</span><a onmouseover="document.getElementById('comment_ref_${status.count}').style.display='block'" onmouseout="document.getElementById('comment_ref_${status.count}').style.display='none';" onclick="document.getElementById('comment_ref_${status.count}').style.display='none';" class="ancla_referencia">#${comentario.comentarioReplyNbr}<span class="referencia" id="comment_ref_${status.count}" style="display:none;font-size: 13px;">${comentario.comentarioReply}</span></a> &nbsp;
+											<span style="color:#0088cc;">@${comentario.comentarioReplyNombre} &nbsp;</span><a style="display:inherit" onmouseover="document.getElementById('comment_ref_${status.count}').style.display='block'" onmouseout="document.getElementById('comment_ref_${status.count}').style.display='none';" onclick="document.getElementById('comment_ref_${status.count}').style.display='none';" class="ancla_referencia">#${comentario.comentarioReplyNbr}<span class="referencia" id="comment_ref_${status.count}" style="display:none;font-size: 13px;">${comentario.comentarioReply}</span></a> &nbsp;
 										</c:if>
 										
 										<span itemprop="description">${fn:replace(comentario.comentario, newLineChar, "<br>")}</span>
 										</p>
 									</div>
 								</div>		
-							</li>						
+							</li>
+							</c:if>						
 						</c:forEach>
 						</ol>
 		
@@ -252,6 +254,7 @@
 					<div id="comments" class="comments-sec">
 						<ol class="commentlist">
 						<c:forEach var="comentario" items="${publicacion.comentariosDeref}" varStatus="status">
+							<c:if test="${comentario.publicado ne 'N'}">
 							<li style="width: 100%;">
 								<div class="comments">
 									<div class="avatar">
@@ -278,14 +281,15 @@
 										 <span class="reply"><span style="color:#aaa"><c:if test="${comentario.puntos gt 0}">/ </span><b>&nbsp;<span>${comentario.puntos}</span></b> puntos</c:if></span><span class="date"><fmt:setLocale value="es_ES" scope="session"/><fmt:formatDate type="both" dateStyle="medium" timeStyle="short" value="${comentario.fecha}"/></span></div>
 										<p>
 										<c:if test="${!empty comentario.comentarioReply}">
-											<span style="color:#0088cc;">@${comentario.comentarioReplyNombre} &nbsp;</span><a onmouseover="document.getElementById('comment_ref_${status.count}').style.display='block'" onmouseout="document.getElementById('comment_ref_${status.count}').style.display='none';" onclick="document.getElementById('comment_ref_${status.count}').style.display='none';" class="ancla_referencia">#${comentario.comentarioReplyNbr}<span class="referencia" id="comment_ref_${status.count}" style="display:none;font-size: 13px;">${comentario.comentarioReply}</span></a> &nbsp;
+											<span style="color:#0088cc;">@${comentario.comentarioReplyNombre} &nbsp;</span><a style="display:inherit" onmouseover="document.getElementById('comment_ref_${status.count}').style.display='block'" onmouseout="document.getElementById('comment_ref_${status.count}').style.display='none';" onclick="document.getElementById('comment_ref_${status.count}').style.display='none';" class="ancla_referencia">#${comentario.comentarioReplyNbr}<span class="referencia" id="comment_ref_${status.count}" style="display:none;font-size: 13px;">${comentario.comentarioReply}</span></a> &nbsp;
 										</c:if>
 										
 										<span>${fn:replace(comentario.comentario, newLineChar, "<br>")}</span>
 										</p>
 									</div>
 								</div>		
-							</li>						
+							</li>
+							</c:if>						
 						</c:forEach>
 						</ol>
 		

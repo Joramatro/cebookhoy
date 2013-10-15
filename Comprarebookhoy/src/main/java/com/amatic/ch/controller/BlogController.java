@@ -5,7 +5,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,15 +16,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.amatic.ch.constants.WebConstants;
-import com.dyuproject.openid.OpenIdUser;
 
 @Controller
 public class BlogController extends PublicacionAbstract {
 
     List<Integer> sessions = new ArrayList<Integer>();
-
-    @Resource(name = "OIdUserBean")
-    OpenIdUser oIdUserBean;
 
     @RequestMapping(value = { "/blog/{url}" }, method = RequestMethod.GET)
     public String cargarPublicacion(ModelMap model, @PathVariable String url,

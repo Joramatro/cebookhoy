@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -24,9 +23,7 @@ import com.amatic.ch.dto.Publicacion;
 import com.amatic.ch.exception.UnknownResourceException;
 import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
-import com.amatic.ch.service.UserService;
 import com.amatic.ch.utils.WebUtils;
-import com.dyuproject.openid.OpenIdUser;
 
 @Controller
 public class HomeController {
@@ -37,20 +34,13 @@ public class HomeController {
     private PublicacionService publicacionService;
 
     @Autowired
-    private UserService userService;
-
-    @Autowired
     private ComentarioService comentarioService;
-
-    @Resource(name = "OIdUserBean")
-    OpenIdUser oIdUserBean;
 
     @RequestMapping(value = { "/index", "/" }, method = { RequestMethod.GET,
 	    RequestMethod.POST })
     public String getMainScreen(ModelMap model, HttpServletRequest request,
 	    HttpServletResponse response) throws IOException {
 
-	HttpSession session = request.getSession();
 	response.setDateHeader("Expires", (new Date()).getTime() + 604800000L);
 	// User user = (User) session
 	// .getAttribute(WebConstants.SessionConstants.RC_USER);

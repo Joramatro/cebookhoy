@@ -36,46 +36,63 @@ public abstract class PublicacionAbstract {
 	    String nombre, String email, String puntos, String comentario,
 	    String web, String nbrComment, String tipo) throws IOException,
 	    NoSuchAlgorithmException {
-	String key = WebUtils.SHA1(url.replaceAll("-", " "));
-	Publicacion publicacion = publicacionService.getPublicacion(key, tipo);
-	if (publicacion == null || Integer.parseInt(puntos) < 0
-		|| Integer.parseInt(puntos) > 5 || email == null
-		|| (email != null && email.trim().equals(""))) {
-	    String uri = request.getRequestURI();
-	    throw new UnknownResourceException("Error en comentario " + uri);
-	    // return "channelNotFound";
+	boolean ok = true;
+	if (comentario.contains("<a href") || comentario.contains("a  href")
+		|| comentario.contains("http:")
+		|| comentario.contains("https:")) {
+	    Mail.sendMail(
+		    "Comentario Spam con ip "
+			    + WebUtils.getClienAddress(request) + " y email: "
+			    + email + "\n Dejado en:" + url + "\n Comentario:"
+			    + comentario + "\n Web:" + web + "\n Puntos:"
+			    + puntos + "\n Nombre:" + nombre,
+		    "Spam comentario en CEHOY");
+	    ok = false;
+	    return;
 	}
+	if (ok) {
+	    String key = WebUtils.SHA1(url.replaceAll("-", " "));
+	    Publicacion publicacion = publicacionService.getPublicacion(key,
+		    tipo);
+	    if (publicacion == null || Integer.parseInt(puntos) < 0
+		    || Integer.parseInt(puntos) > 5 || email == null
+		    || (email != null && email.trim().equals(""))) {
+		String uri = request.getRequestURI();
+		throw new UnknownResourceException("Error en comentario " + uri);
+		// return "channelNotFound";
+	    }
 
-	List<Ref<Comentario>> lComentarios = publicacion.getlComentarios();
-	Comentario nuevoComentario = new Comentario();
-	if (!nbrComment.equals("") && Integer.parseInt(nbrComment) > 0) {
-	    Ref<Comentario> refComentReply = lComentarios.get(Integer
-		    .parseInt(nbrComment) - 1);
-	    Comentario comentReply = Deref.deref(refComentReply);
-	    nuevoComentario.setComentarioReply(comentReply.getComentario());
-	    nuevoComentario.setComentarioReplyNombre(comentReply.getNombre());
-	    nuevoComentario.setComentarioReplyNbr(nbrComment);
+	    List<Ref<Comentario>> lComentarios = publicacion.getlComentarios();
+	    Comentario nuevoComentario = new Comentario();
+	    if (!nbrComment.equals("") && Integer.parseInt(nbrComment) > 0) {
+		Ref<Comentario> refComentReply = lComentarios.get(Integer
+			.parseInt(nbrComment) - 1);
+		Comentario comentReply = Deref.deref(refComentReply);
+		nuevoComentario.setComentarioReply(comentReply.getComentario());
+		nuevoComentario.setComentarioReplyNombre(comentReply
+			.getNombre());
+		nuevoComentario.setComentarioReplyNbr(nbrComment);
+	    }
+
+	    nuevoComentario.setFecha(new Date());
+	    nuevoComentario.setMail(email);
+	    nuevoComentario.setNombre(nombre);
+	    nuevoComentario.setPuntos(Integer.parseInt(puntos));
+	    nuevoComentario.setComentario(comentario);
+	    nuevoComentario.setWeb(web);
+	    nuevoComentario.setGravatar(WebUtils.getGravatar80pxUrl(email));
+	    nuevoComentario.setIpAddress(WebUtils.getClienAddress(request));
+	    nuevoComentario.setPublicacion(publicacion);
+
+	    Key<Comentario> keyNuevoComentario = comentarioService
+		    .crearComentario(nuevoComentario);
+
+	    lComentarios.add(Ref.create(keyNuevoComentario));
+
+	    publicacionService.update(publicacion);
+	    Mail.sendMail("Comentario de:" + email + "\n Dejado en:"
+		    + publicacion.getUrl(), "Nuevo Comentario CEHOY");
 	}
-
-	nuevoComentario.setFecha(new Date());
-	nuevoComentario.setMail(email);
-	nuevoComentario.setNombre(nombre);
-	nuevoComentario.setPuntos(Integer.parseInt(puntos));
-	nuevoComentario.setComentario(comentario);
-	nuevoComentario.setWeb(web);
-	nuevoComentario.setGravatar(WebUtils.getGravatar80pxUrl(email));
-	nuevoComentario.setIpAddress(WebUtils.getClienAddress(request));
-	nuevoComentario.setPublicacion(publicacion);
-
-	Key<Comentario> keyNuevoComentario = comentarioService
-		.crearComentario(nuevoComentario);
-
-	lComentarios.add(Ref.create(keyNuevoComentario));
-
-	publicacionService.update(publicacion);
-	Mail.sendMail(
-		"Comentario de:" + email + "\n Dejado en:"
-			+ publicacion.getUrl(), "Nuevo Comentario CEHOY");
     }
 
     void setPublicaciones(ModelMap model, String tipo) {

@@ -40,6 +40,8 @@ public class Comentario implements Serializable {
     private String comentarioReplyNombre;
     @Index
     private String comentarioReplyNbr;
+    @Index
+    private String publicado;
 
     public String getWeb() {
 	return web;
@@ -143,6 +145,14 @@ public class Comentario implements Serializable {
 
     public void setComentarioReplyNbr(String comentarioReplyNbr) {
 	this.comentarioReplyNbr = comentarioReplyNbr;
+    }
+
+    public String getPublicado() {
+	return publicado;
+    }
+
+    public void setPublicado(String publicado) {
+	this.publicado = publicado;
     }
 
 }

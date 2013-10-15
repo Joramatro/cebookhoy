@@ -3,6 +3,7 @@ package com.amatic.ch.dto;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import com.amatic.ch.utils.WebUtils;
@@ -103,6 +104,17 @@ public class Publicacion implements Serializable {
     }
 
     public List<Ref<Comentario>> getlComentarios() {
+	Iterator<Ref<Comentario>> it = lComentarios.iterator();
+	while (it.hasNext()) {
+	    Ref<Comentario> refComentario = it.next();
+	    Comentario comentario = Deref.deref(refComentario);
+	    if ((comentario == null)
+		    || (comentario != null && comentario.getPublicado().equals(
+			    "N"))) {
+		it.remove();
+	    }
+	}
+
 	return lComentarios;
     }
 
@@ -235,7 +247,8 @@ public class Publicacion implements Serializable {
     }
 
     public List<Comentario> getComentariosDeref() {
-	return Deref.deref(lComentarios);
+
+	return Deref.deref(getlComentarios());
     }
 
     public int getSumaPuntos() {
@@ -248,11 +261,13 @@ public class Publicacion implements Serializable {
     }
 
     public int getVotantes() {
-	List<Comentario> lComentarios = this.getComentariosDeref();
 	int votantes = 0;
-	for (Comentario comentario : lComentarios) {
-	    if (comentario.getPuntos() > 0) {
-		votantes++;
+	if (this.getComentariosDeref() != null) {
+	    List<Comentario> lComentarios = this.getComentariosDeref();
+	    for (Comentario comentario : lComentarios) {
+		if (comentario.getPuntos() > 0) {
+		    votantes++;
+		}
 	    }
 	}
 	return votantes;

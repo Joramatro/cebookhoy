@@ -27,7 +27,6 @@ import com.amatic.ch.exception.UnknownResourceException;
 import com.amatic.ch.fileupload.controller.FileResource;
 import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
-import com.amatic.ch.service.UserService;
 import com.amatic.ch.utils.WebUtils;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Ref;
@@ -40,9 +39,6 @@ public class EditionController {
 
     @Autowired
     private PublicacionService publicacionService;
-
-    @Autowired
-    private UserService userService;
 
     @Autowired
     private ComentarioService comentarioService;
@@ -429,7 +425,6 @@ public class EditionController {
 	    RequestMethod.GET, RequestMethod.POST })
     public void getActualizar(ModelMap model, HttpServletRequest request,
 	    HttpServletResponse response) throws IOException {
-	HttpSession session = request.getSession();
 
 	List<Publicacion> publicaciones = publicacionService
 		.getPublicaciones(WebConstants.SessionConstants.EBOOK);
@@ -438,16 +433,19 @@ public class EditionController {
 	    List<Ref<Comentario>> lComentarios = publicacion.getlComentarios();
 	    if (lComentarios == null) {
 		lComentarios = new ArrayList<Ref<Comentario>>();
+		publicacion.setlComentarios(lComentarios);
 	    }
 	    List<Comentario> comentarios = publicacion.getComentariosDeref();
 	    int i = 0;
-	    for (Comentario comentario : comentarios) {
-		if (comentario != null) {
-		    comentario.setPublicacion(publicacion);
-		    comentarioService.update(comentario);
-		} else {
-		    lComentarios.remove(i);
-		    publicacionService.update(publicacion);
+	    if (comentarios != null) {
+		for (Comentario comentario : comentarios) {
+		    if (comentario != null) {
+			comentario.setPublicacion(publicacion);
+			comentarioService.update(comentario);
+		    } else {
+			lComentarios.remove(i);
+			publicacionService.update(publicacion);
+		    }
 		}
 	    }
 
@@ -457,16 +455,22 @@ public class EditionController {
 		.getPublicaciones(WebConstants.SessionConstants.ARTICULO);
 
 	for (Publicacion publicacion : publicacionesblog) {
-	    List<Comentario> comentarios = publicacion.getComentariosDeref();
 	    List<Ref<Comentario>> lComentarios = publicacion.getlComentarios();
+	    if (lComentarios == null) {
+		lComentarios = new ArrayList<Ref<Comentario>>();
+		publicacion.setlComentarios(lComentarios);
+	    }
+	    List<Comentario> comentarios = publicacion.getComentariosDeref();
 	    int i = 0;
-	    for (Comentario comentario : comentarios) {
-		if (comentario != null) {
-		    comentario.setPublicacion(publicacion);
-		    comentarioService.update(comentario);
-		} else {
-		    lComentarios.remove(i);
-		    publicacionService.update(publicacion);
+	    if (comentarios != null) {
+		for (Comentario comentario : comentarios) {
+		    if (comentario != null) {
+			comentario.setPublicacion(publicacion);
+			comentarioService.update(comentario);
+		    } else {
+			lComentarios.remove(i);
+			publicacionService.update(publicacion);
+		    }
 		}
 	    }
 	}
