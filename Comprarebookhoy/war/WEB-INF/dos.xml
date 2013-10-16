@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<blacklistentries/>
+<blacklistentries>
+  <blacklist>
+    <subnet>37.59.32.148</subnet>
+    <description>spam ip 1</description>
+  </blacklist>
+  <blacklist>
+    <subnet>46.105.114.75</subnet>
+    <description>spam ip 2</description>
+  </blacklist>
+  <blacklist>
+    <subnet>93.115.94.85</subnet>
+    <description>spam ip 3</description>
+  </blacklist>
+  <blacklist>
+    <subnet>192.99.4.25</subnet>
+    <description>spam ip 4</description>
+  </blacklist>
+  <blacklist>
+    <subnet>198.27.80.33</subnet>
+    <description>spam ip 5</description>
+  </blacklist>  
+</blacklistentries>
