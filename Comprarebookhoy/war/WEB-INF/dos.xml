@@ -19,5 +19,21 @@
   <blacklist>
     <subnet>198.27.80.33</subnet>
     <description>spam ip 5</description>
+  </blacklist>
+  <blacklist>
+    <subnet>172.17.164.194</subnet>
+    <description>spam ip 6</description>
+  </blacklist>
+  <blacklist>
+    <subnet>188.143.232.111</subnet>
+    <description>spam ip 7</description>
+  </blacklist>
+  <blacklist>
+    <subnet>183.129.177.194</subnet>
+    <description>spam ip 8</description>
   </blacklist>  
+  <blacklist>
+    <subnet>172.16.10.1</subnet>
+    <description>spam ip 9</description>
+  </blacklist>
 </blacklistentries>

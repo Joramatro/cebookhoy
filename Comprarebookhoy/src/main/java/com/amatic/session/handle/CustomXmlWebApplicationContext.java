@@ -11,8 +11,9 @@ public class CustomXmlWebApplicationContext extends XmlWebApplicationContext {
 	    XmlBeanDefinitionReader beanDefinitionReader) {
 	super.initBeanDefinitionReader(beanDefinitionReader);
 	if (SystemProperty.environment.value() == SystemProperty.Environment.Value.Production) {
-	    beanDefinitionReader
-		    .setValidationMode(XmlBeanDefinitionReader.VALIDATION_NONE);
+	    // beanDefinitionReader
+	    // .setValidationMode(XmlBeanDefinitionReader.VALIDATION_NONE);
+	    beanDefinitionReader.setValidating(false);
 	}
     }
 }

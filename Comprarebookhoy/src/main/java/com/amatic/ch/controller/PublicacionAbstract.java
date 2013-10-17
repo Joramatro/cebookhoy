@@ -10,6 +10,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import net.sf.akismet.Akismet;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 
@@ -36,21 +38,27 @@ public abstract class PublicacionAbstract {
 	    String nombre, String email, String puntos, String comentario,
 	    String web, String nbrComment, String tipo) throws IOException,
 	    NoSuchAlgorithmException {
-	boolean ok = true;
-	if (comentario.contains("<a href") || comentario.contains("a  href")
-		|| comentario.contains("http:")
-		|| comentario.contains("https:")) {
-	    Mail.sendMail(
-		    "Comentario Spam con ip "
-			    + WebUtils.getClienAddress(request) + " y email: "
-			    + email + "\n Dejado en:" + url + "\n Comentario:"
-			    + comentario + "\n Web:" + web + "\n Puntos:"
-			    + puntos + "\n Nombre:" + nombre,
-		    "Spam comentario en CEHOY");
-	    ok = false;
+	Akismet akismet = new Akismet("49f8a3bfb431",
+		"http://www.comprarebookhoy.com");
+	boolean isSpam = akismet.commentCheck(request.getRemoteAddr(),
+		request.getHeader("User-agent"), request.getHeader("referer"),
+		"", // permalink
+		"comment", // comment type
+		nombre, // author
+		email, // email
+		web, comentario, // Text to check
+		request.getParameterMap());
+
+	if (isSpam) {
+	    // Mail.sendMail(
+	    // "Comentario Spam Akimet con ip "
+	    // + WebUtils.getClienAddress(request) + " y email: "
+	    // + email + "\n Dejado en:" + url + "\n Tipo:" + tipo
+	    // + "\n Comentario:" + comentario + "\n Web:" + web
+	    // + "\n Puntos:" + puntos + "\n Nombre:" + nombre,
+	    // "Spam Akimet comentario en CEHOY");
 	    return;
-	}
-	if (ok) {
+	} else {
 	    String key = WebUtils.SHA1(url.replaceAll("-", " "));
 	    Publicacion publicacion = publicacionService.getPublicacion(key,
 		    tipo);
@@ -90,8 +98,12 @@ public abstract class PublicacionAbstract {
 	    lComentarios.add(Ref.create(keyNuevoComentario));
 
 	    publicacionService.update(publicacion);
-	    Mail.sendMail("Comentario de:" + email + "\n Dejado en:"
-		    + publicacion.getUrl(), "Nuevo Comentario CEHOY");
+	    Mail.sendMail(
+		    "Comentario con ip " + WebUtils.getClienAddress(request)
+			    + " y email: " + email + "\n Dejado en:" + url
+			    + "\n Tipo:" + tipo + "\n Comentario:" + comentario
+			    + "\n Web:" + web + "\n Puntos:" + puntos
+			    + "\n Nombre:" + nombre, "Nuevo Comentario CEHOY");
 	}
     }
 

@@ -125,7 +125,7 @@
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/sobre“/>	
 	</c:when>
-	<c:when test="${fn:contains(pageContext.request.requestURI, 'contacto')}">
+	<c:when test="${fn:contains(pageContext.request.requestURI, 'contacta')}">
 		<title>Contacta con Comprar eBook Hoy</title> 
 		<meta name="description" content="Contacta con los que trabajamos en Comprar eBook Hoy"/>
 		<meta name="keywords" content="contacta nosotros ebooks, contacta ebooks, contacta ebook, contacta kindle, contacta fundas ebook, contacta ereaders, contacta lectores de ebook" />
