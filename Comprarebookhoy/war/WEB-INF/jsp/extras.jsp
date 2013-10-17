@@ -50,14 +50,14 @@
 				<c:forEach var="publicacion" items="${publicaciones}" varStatus="status" >				
 				<div class="span4 portfolio-item ${fn:replace(publicacion.clase1, " ", separadorClase)} ${fn:replace(publicacion.clase2, " ", separadorClase)}">
 					<div class="picture">
-					<a href="/venta/extra/${publicacion.url}">
+					<a title="${publicacion.titulo}" href="/venta/extra/${publicacion.url}">
 					<c:if test="${!empty publicacion.lImages }">
 					<img src="${publicacion.lImages[0]}" alt="${publicacion.titulo}"/>
 					</c:if>
 					
 					<div class="image-overlay-link"></div></a>
 						<div class="item-description alt">
-							<h5><a href="/venta/extra/${publicacion.url}">${publicacion.titulo}</a>
+							<h5><a title="${publicacion.titulo}" href="/venta/extra/${publicacion.url}">${publicacion.titulo}</a>
 							<p>
 								${fn:replace(publicacion.resumen, newLineChar, "<p/><p>")}
 							</p>
