@@ -16,7 +16,7 @@ public class ComentarioDaoImpl implements ComentarioDao {
     @Override
     public Key<Comentario> crearComentario(Comentario comentario) {
 
-	comentario.setPublicado("N");
+	comentario.setPublicado("S");
 	return ofy().save().entity(comentario).now();
 
     }
