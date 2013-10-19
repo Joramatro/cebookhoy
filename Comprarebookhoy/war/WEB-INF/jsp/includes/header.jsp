@@ -11,7 +11,7 @@
 	<meta name="robots" content="index,all" />
 	<meta name="revisit-after" content="1 days" />
 	<meta name="lang" content="es" />
-	<!-- end: Meta -->
+		<!-- end: Meta -->
 	
 	<!-- start: Mobile Specific -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -250,7 +250,9 @@
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com“/>
 	</c:otherwise>		
 	</c:choose>
-	
+	<link rel="alternate" type="application/rss+xml" title="Comprar eBook Hoy RSS Feed" href="http://www.comprarebookhoy.com/rssfeed" />
+	<link rel="author" href="https://plus.google.com/108657243775074009859" />
+	<link rel="publisher" href="https://plus.google.com/103298424982329605824" />
 	<style>
 	@font-face {
 	  font-family: 'Droid Sans';

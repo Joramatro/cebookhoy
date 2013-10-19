@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import net.sf.akismet.Akismet;
 
@@ -36,7 +37,8 @@ public abstract class PublicacionAbstract {
 
     void guardarComentarioPub(HttpServletRequest request, String url,
 	    String nombre, String email, String puntos, String comentario,
-	    String web, String nbrComment, String tipo) throws IOException,
+	    String web, String nbrComment, String tipo,
+	    HttpServletResponse response) throws IOException,
 	    NoSuchAlgorithmException {
 	Akismet akismet = new Akismet("49f8a3bfb431",
 		"http://www.comprarebookhoy.com");
@@ -50,14 +52,20 @@ public abstract class PublicacionAbstract {
 		request.getParameterMap());
 
 	if (isSpam) {
-	    // Mail.sendMail(
-	    // "Comentario Spam Akimet con ip "
-	    // + WebUtils.getClienAddress(request) + " y email: "
-	    // + email + "\n Dejado en:" + url + "\n Tipo:" + tipo
-	    // + "\n Comentario:" + comentario + "\n Web:" + web
-	    // + "\n Puntos:" + puntos + "\n Nombre:" + nombre,
-	    // "Spam Akimet comentario en CEHOY");
-	    return;
+	    Mail.sendMail(
+		    "Comentario Spam Akimet con ip "
+			    + WebUtils.getClienAddress(request) + " y email: "
+			    + email + "\n Dejado en:" + url + "\n Tipo:" + tipo
+			    + "\n Comentario:" + comentario + "\n Web:" + web
+			    + "\n Puntos:" + puntos + "\n Nombre:" + nombre
+			    + "\n\n requestHeader:"
+			    + request.getHeader("referer")
+			    + "\n\n requestParameterMap:"
+			    + request.getParameterMap()
+			    + "\n\n requestHeaderNames:"
+			    + request.getHeaderNames(),
+		    "Spam Akimet comentario en CEHOY");
+	    response.sendRedirect("/");
 	} else {
 	    String key = WebUtils.SHA1(url.replaceAll("-", " "));
 	    Publicacion publicacion = publicacionService.getPublicacion(key,

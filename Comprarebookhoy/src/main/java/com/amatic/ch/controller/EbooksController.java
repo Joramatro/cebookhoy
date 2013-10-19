@@ -45,7 +45,7 @@ public class EbooksController extends PublicacionAbstract {
 	    throws IOException, NoSuchAlgorithmException {
 
 	guardarComentarioPub(request, url, nombre, email, puntos, comentario,
-		web, nbrComment, WebConstants.SessionConstants.EBOOK);
+		web, nbrComment, WebConstants.SessionConstants.EBOOK, response);
 
 	response.sendRedirect("/ebooks/" + url);
 

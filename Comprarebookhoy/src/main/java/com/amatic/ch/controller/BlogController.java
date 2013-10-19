@@ -46,7 +46,8 @@ public class BlogController extends PublicacionAbstract {
 	    throws IOException, NoSuchAlgorithmException {
 
 	guardarComentarioPub(request, url, nombre, email, puntos, comentario,
-		web, nbrComment, WebConstants.SessionConstants.ARTICULO);
+		web, nbrComment, WebConstants.SessionConstants.ARTICULO,
+		response);
 
 	response.sendRedirect("/blog/" + url);
 
