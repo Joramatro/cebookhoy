@@ -52,19 +52,19 @@ public abstract class PublicacionAbstract {
 		request.getParameterMap());
 
 	if (isSpam) {
-	    Mail.sendMail(
-		    "Comentario Spam Akimet con ip "
-			    + WebUtils.getClienAddress(request) + " y email: "
-			    + email + "\n Dejado en:" + url + "\n Tipo:" + tipo
-			    + "\n Comentario:" + comentario + "\n Web:" + web
-			    + "\n Puntos:" + puntos + "\n Nombre:" + nombre
-			    + "\n\n requestHeader:"
-			    + request.getHeader("referer")
-			    + "\n\n requestParameterMap:"
-			    + request.getParameterMap()
-			    + "\n\n requestHeaderNames:"
-			    + request.getHeaderNames(),
-		    "Spam Akimet comentario en CEHOY");
+	    // Mail.sendMail(
+	    // "Comentario Spam Akimet con ip "
+	    // + WebUtils.getClienAddress(request) + " y email: "
+	    // + email + "\n Dejado en:" + url + "\n Tipo:" + tipo
+	    // + "\n Comentario:" + comentario + "\n Web:" + web
+	    // + "\n Puntos:" + puntos + "\n Nombre:" + nombre
+	    // + "\n\n requestHeader:"
+	    // + request.getHeader("referer")
+	    // + "\n\n requestParameterMap:"
+	    // + request.getParameterMap()
+	    // + "\n\n requestHeaderNames:"
+	    // + request.getHeaderNames(),
+	    // "Spam Akimet comentario en CEHOY");
 	    response.sendRedirect("/");
 	} else {
 	    String key = WebUtils.SHA1(url.replaceAll("-", " "));
