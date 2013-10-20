@@ -252,7 +252,6 @@
 	</c:choose>
 	<link rel="alternate" type="application/rss+xml" title="Comprar eBook Hoy RSS Feed" href="http://www.comprarebookhoy.com/rssfeed" />
 	<link rel="author" href="https://plus.google.com/108657243775074009859" />
-	<link rel="publisher" href="https://plus.google.com/103298424982329605824" />
 	<style>
 	@font-face {
 	  font-family: 'Droid Sans';
