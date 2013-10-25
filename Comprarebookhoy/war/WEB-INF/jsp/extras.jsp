@@ -50,14 +50,14 @@
 				<c:forEach var="publicacion" items="${publicaciones}" varStatus="status" >				
 				<div class="span4 portfolio-item ${fn:replace(publicacion.clase1, " ", separadorClase)} ${fn:replace(publicacion.clase2, " ", separadorClase)}">
 					<div class="picture">
-					<a title="${publicacion.titulo}" href="/venta/extra/${publicacion.url}">
+					<a title="${publicacion.titulo}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Extra');" href="/venta/extra/${publicacion.url}">
 					<c:if test="${!empty publicacion.lImages }">
 					<img src="${publicacion.lImages[0]}" alt="${publicacion.titulo}"/>
 					</c:if>
 					
 					<div class="image-overlay-link"></div></a>
 						<div class="item-description alt">
-							<h5><a title="${publicacion.titulo}" href="/venta/extra/${publicacion.url}">${publicacion.titulo}</a>
+							<h5><a title="${publicacion.titulo}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Extra');" href="/venta/extra/${publicacion.url}">${publicacion.titulo}</a>
 							<p>
 								${fn:replace(publicacion.resumen, newLineChar, "<p/><p>")}
 							</p>
@@ -73,7 +73,7 @@
 			
 			<%@ include file="/WEB-INF/jsp/includes/masleidos.jsp"%>	
 			
-			<div class="span3" style="float: right;margin-top: -410px;margin-right: -20px;">		
+			<div id="BannerGoogleExtras" class="span3 iframe_wrap" style="float: right;margin-top: -410px;margin-right: -20px;">		
 				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- cuadrado ch -->
 				<ins class="adsbygoogle"
@@ -94,6 +94,23 @@
 	<!-- end: Wrapper  -->
 	
 <%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
+	<script>
+	jQuery(document).ready(function($){
+	    $('.iframe_wrap iframe').iframeTracker({
+	        blurCallback: function(){
+	            // You can know which iframe element is clicked via this._overId
+	        	ga('send', 'event', 'Banner', 'Extras' , this._overId);
+	        },
+	        overCallback: function(element){
+	            this._overId = $(element).parents('.iframe_wrap').attr('id'); // Saving the iframe wrapper id
+	        },
+	        outCallback: function(element){
+	            this._overId = null; // Reset hover iframe wrapper id
+	        },
+	        _overId: null
+	    });
+	});
+	</script>
 
 </body>
 </html>				

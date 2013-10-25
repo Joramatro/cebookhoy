@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +23,7 @@ import com.amatic.ch.dto.Publicacion;
 import com.amatic.ch.exception.UnknownResourceException;
 import com.amatic.ch.service.ComentarioService;
 import com.amatic.ch.service.PublicacionService;
+import com.amatic.ch.utils.Mail;
 import com.amatic.ch.utils.WebUtils;
 
 @Controller
@@ -106,7 +107,6 @@ public class HomeController {
 	    @PathVariable String tipo, HttpServletRequest request,
 	    HttpServletResponse response) throws IOException,
 	    NoSuchAlgorithmException {
-	HttpSession session = request.getSession();
 
 	String key = WebUtils.SHA1(url.replaceAll("-", " "));
 	Publicacion publicacion = null;
@@ -192,6 +192,17 @@ public class HomeController {
 		    + uri);
 	    // return "channelNotFound";
 	}
+
+	StringBuffer mensaje = new StringBuffer();
+	Enumeration<String> headerNames = request.getHeaderNames();
+	while (headerNames.hasMoreElements()) {
+	    String headerName = headerNames.nextElement();
+	    mensaje.append(headerName);
+	    String headerValue = request.getHeader(headerName);
+	    mensaje.append(", " + headerValue);
+	    mensaje.append("\n");
+	}
+	Mail.sendMail(mensaje.toString(), "CEH " + request.getRequestURI());
 
 	model.addAttribute("publicacion", publicacion);
 

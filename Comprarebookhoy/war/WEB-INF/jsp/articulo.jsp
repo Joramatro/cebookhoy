@@ -37,7 +37,7 @@
 			<div style="width: 550px;height: 435px; margin: 0 auto;" class="slider" >
 				<div id="flex1" class="flexslider home">
 					<c:if test="${publicacion.script ne '#' }">
-						<a target="_blank" href="/venta/principal/${publicacion.url}">
+						<a target="_blank" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Imagen Superior');" href="/venta/principal/${publicacion.url}">
 					</c:if>
 					<ul class="slides">
 						<c:forEach var="imagen" items="${publicacion.lImages}" varStatus="status">
@@ -84,7 +84,7 @@
 					${publicacion.articulo}				
 					<br>
 					<c:if test="${publicacion.disponible ne 'N'}">
-						<br><h2><a href="/venta/principal/${publicacion.url}" class="button color launch">Cómpralo Hoy!</a></h2>
+						<br><h2><a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo Hoy');" class="button color launch">Cómpralo Hoy!</a></h2>
 					</c:if>					
 					<br>
 					<!-- AddThis Button BEGIN -->
@@ -390,7 +390,7 @@
 	
 	<%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
 
-	<div id="banGoogle" style="position: absolute;top: 310px;right: 44px;">
+	<div id="banGoogle" class="iframe_wrap" style="position: absolute;top: 310px;right: 44px;">
 		<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- rec grande recomendado ch -->
 		<ins class="adsbygoogle"
@@ -409,7 +409,7 @@
 			$("#banGoogle").hide();
 		}
 	</script>
-	<div id="banAmazonHorizontal" style="position: absolute;top: 1000px;left: 55px;">
+	<div id="banAmazonHorizontal" class="iframe_wrap" style="position: absolute;top: 1000px;left: 55px;">
 		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=14&l=ur1&category=kindle&banner=1XW3YZKJD421WHFJ1Q02&f=ifr" width="160" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 	</div>
 	<script>
@@ -421,7 +421,7 @@
 		}
 	</script>
 	
-	<div id="banAmazonEsquina" style="position: absolute;top: 198px;right: 260px;">
+	<div id="banAmazonEsquina" class="iframe_wrap" style="position: absolute;top: 198px;right: 260px;">
 	<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=20&l=ur1&category=kindlestore&banner=0J2HENEFERESCPS25YR2&f=ifr" width="120" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 	</div>
 	<script>
@@ -453,6 +453,23 @@
 			$("#banAmazonEsquina").show();
 			$(".slide-caption").show();
 		}
+	});
+	</script>
+	<script>
+	jQuery(document).ready(function($){
+	    $('.iframe_wrap iframe').iframeTracker({
+	        blurCallback: function(){
+	            // You can know which iframe element is clicked via this._overId
+	        	ga('send', 'event', 'Banner', '${publicacion.url}' , this._overId);
+	        },
+	        overCallback: function(element){
+	            this._overId = $(element).parents('.iframe_wrap').attr('id'); // Saving the iframe wrapper id
+	        },
+	        outCallback: function(element){
+	            this._overId = null; // Reset hover iframe wrapper id
+	        },
+	        _overId: null
+	    });
 	});
 	</script>
 

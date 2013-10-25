@@ -18,7 +18,7 @@
 					<p>${publicacion.descPortada}</p>
 					<c:choose>
 					<c:when test="${publicacion.script ne '#' }">
-						<a href="/venta/principal/${publicacion.url}" class="da-link">COMPRAR HOY</a>
+						<a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', 'Home ${publicacion.url}', 'Boton Comprar Hoy');" class="da-link">COMPRAR HOY</a>
 					</c:when>
 					<c:otherwise>
 						<c:choose>
@@ -126,7 +126,7 @@
 			
 			<hr>
 			
-			<div style="width: 60%;margin: 0 auto;">
+			<div id="bannerHomeAmazAlto" class="iframe_wrap" style="width: 60%;margin: 0 auto;">
 			<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=48&l=ur1&category=kindle_paperwhite&banner=0W27XP9ZXV3SP6ZQN4R2&f=ifr" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 			</div>
 		
@@ -192,6 +192,23 @@
 	<!-- end: Wrapper  -->			
 
 <%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
+<script>
+	jQuery(document).ready(function($){
+	    $('.iframe_wrap iframe').iframeTracker({
+	        blurCallback: function(){
+	            // You can know which iframe element is clicked via this._overId
+	        	ga('send', 'event', 'Banner', 'home' , this._overId);
+	        },
+	        overCallback: function(element){
+	            this._overId = $(element).parents('.iframe_wrap').attr('id'); // Saving the iframe wrapper id
+	        },
+	        outCallback: function(element){
+	            this._overId = null; // Reset hover iframe wrapper id
+	        },
+	        _overId: null
+	    });
+	});
+</script>
 
 </body>
 </html>

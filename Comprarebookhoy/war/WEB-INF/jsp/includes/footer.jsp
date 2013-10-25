@@ -64,7 +64,7 @@
 		
 		<!-- start: Container -->
 		<div class="container">
-			<div id="banGoogleFooter" style="margin-left:99px">
+			<div id="banGoogleFooter" class="iframe_wrap" style="margin-left:99px">
 				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- includes ch -->
 				<ins class="adsbygoogle"
@@ -221,6 +221,7 @@
 <script src="/js/jquery.cslider.min.js"></script>
 <script src="/js/slider.min.js"></script>
 <script src="/js/fancybox.min.js"></script>
+<script src="/js/jquery.iframetracker.js"></script>
 <script defer="defer" src="/js/custom.min.js"></script>
 <script async src="/js/apprise-v2.min.js"></script>
 

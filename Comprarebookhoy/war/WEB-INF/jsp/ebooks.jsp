@@ -79,7 +79,7 @@
 			
 			<%@ include file="/WEB-INF/jsp/includes/masleidos.jsp"%>
 			
-			<div id="banGoogleVistos" class="span3" style="float: right;margin-top: -410px;margin-right: -20px;">				
+			<div id="banGoogleVistos" class="span3 iframe_wrap" style="float: right;margin-top: -410px;margin-right: -20px;">				
 				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- cuadrado ch -->
 				<ins class="adsbygoogle"
@@ -102,6 +102,23 @@
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		$("#banGoogleVistos").hide();
 	}
+</script>
+<script>
+	jQuery(document).ready(function($){
+	    $('.iframe_wrap iframe').iframeTracker({
+	        blurCallback: function(){
+	            // You can know which iframe element is clicked via this._overId
+	        	ga('send', 'event', 'Banner', 'ebooks' , this._overId);
+	        },
+	        overCallback: function(element){
+	            this._overId = $(element).parents('.iframe_wrap').attr('id'); // Saving the iframe wrapper id
+	        },
+	        outCallback: function(element){
+	            this._overId = null; // Reset hover iframe wrapper id
+	        },
+	        _overId: null
+	    });
+	});
 </script>
 
 </body>
