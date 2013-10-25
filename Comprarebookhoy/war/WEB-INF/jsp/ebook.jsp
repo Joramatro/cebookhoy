@@ -472,6 +472,10 @@
 	        },
 	        _overId: null
 	    });
+	    
+	    $('#_image6').click(function() {
+	    	ga('send', 'event', 'Venta', '${publicacion.url}', 'Imagen Medio');  
+	    });
 	});
 	</script>
 
