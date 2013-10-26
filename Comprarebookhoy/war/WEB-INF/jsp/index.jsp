@@ -40,9 +40,10 @@
 								<a title="${publicacion.titulo}" href="/blog/${publicacion.url}">
 							</c:otherwise>
 						</c:choose>
-						<c:if test="${!empty publicacion.lImages && fn:length(publicacion.lImages) gt 3 }">
-							<img src="${publicacion.lImages[3]}" style="width: 370px;height:340px;" alt="${publicacion.titulo}" /></a>
+						<c:if test="${!empty publicacion.lImages && fn:length(publicacion.lImages) gt 2 }">
+							<img src="${publicacion.lImages[3]}" style="width: 370px;height:340px;" alt="${publicacion.titulo}" />
 						</c:if>
+						</a>
 					</div>
 				</div>							
 			</c:forEach>			

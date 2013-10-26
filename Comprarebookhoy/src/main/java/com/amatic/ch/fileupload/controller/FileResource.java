@@ -21,13 +21,12 @@ import javax.ws.rs.core.Response.Status;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import com.amatic.ch.dao.impl.PublicacionDaoImpl;
 import com.amatic.ch.dto.Publicacion;
 import com.amatic.ch.fileupload.dto.Entity;
 import com.amatic.ch.fileupload.dto.FileMeta;
 import com.amatic.ch.fileupload.dto.FileUrl;
-import com.amatic.ch.service.PublicacionService;
 import com.google.appengine.api.blobstore.BlobInfo;
 import com.google.appengine.api.blobstore.BlobInfoFactory;
 import com.google.appengine.api.blobstore.BlobKey;
@@ -49,8 +48,9 @@ public class FileResource {
 	    .getBlobstoreService();
     private final BlobInfoFactory blobInfoFactory = new BlobInfoFactory();
 
-    @Autowired
-    private PublicacionService publicacionService;
+    // @Autowired
+    // private PublicacionService publicacionService;
+    PublicacionDaoImpl pdi = new PublicacionDaoImpl();
 
     /* step 1. get a unique url */
 
@@ -65,14 +65,14 @@ public class FileResource {
 	} catch (BlobstoreFailureException bfe) {
 	    status = Status.NOT_FOUND;
 	}
-	if (publicacionService != null) {
+	if (pdi != null) {
 	    HttpSession session = req.getSession();
-	    Publicacion publicacion = publicacionService.getPublicacion(
+	    Publicacion publicacion = pdi.getPublicacion(
 		    (String) session.getAttribute("tituloNuevaPublicacion"),
 		    (String) session.getAttribute("tipoNuevaPublicacion"));
 	    List<String> lImages = publicacion.getlImages();
 	    lImages.remove(key);
-	    publicacionService.update(publicacion);
+	    pdi.update(publicacion);
 	}
 	return Response.status(status).build();
     }
@@ -112,8 +112,8 @@ public class FileResource {
 	    String url = imagesService.getServingUrl(ServingUrlOptions.Builder
 		    .withBlobKey(blobKey).crop(true).imageSize(sizeImage)
 		    .secureUrl(true));
-	    log.info("publicacionService: " + publicacionService);
-	    Publicacion publicacion = publicacionService.getPublicacion(
+	    // log.info("publicacionService: " + publicacionService);
+	    Publicacion publicacion = pdi.getPublicacion(
 		    (String) session.getAttribute("tituloNuevaPublicacion"),
 		    (String) session.getAttribute("tipoNuevaPublicacion"));
 	    List<String> lImages = publicacion.getlImages();
@@ -144,7 +144,7 @@ public class FileResource {
 
 		publicacion.setArticulo(articulo);
 	    }
-	    publicacionService.update(publicacion);
+	    pdi.update(publicacion);
 	    int sizePreview = 80;
 	    String urlPreview = imagesService
 		    .getServingUrl(ServingUrlOptions.Builder
