@@ -13,6 +13,7 @@ public class CustomXmlWebApplicationContext extends XmlWebApplicationContext {
 	if (SystemProperty.environment.value() == SystemProperty.Environment.Value.Production) {
 	    beanDefinitionReader
 		    .setValidationMode(XmlBeanDefinitionReader.VALIDATION_NONE);
+	    // beanDefinitionReader.setNamespaceAware(true);
 	    // beanDefinitionReader.setValidating(false);
 	}
     }

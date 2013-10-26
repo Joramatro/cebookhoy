@@ -112,7 +112,7 @@ public class FileResource {
 	    String url = imagesService.getServingUrl(ServingUrlOptions.Builder
 		    .withBlobKey(blobKey).crop(true).imageSize(sizeImage)
 		    .secureUrl(true));
-
+	    log.info("publicacionService: " + publicacionService);
 	    Publicacion publicacion = publicacionService.getPublicacion(
 		    (String) session.getAttribute("tituloNuevaPublicacion"),
 		    (String) session.getAttribute("tipoNuevaPublicacion"));
