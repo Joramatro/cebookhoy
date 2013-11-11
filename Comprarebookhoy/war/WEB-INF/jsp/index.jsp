@@ -14,8 +14,8 @@
 		<div id="da-slider" class="da-slider">
 			<c:forEach var="publicacion" items="${publicacionesPortada}" varStatus="status" end="4">
 				<div class="da-slide">
-					<h2>${publicacion.tituloPortada}</h2>
-					<p>${publicacion.descPortada}</p>
+					<h2 class="titPortada">${publicacion.tituloPortada}</h2>
+					<p class="descPortada">${publicacion.descPortada}</p>
 					<c:choose>
 					<c:when test="${publicacion.script ne '#' }">
 						<a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', 'Home ${publicacion.url}', 'Boton Comprar Hoy');" class="da-link">COMPRAR HOY</a>
@@ -252,6 +252,11 @@
 	        _overId: null
 	    });
 	});
+	
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		$(".titPortada").css("font-size","38px");
+		$(".descPortada").css("font-size","14px");
+	}	
 </script>
 
 </body>

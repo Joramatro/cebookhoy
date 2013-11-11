@@ -414,7 +414,7 @@
 			$("#banGoogle").hide();
 		}
 	</script>
-	<div id="banAmazonHorizontal" style="position:absolute;top:890px;left:54px;">
+	<div id="banAmazonHorizontal" style="position:absolute;top:915px;left:54px;">
 		<div style="margin-left: 33px; margin-bottom: 12px;"><b>OFERTAS</b></div>
 			<%-- <div id="Amazon1" class="iframe_wrap">
 	    		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=EBF7F9&IS2=1&bg1=EBF7F9&fc1=666666&lc1=005580&t=comprarmicroh-21&o=30&p=8&l=as1&m=amazon&f=ifr&ref=tf_til&asins=B007HMLEAY" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>   		   		
@@ -438,10 +438,7 @@
 	    	  --%>  		    	
 	</div>
 	<script>
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-			$("#banAmazonHorizontal").hide();
-		}
-		if($('#footer').width() < 1079){
+		if($('#footer').width() < 855){
 			$("#banAmazonHorizontal").hide();
 		}
 	</script>
@@ -482,7 +479,7 @@
 	
 	$(window).scroll(function(){
 		if($('#footer').width() >= 855){
-			if($(window).scrollTop() > 890){
+			if($(window).scrollTop() > 915){
 				$("#banAmazonHorizontal").css("top", $(window).scrollTop());
 			    if($("#banAmazonHorizontal").offset().top + $('#banAmazonHorizontal').outerHeight(true) > $("#ttpi").offset().top){
 			    	$("#banAmazonHorizontal").hide();
