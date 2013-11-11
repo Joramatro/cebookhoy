@@ -40,7 +40,7 @@
 	<!-- end: Map -->	
 	
 	<!-- start: Wrapper -->	
-	<div id="wrapper">		
+	<div id="wrapper" style="padding-bottom: 50px;">		
 
 		<!-- start: Container -->	
 		<div class="container">

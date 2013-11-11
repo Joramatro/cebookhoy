@@ -7,8 +7,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-	<%@ include file="/WEB-INF/jsp/includes/header.jsp"%>
-	
+	<%@ include file="/WEB-INF/jsp/includes/header.jsp"%>	
 	<!-- start: Page Title -->
 	<div id="page-title">
 
@@ -32,7 +31,17 @@
 		<div style="display:none"><span  itemprop="url">http://www.comprarebookhoy.com/blog/${publicacion.url}</span></div>		
 		<!--start: Container -->
     	<div class="container">
-	
+	    	<div id="banGoogle" class="iframe_wrap" style="position:absolute;margin-left: 870px;">
+				<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- rec grande recomendado ch -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:336px;height:280px"
+				     data-ad-client="ca-pub-3168560600423825"
+				     data-ad-slot="5882295745"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>	
 			<!-- start: Flexslider -->
 			<div style="width: 550px;height: 435px; margin: 0 auto;" class="slider" >
 				<div id="flex1" class="flexslider home">
@@ -44,11 +53,9 @@
 						<c:if test="${status.count ne 3}">
 							<li>
 								<img style="width: 420px;height: 420px;" src="${imagen}"  alt="${publicacion.titulo}" />
-								<c:if test="${status.count < 2}">
 									<div class="slide-caption n">
 										<h3>${publicacion.titulo2}</h3>
 									</div>
-								</c:if>
 							</li>
 						</c:if>
 						</c:forEach>
@@ -57,7 +64,6 @@
 				</div>
 			</div>
 			<!-- end: Flexslider -->
-
 			<hr>
 			
 			<% pageContext.setAttribute("newLineChar", "\n"); %>
@@ -84,7 +90,7 @@
 					${publicacion.articulo}				
 					<br>
 					<c:if test="${publicacion.disponible ne 'N'}">
-						<br><h2><a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo Hoy');" class="button color launch">Cómpralo Hoy!</a></h2>
+						<br><h2><a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo Hoy');" class="button color launch">¡ Cómpralo Hoy!</a></h2>
 					</c:if>					
 					<br>
 					<!-- AddThis Button BEGIN -->
@@ -132,7 +138,7 @@
 	
 				<div class="span9">
 					
-					<div class="title"><h3>También te puede interesar...</h3></div>
+					<div id="ttpi" class="title"><h3>También te puede interesar...</h3></div>
 					
 					<!-- start: Row -->
 		      		<div class="row">
@@ -399,18 +405,7 @@
 	<!-- end: Wrapper -->		
 	
 	<%@ include file="/WEB-INF/jsp/includes/footer.jsp"%>
-
-	<div id="banGoogle" class="iframe_wrap" style="position: absolute;top: 310px;right: 44px;">
-		<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- rec grande recomendado ch -->
-		<ins class="adsbygoogle"
-		     style="display:inline-block;width:336px;height:280px"
-		     data-ad-client="ca-pub-3168560600423825"
-		     data-ad-slot="5882295745"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-	</div>
+	
 	<script>
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 			$("#banGoogle").hide();
@@ -419,8 +414,28 @@
 			$("#banGoogle").hide();
 		}
 	</script>
-	<div id="banAmazonHorizontal" class="iframe_wrap" style="position: absolute;top: 1000px;left: 55px;">
-		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=14&l=ur1&category=kindle&banner=1XW3YZKJD421WHFJ1Q02&f=ifr" width="160" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+	<div id="banAmazonHorizontal" style="position: fixed;left: 54px;">
+		<div style="margin-left: 33px; margin-bottom: 12px;"><b>OFERTAS</b></div>
+			<%-- <div id="Amazon1" class="iframe_wrap">
+	    		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=EBF7F9&IS2=1&bg1=EBF7F9&fc1=666666&lc1=005580&t=comprarmicroh-21&o=30&p=8&l=as1&m=amazon&f=ifr&ref=tf_til&asins=B007HMLEAY" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>   		   		
+	    	</div>
+			--%>
+			<div id="Amazon2art" class="iframe_wrap">
+	    		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=8&l=as1&asins=B00CTUKFNQ&ref=tf_til&fc1=666666&IS2=1&lt1=_blank&m=amazon&lc1=005580&bc1=EBF7F9&bg1=EBF7F9&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	    	</div>
+
+			<div id="Amazon3art" class="iframe_wrap">
+	    		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=8&l=as1&asins=B00CE5C74Q&ref=tf_til&fc1=666666&IS2=1&lt1=_blank&m=amazon&lc1=005580&bc1=EBF7F9&bg1=EBF7F9&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	    	</div>
+	    	<%--
+			<div id="Amazon4prod" class="iframe_wrap">
+	    		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarmicroh-21&o=30&p=8&l=as1&asins=B007TVJSGA&ref=tf_til&fc1=666666&IS2=1&lt1=_blank&m=amazon&lc1=005580&bc1=EBF7F9&bg1=EBF7F9&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>	   		
+	    	</div>
+	    	
+			<div id="Amazon5prod" class="iframe_wrap">
+	    		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarmicroh-21&o=30&p=8&l=as1&asins=B0055ZOY7K&ref=tf_til&fc1=666666&IS2=1&lt1=_blank&m=amazon&lc1=005580&bc1=EBF7F9&bg1=EBF7F9&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>	   		
+	    	</div>	
+	    	  --%>  		    	
 	</div>
 	<script>
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -432,7 +447,7 @@
 	</script>
 	
 	<div id="banAmazonEsquina" class="iframe_wrap" style="position: absolute;top: 198px;right: 260px;">
-	<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=20&l=ur1&category=kindlestore&banner=0J2HENEFERESCPS25YR2&f=ifr" width="120" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+	<%-- <iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=20&l=ur1&category=kindlestore&banner=0J2HENEFERESCPS25YR2&f=ifr" width="120" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe> --%>
 	</div>
 	<script>
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -463,6 +478,15 @@
 			$("#banAmazonEsquina").show();
 			$(".slide-caption").show();
 		}
+	});
+	
+	$(window).scroll(function(){
+	    $("#banAmazonHorizontal").css("top",Math.max(0,890-$(this).scrollTop()));
+	    if($("#banAmazonHorizontal").offset().top + $('#banAmazonHorizontal').outerHeight(true) > $("#ttpi").offset().top){
+	    	$("#banAmazonHorizontal").hide();
+	    }else{
+	    	$("#banAmazonHorizontal").show();
+	    }
 	});
 	</script>
 	<script>

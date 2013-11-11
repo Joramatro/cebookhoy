@@ -61,13 +61,62 @@
 				
 		<!--start: Container -->
     	<div class="container">
-			
+    	<table style="margin: 0px auto;">
+    		<tr>
+    		<td>
+	    	<div id="Amazon1" class="iframe_wrap">
+	    		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=8&l=as1&asins=B007HCCOD0&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>   		
+	    	</div>
+	    	</td>
+	    	<td>
+	    	<div id="Amazon2" class="iframe_wrap">
+	    	<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=8&l=as1&asins=B00CFV0SRC&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	    	</div>
+	    	</td>
+	    	<td>
+			<div id="banGoogleMasVistos" style="" class="iframe_wrap">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- rec mas vistos -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:300px;height:250px"
+				     data-ad-client="ca-pub-3168560600423825"
+				     data-ad-slot="2325322947"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+			</td>
+			<td>
+			<div id="bannerHomeAmazAlto" class="iframe_wrap" style="">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- rec mas vistos -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:300px;height:250px"
+				     data-ad-client="ca-pub-3168560600423825"
+				     data-ad-slot="2325322947"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+			</td>
+			<td>
+	    	<div id="Amazon3" class="iframe_wrap">
+	    		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=8&l=as1&asins=B00CTUKFNQ&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	    	</div>
+	    	</td>
+	    	<td>
+	    	<div id="Amazon4" class="iframe_wrap">
+	    	<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarcafeh-21&o=30&p=8&l=as1&asins=B00884BPUE&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	    	</div>
+	    	</td>
+	    	</tr>
+	    </table>					
 			<hr>
 	
       		<!-- start: Hero Unit - Main hero unit for a primary marketing message or call to action -->
       		<div class="hero-unit">
 				<h3>
-					Los e-books están siendo cada vez más y más populares, gracias a lo fácil que es llevarlos contigo y transferirlos. Aquí te ayudaremos a comprar el ebook con pantalla de tinta electrónica que más se ajuste a tus necesidades.
+					Los e-books están siendo cada vez más y más populares, gracias a lo fácil que es llevarlos contigo y transferirlos. Aquí te ayudaremos a comprar el ebook con pantalla de tinta electrónica que más se ajuste a tus necesidades y al precio más económico del mercado.
 				</h3>
         		<p><a class="btn btn-primary btn-large" title="Blog" href="/blog">ver Blog</a> &nbsp;&nbsp;<a class="btn btn-primary btn-large" title="eBooks" href="/ebooks">ver eBooks</a></p>
       		</div>
@@ -124,12 +173,6 @@
 				<div class="clear"></div>
 			</div>
 			<!-- end: Row -->
-			
-			<hr>
-			
-			<div id="bannerHomeAmazAlto" class="iframe_wrap" style="width: 60%;margin: 0 auto;">
-			<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=48&l=ur1&category=kindle_paperwhite&banner=0W27XP9ZXV3SP6ZQN4R2&f=ifr" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-			</div>
 		
 		<hr>			
 			<%@ include file="/WEB-INF/jsp/includes/masleidos.jsp"%>

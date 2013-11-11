@@ -1,17 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ page isELIgnored="false"%>
 
-	<div id="banGoogleFooter" class="iframe_wrap" style="width: 72%; margin:0 auto;">
-		<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- includes ch -->
-		<ins class="adsbygoogle"
-		     style="display:inline-block;width:970px;height:90px"
-		     data-ad-client="ca-pub-3168560600423825"
-		     data-ad-slot="2942822544"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-	</div>
     <!-- start: Footer Menu -->
 	<div id="footer-menu" class="hidden-tablet hidden-phone">
 
@@ -199,7 +188,7 @@
 			
 				<p>
 				<a style="margin-right: 35px;" href="http://www.comprarebookhoy.com/rssfeed" accesskey="r"><img src="/img/rss.gif" alt="RSS"/>RSS</a>
-				&copy; 2013, <a target="_blank" rel="publisher" href="https://plus.google.com/103298424982329605824"><span id="_publisher8" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+				&copy; 2013, <a target="_blank" href="https://www.google.com/+Comprarebookhoy"><span id="_publisher8" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <span itemprop="name">Comprar eBook Hoy</span></span></a><i style="margin-top: -18px;" class="ico-color ico-sun"></i>
 				<a style="margin-left: 19px;" href="/politica-de-privacidad">Política de privacidad</a>					
 				</p>
@@ -253,14 +242,5 @@ $("head").append("<link rel='stylesheet' type='text/css' href='/css/fancybox.css
 	}else{
 		$("#menuInicio").addClass('active');
 	}
-</script>
-<script>
-$(window).bind('resize', function () { 
-	if($('#footer').width() < 1345){
-		$("#banGoogleFooter").hide();
-	}else{
-		$("#banGoogleFooter").show();
-	}
-});
 </script>
 <!-- end: Java Script -->

@@ -48,7 +48,7 @@
 							Nuestras valoraciones son honestas y con sello propio, pretendiendo aclarar tu idea para comprar un eBook en función a tus necesidades. Los eBooks han cambiado la forma de concebir la lectura de libros y estamos aquí para ayudarte en todo lo posible y darte la mejor información que puedas encontrar en Internet.
 						</p>
 						<p>
-							Por favor, no dudes en contactar con nosotros para consultarnos cualquier duda que tengas ó darnos tu opinión sobre nuestro trabajo, estamos aquí para ayudarte y conseguir que tu elección sea la idónea, porque estamos a tu servicio.
+							Por favor, no dudes en contactar con nosotros para consultarnos cualquier duda que tengas ó darnos tu opinión sobre nuestro trabajo, estamos aquí para ayudarte y conseguir que tu elección sea la idónea. Puedes usar la sección de comentarios de cada artículo para puntuar, preguntar o aportar más información sobre un producto analizado.
 						</p>
 					</div>	
 					<!-- end: About Us -->
@@ -112,19 +112,19 @@
 				       	<ul class="progress-bar">
 				        	<li>
 				            	<h5>Productos de marca ( 100% )</h5>
-				            	<div class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
+				            	<div class="meter"><span pagespeed_no_defer="" style="width: 100%"></span></div><!-- Edite width here -->
 				          	</li>
 				          	<li>
 				            	<h5>Gestión de contenidos( 100% )</h5>
-				            	<div class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
+				            	<div class="meter"><span pagespeed_no_defer="" style="width: 100%"></span></div><!-- Edite width here -->
 				          	</li>
 				          	<li>
 				            	<h5>Desarrollo web ( 100% )</h5>
-				            	<div class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
+				            	<div class="meter"><span pagespeed_no_defer="" style="width: 100%"></span></div><!-- Edite width here -->
 				          	</li>
 				          	<li>
 				            	<h5>Optimización SEO ( 100% )</h5>
-				            	<div class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
+				            	<div class="meter"><span pagespeed_no_defer="" style="width: 100%"></span></div><!-- Edite width here -->
 				          	</li>
 				      	</ul>
 				      	<!-- end: Skills -->
