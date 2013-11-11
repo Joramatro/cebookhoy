@@ -41,7 +41,7 @@
 		<!-- start: Container -->	
 		<div class="container">
 
-			<div id="filters">
+			<div id="filters" style="margin-top: 15px;">
 				<ul class="option-set" data-option-key="filter">
 					<li><a href="#filter" class="selected" data-option-value="*">Todos</a></li>
 					<c:forEach var="categoria" items="${categorias}" varStatus="status" >
