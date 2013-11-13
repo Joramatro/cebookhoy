@@ -195,18 +195,28 @@ public class HomeController {
 
 	StringBuffer mensaje = new StringBuffer();
 	Enumeration<String> headerNames = request.getHeaderNames();
+	boolean existReferer = false;
 	while (headerNames.hasMoreElements()) {
 	    String headerName = headerNames.nextElement();
+	    if (headerName.equals("Referer")) {
+		existReferer = true;
+	    }
 	    mensaje.append(headerName);
 	    String headerValue = request.getHeader(headerName);
 	    mensaje.append(", " + headerValue);
 	    mensaje.append("\n");
 	}
-	Mail.sendMail(mensaje.toString(), "CEH " + request.getRequestURI());
+	if (existReferer) {
+	    Mail.sendMail(mensaje.toString(), "CEH " + request.getRequestURI());
 
-	model.addAttribute("publicacion", publicacion);
+	    model.addAttribute("publicacion", publicacion);
 
-	return "venta/venta";
+	    return "venta/venta";
+	} else {
+	    mensaje.append("NO DIRIGIDO A VENTA YA QUE NO HAY REFERER");
+	    Mail.sendMail(mensaje.toString(), "CEH " + request.getRequestURI());
+	    return "index";
+	}
     }
 
 }

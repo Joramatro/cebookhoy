@@ -6,20 +6,15 @@ import javax.servlet.http.HttpServletResponse;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.ModelMap;
 
 import com.amatic.ch.constants.WebConstants;
 import com.amatic.ch.dto.User;
-import com.amatic.ch.service.UserService;
 import com.dyuproject.demos.openidservlet.PopupVerifyServlet;
 
 @Aspect
 public class LoginAspect {
-
-    @Autowired
-    private UserService userService;
 
     @Value("#{application['mail']}")
     private String myMail;

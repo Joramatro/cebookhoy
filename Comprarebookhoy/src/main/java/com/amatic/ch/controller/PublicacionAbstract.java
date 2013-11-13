@@ -66,6 +66,7 @@ public abstract class PublicacionAbstract {
 	    // + request.getHeaderNames(),
 	    // "Spam Akimet comentario en CEHOY");
 	    response.sendRedirect("/");
+	    response.flushBuffer();
 	} else {
 	    String key = WebUtils.SHA1(url.replaceAll("-", " "));
 	    Publicacion publicacion = publicacionService.getPublicacion(key,
