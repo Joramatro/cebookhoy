@@ -184,6 +184,24 @@ public class HomeController {
 	    } else {
 		publicacion = null;
 	    }
+	} else if (tipo.equals("Papyre602Ocean")) {
+	    publicacion = new Publicacion();
+	    publicacion
+		    .setScript("http://www.amazon.es/gp/product/B00BS9MH80/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00BS9MH80&linkCode=as2&tag=comprarebookh-21");
+	    publicacion
+		    .setScript2("http://ir-es.amazon-adsystem.com/e/ir?t=comprarebookh-21&l=as2&o=30&a=B00BS9MH80");
+	} else if (tipo.equals("WolderMibukDelta7")) {
+	    publicacion = new Publicacion();
+	    publicacion
+		    .setScript("http://www.amazon.es/gp/product/B0074FPD7Y/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B0074FPD7Y&linkCode=as2&tag=comprarebookh-21");
+	    publicacion
+		    .setScript2("http://ir-es.amazon-adsystem.com/e/ir?t=comprarebookh-21&l=as2&o=30&a=B0074FPD7Y");
+	} else if (tipo.equals("ApproxAPPEB02G")) {
+	    publicacion = new Publicacion();
+	    publicacion
+		    .setScript("http://www.amazon.es/gp/product/B009OCGEW8/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B009OCGEW8&linkCode=as2&tag=comprarebookh-21");
+	    publicacion
+		    .setScript2("http://ir-es.amazon-adsystem.com/e/ir?t=comprarebookh-21&l=as2&o=30&a=B009OCGEW8");
 	}
 
 	if (publicacion == null) {
@@ -195,28 +213,20 @@ public class HomeController {
 
 	StringBuffer mensaje = new StringBuffer();
 	Enumeration<String> headerNames = request.getHeaderNames();
-	boolean existReferer = false;
 	while (headerNames.hasMoreElements()) {
 	    String headerName = headerNames.nextElement();
-	    if (headerName.equals("Referer")) {
-		existReferer = true;
-	    }
 	    mensaje.append(headerName);
 	    String headerValue = request.getHeader(headerName);
 	    mensaje.append(", " + headerValue);
 	    mensaje.append("\n");
 	}
-	if (existReferer) {
-	    Mail.sendMail(mensaje.toString(), "CEH " + request.getRequestURI());
 
-	    model.addAttribute("publicacion", publicacion);
+	Mail.sendMail(mensaje.toString(), "CEH " + request.getRequestURI());
 
-	    return "venta/venta";
-	} else {
-	    mensaje.append("NO DIRIGIDO A VENTA YA QUE NO HAY REFERER");
-	    Mail.sendMail(mensaje.toString(), "CEH " + request.getRequestURI());
-	    return "index";
-	}
+	model.addAttribute("publicacion", publicacion);
+
+	return "venta/venta";
+
     }
 
 }

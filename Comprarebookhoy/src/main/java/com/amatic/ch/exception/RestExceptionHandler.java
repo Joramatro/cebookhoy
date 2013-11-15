@@ -230,6 +230,7 @@ public class RestExceptionHandler extends AbstractHandlerExceptionResolver
 
 	ModelAndView mav = new ModelAndView("error/error_dinamic");
 	mav.addObject("message", lhmBody);
+	mav.addObject("code", lhmBody.get("code"));
 
 	return mav;
     }

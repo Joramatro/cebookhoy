@@ -24,7 +24,7 @@ public class DefaultController {
 	String uri = request.getRequestURI();
 
 	UnknownResourceException urexc = new UnknownResourceException(
-		"There is no resource for path " + uri);
+		"No existe esta ruta: " + uri);
 	log.error("error Bad Request", urexc);
 
 	throw urexc;

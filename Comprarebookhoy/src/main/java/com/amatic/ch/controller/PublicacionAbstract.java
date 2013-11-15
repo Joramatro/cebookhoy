@@ -180,8 +180,7 @@ public abstract class PublicacionAbstract {
 	Publicacion publicacion = publicacionService.getPublicacion(key, tipo);
 	if (publicacion == null) {
 	    String uri = request.getRequestURI();
-	    throw new UnknownResourceException("No existe la publicacion: "
-		    + uri);
+	    throw new UnknownResourceException("No existe el recurso: " + uri);
 	    // return "channelNotFound";
 	}
 	// incremeanting number viewers

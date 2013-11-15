@@ -228,8 +228,7 @@ public class EditionController {
 	Publicacion publicacion = publicacionService.getPublicacion(key, tipo);
 	if (publicacion == null) {
 	    String uri = request.getRequestURI();
-	    throw new UnknownResourceException("No existe la publicacion: "
-		    + uri);
+	    throw new UnknownResourceException("No existe el recurso: " + uri);
 	}
 	session.setAttribute("publicacion", publicacion);
 

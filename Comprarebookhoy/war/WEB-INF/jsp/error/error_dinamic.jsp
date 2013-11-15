@@ -4,7 +4,6 @@
 <%@ taglib prefix='fn' uri='http://java.sun.com/jsp/jstl/functions' %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -57,6 +56,7 @@
 </head>
 
 <body>
+
 <script>
     var container, stats;
     var camera, scene, renderer, group, particle;
@@ -181,13 +181,20 @@
 
     }
 </script>
-
+<c:set var="errorCode" value="${code}"/>
+<%
+int errorCode = (Integer)pageContext.getAttribute("errorCode");
+response.setStatus(errorCode); 
+%>
 <div class="wrapper">
-  <c:forEach var="type" items="${message}" end="0">
-	  <h2>Error: <c:out value="${type.value }"/></h2>
+Error ${errorCode}
+<h2>
+  <c:forEach var="type" items="${message}" begin="2"end="2">
+	  <c:out value="${type.value}"/></h2>
   </c:forEach>
+</h2>
 
-  <div class="desc">Parece que no va a poder ser<br>Clicka <a href="javascript:history.go(-1);" style="color:red">aquí</a> para volver atrás<br> ó clicka <a href="/" style="color:rgb(79, 182, 157)">aquí</a> para volver al Inicio</div>
+  <div class="desc">Por favor, haz click <a href="javascript:history.go(-1);" style="color:red">aqu&iacute;</a> para volver atr&aacute;s<br> o <a href="/" style="color:rgb(79, 182, 157)">aqu&iacute;</a> para volver al Inicio</div>
 </div>
 <!--  
 		<div class="lbox">
@@ -207,7 +214,7 @@
 			pw.close();
 			%>
 			<br/> <br/>
-			<p>Por favor, envia esta traza al <a href="mailto:hola@comprarebookhoy.com">administrator</a></p>
+			<p>Por favor, envia esta traza al <a href="mailto:yagofierro.her@gmail.com">administrator</a></p>
 		</div>
 -->
 </body>
