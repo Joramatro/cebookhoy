@@ -202,12 +202,16 @@ public class HomeController {
 		    .setScript("http://www.amazon.es/gp/product/B009OCGEW8/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B009OCGEW8&linkCode=as2&tag=comprarebookh-21");
 	    publicacion
 		    .setScript2("http://ir-es.amazon-adsystem.com/e/ir?t=comprarebookh-21&l=as2&o=30&a=B009OCGEW8");
+	} else if (tipo.equals("WolderMiBukKids")) {
+	    publicacion = new Publicacion();
+	    publicacion
+		    .setScript("http://www.amazon.es/gp/product/B008DG53R8/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B008DG53R8&linkCode=as2&tag=comprarebookh-21");
+	    publicacion
+		    .setScript2("http://ir-es.amazon-adsystem.com/e/ir?t=comprarebookh-21&l=as2&o=30&a=B008DG53R8");
 	}
-
 	if (publicacion == null) {
 	    String uri = request.getRequestURI();
-	    throw new UnknownResourceException("There is no resource for path "
-		    + uri);
+	    throw new UnknownResourceException("No existe la ruta: " + uri);
 	    // return "channelNotFound";
 	}
 

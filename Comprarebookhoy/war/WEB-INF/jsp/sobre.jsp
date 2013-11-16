@@ -109,22 +109,22 @@
 
 						<!-- start: Skills -->
 				       	<div class="title"><h3>Nuestras habilidades</h3></div>
-				       	<ul class="progress-bar">
+				       	<ul pagespeed_no_defer="" class="progress-bar">
 				        	<li>
 				            	<h5>Productos de marca ( 100% )</h5>
-				            	<div class="meter"><span pagespeed_no_defer="" style="width: 100%"></span></div><!-- Edite width here -->
+				            	<div pagespeed_no_defer="" class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
 				          	</li>
 				          	<li>
 				            	<h5>Gestión de contenidos( 100% )</h5>
-				            	<div class="meter"><span pagespeed_no_defer="" style="width: 100%"></span></div><!-- Edite width here -->
+				            	<div pagespeed_no_defer="" class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
 				          	</li>
 				          	<li>
 				            	<h5>Desarrollo web ( 100% )</h5>
-				            	<div class="meter"><span pagespeed_no_defer="" style="width: 100%"></span></div><!-- Edite width here -->
+				            	<div pagespeed_no_defer="" class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
 				          	</li>
 				          	<li>
 				            	<h5>Optimización SEO ( 100% )</h5>
-				            	<div class="meter"><span pagespeed_no_defer="" style="width: 100%"></span></div><!-- Edite width here -->
+				            	<div pagespeed_no_defer="" class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
 				          	</li>
 				      	</ul>
 				      	<!-- end: Skills -->
@@ -132,19 +132,7 @@
 
 
 					</div>
-					<!-- end: Sidebar -->
-					<div>
-						<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						<!-- rec mediano ch -->
-						<ins class="adsbygoogle"
-						     style="display:inline-block;width:300px;height:250px"
-						     data-ad-client="ca-pub-3168560600423825"
-						     data-ad-slot="6552423744"></ins>
-						<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-						</script>
-					</div>
-					
+					<!-- end: Sidebar -->					
 				</div>
 				
 			</div>

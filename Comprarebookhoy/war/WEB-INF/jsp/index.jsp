@@ -74,26 +74,26 @@
 	    	</div>
 	    	</td>
 	    	<td>
-			<div id="banGoogleMasVistos" style="" class="iframe_wrap">
+			<div id="googleRecIndex1" style="" class="iframe_wrap">
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- rec mas vistos -->
+				<!-- rectangulo index izquierda ebook -->
 				<ins class="adsbygoogle"
 				     style="display:inline-block;width:300px;height:250px"
 				     data-ad-client="ca-pub-3168560600423825"
-				     data-ad-slot="2325322947"></ins>
+				     data-ad-slot="3064549341"></ins>
 				<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
 			</div>
 			</td>
 			<td>
-			<div id="bannerHomeAmazAlto" class="iframe_wrap" style="">
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- rec mas vistos -->
+			<div id="googleRecIndex2" class="iframe_wrap" style="">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- rectangulo index derecha ebook -->
 				<ins class="adsbygoogle"
 				     style="display:inline-block;width:300px;height:250px"
 				     data-ad-client="ca-pub-3168560600423825"
-				     data-ad-slot="2325322947"></ins>
+				     data-ad-slot="5760663743"></ins>
 				<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
