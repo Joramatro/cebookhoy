@@ -56,10 +56,14 @@ public class Publicacion implements Serializable {
     String clase3;
     @Index
     String clase4;
+    @Index
+    String clase7;
     @Ignore
     String clase5;
     @Ignore
     String clase6;
+    @Ignore
+    String clase8;
     @Index
     String tipo;
     @Index
@@ -114,6 +118,7 @@ public class Publicacion implements Serializable {
 			    "N"))) {
 		it.remove();
 	    }
+
 	}
 
 	return lComentarios;
@@ -396,6 +401,22 @@ public class Publicacion implements Serializable {
 
     public void setTituloPortada(String tituloPortada) {
 	this.tituloPortada = tituloPortada;
+    }
+
+    public String getClase7() {
+	return clase7;
+    }
+
+    public void setClase7(String clase7) {
+	this.clase7 = clase7;
+    }
+
+    public String getClase8() {
+	return clase8;
+    }
+
+    public void setClase8(String clase8) {
+	this.clase8 = clase8;
     }
 
 }

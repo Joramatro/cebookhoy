@@ -1,35 +1,35 @@
-<!-- Indices written at Fri, 15 Nov 2013 01:45:52 GMT -->
+<!-- Indices written at Thu, 21 Nov 2013 15:46:49 GMT -->
 
 <datastore-indexes>
 
-    <!-- Used 2 times in query history -->
+    <!-- Used 20 times in query history -->
     <datastore-index kind="Publicacion" ancestor="false" source="auto">
         <property name="tipo" direction="asc"/>
         <property name="fechaCreacion" direction="desc"/>
     </datastore-index>
 
-    <!-- Used 2 times in query history -->
+    <!-- Used 38 times in query history -->
     <datastore-index kind="Comentario" ancestor="false" source="auto">
         <property name="publicado" direction="asc"/>
         <property name="fecha" direction="desc"/>
     </datastore-index>
 
-    <!-- Used 1 time in query history -->
+    <!-- Used 19 times in query history -->
     <datastore-index kind="Publicacion" ancestor="false" source="auto">
         <property name="destacado" direction="asc"/>
         <property name="fechaCreacion" direction="desc"/>
+    </datastore-index>
+
+    <!-- Used 36 times in query history -->
+    <datastore-index kind="Publicacion" ancestor="false" source="auto">
+        <property name="tipo" direction="asc"/>
+        <property name="numVisitas" direction="desc"/>
     </datastore-index>
 
     <!-- Used 1 time in query history -->
     <datastore-index kind="Publicacion" ancestor="false" source="auto">
         <property name="portada" direction="asc"/>
         <property name="fechaCreacion" direction="desc"/>
-    </datastore-index>
-
-    <!-- Used 2 times in query history -->
-    <datastore-index kind="Publicacion" ancestor="false" source="auto">
-        <property name="tipo" direction="asc"/>
-        <property name="numVisitas" direction="desc"/>
     </datastore-index>
 
 </datastore-indexes>

@@ -351,7 +351,7 @@
 						
 		</div>
 		<!--end: Container-->			
-	<div id="banGooHeader" class="iframe_wrap" style="width: 72%; margin:0 auto;">
+	<div id="banGooHeader" class="iframe_wrap" style="width: 75%; margin:0 auto;">
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- superior 1 skyscraper ebook -->
 		<ins class="adsbygoogle"

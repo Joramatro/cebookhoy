@@ -20,7 +20,10 @@ public class ComentarioService {
     }
 
     public List<Comentario> getUltimosComentarios() {
-	return this.comentarioDao.getUltimosComentarios();
+	List<Comentario> ultimosComentarios = this.comentarioDao
+		.getUltimosComentarios();
+
+	return ultimosComentarios;
     }
 
     public void update(Comentario comentario) {

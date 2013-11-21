@@ -61,20 +61,20 @@
 				
 		<!--start: Container -->
     	<div class="container">
-    	<table style="margin: 0px auto;">
+    	<table style="margin: 0px auto -43px">
     		<tr>
     		<td>
 	    	<div id="Amazon1" class="iframe_wrap">
-	    		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=8&l=as1&asins=B007HCCOD0&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>   		
+				<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=8&l=as1&asins=B00CTUKFNQ&ref=tf_til&fc1=666666&IS2=1&lt1=_blank&m=amazon&lc1=005580&bc1=EBF7F9&bg1=EBF7F9&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>	    		   		
 	    	</div>
 	    	</td>
 	    	<td>
 	    	<div id="Amazon2" class="iframe_wrap">
-	    	<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=8&l=as1&asins=B00CFV0SRC&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+				<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=8&l=as1&asins=B00CFV0SRC&ref=tf_til&fc1=666666&IS2=1&lt1=_blank&m=amazon&lc1=005580&bc1=EBF7F9&bg1=EBF7F9&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>	    		
 	    	</div>
 	    	</td>
 	    	<td>
-			<div id="googleRecIndex1" style="" class="iframe_wrap">
+			<div id="googleRecIndex1" class="iframe_wrap">
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- rectangulo index izquierda ebook -->
 				<ins class="adsbygoogle"
@@ -87,7 +87,7 @@
 			</div>
 			</td>
 			<td>
-			<div id="googleRecIndex2" class="iframe_wrap" style="">
+			<div id="googleRecIndex2" class="iframe_wrap">
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- rectangulo index derecha ebook -->
 				<ins class="adsbygoogle"
@@ -101,12 +101,12 @@
 			</td>
 			<td>
 	    	<div id="Amazon3" class="iframe_wrap">
-	    		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=8&l=as1&asins=B00CTUKFNQ&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	    		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=8&l=as1&asins=B007HCCOD0&ref=tf_til&fc1=666666&IS2=1&lt1=_blank&m=amazon&lc1=005580&bc1=EBF7F9&bg1=EBF7F9&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 	    	</div>
 	    	</td>
 	    	<td>
 	    	<div id="Amazon4" class="iframe_wrap">
-	    	<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarcafeh-21&o=30&p=8&l=as1&asins=B00884BPUE&ref=qf_sp_asin_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	    		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?t=comprarebookh-21&o=30&p=8&l=as1&asins=B00884BPUE&ref=tf_til&fc1=666666&IS2=1&lt1=_blank&m=amazon&lc1=005580&bc1=EBF7F9&bg1=EBF7F9&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 	    	</div>
 	    	</td>
 	    	</tr>
@@ -253,10 +253,31 @@
 	    });
 	});
 	
+	if($('#footer').width() < 1345){
+		$("#Amazon3").hide();
+		$("#Amazon4").hide();
+		$("#googleRecIndex2").hide();
+	}
+	
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		$(".titPortada").css("font-size","38px");
 		$(".descPortada").css("font-size","14px");
-	}	
+		$("#Amazon3").hide();
+		$("#Amazon4").hide();
+		$("#googleRecIndex2").hide();
+	}
+	
+	$(window).bind('resize', function () { 
+		if($('#footer').width() < 1345){
+			$("#Amazon3").hide();
+			$("#Amazon4").hide();
+			$("#googleRecIndex2").hide();
+		}else{
+			$("#Amazon3").show();
+			$("#Amazon4").show();
+			$("#googleRecIndex2").show();
+		}
+	});
 </script>
 
 </body>

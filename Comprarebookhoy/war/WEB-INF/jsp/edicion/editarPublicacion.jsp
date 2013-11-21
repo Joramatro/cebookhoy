@@ -124,6 +124,7 @@ Google+: <input type="text" style="width: 433px;" id="googleAutor" name="googleA
 
 Clase1: <input type="text" id="clase1" name="clase1" size="20" maxlength="40" value="${publicacion.clase1}"/>
 Clase2: <input type="text" id="clase2" name="clase2" size="20" maxlength="40" value="${publicacion.clase2}"/>
+Clase3: <input type="text" id="clase7" name="clase7" size="20" maxlength="20" value="${publicacion.clase7}"/>
 ClasePr3: <input type="text" id="clase3" name="clase3" size="20" maxlength="40" value="${publicacion.clase3}"/>
 ClasePr4: <input type="text" id="clase4" name="clase4" size="20" maxlength="40" value="${publicacion.clase4}"/>
 <br><br>

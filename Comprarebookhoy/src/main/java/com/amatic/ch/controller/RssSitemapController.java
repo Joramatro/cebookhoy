@@ -4,9 +4,13 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.jsoup.Jsoup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,7 +22,7 @@ import com.amatic.ch.service.PublicacionService;
 import com.sun.syndication.feed.rss.Category;
 
 @Controller
-public class RssController {
+public class RssSitemapController {
 
     @Autowired
     private PublicacionService publicacionService;
@@ -86,6 +90,23 @@ public class RssController {
 	mav.addObject("feedContent", items);
 
 	return mav;
+
+    }
+
+    @RequestMapping(value = "/sitemap.xml", method = RequestMethod.GET)
+    public String getMainScreen(ModelMap model, HttpServletRequest request,
+	    HttpServletResponse response) {
+	List<Publicacion> publicacionesBlog = publicacionService
+		.getPublicaciones(WebConstants.SessionConstants.ARTICULO);
+
+	List<Publicacion> publicacionesEbooks = publicacionService
+		.getPublicaciones(WebConstants.SessionConstants.EBOOK);
+
+	model.addAttribute("publicacionesEbooks", publicacionesEbooks);
+
+	model.addAttribute("publicacionesBlog", publicacionesBlog);
+
+	return "sitemap";
 
     }
 }

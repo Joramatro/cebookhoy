@@ -26,16 +26,6 @@ public class HeaderAspect {
 	    HttpServletResponse response) {
     }
 
-    @Pointcut(value = "execution(* com.amatic.ch.controller.EbooksController.*(..)) && args(model, url, request, response)")
-    public void ebooksMethodsUrl(ModelMap model, @PathVariable String url,
-	    HttpServletRequest request, HttpServletResponse response) {
-    }
-
-    @Pointcut(value = "execution(* com.amatic.ch.controller.EbooksController.*(..)) && args(model, request, response)")
-    public void ebooksMethods(ModelMap model, HttpServletRequest request,
-	    HttpServletResponse response) {
-    }
-
     @Pointcut(value = "execution(* com.amatic.ch.controller.BlogController.*(..)) && args(model, request, response)")
     public void blogMethods(ModelMap model, HttpServletRequest request,
 	    HttpServletResponse response) {
@@ -46,37 +36,8 @@ public class HeaderAspect {
 	    HttpServletRequest request, HttpServletResponse response) {
     }
 
-    @Pointcut(value = "execution(* com.amatic.ch.controller.ExtrasController.*(..)) && args(model, request, response)")
-    public void extrasMethods(ModelMap model, HttpServletRequest request,
-	    HttpServletResponse response) {
-    }
-
     @After("otherMethods(model,request,response)")
     public void getPublicacionesHeaderOther(ModelMap model,
-	    HttpServletRequest request, HttpServletResponse response)
-	    throws Throwable {
-
-	List<Publicacion> publicacionesDestacadas = publicacionService
-		.getPublicacionesDestacadas();
-
-	model.addAttribute("publicacionesDestacadas", publicacionesDestacadas);
-
-    }
-
-    @After("ebooksMethodsUrl(model,url,request,response)")
-    public void getPublicacionesHeaderEbooksUrl(ModelMap model,
-	    @PathVariable String url, HttpServletRequest request,
-	    HttpServletResponse response) throws Throwable {
-
-	List<Publicacion> publicacionesDestacadas = publicacionService
-		.getPublicacionesDestacadas();
-
-	model.addAttribute("publicacionesDestacadas", publicacionesDestacadas);
-
-    }
-
-    @After("ebooksMethods(model,request,response)")
-    public void getPublicacionesHeaderEbooks(ModelMap model,
 	    HttpServletRequest request, HttpServletResponse response)
 	    throws Throwable {
 
@@ -111,15 +72,4 @@ public class HeaderAspect {
 
     }
 
-    @After("extrasMethods(model,request,response)")
-    public void getPublicacionesHeaderExtras(ModelMap model,
-	    HttpServletRequest request, HttpServletResponse response)
-	    throws Throwable {
-
-	List<Publicacion> publicacionesDestacadas = publicacionService
-		.getPublicacionesDestacadas();
-
-	model.addAttribute("publicacionesDestacadas", publicacionesDestacadas);
-
-    }
 }

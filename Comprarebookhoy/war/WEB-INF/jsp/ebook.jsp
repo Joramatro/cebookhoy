@@ -116,7 +116,7 @@
 					<br><br>
 					<p style="font-style: italic;">Por favor, no dudes en puntuar y comentar tu opinión para aportar más detalles sobre el producto en la sección de <a href="#comments">comentarios</a></p>
 				</div>	
-				<div id="banGoogleFinArticulo" class="iframe_wrap" style="width: 50%; margin:0 auto;">
+				<div id="banGoogleFinArticulo" class="iframe_wrap" style="width: 64%; margin:0 auto;">
 					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 					<!-- fin articulo skycraper ebook -->
 					<ins class="adsbygoogle"
