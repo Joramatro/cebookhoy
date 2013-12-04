@@ -116,7 +116,7 @@ Resumen: <br>
 <textarea style="width: 833px;" rows="10" id="resumen" name="resumen">${publicacion.resumen}</textarea>
 <br><br>
 
-Descripcion: <input type="text" style="width: 433px;" id="descripcion" name="descripcion" size="70" maxlength="70" value="${publicacion.descripcion}"/><br><br>
+Descripcion: <input type="text" style="width: 433px;" id="descripcion" name="descripcion" size="160" maxlength="180" value="${publicacion.descripcion}"/><br><br>
 
 Autor: <input type="text" id="autor" name="autor" size="100" maxlength="100" value="${publicacion.autor}"/><br><br>
 

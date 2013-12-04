@@ -48,9 +48,9 @@ public abstract class PublicacionAbstract {
 		request.getHeader("User-agent"), request.getHeader("referer"),
 		"", // permalink
 		"comment", // comment type
-		nombre, // author
-		email, // email
-		web, comentario, // Text to check
+		"", // author
+		"", // email
+		"", comentario, // Text to check
 		request.getParameterMap());
 
 	if (isSpam) {
@@ -180,6 +180,8 @@ public abstract class PublicacionAbstract {
 	    Comentario ultimoComentario = new Comentario();
 	    ultimoComentario.setComentario(Jsoup.clean(
 		    comentario.getComentario(), Whitelist.simpleText()));
+	    ultimoComentario.setNombre(comentario.getNombre());
+	    ultimoComentario.setPublicacion(comentario.getPublicacion());
 	    ultimosComentarios.add(ultimoComentario);
 	}
 	model.addAttribute("comentarios", ultimosComentarios);
@@ -230,6 +232,8 @@ public abstract class PublicacionAbstract {
 	    Comentario ultimoComentario = new Comentario();
 	    ultimoComentario.setComentario(Jsoup.clean(
 		    comentario.getComentario(), Whitelist.simpleText()));
+	    ultimoComentario.setNombre(comentario.getNombre());
+	    ultimoComentario.setPublicacion(comentario.getPublicacion());
 	    ultimosComentarios.add(ultimoComentario);
 	}
 

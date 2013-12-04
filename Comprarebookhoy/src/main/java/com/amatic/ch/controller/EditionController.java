@@ -121,8 +121,9 @@ public class EditionController {
 	    articulo = articulo.replaceAll("\n", "</p><p>");
 	    articulo = articulo.concat("</p>");
 
-	    articulo = articulo.replaceAll("<a>", "<a href=\"/venta/principal/"
-		    + publicacion.getUrl() + "\">");
+	    articulo = articulo.replaceAll("<a>",
+		    "<a target=\"_blank\" href=\"/venta/principal/"
+			    + publicacion.getUrl() + "\">");
 	    articulo = articulo.replaceAll("<href *",
 		    "<a target=\"_blank\" href=");
 	    articulo = articulo.replaceAll("</href>", "</a>");

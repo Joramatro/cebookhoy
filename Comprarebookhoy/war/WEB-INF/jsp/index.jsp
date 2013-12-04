@@ -116,9 +116,11 @@
       		<!-- start: Hero Unit - Main hero unit for a primary marketing message or call to action -->
       		<div class="hero-unit">
 				<h3>
-					Los e-books están siendo cada vez más y más populares, gracias a lo fácil que es llevarlos contigo y transferirlos. Aquí te ayudaremos a comprar el ebook con pantalla de tinta electrónica que más se ajuste a tus necesidades y al precio más económico del mercado.
+					Los e-books y libros electrónicos están siendo cada vez más y más populares, gracias a lo fácil que es llevarlos contigo, a la posibilidad de transferirlos y a ser los dispositivos tecnológicos que mejor experiencia de lectura ofrecen a los usuario, superior a los tablets y móviles.<br>
+					Aquí te ayudaremos a comprar el ebook reader con pantalla de tinta electrónica que más se ajuste a tus necesidades y al precio más económico del mercado.<br>
+					Te mostramos los mejores análisis de ereaders de las mejores marcas como Kindle, Kobo, Sony, BQ, Papyre o Barnes & Nobles para que puedas responder con la mejor información a la pregunta de qué ebook comprar.
 				</h3>
-        		<p><a class="btn btn-primary btn-large" title="Blog" href="/blog">ver Blog</a> &nbsp;&nbsp;<a class="btn btn-primary btn-large" title="eBooks" href="/ebooks">ver eBooks</a></p>
+        		<p><br><a class="btn btn-primary btn-large" title="Blog" href="/blog">ver Blog</a> &nbsp;&nbsp;<a class="btn btn-primary btn-large" title="eBooks" href="/ebooks">ver eBooks</a></p>
       		</div>
 			<!-- end: Hero Unit -->
       		
