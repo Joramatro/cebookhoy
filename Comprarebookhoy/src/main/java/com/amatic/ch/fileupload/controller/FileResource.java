@@ -144,6 +144,68 @@ public class FileResource {
 
 		publicacion.setArticulo(articulo);
 	    }
+
+	    if (lImages.size() == 1) {
+		replaceimg = replaceimg.replace(
+			"alt=\"" + publicacion.getDescripcion() + "\"",
+			"alt=\"imagen 1 de detalle de "
+				+ publicacion.getTitulo() + "\"");
+		replaceimg = replaceimg.replace(
+			"id=\"_image6\" itemprop=\"image\" ",
+			"class=\"imageContextual\" ");
+		articulo = articulo.replaceAll("<img1>", replaceimg);
+
+		publicacion.setArticulo(articulo);
+	    }
+	    if (lImages.size() == 2) {
+		replaceimg = replaceimg.replace(
+			"alt=\"" + publicacion.getDescripcion() + "\"",
+			"alt=\"imagen 2 de detalle de "
+				+ publicacion.getTitulo() + "\"");
+		replaceimg = replaceimg.replace(
+			"id=\"_image6\" itemprop=\"image\" ",
+			"class=\"imageContextual\" ");
+		articulo = articulo.replaceAll("<img2>", replaceimg);
+
+		publicacion.setArticulo(articulo);
+	    }
+	    if (lImages.size() == 3) {
+		replaceimg = replaceimg.replace(
+			"alt=\"" + publicacion.getDescripcion() + "\"",
+			"alt=\"imagen 3 de detalle de "
+				+ publicacion.getTitulo() + "\"");
+		replaceimg = replaceimg.replace(
+			"id=\"_image6\" itemprop=\"image\" ",
+			"class=\"imageContextual\" ");
+		articulo = articulo.replaceAll("<img3>", replaceimg);
+
+		publicacion.setArticulo(articulo);
+	    }
+	    if (lImages.size() == 4) {
+		replaceimg = replaceimg.replace(
+			"alt=\"" + publicacion.getDescripcion() + "\"",
+			"alt=\"imagen 4 de detalle de "
+				+ publicacion.getTitulo() + "\"");
+		replaceimg = replaceimg.replace(
+			"id=\"_image6\" itemprop=\"image\" ",
+			"class=\"imageContextual\" ");
+		articulo = articulo.replaceAll("<img4>", replaceimg);
+
+		publicacion.setArticulo(articulo);
+	    }
+	    if (lImages.size() == 5) {
+		replaceimg = replaceimg.replace(
+			"alt=\"" + publicacion.getDescripcion() + "\"",
+			"alt=\"imagen 5 de detalle de "
+				+ publicacion.getTitulo() + "\"");
+		replaceimg = replaceimg.replace(
+			"id=\"_image6\" itemprop=\"image\" ",
+			"class=\"imageContextual\" ");
+		articulo = articulo.replaceAll("<img5>", replaceimg);
+
+		publicacion.setArticulo(articulo);
+	    }
+
 	    pdi.update(publicacion);
 	    int sizePreview = 80;
 	    String urlPreview = imagesService

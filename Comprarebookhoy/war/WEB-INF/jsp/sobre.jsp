@@ -45,7 +45,7 @@
 							Somos un equipo de personas con gran formación tecnólogica que quiere ofrecerte la mejor información y los mejores análisis sobre eBooks en la red.
 						</p>
 						<p>
-							Nuestras valoraciones son honestas y con sello propio, pretendiendo aclarar tu idea para comprar un eBook en función a tus necesidades. Los eBooks han cambiado la forma de concebir la lectura de libros y estamos aquí para ayudarte en todo lo posible y darte la mejor información que puedas encontrar en Internet.
+							Nuestras valoraciones son honestas y con sello propio, pretendiendo aclarar tu idea para comprar un eBook en función de tus necesidades. Los eBooks han cambiado la forma de concebir la lectura de libros y estamos aquí para ayudarte en todo lo posible y darte la mejor información que puedas encontrar en Internet.
 						</p>
 						<p>
 							Por favor, no dudes en contactar con nosotros para consultarnos cualquier duda que tengas ó darnos tu opinión sobre nuestro trabajo, estamos aquí para ayudarte y conseguir que tu elección sea la idónea. Puedes usar la sección de comentarios de cada artículo para puntuar, preguntar o aportar más información sobre un producto analizado.
@@ -109,22 +109,22 @@
 
 						<!-- start: Skills -->
 				       	<div class="title"><h3>Nuestras habilidades</h3></div>
-				       	<ul pagespeed_no_defer="" class="progress-bar">
+				       	<ul class="progress-bar">
 				        	<li>
-				            	<h5>Productos de marca ( 100% )</h5>
-				            	<div pagespeed_no_defer="" class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
+				            	<h5>Productos de marca ( 90% )</h5>
+				            	<div class="meter"><span style="width: 90%"></span></div><!-- Edite width here -->
 				          	</li>
 				          	<li>
 				            	<h5>Gestión de contenidos( 100% )</h5>
-				            	<div pagespeed_no_defer="" class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
+				            	<div class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
 				          	</li>
 				          	<li>
 				            	<h5>Desarrollo web ( 100% )</h5>
-				            	<div pagespeed_no_defer="" class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
+				            	<div class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
 				          	</li>
 				          	<li>
-				            	<h5>Optimización SEO ( 100% )</h5>
-				            	<div pagespeed_no_defer="" class="meter"><span style="width: 100%"></span></div><!-- Edite width here -->
+				            	<h5>Optimización SEO ( 90% )</h5>
+				            	<div class="meter"><span style="width: 90%"></span></div><!-- Edite width here -->
 				          	</li>
 				      	</ul>
 				      	<!-- end: Skills -->

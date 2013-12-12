@@ -18,15 +18,14 @@
 	<!-- end: Mobile Specific -->
 	<c:choose>
 	<c:when test="${!empty publicacion && publicacion.tipo eq 'EB'}">
-		<title>${publicacion.titulo} en Comprar eBook Hoy</title> 
-		<meta name="description" content="${publicacion.descripcion}"/>
-		<meta name="title" content="${publicacion.titulo} en Comprar eBook Hoy" />
+		<title>${publicacion.titulo} en análisis y online en Comprar eBook Hoy</title> 
+		<meta name="description" content="${publicacion.descripcion} en Comprar eBook Hoy"/>
 		<meta name="author" content="Jorge Amat" />
 		<meta name="copyright" content="Comprar eBook Hoy" />
 		<meta name="application-name" content="${publicacion.titulo} en Comprar eBook Hoy" />
 		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="${publicacion.titulo}"/>
-		<meta property="og:description" content="${publicacion.descripcion}"/>
+		<meta property="og:title" content="${publicacion.titulo} en análisis y online en Comprar eBook Hoy"/>
+		<meta property="og:description" content="${publicacion.descripcion} en Comprar eBook Hoy"/>
 		<meta property="og:type" content="ebooks"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/ebooks/${publicacion.url}"/>
 		<meta property="og:image" content="${publicacion.lImages[0]}"/>
@@ -46,7 +45,6 @@
 	<c:when test="${!empty publicacion && publicacion.tipo eq 'AR'}">
 		<title>${publicacion.titulo} en Comprar eBook Hoy</title> 
 		<meta name="description" content="${publicacion.descripcion}"/>
-		<meta name="title" content="${publicacion.titulo} en Comprar eBook Hoy" />
 		<meta name="author" content="Jorge Amat" />
 		<meta name="copyright" content="Comprar eBook Hoy" />
 		<meta name="application-name" content="${publicacion.titulo} en Comprar eBook Hoy" />
@@ -70,14 +68,13 @@
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/blog/${publicacion.url}“/>
 	</c:when>	
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'extras')}">
-		<title>Extras en Comprar eBook Hoy</title> 
+		<title>Extras y accesorios online para tu ebook reader en Comprar eBook Hoy</title> 
 		<meta name="description" content="Accede a todos los extras para comprar online accesorios a tu ebook reader como fundas Kindle, Kobo, Sony, BQ, Barnes & Nobles, Papyre y otras grandes marcas para protegerlo, adaptadores de corriente ó luces de lectura"/>
-		<meta name="title" content="Extras en Comprar eBook Hoy" />
 		<meta name="author" content="Jorge Amat" />
 		<meta name="copyright" content="Comprar eBook Hoy" />
 		<meta name="application-name" content="Extras en Comprar eBook Hoy" />
 		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="Extras en Comprar eBook Hoy"/>
+		<meta property="og:title" content="Extras y accesorios online para tu ebook reader en Comprar eBook Hoy"/>
 		<meta property="og:description" content="Accede a todos los extras para comprar online accesorios a tu ebook reader como fundas Kindle, Kobo, Sony, BQ, Barnes & Nobles, Papyre y otras grandes marcas para protegerlo, adaptadores de corriente ó luces de lectura"/>
 		<meta property="og:type" content="extras"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/extras"/>
@@ -98,7 +95,6 @@
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'sobre')}">
 		<title>Sobre Nosotros y Comprar eBook Hoy</title> 
 		<meta name="description" content="Toda la información sobre los que trabajamos en Comprar eBook Hoy, su experiencia y valores profesionales"/>
-		<meta name="title" content="Sobre Nosotros en Comprar eBooks Hoy" />
 		<meta name="author" content="Jorge Amat" />
 		<meta name="copyright" content="Comprar eBook Hoy" />
 		<meta name="application-name" content="Sobre Nosotros en Comprar eBook Hoy" />
@@ -124,7 +120,6 @@
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'contacta')}">
 		<title>Contacta con Comprar eBook Hoy</title> 
 		<meta name="description" content="Contacta con los que trabajamos en Comprar eBook Hoy"/>
-		<meta name="title" content="Contacta en Comprar eBooks Hoy" />
 		<meta name="author" content="Jorge Amat" />
 		<meta name="copyright" content="Comprar eBook Hoy" />
 		<meta name="application-name" content="Contacto en Comprar eBook Hoy" />
@@ -148,15 +143,14 @@
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/contacto“/>
 	</c:when>
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'ebooks')}">
-		<title>eBooks y precios en Comprar eBook Hoy</title> 
-		<meta name="description" content="Análisis y precios de los mejores eBook readers en la actualidad para que puedas comprar tu libro electrónico Kindle, Kobo, Sony, BQ, Barnes & Nobles, Papyre y otras grandes marcas y comparar online"/>
-		<meta name="title" content="Análisis y precios de eBook readers para comprar tu ebook online y poder comparar precios" />
+		<title>eBooks, precios y análisis de los mejores ereaders en Comprar eBook Hoy</title> 
+		<meta name="description" content="Análisis y precios de los mejores eBook readers en la actualidad para que puedas comprar online tu libro electrónico Kindle, Kobo, Sony, BQ, Barnes & Nobles, Papyre y otras grandes marcas y comparar"/>
 		<meta name="author" content="Jorge Amat" />
 		<meta name="copyright" content="Comprar eBook Hoy" />
 		<meta name="application-name" content="eBooks en Comprar eBook Hoy" />
 		<!-- start: Facebook Open Graph -->
 		<meta property="og:title" content="Análisis de eBooks para comprar tu ebook online y poder comparar precios"/>
-		<meta property="og:description" content="Análisis y precios de los mejores eBook readers en la actualidad para que puedas comprar tu libro electrónico Kindle, Kobo, Sony, BQ, Barnes & Nobles, Papyre y otras grandes marcas y comparar online"/>
+		<meta property="og:description" content="Análisis y precios de los mejores eBook readers en la actualidad para que puedas comprar online tu libro electrónico Kindle, Kobo, Sony, BQ, Barnes & Nobles, Papyre y otras grandes marcas y comparar"/>
 		<meta property="og:type" content="ebook"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/ebooks"/>
 		<c:if test="${!empty publicaciones}">
@@ -182,14 +176,13 @@
 		<!-- end: Twitter tags -->		
 	</c:when>
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'blog')}">
-		<title>Artículos sobre eBooks en Comprar eBook Hoy</title> 
+		<title>Artículos y opinión sobre eReaders en Comprar eBook Hoy</title> 
 		<meta name="description" content="Opinión y artículos en nuestro blog de los mejores eBook readers en la actualidad para que puedas comprar tu ebook Kindle, Kobo, Sony, BQ, Barnes & Nobles, Papyre y otras grandes marcas"/>
-		<meta name="title" content="Opinión y artículos sobre eBook readers para comprar tu ebook online" />
 		<meta name="author" content="Jorge Amat" />
 		<meta name="copyright" content="Comprar eBook Hoy" />
 		<meta name="application-name" content="Blog en Comprar eBook Hoy" />
 		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="Opinión sobre ebook reader para comprar tu ebook online"/>
+		<meta property="og:title" content="Artículos y opinión sobre eReaders en Comprar eBook Hoy"/>
 		<meta property="og:description" content="Opinión y artículos en nuestro blog de los mejores eBook readers en la actualidad para que puedas comprar tu ebook de tinta electrónica Kindle, Kobo, Sony, BQ, Barnes & Nobles, Papyre y otras grandes marcas"/>
 		<meta property="og:type" content="articulo"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com/blog"/>
@@ -218,7 +211,6 @@
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'privacidad')}">
 		<title>Política de privacidad de Comprar eBook Hoy</title> 
 		<meta name="description" content="Política de privacidad y condiciones de uso de Comprar eBook Hoy"/>
-		<meta name="title" content="Política de privacidad de Comprar eBook Hoy" />
 		<meta name="author" content="Jorge Amat" />
 		<meta name="copyright" content="Comprar eBook Hoy" />
 		<meta name="application-name" content="Política privacidad Comprar eBook Hoy" />
@@ -239,14 +231,13 @@
 		<!-- end: Twitter tags -->		
 	</c:when>	
 	<c:otherwise>
-		<title>Bienvenido a Comprar eBook Hoy</title> 
+		<title>Bienvenido a Comprar eBook Hoy - Análisis y opinión sobre los mejores eReaders para comprar online</title> 
 		<meta name="description" content="Analizamos los mejores lectores de ebooks del mercado para que puedas comprar tu ebook reader preferido al mejor precio y online. Los mejores libros electrónicos Kindle, Kobo, Sony, BQ, Barnes & Nobles, Papyre y otras grandes marcas"/>
-		<meta name="title" content="eBook readers en Comprar eBook Hoy online" />
 		<meta name="author" content="Jorge Amat" />
 		<meta name="copyright" content="Comprar eBook Hoy" />
 		<meta name="application-name" content="eBook Readers en Comprar eBook Hoy" />
 		<!-- start: Facebook Open Graph -->
-		<meta property="og:title" content="eBook readers en Comprar eBook online"/>
+		<meta property="og:title" content="Comprar eBook Hoy - Análisis y opinión sobre los mejores eReaders para comprar online"/>
 		<meta property="og:description" content="Analizamos los mejores lectores de ebooks del mercado para que puedas comprar tu ebook reader preferido al mejor precio y online. Los mejores libros electrónicos Kindle, Kobo, Sony, BQ, Barnes & Nobles, Papyre y otras grandes marcas"/>
 		<meta property="og:type" content="principal"/>
 		<meta property="og:url" content="http://www.comprarebookhoy.com"/>
@@ -335,29 +326,29 @@
 	          		<div class="nav-collapse collapse">
 	            		<ul id="menuSuperior" class="nav" style="margin-right:-30px;">
 							<li id="menuInicio">
-	                			<a href="/">Inicio</a>
+	                			<a onClick="ga('send', 'event', 'Menu Superior', 'Menu Inicio', 'Inicio');" href="/">Inicio</a>
 	              			</li>
-	              			<li id="menuEbooks"><a title="eBooks" href="/ebooks">eBooks</a></li>
+	              			<li id="menuEbooks"><a onClick="ga('send', 'event', 'Menu Superior', 'Menu eBooks', 'eBooks');" title="eBooks" href="/ebooks">eBooks</a></li>
 							<li class="dropdown">
 	                			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Destacados<b class="caret"></b></a>
 	                			<ul class="dropdown-menu">
 	                				<c:forEach var="publicacion" items="${publicacionesDestacadas}" varStatus="status" end="5">
 										<c:choose>
 											<c:when test="${publicacion.tipo eq 'EB' }">
-												<li><a title="${publicacion.titulo}" href="/ebooks/${publicacion.url}">${publicacion.titulo}</a></li>
+												<li><a onClick="ga('send', 'event', 'Menu Superior', '${publicacion.titulo}', 'Destacados');" title="${publicacion.titulo}" href="/ebooks/${publicacion.url}">${publicacion.titulo}</a></li>
 											</c:when>	
 											<c:otherwise>
-												<li><a title="${publicacion.titulo}" href="/blog/${publicacion.url}">${publicacion.titulo}</a></li>
+												<li><a onClick="ga('send', 'event', 'Menu Superior', '${publicacion.titulo}', 'Destacados');" title="${publicacion.titulo}" href="/blog/${publicacion.url}">${publicacion.titulo}</a></li>
 											</c:otherwise>
 										</c:choose>										
 	                  				</c:forEach>	                					                  				
 								</ul>
 	              			</li>
-	              			<li id="menuExtras"><a title="Extras" href="/extras">Extras</a></li>
-	              			<li id="menuBlog"><a title="Blog" href="/blog">Blog</a></li>	              																			
-							<li id="menuSobre"><a title="Sobre" href="/sobre">Sobre nosotros</a></li>
-	              			<li id="menuContacto"><a title="Contacto" href="/contacto">Contacto</a></li>
-	              			<li style="margin-top: -8px;"><a href="#newsletter" accesskey="r"><img src="/img/rssmenu.png" alt="RSS"></a></li>
+	              			<li id="menuExtras"><a onClick="ga('send', 'event', 'Menu Superior', 'Menu Extras', 'Extras');"  title="Extras" href="/extras">Extras</a></li>
+	              			<li id="menuBlog"><a onClick="ga('send', 'event', 'Menu Superior', 'Menu Blog', 'Blog');" title="Blog" href="/blog">Blog</a></li>	              																			
+							<li id="menuSobre"><a onClick="ga('send', 'event', 'Menu Superior', 'Menu Sobre', 'Sobre');" title="Sobre" href="/sobre">Sobre nosotros</a></li>
+	              			<li id="menuContacto"><a onClick="ga('send', 'event', 'Menu Superior', 'Menu Contacto', 'Contacto');" title="Contacto" href="/contacto">Contacto</a></li>
+	              			<li style="margin-top: -8px;"><a onClick="ga('send', 'event', 'Menu Superior', 'Menu RSS', 'RSS');" href="#newsletter" accesskey="r"><img src="/img/rssmenu.png" alt="RSS"></a></li>
 	            		</ul>
 	          		</div>
 	        	</div>

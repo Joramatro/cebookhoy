@@ -90,6 +90,22 @@ public class Publicacion implements Serializable {
     List<Ref<Comentario>> lComentarios = new ArrayList<Ref<Comentario>>();
     @Index
     String disponible;
+    @Index
+    String script21;
+    @Index
+    String script22;
+    @Index
+    String script31;
+    @Index
+    String script32;
+    @Index
+    String script41;
+    @Index
+    String script42;
+    @Index
+    String script51;
+    @Index
+    String script52;
 
     public String getAutor() {
 	return autor;
@@ -417,6 +433,70 @@ public class Publicacion implements Serializable {
 
     public void setClase8(String clase8) {
 	this.clase8 = clase8;
+    }
+
+    public String getScript21() {
+	return script21;
+    }
+
+    public void setScript21(String script21) {
+	this.script21 = script21;
+    }
+
+    public String getScript22() {
+	return script22;
+    }
+
+    public void setScript22(String script22) {
+	this.script22 = script22;
+    }
+
+    public String getScript31() {
+	return script31;
+    }
+
+    public void setScript31(String script31) {
+	this.script31 = script31;
+    }
+
+    public String getScript32() {
+	return script32;
+    }
+
+    public void setScript32(String script32) {
+	this.script32 = script32;
+    }
+
+    public String getScript41() {
+	return script41;
+    }
+
+    public void setScript41(String script41) {
+	this.script41 = script41;
+    }
+
+    public String getScript42() {
+	return script42;
+    }
+
+    public void setScript42(String script42) {
+	this.script42 = script42;
+    }
+
+    public String getScript51() {
+	return script51;
+    }
+
+    public void setScript51(String script51) {
+	this.script51 = script51;
+    }
+
+    public String getScript52() {
+	return script52;
+    }
+
+    public void setScript52(String script52) {
+	this.script52 = script52;
     }
 
 }

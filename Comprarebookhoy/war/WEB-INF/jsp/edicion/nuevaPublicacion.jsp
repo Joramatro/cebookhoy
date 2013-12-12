@@ -97,7 +97,7 @@ Destacado: <select name="destacado" id="destacado">
 				  <option value="S">Si</option>
 				</select><br><br>									
 Autor: <input type="text" id="autor" name="autor" size="25" maxlength="50"/><br><br>	
-Google+: <input type="text" style="width: 433px;" id="googleAutor" name="googleAutor" value="https://plus.google.com/u/0/108657243775074009859?rel=author" size="250" maxlength="570"/><br><br>			
+Google+: <input type="text" style="width: 433px;" id="googleAutor" name="googleAutor" value="https://plus.google.com/+JorgeAmat?rel=author" size="250" maxlength="570"/><br><br>			
 Titulo: <input type="text" style="width: 350px;" id="titulo" name="titulo" size="70" maxlength="70"/><br><br>
 Titulo2: <input type="text" style="width: 433px;" id="titulo2" name="titulo2" size="120" maxlength="120"/><br><br>
 Keywords: <input type="text" style="width: 433px;"id="keywords" name="keywords" size="150" maxlength="150"/>
@@ -128,6 +128,14 @@ Articulo
 <br><br>
 Script: <input type="text" style="width: 600px;" id="script" name="script" size="300" maxlength="300"><br><br>				
 Script2: <input type="text" style="width: 600px;" id="script2" name="script2" size="300" maxlength="300"><br><br>
+Script21: <input type="text" style="width: 600px;" id="script21" name="script21" size="300" maxlength="300"><br><br>				
+Script22: <input type="text" style="width: 600px;" id="script22" name="script22" size="300" maxlength="300"><br><br>
+Script31: <input type="text" style="width: 600px;" id="script31" name="script31" size="300" maxlength="300"><br><br>				
+Script32: <input type="text" style="width: 600px;" id="script32" name="script32" size="300" maxlength="300"><br><br>
+Script41: <input type="text" style="width: 600px;" id="script41" name="script41" size="300" maxlength="300"><br><br>				
+Script42: <input type="text" style="width: 600px;" id="script42" name="script42" size="300" maxlength="300"><br><br>
+Script51: <input type="text" style="width: 600px;" id="script51" name="script51" size="300" maxlength="300"><br><br>				
+Script52: <input type="text" style="width: 600px;" id="script52" name="script52" size="300" maxlength="300"><br><br>
 <table width="50%" border="0" align="center" cellpadding="10" cellspacing="0">
 <tr>
 <td><div align="center">

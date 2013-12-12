@@ -17,7 +17,7 @@
 					<h2 class="titPortada">${publicacion.tituloPortada}</h2>
 					<p class="descPortada">${publicacion.descPortada}</p>
 					<c:choose>
-					<c:when test="${publicacion.script ne '#' }">
+					<c:when test="${publicacion.disponible eq 'S' }">
 						<a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', 'Home ${publicacion.url}', 'Boton Comprar Hoy');" class="da-link">COMPRAR HOY</a>
 					</c:when>
 					<c:otherwise>
@@ -186,7 +186,7 @@
 			<div id="portfolio-wrapper" class="row">
 				<% pageContext.setAttribute("newLineChar", "\n"); %>
 				<c:forEach var="publicacion" items="${publicacionesEbooks}" varStatus="status" end="8">				
-				<div class="span4 portfolio-item nature people">
+				<div class="span4 portfolio-item">
 					<div class="picture"><a href="/ebooks/${publicacion.url}" title="${publicacion.titulo}">
 					
 					<c:if test="${!empty publicacion.lImages }">
@@ -205,7 +205,7 @@
 				</div>
 				</c:forEach>
 				<c:forEach var="publicacion" items="${publicacionesBlog}" varStatus="status" end="8">				
-				<div class="span4 portfolio-item nature people">
+				<div class="span4 portfolio-item">
 					<div class="picture"><a href="/blog/${publicacion.url}" title="${publicacion.titulo}">
 					
 					<c:if test="${!empty publicacion.lImages }">
