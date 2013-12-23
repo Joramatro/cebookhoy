@@ -299,7 +299,8 @@ public class HomeController {
 	    return null;
 	} else if (existsAccept) {
 
-	    Mail.sendMail(mensaje.toString(), "CEH " + request.getRequestURI());
+	    // Mail.sendMail(mensaje.toString(), "CEH " +
+	    // request.getRequestURI());
 	    model.addAttribute("publicacion", publicacion);
 
 	    if (url.endsWith("-2")) {

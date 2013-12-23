@@ -100,8 +100,6 @@ Autor: <input type="text" id="autor" name="autor" size="25" maxlength="50"/><br>
 Google+: <input type="text" style="width: 433px;" id="googleAutor" name="googleAutor" value="https://plus.google.com/+JorgeAmat?rel=author" size="250" maxlength="570"/><br><br>			
 Titulo: <input type="text" style="width: 350px;" id="titulo" name="titulo" size="70" maxlength="70"/><br><br>
 Titulo2: <input type="text" style="width: 433px;" id="titulo2" name="titulo2" size="120" maxlength="120"/><br><br>
-Keywords: <input type="text" style="width: 433px;"id="keywords" name="keywords" size="150" maxlength="150"/>
-<br><br>
 Descripcion: <input type="text" style="width: 633px;" id="descripcion" name="descripcion" size="160" maxlength="180"/>
 <br><br>
 Clase1: <input type="text" id="clase1" name="clase1" size="20" maxlength="20"/>
