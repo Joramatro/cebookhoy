@@ -213,6 +213,7 @@
 <script src="/js/jquery.iframetracker.js"></script>
 <script defer="defer" src="/js/custom.min.js"></script>
 <script async src="/js/apprise-v2.min.js"></script>
+<script async src="/js/jquery.rateit.min.js"></script>
 
 <%@ include file="/WEB-INF/jsp/includes/scripts.jsp"%>
 
@@ -224,6 +225,7 @@ $("head").append("<link rel='stylesheet' type='text/css' href='/css/icons-color.
 $("head").append("<link rel='stylesheet' type='text/css' href='/css/social-icons.min.css' />");
 $("head").append("<link rel='stylesheet' type='text/css' href='/css/hover.css' />");
 $("head").append("<link rel='stylesheet' type='text/css' href='/css/fancybox.css' />");
+$("head").append("<link rel='stylesheet' type='text/css' href='/css/rateit.css' />");
 </script>
 <script>
 	var pathname = window.location.pathname;

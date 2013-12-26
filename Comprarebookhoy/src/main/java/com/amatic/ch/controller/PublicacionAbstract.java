@@ -97,6 +97,7 @@ public abstract class PublicacionAbstract {
 	    nuevoComentario.setMail(email);
 	    nuevoComentario.setNombre(nombre);
 	    nuevoComentario.setPuntos(Integer.parseInt(puntos));
+	    comentario = comentario.replaceAll("\r\n", "<br>");
 	    String safeComentario = Jsoup.clean(comentario, Whitelist.basic());
 	    safeComentario = safeComentario.replaceAll("\n", "");
 	    nuevoComentario.setComentario(safeComentario);
@@ -230,8 +231,9 @@ public abstract class PublicacionAbstract {
 	List<Comentario> ultimosComentarios = new ArrayList<Comentario>();
 	for (Comentario comentario : comentarios) {
 	    Comentario ultimoComentario = new Comentario();
-	    ultimoComentario.setComentario(Jsoup.clean(
-		    comentario.getComentario(), Whitelist.simpleText()));
+	    ultimoComentario.setComentario(Jsoup.clean(comentario
+		    .getComentario().replaceAll("<br />", " "), Whitelist
+		    .simpleText()));
 	    ultimoComentario.setNombre(comentario.getNombre());
 	    ultimoComentario.setPublicacion(comentario.getPublicacion());
 	    ultimosComentarios.add(ultimoComentario);
