@@ -58,7 +58,6 @@ public class EditionController {
 	    @RequestParam("descripcion") String descripcion,
 	    @RequestParam("resumen") String resumen,
 	    @RequestParam("articulo") String articulo,
-	    @RequestParam("keywords") String keywords,
 	    @RequestParam("clase1") String clase1,
 	    @RequestParam("clase2") String clase2,
 	    @RequestParam("clase3") String clase3,
@@ -165,7 +164,6 @@ public class EditionController {
 	    }
 
 	    publicacion.setArticulo(articulo);
-	    publicacion.setKeywords(keywords);
 	    publicacion.setClase1(clase1);
 	    publicacion.setClase2(clase2);
 	    publicacion.setClase3(clase3);
