@@ -188,7 +188,7 @@
 			
 				<p>
 				<a style="margin-right: 35px;" href="http://www.comprarebookhoy.com/rssfeed" accesskey="r"><img src="/img/rss.gif" alt="RSS"/>RSS</a>
-				&copy; 2013, <a target="_blank" href="https://www.google.com/+Comprarebookhoy"><span id="_publisher8" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+				&copy; 2014, <a target="_blank" href="https://www.google.com/+Comprarebookhoy"><span id="_publisher8" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
 <span itemprop="name">Comprar eBook Hoy</span></span></a><i style="margin-top: -18px;" class="ico-color ico-sun"></i>
 				<a style="margin-left: 19px;" href="/politica-de-privacidad">Política de privacidad</a>					
 				</p>

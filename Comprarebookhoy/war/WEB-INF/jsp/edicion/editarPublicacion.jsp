@@ -504,7 +504,7 @@ Script52: <input type="text" style="width: 600px;" id="script52" name="script52"
 		
 			<div class="span12">
 				<p>
-					&copy; 2013, <a href="/">Compra eBook Hoy</a><i style="margin-top: -18px;" class="ico-color ico-sun"></i>
+					&copy; 2014, <a href="/">Compra eBook Hoy</a><i style="margin-top: -18px;" class="ico-color ico-sun"></i>
 				</p>
 			</div>
 	

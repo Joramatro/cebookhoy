@@ -178,8 +178,8 @@
 								<ul class="carousel">
 									<c:forEach var="comentario" items="${comentarios}" varStatus="status" >	
 									<li class="testimonial">
-										<div class="testimonials"><span itemprop="summary">${fn:substring(comentario.comentario, 0, 400)}
-										<c:if test="${fn:length(comentario.comentario)>400}">
+										<div class="testimonials"><span itemprop="summary">${fn:substring(comentario.comentario, 0, 405)}
+										<c:if test="${fn:length(comentario.comentario)>405}">
 										...
 										</c:if></span>
 										</div>
