@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.sf.akismet.Akismet;
 
+import org.apache.commons.lang.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +53,20 @@ public abstract class PublicacionAbstract {
 		"", // email
 		"", comentario, // Text to check
 		request.getParameterMap());
-
+	if (isSpam == false
+		&& (StringUtils.containsAny(comentario, "пдзй")
+			|| StringUtils.containsAny(nombre, "пдзй") || StringUtils
+			    .containsAny(web, "пдзй"))) {
+	    isSpam = true;
+	    akismet.submitSpam(request.getRemoteAddr(),
+		    request.getHeader("User-agent"),
+		    request.getHeader("referer"), "", // permalink
+		    "comment", // comment type
+		    nombre, // author
+		    email, // email
+		    web, comentario, // Text to check
+		    request.getParameterMap());
+	}
 	if (isSpam) {
 	    // Mail.sendMail(
 	    // "Comentario Spam Akimet con ip "
