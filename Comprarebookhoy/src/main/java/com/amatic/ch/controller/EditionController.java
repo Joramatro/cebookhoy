@@ -264,7 +264,8 @@ public class EditionController {
 	    String uri = request.getRequestURI();
 	    throw new UnknownResourceException("No existe el recurso: " + uri);
 	}
-	session.setAttribute("publicacion", publicacion);
+	session.setAttribute("publicacionKey", key);
+	session.setAttribute("publicacionTipo", tipo);
 
 	model.addAttribute("publicacion", publicacion);
 
@@ -311,10 +312,14 @@ public class EditionController {
 	    response.sendRedirect("/editar");
 	}
 
-	Publicacion publicacion = (Publicacion) session
-		.getAttribute("publicacion");
+	Publicacion publicacion = publicacionService.getPublicacion(
+		(String) session.getAttribute("publicacionKey"),
+		(String) session.getAttribute("publicacionTipo"));
 	try {
 	    // articulo = articulo.replaceAll("\n", "");
+	    if (publicacion == null) {
+		log.error("Publicacion is null");
+	    }
 	    publicacion.setArticulo(articulo);
 	    publicacion.setPortada(portada);
 	    publicacion.setDestacado(destacado);
