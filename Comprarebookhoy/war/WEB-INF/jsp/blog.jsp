@@ -42,10 +42,10 @@
 		<div class="container">
 
 			<div id="filters" style="margin-top: 15px;">
-				<ul class="option-set" data-option-key="filter">
+				<ul id="optionSet1" class="option-set" data-option-key="filter">
 					<li><a href="#filter" class="selected" data-option-value="*">Todos</a></li>
 					<c:forEach var="categoria" items="${categorias}" varStatus="status" >
-						<li><a href="#filter" data-option-value=".${fn:replace(categoria, " ", separadorClase)}">${categoria}</a></li>
+						<li><a href="#filter" class='${fn:replace(categoria, " ", separadorClase)}' data-option-value=".${fn:replace(categoria, " ", separadorClase)}">${categoria}</a></li>
 					</c:forEach>
 				</ul>
 			</div> 
@@ -122,6 +122,16 @@
 	        },
 	        _overId: null
 	    });
+	    
+	    function getURLParameter(name) {
+	        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+	    }
+	    
+	    if (getURLParameter("filtro")!=null){
+	    	$('#optionSet1 .selected').removeClass('selected');
+	    	$('#optionSet1 .'+getURLParameter("filtro")).addClass('selected');
+	    	$('#portfolio-wrapper').isotope({ filter: '.'+ getURLParameter("filtro")});
+	    }
 	});
 </script>
 

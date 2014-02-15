@@ -73,7 +73,7 @@
 					
 					<h3>Sobre nosotros</h3>
 					<p>
-						Somos un equipo de personas con gran formación tecnológica y apasionados por el mundo de la informática. Queremos ofrecerte la mejor información sobre eBooks, tablets y nuevos gadgets tecnológicos.
+						Somos un equipo de personas con gran formación tecnológica y apasionados por el mundo de la informática. Queremos ofrecerte la mejor información sobre eBooks, libros electrónicos, eReaders y nuevos gadgets tecnológicos.
 					</p>
 						
 				</div>

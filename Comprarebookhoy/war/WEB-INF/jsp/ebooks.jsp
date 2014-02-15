@@ -127,6 +127,22 @@
 	        },
 	        _overId: null
 	    });
+	    
+	    function getURLParameter(name) {
+	        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+	    }
+	    
+	    if (getURLParameter("filtro")!=null){
+	    	$('#optionSet1 .selected').removeClass('selected');
+	    	$('#optionSet1 .'+getURLParameter("filtro")).addClass('selected');
+	    	$('#portfolio-wrapper').isotope({ filter: '.'+ getURLParameter("filtro")});
+	    }
+	    
+	    if (getURLParameter("filtroPrecio")!=null){
+	    	$('#optionSet2 .selected').removeClass('selected');
+	    	$('#optionSet2 .'+getURLParameter("filtroPrecio")).addClass('selected');
+	    	$('#portfolio-wrapper').isotope({ filter: '.'+ getURLParameter("filtroPrecio")});
+	    }
 	});
 </script>
 

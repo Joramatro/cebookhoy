@@ -31,6 +31,33 @@
 		<div style="display:none"><span  itemprop="url">http://www.comprarebookhoy.com/blog/${publicacion.url}</span></div>		
 		<!--start: Container -->
     	<div class="container">
+    	
+    		<% 
+				int port = request.getServerPort();
+				StringBuilder result = new StringBuilder();
+				result.append(request.getScheme())
+				      .append("://")
+				      .append(request.getServerName());
+				
+				if (port != 80) {
+				  result.append(':')
+				        .append(port);
+				}
+				
+				pageContext.setAttribute("separador", "-");
+			%>
+    		<ul class="breadcrumbs"><li class="home" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a name="header.breadcrumb.1" href="<%=result.toString()%>" itemprop="url" title="Página principal" class="migapan"><span itemprop="title">Página principal</span></a></li>
+				<li class="crumb0" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span>&nbsp;&gt;&nbsp;</span><a name="header.breadcrumb.2" href="<%=result.toString()%>/blog" itemprop="url" title="Blog eReaders" class="migapan"><span itemprop="title">Blog eReaders</span></a></li>
+				<li class="crumb1" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span>&nbsp;&gt;&nbsp;</span><a name="header.breadcrumb.3" href="<%=result.toString()%>/blog?filtro=${fn:replace(publicacion.clase1, " ", separador)}" itemprop="url" title="${publicacion.clase1}" class="migapan"><span itemprop="title">${publicacion.clase1}</span></a></li>
+				<c:if test="${not empty publicacion.clase2}">
+					<li class="crumb2" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span>&nbsp;&gt;&nbsp;</span><a name="header.breadcrumb.4" href="<%=result.toString()%>/blog?filtro=${fn:replace(publicacion.clase2, " ", separador)}" itemprop="url" title="${publicacion.clase2}" class="migapan"><span itemprop="title">${publicacion.clase2}</span></a></li>				
+				</c:if>
+				<c:if test="${not empty publicacion.clase7}">
+					<li class="crumb3" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span>&nbsp;&gt;&nbsp;</span><a name="header.breadcrumb.5" href="<%=result.toString()%>/blog?filtro=${fn:replace(publicacion.clase7, " ", separador)}" itemprop="url" title="${publicacion.clase7}" class="migapan"><span itemprop="title">${publicacion.clase7}</span></a></li>				
+				</c:if>
+				<li class="crumbFinal"><span>&nbsp;&gt;&nbsp;</span>${publicacion.titulo}</li>
+			</ul> 
+    		<br>
 	    	<div id="banGoogle" class="iframe_wrap" style="position:absolute;margin-left: 870px;">
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- articulo superior recuadro ebook -->
@@ -417,7 +444,7 @@
 			$("#banGoogle").hide();
 		}
 	</script>
-	<div id="banAmazonHorizontal" style="position:absolute;top:920px;left:54px;">
+	<div id="banAmazonHorizontal" style="position:absolute;top:995px;left:54px;">
 		<div style="margin-left: 33px; margin-bottom: 12px;"><b>OFERTAS</b></div>
 			<%-- <div id="Amazon1" class="iframe_wrap">
 	    		<iframe src="http://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=EBF7F9&IS2=1&bg1=EBF7F9&fc1=666666&lc1=005580&t=comprarmicroh-21&o=30&p=8&l=as1&m=amazon&f=ifr&ref=tf_til&asins=B007HMLEAY" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>   		   		
@@ -482,7 +509,7 @@
 	
 	$(window).scroll(function(){
 		if($('#footer').width() >= 855){
-			if($(window).scrollTop() > 920){
+			if($(window).scrollTop() > 995){
 				$("#banAmazonHorizontal").css("top", $(window).scrollTop());
 			    if($("#banAmazonHorizontal").offset().top + $('#banAmazonHorizontal').outerHeight(true) > $("#ttpi").offset().top){
 			    	$("#banAmazonHorizontal").hide();
@@ -519,6 +546,10 @@
 	    
 	    $('.linkContextual').click(function() {
 	    	ga('send', 'event', 'Venta', '${publicacion.url}', 'Link Contextual');  
+	    });
+	    
+	    $('.migapan').click(function(e) {
+	    	ga('send', 'event', 'Migas', 'Miga '+$(e.target).text(), $(e.target).text());  
 	    });
 	});
 	</script>
