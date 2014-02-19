@@ -82,7 +82,7 @@
 								<img src="/img/jorge_1.jpg" alt="team member">
 								<div class="team-name">Jorge Amat<span> / Creador de Comprar Hoy</span></div>
 								<p>
-									 Jorge es un joven y polifacético desarrollador de software, especialmente orientado a asuntos de marketing y SEO. Es el creador de la plataforma web "Comprar Hoy" y dedica una buena parte de su tiempo a mejorarla entre otros proyectos. Además colabora con otras empresas tecnológicas en Dublin donde reside hasta la fecha, en busca de la Guinness perfecta. Como gran apasionado a los gadgets tecnológicos, también escribe artículos y anáisis que pueden ayudarte en la elección de tu producto favorito. 
+									 Jorge es un joven y polifacético desarrollador de software, especialmente orientado a marketing y desarrollo web. Es el creador de la plataforma web "Comprar Hoy" y dedica una buena parte de su tiempo a mejorarla entre otros proyectos. Además colabora con otras empresas tecnológicas en Dublin donde reside hasta la fecha, en busca de la Guinness perfecta. Como gran apasionado a los gadgets tecnológicos, también escribe artículos y anáisis que pueden ayudarte en la elección de tu producto favorito. 
 								</p>
 								<div class="social_profiles">
 									<ul class="social-bookmarks">

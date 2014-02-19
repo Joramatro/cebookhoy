@@ -392,8 +392,9 @@ public class EditionController {
 	    response.sendRedirect("/editar");
 	}
 	try {
-	    Publicacion publicacion = (Publicacion) session
-		    .getAttribute("publicacion");
+	    Publicacion publicacion = publicacionService.getPublicacion(
+		    (String) session.getAttribute("publicacionKey"),
+		    (String) session.getAttribute("publicacionTipo"));
 
 	    publicacion.setArticulo(articulo);
 	    publicacion.setPortada(portada);
@@ -431,6 +432,7 @@ public class EditionController {
 					+ "\" style=\"width:430px; height:400px; margin-left: 28%;\"/></a><br> ",
 				"<img>");
 	    }
+	    publicacion.setArticulo(articulo);
 
 	    request.getSession().setAttribute("tituloNuevaPublicacion",
 		    publicacion.getKey());
@@ -442,8 +444,10 @@ public class EditionController {
 		fr.delete(image, request, response);
 	    }
 
-	    publicacion.getlImages().clear();
+	    lImagenes.clear();
 	    publicacion.getlImagesKeys().clear();
+	    publicacion.getlImagesNames().clear();
+
 	    publicacionService.update(publicacion);
 	} catch (Exception e) {
 	    log.error("error en editioncontroller", e);

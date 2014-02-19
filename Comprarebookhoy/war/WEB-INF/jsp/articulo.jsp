@@ -80,12 +80,12 @@
 						<c:if test="${status.count ne 3}">
 							<li>
 								<img style="width: 420px;height: 420px;" src="${imagen}"  alt="${publicacion.titulo}" />
-									<div class="slide-caption n">
-										<h3>${publicacion.titulo2}</h3>
-									</div>
 							</li>
 						</c:if>
 						</c:forEach>
+						<div class="slide-caption n">
+							<h3>${publicacion.titulo2}</h3>
+						</div>
 					</ul>
 					<c:if test="${publicacion.disponible eq 'S' }">
 						</a>
@@ -116,11 +116,14 @@
 					</ul>					
 				</div>				
 				<div class="span10">
+					<c:if test="${publicacion.disponible ne 'N'}">
+						<h2><a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo Hoy');" class="button color launch" target="_blank">¡ Cómpralo Hoy!</a></h2>				
+					</c:if>
 					<meta id="_articleBody7" itemprop="articleBody" content="${fn:replace(publicacion.articulo, "\"", "'")}">
 					${publicacion.articulo}				
 					<br>
 					<c:if test="${publicacion.disponible ne 'N'}">
-						<br><h2><a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo Hoy');" class="button color launch">¡ Cómpralo Hoy!</a></h2>
+						<br><h2><a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo hoy al mejor precio');" class="button color launch">¡ Cómpralo hoy al mejor precio!</a></h2>
 					</c:if>					
 					<br>
 					<!-- AddThis Button BEGIN -->

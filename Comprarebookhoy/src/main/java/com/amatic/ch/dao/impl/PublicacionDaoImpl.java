@@ -97,6 +97,7 @@ public class PublicacionDaoImpl implements PublicacionDao {
 	    Publicacion publicacion) {
 	updatePublicacion.setlImages(publicacion.getlImages());
 	updatePublicacion.setlImagesKeys(publicacion.getlImagesKeys());
+	updatePublicacion.setlImagesNames(publicacion.getlImagesNames());
 	updatePublicacion.setKey(publicacion.getKey());
 	updatePublicacion.setNumVisitas(publicacion.getNumVisitas());
 	updatePublicacion.setTitulo(publicacion.getTitulo());

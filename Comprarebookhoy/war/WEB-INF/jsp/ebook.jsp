@@ -15,9 +15,7 @@
 
 			<!-- start: Container -->
 			<div class="container">
-
 				<h1 id="_name2" itemprop="name"><i class="ico-book ico-white"></i>${publicacion.titulo}</h1>
-
 			</div>
 			<!-- end: Container  -->
 
@@ -70,7 +68,7 @@
 				     data-ad-slot="4680883347"></ins>
 				<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
+				</script>	
 			</div>	
 			<!-- start: Flexslider -->
 			<div style="width: 550px;height: 435px; margin: 0 auto;" class="slider" >
@@ -82,13 +80,13 @@
 						<c:forEach var="imagen" items="${publicacion.lImages}" varStatus="status">
 						<c:if test="${status.count ne 3}">
 							<li>
-								<img style="width: 420px;height: 420px;" src="${imagen}"  alt="${publicacion.titulo}" />						
-									<div class="slide-caption n">
-										<h3>${publicacion.titulo2}</h3>
-									</div>
+								<img style="width: 420px;height: 420px;" src="${imagen}"  alt="${publicacion.titulo}" />														
 							</li>
 						</c:if>
 						</c:forEach>
+						<div class="slide-caption n">
+							<h3>${publicacion.titulo2}</h3>
+						</div>
 					</ul>
 					<c:if test="${publicacion.disponible eq 'S' }">
 						</a>
@@ -100,8 +98,7 @@
 			
 			<% pageContext.setAttribute("newLineChar", "\n"); %>
 			<!-- start: Row -->
-			<div class="row">
-				
+			<div class="row">			
 				<div class="span2">					
 					<ul class="project-info" style="font-size: 12px;">
 						<li><strong>Número visitas&nbsp;</strong>&nbsp;  ${publicacion.numVisitas}</li>
@@ -119,11 +116,14 @@
 					</ul>					
 				</div>				
 				<div class="span10">
+					<c:if test="${publicacion.disponible ne 'N'}">
+						<h2><a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo Hoy');" class="button color launch" target="_blank">¡ Cómpralo Hoy!</a></h2>				
+					</c:if>
 					<meta id="_articleBody7" itemprop="articleBody" content="${fn:replace(publicacion.articulo, "\"", "'")}">
 					${publicacion.articulo}				
 					<br>
 					<c:if test="${publicacion.disponible ne 'N'}">
-						<br><h2><a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo Hoy');" class="button color launch">¡ Cómpralo Hoy!</a></h2>
+						<br><h2><a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo hoy al mejor precio');" class="button color launch">¡ Cómpralo hoy al mejor precio!</a></h2>
 					</c:if>					
 					<br>
 					<!-- AddThis Button BEGIN -->

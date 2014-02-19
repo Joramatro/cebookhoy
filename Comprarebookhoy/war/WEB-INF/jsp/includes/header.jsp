@@ -142,6 +142,40 @@
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/contacto“/>
 	</c:when>
+	
+	<c:when test="${fn:contains(pageContext.request.requestURI, 'ebooks') && not empty param.filtro}">
+		<title>eBooks, precios y análisis de los mejores ereaders de <%= request.getParameter("filtro").replaceAll("-"," ") %> en Comprar eBook Hoy</title> 
+		<meta name="description" content="Análisis y precios de los mejores eBook readers de <%= request.getParameter("filtro").replaceAll("-"," ") %> para que puedas comprar online el libro electrónico más adecuado a tus necesidades"/>
+		<meta name="author" content="Jorge Amat" />
+		<meta name="copyright" content="Comprar eBook Hoy" />
+		<meta name="application-name" content="eBooks en Comprar eBook Hoy" />
+		<!-- start: Facebook Open Graph -->
+		<meta property="og:title" content="eBooks, precios y análisis de los mejores ereaders de <%= request.getParameter("filtro").replaceAll("-"," ") %> en Comprar eBook Hoy"/>
+		<meta property="og:description" content="Análisis y precios de los mejores eBook readers de <%= request.getParameter("filtro").replaceAll("-"," ") %> para que puedas comprar online el libro electrónico más adecuado a tus necesidades"/>
+		<meta property="og:type" content="ebook"/>
+		<meta property="og:url" content="http://www.comprarebookhoy.com/ebooks"/>
+		<c:if test="${!empty publicaciones}">
+			<c:if test="${!empty publicaciones[0].lImages}">
+				<meta property="og:image" content="${publicaciones[0].lImages[0]}"/>
+			</c:if>
+		</c:if>
+		<meta property="og:email" content="hola@comprarebookhoy.com"/>
+		<!-- end: Facebook Open Graph -->
+		<!-- start: Twitter tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@ComprarHoy">
+		<meta name="twitter:creator" content="@ComprarHoy">
+		<meta property="twitter:title" content="eBooks, precios y análisis de los mejores ereaders de <%= request.getParameter("filtro").replaceAll("-"," ") %> en Comprar eBook Hoy"/>
+		<meta property="twitter:description" content="Análisis y precios de los mejores eBook readers de <%= request.getParameter("filtro").replaceAll("-"," ") %> para que puedas comprar online el libro electrónico más adecuado a tus necesidades"/>		<c:if test="${!empty publicaciones}">
+			<c:if test="${!empty publicaciones[0].lImages}">
+				<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
+			</c:if>
+		</c:if>
+		<meta name="twitter:domain" content="comprarebookhoy.com">
+		<link rel=”canonical” href=”http://www.comprarebookhoy.com/ebooks“/>
+		<!-- end: Twitter tags -->		
+	</c:when>	
+	
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'ebooks')}">
 		<title>eBooks, precios y análisis de los mejores ereaders en Comprar eBook Hoy</title> 
 		<meta name="description" content="Análisis y precios de los mejores eBook readers en la actualidad para que puedas comprar online tu libro electrónico Kindle, Kobo, Sony, BQ, Barnes & Nobles, Papyre y otras grandes marcas y comparar"/>
@@ -175,6 +209,41 @@
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/ebooks“/>
 		<!-- end: Twitter tags -->		
 	</c:when>
+	
+	<c:when test="${fn:contains(pageContext.request.requestURI, 'blog') && not empty param.filtro}">
+		<title>Artículos de tipo <%= request.getParameter("filtro").replaceAll("-"," ") %> sobre eReaders en Comprar eBook Hoy</title> 
+		<meta name="description" content="Opinión y artículos de tipo <%= request.getParameter("filtro").replaceAll("-"," ") %> en nuestro blog de los mejores eBook readers en la actualidad para que puedas elegir mejor y comprar tu ebook"/>
+		<meta name="author" content="Jorge Amat" />
+		<meta name="copyright" content="Comprar eBook Hoy" />
+		<meta name="application-name" content="Blog en Comprar eBook Hoy" />
+		<!-- start: Facebook Open Graph -->
+		<meta property="og:title" content="Artículos de tipo <%= request.getParameter("filtro").replaceAll("-"," ") %> sobre eReaders en Comprar eBook Hoy"/>
+		<meta property="og:description" content="Opinión y artículos de tipo <%= request.getParameter("filtro").replaceAll("-"," ") %> en nuestro blog de los mejores eBook readers en la actualidad para que puedas elegir mejor y comprar tu ebook"/>
+		<meta property="og:type" content="articulo"/>
+		<meta property="og:url" content="http://www.comprarebookhoy.com/blog"/>
+		<c:if test="${!empty publicaciones}">
+			<c:if test="${!empty publicaciones[0].lImages}">
+				<meta property="og:image" content="${publicaciones[0].lImages[0]}"/>
+			</c:if>
+		</c:if>
+		<meta property="og:email" content="hola@comprarebookhoy.com"/>
+		<!-- end: Facebook Open Graph -->
+		<!-- start: Twitter tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@ComprarHoy">
+		<meta name="twitter:creator" content="@ComprarHoy">
+		<meta property="twitter:title" content="Artículos de tipo <%= request.getParameter("filtro").replaceAll("-"," ") %> sobre eReaders en Comprar eBook Hoy"/>
+		<meta property="twitter:description" content="Opinión y artículos de tipo <%= request.getParameter("filtro").replaceAll("-"," ") %> en nuestro blog de los mejores eBook readers en la actualidad para que puedas elegir mejor y comprar tu ebook"/>
+		<c:if test="${!empty publicaciones}">
+			<c:if test="${!empty publicaciones[0].lImages}">
+				<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
+			</c:if>
+		</c:if>
+		<meta name="twitter:domain" content="comprarebookhoy.com">
+		<!-- end: Twitter tags -->
+		<link rel=”canonical” href=”http://www.comprarebookhoy.com/blog“/>		
+	</c:when>
+	
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'blog')}">
 		<title>Artículos y opinión sobre eReaders en Comprar eBook Hoy</title> 
 		<meta name="description" content="Opinión y artículos en nuestro blog de los mejores eBook readers en la actualidad para que puedas comprar tu ebook Kindle, Kobo, Sony, BQ, Barnes & Nobles, Papyre y otras grandes marcas"/>
