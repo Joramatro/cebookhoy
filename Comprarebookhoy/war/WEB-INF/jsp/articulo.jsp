@@ -386,7 +386,7 @@
 							<textarea id="comComentario" name="comentario" class="text textarea" ></textarea>
 						</div>
 						
-						<label>El comentario puede tardar unos instantes en aparecer publicado una vez enviado</label>
+						<label>El comentario puede estar sujeto a moderación y tardar unos instantes en aparecer publicado una vez enviado</label>
 						
 						<div class="field">
 						<br>

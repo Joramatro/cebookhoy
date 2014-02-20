@@ -353,6 +353,14 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+	<%if(request.getAttribute("javax.servlet.forward.request_uri").equals("/ebooks/Sony-Reader-PRS-T3")){%>
+	<script src="//www.google-analytics.com/cx/api.js?experiment=Em2kwn2gTaeWI-pxW9LnnQ"></script>
+	
+	<script>
+	  // Ask Google Analytics which variation to show the visitor.
+	  var chosenVariation = cxApi.chooseVariation();
+	</script>
+	<%} %>
 
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -361,6 +369,7 @@
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 	
 	  ga('create', 'UA-43441645-1', 'comprarebookhoy.com');
+	  ga('require', 'linkid', 'linkid.js');
 	  ga('send', 'pageview');
 	
 	</script>

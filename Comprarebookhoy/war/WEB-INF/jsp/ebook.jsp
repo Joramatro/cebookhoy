@@ -117,13 +117,13 @@
 				</div>				
 				<div class="span10">
 					<c:if test="${publicacion.disponible ne 'N'}">
-						<h2><a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo Hoy');" class="button color launch" target="_blank">¡ Cómpralo Hoy!</a></h2>				
+						<h2><a id="btnComprar1" href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo Hoy');" class="button color launch" target="_blank">¡ Cómpralo Hoy!</a></h2>				
 					</c:if>
 					<meta id="_articleBody7" itemprop="articleBody" content="${fn:replace(publicacion.articulo, "\"", "'")}">
 					${publicacion.articulo}				
 					<br>
 					<c:if test="${publicacion.disponible ne 'N'}">
-						<br><h2><a href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo hoy al mejor precio');" class="button color launch">¡ Cómpralo hoy al mejor precio!</a></h2>
+						<br><h2><a id="btnComprar2" href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo hoy al mejor precio');" class="button color launch">¡ Cómpralo hoy al mejor precio!</a></h2>
 					</c:if>					
 					<br>
 					<!-- AddThis Button BEGIN -->
@@ -388,7 +388,7 @@
 							<textarea id="comComentario" name="comentario" class="text textarea" ></textarea>
 						</div>
 						
-						<label>El comentario puede tardar unos instantes en aparecer publicado una vez enviado</label>
+						<label>El comentario puede estar sujeto a moderación y tardar unos instantes en aparecer publicado una vez enviado</label>
 						
 						<div class="field">
 						<br>
@@ -525,6 +525,26 @@
 	});
 	</script>
 	<script>
+	
+	<%if(request.getAttribute("javax.servlet.forward.request_uri").equals("/ebooks/Sony-Reader-PRS-T3")){%>
+		// Define JavaScript for each page variation of this experiment.
+		var pageVariations = [
+		  function() {},  // Original: Do nothing. This will render the default HTML.
+		  function() {    // Variation 1: boton comprar hoy los dos
+			  $("#btnComprar1").text('¡ Comprar Hoy!');
+			  $("#btnComprar2").text('¡ Comprar Hoy!');
+		  },
+		  function() {    // Variation 2: boton comprar ya los dos
+			  $("#btnComprar1").text('¡ Comprar Ya!');
+			  $("#btnComprar2").text('¡ Comprar Ya!');
+		  },
+		  function() {    // Variation 3: comprar hoy y comprar ya
+			  $("#btnComprar1").text('¡ Comprar Hoy!');
+			  $("#btnComprar2").text('¡ Comprar Ya!');
+		  }
+		];
+	<%} %>
+	
 	jQuery(document).ready(function($){
 	    $('.iframe_wrap iframe').iframeTracker({
 	        blurCallback: function(){
@@ -555,6 +575,11 @@
 	    $('.migapan').click(function(e) {
 	    	ga('send', 'event', 'Migas', 'Miga '+$(e.target).text(), $(e.target).text());  
 	    });
+	    
+	    <%if(request.getAttribute("javax.servlet.forward.request_uri").equals("/ebooks/Sony-Reader-PRS-T3")){%>
+	 	// Execute the chosen view
+	    pageVariations[chosenVariation]
+	    <%} %>
 	});
 	</script>
 
