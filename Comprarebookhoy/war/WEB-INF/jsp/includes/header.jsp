@@ -41,6 +41,15 @@
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/ebooks/${publicacion.url}“/>
+		<!--
+		  <PageMap>
+		    <DataObject type="thumbnail">
+		      <Attribute name="src" value="${publicacion.lImages[0]}"/>
+		      <Attribute name="width" value="100"/>
+		      <Attribute name="height" value="130"/>
+		    </DataObject>
+		  </PageMap>
+		-->
 	</c:when>
 	<c:when test="${!empty publicacion && publicacion.tipo eq 'AR'}">
 		<title>${publicacion.titulo} en Comprar eBook Hoy</title> 
@@ -66,6 +75,15 @@
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
 		<link rel=”canonical” href=”http://www.comprarebookhoy.com/blog/${publicacion.url}“/>
+		<!--
+		  <PageMap>
+		    <DataObject type="thumbnail">
+		      <Attribute name="src" value="${publicacion.lImages[0]}"/>
+		      <Attribute name="width" value="100"/>
+		      <Attribute name="height" value="130"/>
+		    </DataObject>
+		  </PageMap>
+		-->
 	</c:when>	
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'extras')}">
 		<title>Extras y accesorios online para tu ebook reader en Comprar eBook Hoy</title> 

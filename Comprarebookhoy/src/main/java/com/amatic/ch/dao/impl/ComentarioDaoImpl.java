@@ -28,8 +28,8 @@ public class ComentarioDaoImpl implements ComentarioDao {
 		.type(Comentario.class).filter("publicado !=", "N")
 		.order("publicado").order("-fecha").list();
 
-	if (ultimosComentarios.size() > 40) {
-	    ultimosComentarios = ultimosComentarios.subList(0, 40);
+	if (ultimosComentarios.size() > 25) {
+	    ultimosComentarios = ultimosComentarios.subList(0, 25);
 	}
 
 	return ultimosComentarios;

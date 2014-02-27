@@ -23,16 +23,19 @@
 							</div>
 							<div class="item-description">
 								<h4><a title="${publicacionMVE.titulo}" href="/ebooks/${publicacionMVE.url}">${publicacionMVE.titulo}</a></h4>
+								<c:if test="${publicacionMVE.sumaPuntos gt 0 }">
+								<div class="rateit" data-rateit-value="${publicacionMVE.sumaPuntos div publicacionMVE.votantes}" data-rateit-ispreset="true" data-rateit-readonly="true" title="<fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${publicacionMVE.sumaPuntos div publicacionMVE.votantes}" /> / 5"></div>
+								</c:if>
 								<p>
 									${fn:replace(publicacionMVE.descripcion, newLineChar, "<p/><p>")}
 								</p>
-								<ul class="project-info">
-									<li><strong>Visto&nbsp;</strong>&nbsp;  ${publicacionMVE.numVisitas} veces</li>
+								<p><i title="Visto" style="margin-top: -17px;" class="ico-eye-open"></i>  ${publicacionMVE.numVisitas} veces</p>
+									<%--
 									<c:if test="${publicacionMVE.votantes gt 0 }">					
 									<li><strong>Puntos&nbsp;</strong>&nbsp; <b>${publicacionMVE.sumaPuntos}</b>&nbsp;&nbsp;(de ${publicacionMVE.votantes} votantes)</li>
-									<li><div class="rateit" data-rateit-value="${publicacionMVE.sumaPuntos div publicacionMVE.votantes}" data-rateit-ispreset="true" data-rateit-readonly="true" title="<fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${publicacionMVE.sumaPuntos div publicacionMVE.votantes}" /> / 5"></div></li>
-									</c:if> 
-								</ul>
+									</c:if>
+									--%> 
+								
 							</div>					
         				</div>
         				</c:forEach>					
@@ -99,16 +102,13 @@
 							</div>
 							<div class="item-description">
 								<h4><a title="${publicacionMVA.titulo}" href="/blog/${publicacionMVA.url}">${publicacionMVA.titulo}</a></h4>
+								<c:if test="${publicacionMVA.sumaPuntos gt 0 }">
+								<div class="rateit" data-rateit-value="${publicacionMVA.sumaPuntos div publicacionMVA.votantes}" data-rateit-ispreset="true" data-rateit-readonly="true" title="<fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${publicacionMVA.sumaPuntos div publicacionMVA.votantes}" /> / 5"></div>
+								</c:if>
 								<p>
 									${fn:replace(publicacionMVA.descripcion, newLineChar, "<p/><p>")}
 								</p>
-								<ul class="project-info">
-									<li><strong>Visto&nbsp;</strong>&nbsp;  ${publicacionMVA.numVisitas} veces</li>
-									<c:if test="${publicacionMVA.votantes gt 0 }">					
-									<li><strong>Puntos&nbsp;</strong>&nbsp; <b>${publicacionMVA.sumaPuntos}</b>&nbsp;&nbsp;(de ${publicacionMVA.votantes} votantes)</li>
-									<li><div class="rateit" data-rateit-value="${publicacionMVA.sumaPuntos div publicacionMVA.votantes}" data-rateit-ispreset="true" data-rateit-readonly="true" title="<fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${publicacionMVA.sumaPuntos div publicacionMVA.votantes}" /> / 5"></div></li>
-									</c:if> 
-								</ul>
+								<p><i title="Visto" style="margin-top: -17px;" class="ico-eye-open"></i>  ${publicacionMVA.numVisitas} veces</p>
 							</div>					
         				</div>
         				</c:forEach>					
