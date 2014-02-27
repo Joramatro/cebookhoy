@@ -28,7 +28,7 @@
 	
 	<!--start: Wrapper -->
 	<div itemscope itemtype="http://schema.org/Article" id="wrapper">
-		<div style="display:none"><span  itemprop="url">http://www.comprarebookhoy.com/blog/${publicacion.url}</span><span itemprop="publisher">Comprar eBook Hoy</span></div>		
+		<div style="display:none"><span itemprop="url">http://www.comprarebookhoy.com/blog/${publicacion.url}</span><span itemprop="publisher">Comprar eBook Hoy</span></div>		
 		<!--start: Container -->
     	<div class="container">
     	
@@ -214,7 +214,7 @@
 				<c:choose>
 				<c:when test="${publicacion.votantes gt 0}">
 					<div itemscope itemtype="http://data-vocabulary.org/Review-aggregate" id="comments" class="comments-sec">
-						<div style="display:none"><span  itemprop="itemreviewed">${publicacion.titulo}</span><span itemprop="votes">${publicacion.votantes}</span><span itemprop="count">${fn:length(publicacion.lComentarios)}</span><span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating"><span itemprop="average">${publicacion.sumaPuntos div publicacion.votantes}</span><span itemprop="best">5</span></span><img itemprop="photo" src="${publicacion.lImages[0]}" /></div>
+						<div style="display:none"><span itemprop="itemreviewed">${publicacion.titulo}</span><span itemprop="votes">${publicacion.votantes}</span><span itemprop="count">${fn:length(publicacion.lComentarios)}</span><span itemprop="rating" itemscope itemtype="http://data-vocabulary.org/Rating"><span itemprop="average">${publicacion.sumaPuntos div publicacion.votantes}</span><span itemprop="best">5</span></span><img itemprop="photo" src="${publicacion.lImages[0]}" /></div>
 						<ol class="commentlist">
 						<c:forEach var="comentario" items="${publicacion.comentariosDeref}" varStatus="status">
 							<c:if test="${comentario.publicado ne 'N'}">
