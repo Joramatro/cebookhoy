@@ -60,7 +60,7 @@
 			</ul>    	
     		<br>
 	    	<div id="banGoogle" class="iframe_wrap" style="position:absolute;margin-left: 870px;">
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<%--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- articulo superior recuadro ebook -->
 				<ins class="adsbygoogle"
 				     style="display:inline-block;width:300px;height:250px"
@@ -68,7 +68,7 @@
 				     data-ad-slot="4680883347"></ins>
 				<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>	
+				</script>--%>	
 			</div>	
 			<!-- start: Flexslider -->
 			<div style="width: 550px;height: 435px; margin: 0 auto;" class="slider" >
@@ -117,13 +117,13 @@
 				</div>				
 				<div class="span10">
 					<c:if test="${publicacion.disponible ne 'N'}">
-						<h2><a id="btnComprar1" href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo Hoy');" class="button color launch" target="_blank">¡ Cómpralo Hoy!</a></h2>				
+						<h2><a id="btnComprar1" href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo Hoy');" class="button color launch" target="_blank">¡ Comprar Hoy!</a></h2>				
 					</c:if>
 					<meta id="_articleBody7" content="${fn:replace(publicacion.articulo, "\"", "'")}">
 					${publicacion.articulo}				
 					<br>
 					<c:if test="${publicacion.disponible ne 'N'}">
-						<br><h2><a id="btnComprar2" href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo hoy al mejor precio');" class="button color launch">¡ Cómpralo hoy al mejor precio!</a></h2>
+						<br><h2><a id="btnComprar2" href="/venta/principal/${publicacion.url}" onClick="ga('send', 'event', 'Venta', '${publicacion.url}', 'Boton Compralo hoy al mejor precio');" class="button color launch">¡ Comprar Hoy!</a></h2>
 					</c:if>					
 					<br>
 					<!-- AddThis Button BEGIN -->
@@ -150,7 +150,7 @@
 					<p style="font-style: italic;">Por favor, no dudes en puntuar y comentar tu opinión para aportar más detalles sobre el producto en la sección de <a href="#comments">comentarios</a></p>
 				</div>	
 				<div id="banGoogleFinArticulo" class="iframe_wrap" style="width: 64%; margin:0 auto;">
-					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<%--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 					<!-- fin articulo skycraper ebook -->
 					<ins class="adsbygoogle"
 					     style="display:inline-block;width:728px;height:90px"
@@ -158,7 +158,7 @@
 					     data-ad-slot="5878414947"></ins>
 					<script>
 					(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
+					</script>--%>
 				</div>
 			</div>
 			<!-- end: Row -->
@@ -462,8 +462,9 @@
 	</script>
 	<script>
 	
-	<%if(request.getAttribute("javax.servlet.forward.request_uri").equals("/ebooks/Sony-Reader-PRS-T3")){%>
+	<%//if(request.getAttribute("javax.servlet.forward.request_uri").equals("/ebooks/Sony-Reader-PRS-T3")){%>
 		// Define JavaScript for each page variation of this experiment.
+		/*
 		var pageVariations = [
 		  function() {},  // Original: Do nothing. This will render the default HTML.
 		  function() {    // Variation 1: boton comprar hoy los dos
@@ -479,7 +480,8 @@
 			  $("#btnComprar2").text('¡ Comprar Ya!');
 		  }
 		];
-	<%} %>
+		*/
+	<%//} %>
 	
 	jQuery(document).ready(function($){
 	    $('.iframe_wrap iframe').iframeTracker({
@@ -512,10 +514,10 @@
 	    	ga('send', 'event', 'Migas', 'Miga '+$(e.target).text(), $(e.target).text());  
 	    });
 	    
-	    <%if(request.getAttribute("javax.servlet.forward.request_uri").equals("/ebooks/Sony-Reader-PRS-T3")){%>
+	    <%//if(request.getAttribute("javax.servlet.forward.request_uri").equals("/ebooks/Sony-Reader-PRS-T3")){%>
 	 	// Execute the chosen view
-	    pageVariations[chosenVariation]
-	    <%} %>
+	    //pageVariations[chosenVariation]
+	    <%//} %>
 	});
 	</script>
 

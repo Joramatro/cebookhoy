@@ -371,14 +371,16 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-	<%if(request.getAttribute("javax.servlet.forward.request_uri").equals("/ebooks/Sony-Reader-PRS-T3")){%>
+	<%//if(request.getAttribute("javax.servlet.forward.request_uri").equals("/ebooks/Sony-Reader-PRS-T3")){%>
+	<%-- 
 	<script src="//www.google-analytics.com/cx/api.js?experiment=Em2kwn2gTaeWI-pxW9LnnQ"></script>
 	
 	<script>
 	  // Ask Google Analytics which variation to show the visitor.
 	  var chosenVariation = cxApi.chooseVariation();
 	</script>
-	<%} %>
+	--%>
+	<%//} %>
 
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -454,7 +456,7 @@
 		</div>
 		<!--end: Container-->			
 	<div id="banGooHeader" class="iframe_wrap" style="width: 75%; margin:0 auto;">
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<%--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- superior 1 skyscraper ebook -->
 		<ins class="adsbygoogle"
 		     style="display:inline-block;width:728px;height:90px"
@@ -462,7 +464,7 @@
 		     data-ad-slot="9111082944"></ins>
 		<script>
 		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+		</script>--%>
 	</div>		
 	</header>
 	<!--end: Header-->

@@ -28,7 +28,7 @@
 	<!--start: Wrapper-->
 	<div id="wrapper">
 		<div id="banGoogleETop" class="iframe_wrap" style="width: 54%;margin: -16px auto;">
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<%--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<!-- superior 2 skycraper ebook -->
 			<ins class="adsbygoogle"
 			     style="display:inline-block;width:728px;height:90px"
@@ -36,7 +36,7 @@
 			     data-ad-slot="7494748940"></ins>
 			<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+			</script>--%>
 		</div>		
 		<!-- start: Container -->	
 		<div class="container">
@@ -84,7 +84,7 @@
 			
 			<div class="clear" style="padding-top: 25px;"></div>
 			<div id="banGoogleMasVistos" style="margin-bottom: 25px;" class="iframe_wrap">
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<%--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- rectangulo abajo ebook -->
 				<ins class="adsbygoogle"
 				     style="display:inline-block;width:300px;height:250px"
@@ -92,7 +92,7 @@
 				     data-ad-slot="1448215346"></ins>
 				<script>
 				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
+				</script>--%>
 			</div>			
 			<%@ include file="/WEB-INF/jsp/includes/masleidos.jsp"%>			
 			
