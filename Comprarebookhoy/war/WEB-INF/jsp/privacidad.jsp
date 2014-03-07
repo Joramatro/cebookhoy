@@ -55,7 +55,7 @@ La Información que se proporcione en estos Sitios Cobrandeados esta sujeta a la
 <p>Nosotros estudiamos las preferencias de nuestros usuarios, sus características demográficas, sus patrones de tráfico, y otra información en conjunto para comprender mejor quiénes constituyen nuestra audiencia y qué es lo que usted necesita. El rastreo de las preferencias de nuestros usuarios también nos ayuda a servirle a usted los avisos publicitarios más relevantes.</p>
 <p>Política De Privacidad De Fuentes De Rastreo Utilizadas En Este Sitio:</p>
 <p><a href="http://www.google.com/intl/es_ALL/privacypolicy.html">Google Analytics</a><br />
-<a href="http://www.google.com/intl/es_ALL/privacypolicy.html">Google Adwords</a><br /></p>
+<a href="http://www.google.com/intl/es_ALL/privacypolicy.html">Google Adwords</a></p>
 <p><strong>Política De Protección De Datos Personales</strong></p>
 <p>Para utilizar algunos de los servicios o acceder a determinados contenidos, deberá proporcionar previamente ciertos datos de carácter personal, que solo serán utilizados para el propósito que fueron recopilados.</p>
 <p>El tipo de la posible Información que se le sea solicitada incluye, de manera enunciativa más no limitativa, su nombre, dirección de correo electrónico (e-mail), fecha de nacimiento, sexo, ocupación, país y ciudad de origen e intereses personales, entre otros, no toda la Información solicitada al momento de participar en el sitio es obligatoria de proporcionarse, salvo aquella que consideremos conveniente y que así se le haga saber.</p>
