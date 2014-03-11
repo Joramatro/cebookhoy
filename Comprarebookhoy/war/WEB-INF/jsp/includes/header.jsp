@@ -40,7 +40,7 @@
 		<meta name="twitter:image" content="${publicacion.lImages[0]}">
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
-		<link rel=”canonical” href=”http://www.comprarebookhoy.com/ebooks/${publicacion.url}“/>
+		<link rel="canonical" href="http://www.comprarebookhoy.com/ebooks/${publicacion.url}"/>
 		<!--
 		  <PageMap>
 		    <DataObject type="thumbnail">
@@ -74,7 +74,7 @@
 		<meta name="twitter:image" content="${publicacion.lImages[0]}">
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
-		<link rel=”canonical” href=”http://www.comprarebookhoy.com/blog/${publicacion.url}“/>
+		<link rel="canonical" href="http://www.comprarebookhoy.com/blog/${publicacion.url}"/>
 		<!--
 		  <PageMap>
 		    <DataObject type="thumbnail">
@@ -108,7 +108,7 @@
 		<meta name="twitter:image" content="${publicaciones[0].lImages[0]}">
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->		
-		<link rel=”canonical” href=”http://www.comprarebookhoy.com/extras“/>
+		<link rel="canonical" href="http://www.comprarebookhoy.com/extras"/>
 	</c:when>
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'sobre')}">
 		<title>Sobre Nosotros y Comprar eBook Hoy</title> 
@@ -133,7 +133,7 @@
 		<meta name="twitter:image" content="/img/img-meta/logoGrande.jpg">
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
-		<link rel=”canonical” href=”http://www.comprarebookhoy.com/sobre“/>	
+		<link rel="canonical" href="http://www.comprarebookhoy.com/sobre"/>	
 	</c:when>
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'contacta')}">
 		<title>Contacta con Comprar eBook Hoy</title> 
@@ -158,7 +158,7 @@
 		<meta name="twitter:image" content="/img/img-meta/logoGrande.jpg">
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
-		<link rel=”canonical” href=”http://www.comprarebookhoy.com/contacto“/>
+		<link rel="canonical" href="http://www.comprarebookhoy.com/contacto"/>
 	</c:when>
 	
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'ebooks') && not empty param.filtro}">
@@ -190,7 +190,7 @@
 			</c:if>
 		</c:if>
 		<meta name="twitter:domain" content="comprarebookhoy.com">
-		<link rel=”canonical” href=”http://www.comprarebookhoy.com/ebooks“/>
+		<link rel="canonical" href="http://www.comprarebookhoy.com/ebooks"/>
 		<!-- end: Twitter tags -->		
 	</c:when>	
 	
@@ -224,7 +224,7 @@
 			</c:if>
 		</c:if>
 		<meta name="twitter:domain" content="comprarebookhoy.com">
-		<link rel=”canonical” href=”http://www.comprarebookhoy.com/ebooks“/>
+		<link rel="canonical" href="http://www.comprarebookhoy.com/ebooks"/>
 		<!-- end: Twitter tags -->		
 	</c:when>
 	
@@ -259,7 +259,7 @@
 		</c:if>
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
-		<link rel=”canonical” href=”http://www.comprarebookhoy.com/blog“/>		
+		<link rel="canonical" href="http://www.comprarebookhoy.com/blog"/>		
 	</c:when>
 	
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'blog')}">
@@ -293,7 +293,7 @@
 		</c:if>
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->
-		<link rel=”canonical” href=”http://www.comprarebookhoy.com/blog“/>		
+		<link rel="canonical" href="http://www.comprarebookhoy.com/blog"/>		
 	</c:when>
 	<c:when test="${fn:contains(pageContext.request.requestURI, 'privacidad')}">
 		<title>Política de privacidad de Comprar eBook Hoy</title> 
@@ -314,7 +314,7 @@
 		<meta name="twitter:title" content="Política de privacidad de Comprar eBook Hoy">
 		<meta name="twitter:description" content="Política de privacidad y condiciones de uso de Comprar eBook Hoy">
 		<meta name="twitter:domain" content="comprarebookhoy.com">
-		<link rel=”canonical” href=”http://www.comprarebookhoy.com/politica-de-privacidad“/>
+		<link rel="canonical" href="http://www.comprarebookhoy.com/politica-de-privacidad"/>
 		<!-- end: Twitter tags -->		
 	</c:when>	
 	<c:otherwise>
@@ -340,7 +340,7 @@
 		<meta name="twitter:image" content="/img/img-meta/logoGrande.jpg">
 		<meta name="twitter:domain" content="comprarebookhoy.com">
 		<!-- end: Twitter tags -->				
-		<link rel=”canonical” href=”http://www.comprarebookhoy.com“/>
+		<link rel="canonical" href="http://www.comprarebookhoy.com"/>
 	</c:otherwise>		
 	</c:choose>
 	<link rel="alternate" type="application/rss+xml" title="Comprar eBook Hoy RSS Feed" href="http://www.comprarebookhoy.com/rssfeed" />
@@ -391,7 +391,7 @@
 	  ga('create', 'UA-43441645-1', 'comprarebookhoy.com');
 	  ga('require', 'linkid', 'linkid.js');
 	  ga('send', 'pageview');
-	
+	  ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
 	</script>
 </head>
 <body>
