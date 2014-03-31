@@ -92,8 +92,9 @@ public class HomeController {
 	List<Comentario> ultimosComentarios = new ArrayList<Comentario>();
 	for (Comentario comentario : comentarios) {
 	    Comentario ultimoComentario = new Comentario();
-	    ultimoComentario.setComentario(Jsoup.clean(
-		    comentario.getComentario(), Whitelist.simpleText()));
+	    ultimoComentario.setComentario(Jsoup.clean(comentario
+		    .getComentario().replaceAll("<br />", " "), Whitelist
+		    .simpleText()));
 	    ultimoComentario.setNombre(comentario.getNombre());
 	    ultimoComentario.setPublicacion(comentario.getPublicacion());
 	    ultimosComentarios.add(ultimoComentario);
